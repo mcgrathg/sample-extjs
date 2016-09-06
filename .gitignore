@@ -4,6 +4,7 @@
 /.sass-cache/*
 /ext/*
 /packages/Stewarts-5/*
+resources/stewarts-all-debug-w-comments.js
 
 # Windows image file caches
 Thumbs.db
@@ -52,4 +53,3 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-resources/stewarts-all-debug-w-comments.js
