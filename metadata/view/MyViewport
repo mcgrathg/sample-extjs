@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "designer|initialView": true,
         "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewport",
         "layout": "hbox"
