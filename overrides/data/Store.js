@@ -21,11 +21,9 @@ Ext.define('overrides.data.Store', {
      * If `true`, when a new record is added to the store, it will immediately be validated
      */
     isNewRecordValidated: true,
-
-    constructor: function() {
+    
+    constructor: function(config) {
         var store = this;
-        
-        console.log('inside the store overrides');
         
         store.callParent(arguments);
 
