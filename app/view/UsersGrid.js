@@ -36,7 +36,7 @@ Ext.define('Examples.view.UsersGrid', {
     singleName: 'User',
 
     bind: {
-        store: '{test}'
+        store: '{usersStore}'
     },
     columns: [
         {

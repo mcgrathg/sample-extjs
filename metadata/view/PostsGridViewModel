@@ -6,10 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "usersgrid",
-        "designer|userClassName": "UsersGridViewModel"
+        "designer|userAlias": "postsgrid",
+        "designer|userClassName": "PostsGridViewModel"
     },
-    "designerId": "8f8f9778-82cd-47eb-ab57-7cc82495f8fb",
+    "name": "TodosGridViewModel1",
+    "designerId": "cfe43112-4cea-4112-9c85-2fcfcb0ee8f8",
     "cn": [
         {
             "type": "jsonpstore",
@@ -19,13 +20,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "autoLoad": true,
-                "model": "User",
-                "name": "usersStore",
+                "model": "Post",
+                "name": "postsStore",
                 "pageSize": 0
             },
-            "name": "MyJsonPStore2",
-            "designerId": "0c2d1c65-2993-445f-a35b-8206ef620b7c",
+            "name": "MyJsonPStore1",
+            "designerId": "df5bb93f-060c-43a6-a87c-35a874024940",
             "cn": [
                 {
                     "type": "Ext.data.proxy.JsonP",
@@ -35,10 +35,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "url": "https://jsonplaceholder.typicode.com/users"
+                        "url": "https://jsonplaceholder.typicode.com/posts"
                     },
-                    "name": "MyJsonPProxy2",
-                    "designerId": "bc78d53b-300a-4525-b54c-e675ffeb6b26",
+                    "name": "MyJsonPProxy3",
+                    "designerId": "9c22b3cb-9b3c-4519-919e-3479c8eb3be2",
                     "cn": [
                         {
                             "type": "Ext.data.reader.Json",
@@ -47,8 +47,8 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "name": "MyJsonReader2",
-                            "designerId": "07677049-d2f5-44d6-b2ef-c7ad6b424115"
+                            "name": "MyJsonReader3",
+                            "designerId": "49d08c86-c71b-49f4-9484-899be50f98b4"
                         }
                     ]
                 }
