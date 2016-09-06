@@ -43,6 +43,7 @@ Ext.define('Examples.view.UsersGrid', {
             xtype: 'gridcolumn',
             dataIndex: 'name',
             text: 'Name',
+            flex: 1,
             editor: {
                 xtype: 'textfield'
             }
@@ -56,6 +57,7 @@ Ext.define('Examples.view.UsersGrid', {
                 'Please enter a <b>Name</b> first'
                 );
             },
+            width: 150,
             dataIndex: 'username',
             text: 'Username',
             editor: {
@@ -65,10 +67,11 @@ Ext.define('Examples.view.UsersGrid', {
         {
             xtype: 'templatecolumn',
             tpl: [
-                '<a href="mailto:{email}">{email}</a>'
+                '<a href="mailto:{email}" target="_blank">{email}</a>'
             ],
             dataIndex: 'email',
             text: 'Email',
+            flex: 1,
             editor: {
                 xtype: 'textfield'
             }
@@ -77,12 +80,14 @@ Ext.define('Examples.view.UsersGrid', {
             xtype: 'gridcolumn',
             dataIndex: 'phone',
             text: 'Phone',
+            flex: 1,
             editor: {
                 xtype: 'textfield'
             }
         },
         {
             xtype: 'gridcolumn',
+            width: 150,
             dataIndex: 'website',
             text: 'Website',
             editor: {
@@ -96,19 +101,48 @@ Ext.define('Examples.view.UsersGrid', {
             expandOnDblClick: false,
             expandOnEnter: false,
             rowBodyTpl: [
-                '<div style="display:inline-flex;width:100%;">',
-                '    <div style="flex:1;">',
-                '        <h3>Address:</h3>',
-                '        <div><b>Street:</b> {address.street}</div>',
-                '        <div><b>Suite:</b> {address.suite}</div>',
-                '        <div><b>City:</b> {address.city}</div>',
-                '        <div><b>Zip Code:</b> {address.zipcode}</div>',
+                '<div class="flex-full">',
+                '    <div class="flex-one expanded-grid-table" style="margin-right:25px;">',
+                '        <table>',
+                '            <tr>',
+                '                <th colspan="2">Address</th>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Street:</td>',
+                '                <td>{address.street}</td>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Suite:</td>',
+                '                <td>{address.suite}</td>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>City:</td>',
+                '                <td>{address.city}</td>',
+                '            </tr>',
+                '        </table>',
                 '    </div>',
-                '    <div style="flex:2;">',
-                '        <h3>Company:</h2>',
-                '        <div><b>Name:</b> {company.name}</div>',
-                '        <div><b>Slogan:</b> {company.catchPhrase}</div>',
-                '        <div><b>Category:</b> {company.bs}</div>',
+                '    <div class="flex-two expanded-grid-table">',
+                '        <table>',
+                '            <tr>',
+                '                <th colspan="2">Company</th>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Name:</td>',
+                '                <td>{company.name}</td>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Slogan:</td>',
+                '                <td>{company.catchPhrase}</td>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Category:</td>',
+                '                <td>{company.bs}</td>',
+                '            </tr>',
+                '            <tr>',
+                '                <td>Zip Code:</td>',
+                '                <td>{address.zipcode}</td>',
+                '            </tr>',
+                '        </table>',
                 '    </div>',
                 '</div>'
             ]
