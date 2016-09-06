@@ -24828,3 +24828,27 @@ a.x-color-picker-item:hover {
 
 .x-slider-focus .x-slider-thumb {
   outline: 1px dotted #333333; }
+
+.flex-full {
+  display: inline-flex;
+  width: 100%; }
+  .flex-full .flex-one {
+    flex: 1; }
+  .flex-full .flex-two {
+    flex: 2; }
+
+.expanded-grid-table table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: lightgray;
+  /* First Column */
+  /* Striped Rows */ }
+  .expanded-grid-table table th, .expanded-grid-table table td {
+    text-align: left;
+    padding: 8px; }
+  .expanded-grid-table table th {
+    font-size: larger; }
+  .expanded-grid-table table td:first-child {
+    font-weight: bold; }
+  .expanded-grid-table table tr:nth-child(even) {
+    background-color: #f2f2f2; }

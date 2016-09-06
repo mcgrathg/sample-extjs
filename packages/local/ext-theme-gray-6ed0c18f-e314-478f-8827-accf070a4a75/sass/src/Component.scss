@@ -1,0 +1,38 @@
+.flex-full {
+    display:inline-flex;
+    width:100%;
+
+    .flex-one {
+        flex: 1;
+    }
+
+    .flex-two {
+        flex: 2;
+    }
+}
+
+
+.expanded-grid-table table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: lightgray;
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        font-size: larger;
+    }
+
+    /* First Column */
+    td:first-child {
+        font-weight: bold;
+    }
+
+    /* Striped Rows */
+    tr:nth-child(even){
+        background-color: #f2f2f2
+    }
+}
