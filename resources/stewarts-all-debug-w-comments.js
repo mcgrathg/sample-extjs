@@ -1192,14 +1192,14 @@ Ext.define('sl.override.StoreOverride', {
         for (var i = 0; i < prevRecs.length; i++) {
             prevRec = prevRecs[i];
             if (!Ext.isFunction(prevRec.get)) {
-
+                
                 continue;
             }
             prevVal = prevRec.get(idProp);
             for (var j = 0; j < records.length; j++) {
                 rec = records[j];
                 if (!Ext.isFunction(rec.get)) {
-
+                    
                     continue;
                 }
                 recVal = rec.get(idProp);
@@ -2737,80 +2737,80 @@ Ext.define('sl.override.PanelOverride', {
  *
  *   This is particularly useful for MVC/MVVM design.
  */
-// Ext.define('sl.override.ViewportOverride', {
-//     override: 'Ext.container.Viewport',
-//     config: {
-//         queryString: '',
-//         corporation: '',
-//         division: '',
-//         procGroup: '',
-//         username: '',
-//         userID: '',
-//         uprofile: '',
-//         AuthToken: '',
-//         menuitem: ''
-//     },
-//     constructor: function(config) {
-//         var me = this;
-//         config = config || {};
-//         me.initQueryStringProperties(config.queryString || Ext.Object.fromQueryString(window.location.search));
-//         me.callParent(arguments);
-//     },
-//     initComponent: function() {
-//         var me = this;
-//         //     vm = me.getViewModel();
-//         // if (vm) {
-//         //     vm.set('corporation', me.getCorporation());
-//         //     vm.set('division', me.getDivision());
-//         //     vm.set('procGroup', me.getCorporation());
-//         //     vm.set('username', me.getUsername());
-//         //     vm.set('userID', me.getUserID());
-//         //     vm.set('uprofile', me.getUprofile());
-//         //     vm.set('AuthToken', me.getAuthToken());
-//         //     vm.set('menuitem', me.getMenuitem());
-//         // }
-//         // me.on({
-//         //     'beforerender': function() {
-//         //         var mask = Ext.get('stewarts-splashscreen');
-//         //         if (mask) {
-//         //             mask.destroy();
-//         //         }
-//         //     }
-//         // });
-//         me.callParent();
-//     },
-//     initQueryStringProperties: function(queryString) {
-//         var me = this;
-//         me.setQueryString(queryString);
-//         me.setCorporation(me.corporation || queryString.ucorp);
-//         me.setDivision(me.division || queryString.udivision);
-//         me.setProcGroup(me.procGroup || queryString.uprocgroup);
-//         me.setUsername(me.username || queryString.uid);
-//         me.setUserID(me.userID || queryString.userid);
-//         me.setUprofile(me.uprofile || queryString.uprofile);
-//         me.setAuthToken(me.AuthToken || queryString.AuthToken);
-//         me.setMenuitem(me.menuitem || queryString.menuitem);
-//         // create easier-to-get-to methods
-//         sl.setQueryString = me.setQueryString.bind(me);
-//         sl.setCorporation = me.setCorporation.bind(me);
-//         sl.setDivision = me.setDivision.bind(me);
-//         sl.setProcGroup = me.setProcGroup.bind(me);
-//         sl.setUsername = me.setUsername.bind(me);
-//         sl.setUserID = me.setUserID.bind(me);
-//         sl.setUprofile = me.setUprofile.bind(me);
-//         sl.setAuthToken = me.setAuthToken.bind(me);
-//         sl.setMenuitem = me.setMenuitem.bind(me);
-//         sl.getQueryString = me.getQueryString.bind(me);
-//         sl.getCorporation = me.getCorporation.bind(me);
-//         sl.getDivision = me.getDivision.bind(me);
-//         sl.getProcGroup = me.getProcGroup.bind(me);
-//         sl.getUsername = me.getUsername.bind(me);
-//         sl.getUserID = me.getUserID.bind(me);
-//         sl.getUprofile = me.getUprofile.bind(me);
-//         sl.getAuthToken = me.getAuthToken.bind(me);
-//         sl.getMenuitem = me.getMenuitem.bind(me);
-//     }
-// });
+Ext.define('sl.override.ViewportOverride', {
+    override: 'Ext.container.Viewport',
+    config: {
+        queryString: '',
+        corporation: '',
+        division: '',
+        procGroup: '',
+        username: '',
+        userID: '',
+        uprofile: '',
+        AuthToken: '',
+        menuitem: ''
+    },
+    constructor: function(config) {
+        var me = this;
+        config = config || {};
+        me.initQueryStringProperties(config.queryString || Ext.Object.fromQueryString(window.location.search));
+        me.callParent(arguments);
+    },
+    initComponent: function() {
+        var me = this,
+            vm = me.getViewModel();
+        if (vm) {
+            vm.set('corporation', me.getCorporation());
+            vm.set('division', me.getDivision());
+            vm.set('procGroup', me.getCorporation());
+            vm.set('username', me.getUsername());
+            vm.set('userID', me.getUserID());
+            vm.set('uprofile', me.getUprofile());
+            vm.set('AuthToken', me.getAuthToken());
+            vm.set('menuitem', me.getMenuitem());
+        }
+        me.on({
+            'beforerender': function() {
+                var mask = Ext.get('stewarts-splashscreen');
+                if (mask) {
+                    mask.destroy();
+                }
+            }
+        });
+        me.callParent();
+    },
+    initQueryStringProperties: function(queryString) {
+        var me = this;
+        me.setQueryString(queryString);
+        me.setCorporation(me.corporation || queryString.ucorp);
+        me.setDivision(me.division || queryString.udivision);
+        me.setProcGroup(me.procGroup || queryString.uprocgroup);
+        me.setUsername(me.username || queryString.uid);
+        me.setUserID(me.userID || queryString.userid);
+        me.setUprofile(me.uprofile || queryString.uprofile);
+        me.setAuthToken(me.AuthToken || queryString.AuthToken);
+        me.setMenuitem(me.menuitem || queryString.menuitem);
+        // create easier-to-get-to methods
+        sl.setQueryString = me.setQueryString.bind(me);
+        sl.setCorporation = me.setCorporation.bind(me);
+        sl.setDivision = me.setDivision.bind(me);
+        sl.setProcGroup = me.setProcGroup.bind(me);
+        sl.setUsername = me.setUsername.bind(me);
+        sl.setUserID = me.setUserID.bind(me);
+        sl.setUprofile = me.setUprofile.bind(me);
+        sl.setAuthToken = me.setAuthToken.bind(me);
+        sl.setMenuitem = me.setMenuitem.bind(me);
+        sl.getQueryString = me.getQueryString.bind(me);
+        sl.getCorporation = me.getCorporation.bind(me);
+        sl.getDivision = me.getDivision.bind(me);
+        sl.getProcGroup = me.getProcGroup.bind(me);
+        sl.getUsername = me.getUsername.bind(me);
+        sl.getUserID = me.getUserID.bind(me);
+        sl.getUprofile = me.getUprofile.bind(me);
+        sl.getAuthToken = me.getAuthToken.bind(me);
+        sl.getMenuitem = me.getMenuitem.bind(me);
+    }
+});
 
 /**
  * @class sl.field.utils.ValueToDisplayHash
@@ -5254,7 +5254,7 @@ Ext.ux.DataViewTransition = Ext.extend(Object, {
                     left: el.getX() - parentEl.getX() - el.getMargin('l') - parentEl.getPadding('l')
                 };
             }, this);
-            //set absolute positioning on all DataView items. We need to set position, left and
+            //set absolute positioning on all DataView items. We need to set position, left and 
             //top at the same time to avoid any flickering
             Ext.iterate(previous, function(id, item) {
                 var oldPos = oldPositions[id],
@@ -5304,10 +5304,10 @@ Ext.ux.DataViewTransition = Ext.extend(Object, {
                         //move each item
                         for (var id in newPositions) {
                             if (!previous[id])  {
-
+                                
                                 continue;
                             }
-
+                            
                             var oldPos = oldPositions[id],
                                 newPos = newPositions[id],
                                 oldTop = oldPos.top,
@@ -5579,7 +5579,7 @@ Ext.define('Ext.ux.DataView.Animated', {
                 // If it is a "remaining" one from last refesh, shunt it back to
                 // its old position from where it will be animated.
                 newPos = oldPositions[id] || newPositions[id];
-                // set absolute positioning on all DataView items. We need to set position, left and
+                // set absolute positioning on all DataView items. We need to set position, left and 
                 // top at the same time to avoid any flickering
                 newStyle.position = 'absolute';
                 newStyle.top = newPos.top + "px";
@@ -5758,8 +5758,8 @@ Ext.define('Ext.ux.DataView.DragSelector', {
         /**
          * @property tracker
          * @type Ext.dd.DragTracker
-         * The DragTracker attached to this instance. Note that the 4 on* functions are called in the scope of the
-         * DragTracker ('this' refers to the DragTracker inside those functions), so we pass a reference to the
+         * The DragTracker attached to this instance. Note that the 4 on* functions are called in the scope of the 
+         * DragTracker ('this' refers to the DragTracker inside those functions), so we pass a reference to the 
          * DragSelector so that we can call this class's functions.
          */
         this.tracker = Ext.create('Ext.dd.DragTracker', {
@@ -5916,7 +5916,7 @@ Ext.define('Ext.ux.DataView.DragSelector', {
  *                     ddGroup: 'someGroup'
  *                 }
  *             });
- *
+ * 
  *             this.callParent(arguments);
  *         }
  *     });
@@ -5937,10 +5937,10 @@ Ext.define('Ext.ux.DataView.DragSelector', {
  *          Ext.create('My.cool.View', {
  *              store: Ext.StoreMgr.get('baseball'),
  *              tpl: [
- *                  '<tpl for=".">',
- *                      '<p class="team">',
+ *                  '<tpl for=".">', 
+ *                      '<p class="team">', 
  *                          'The {team} were founded in {established}.',
- *                      '</p>',
+ *                      '</p>', 
  *                  '</tpl>'
  *              ],
  *              itemSelector: 'p.team',
@@ -6378,18 +6378,18 @@ Ext.define('Ext.ux.FieldReplicator', {
  *
  * The GMap Panel UX extends `Ext.panel.Panel` in order to display Google Maps.
  *
- * It is important to note that you must include the following Google Maps API above bootstrap.js in your
+ * It is important to note that you must include the following Google Maps API above bootstrap.js in your 
  * application's index.html file (or equivilant).
  *
  *     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
  *
  * It is important to note that due to the Google Maps loader, you cannot currently include
  * the above JS resource in the Cmd generated app.json file.  Doing so interferes with the loading of
- * Ext JS and Google Maps.
+ * Ext JS and Google Maps. 
  *
- * The following example creates a window containing a GMap Panel.  In this case, the center
+ * The following example creates a window containing a GMap Panel.  In this case, the center 
  * is set as geoCodeAddr, which is a string that Google translates into longitude and latitude.
- *
+ * 
  *     var mapwin = Ext.create('Ext.Window', {
  *         layout: 'fit',
  *         title: 'GMap Window',
@@ -6409,7 +6409,7 @@ Ext.define('Ext.ux.FieldReplicator', {
  *             }
  *         }
  *     }).show();
- *
+ * 
  */
 Ext.define('Ext.ux.GMapPanel', {
     extend: 'Ext.panel.Panel',
@@ -6821,7 +6821,7 @@ Ext.define('Ext.ux.GroupTabPanel', {
 });
 
 /**
- * Barebones iframe implementation.
+ * Barebones iframe implementation. 
  */
 Ext.define('Ext.ux.IFrame', {
     extend: 'Ext.Component',
@@ -6990,15 +6990,15 @@ Ext.define('Ext.ux.IFrame', {
  *         // etc.
  *         bbar: Ext.create('Ext.ux.StatusBar', {
  *             id: 'my-status',
- *
+ *      
  *             // defaults to use when the status is cleared:
  *             defaultText: 'Default status text',
  *             defaultIconCls: 'default-icon',
- *
+ *      
  *             // values to set initially:
  *             text: 'Ready',
  *             iconCls: 'ready-icon',
- *
+ *      
  *             // any standard Toolbar items:
  *             items: [{
  *                 text: 'A Button'
@@ -7208,7 +7208,7 @@ Ext.define('Ext.ux.statusbar.StatusBar', {
      * it will be used as the callback interval (in milliseconds), overriding the {@link #autoClear} value.
      * All other options will be defaulted as with the boolean option.  To customize any other options,
      * you can pass an object in the format:
-     *
+     * 
      * @param {Number} config.clear.wait The number of milliseconds to wait before clearing
      * (defaults to {@link #autoClear}).
      * @param {Boolean} config.clear.anim False to clear the status immediately once the callback
@@ -7478,7 +7478,7 @@ Ext.define('Ext.ux.LiveSearchGridPanel', {
         });
         me.callParent(arguments);
     },
-    // afterRender override: it adds textfield and statusbar reference and start monitoring keydown events in textfield input
+    // afterRender override: it adds textfield and statusbar reference and start monitoring keydown events in textfield input 
     afterRender: function() {
         var me = this;
         me.callParent(arguments);
@@ -11458,7 +11458,7 @@ Ext.define('Ext.ux.event.Maker', {
  * This class manages the playback of an array of "event descriptors". For details on the
  * contents of an "event descriptor", see {@link Ext.ux.event.Recorder}. The events recorded by the
  * {@link Ext.ux.event.Recorder} class are designed to serve as input for this class.
- *
+ * 
  * The simplest use of this class is to instantiate it with an {@link #eventQueue} and call
  * {@link #method-start}. Like so:
  *
@@ -11795,7 +11795,7 @@ Ext.define('Ext.ux.event.Player', function(Player) {
      * Replaces an event in the queue with an array of events. This is often used to roll
      * up a multi-step pseudo-event and expand it just-in-time to be played. The process
      * for doing this in a derived class would be this:
-     *
+     * 
      *      Ext.define('My.Player', {
      *          extend: 'Ext.ux.event.Player',
      *
@@ -11813,11 +11813,11 @@ Ext.define('Ext.ux.event.Player', function(Player) {
      *              return event;
      *          }
      *      });
-     *
+     * 
      * This method ensures that the `beforeplay` hook (if any) from the replaced event is
      * placed on the first new event and the `afterplay` hook (if any) is placed on the
      * last new event.
-     *
+     * 
      * @param {Number} index The queue index to replace. Pass `null` to replace the event
      * at the current `queueIndex`.
      * @param {Event[]} events The array of events with which to replace the specified
@@ -12133,9 +12133,9 @@ Ext.define('Ext.ux.event.Player', function(Player) {
             /*
          * Injects a key event using the given event information to populate the event
          * object.
-         *
+         * 
          * **Note:** `keydown` causes Safari 2.x to crash.
-         *
+         * 
          * @param {HTMLElement} target The target of the given event.
          * @param {Object} options Object object containing all of the event injection
          * options.
@@ -12181,7 +12181,7 @@ Ext.define('Ext.ux.event.Player', function(Player) {
                         // @TODO: Decipher between Firefox's implementation and a correct one.
                         customEvent.initKeyEvent(type, options.bubbles, options.cancelable, view, options.ctrlKey, options.altKey, options.shiftKey, options.metaKey, options.keyCode, options.charCode);
                     } catch (ex) {
-                        // If it got here, that means key events aren't officially supported.
+                        // If it got here, that means key events aren't officially supported. 
                         // Safari/WebKit is a real problem now. WebKit 522 won't let you
                         // set keyCode, charCode, or other properties if you use a
                         // UIEvent, so we first must try to create a generic event. The
@@ -12347,7 +12347,7 @@ Ext.define('Ext.ux.event.Player', function(Player) {
             /*
          * Injects a UI event using the given event information to populate the event
          * object.
-         *
+         * 
          * @param {HTMLElement} target The target of the given event.
          * @param {String} options.type The type of event to fire. This can be any one of
          * the following: `click`, `dblclick`, `mousedown`, `mouseup`, `mouseout`,
@@ -13139,13 +13139,13 @@ Ext.define('Ext.ux.form.MultiSelect', {
      */
     blankText: 'This field is required',
     /**
-     * @cfg {String} [minSelectionsText="Minimum {0}item(s) required"]
-     * Validation message displayed when {@link #minSelections} is not met.
+     * @cfg {String} [minSelectionsText="Minimum {0}item(s) required"] 
+     * Validation message displayed when {@link #minSelections} is not met. 
      * The {0} token will be replaced by the value of {@link #minSelections}.
      */
     minSelectionsText: 'Minimum {0} item(s) required',
     /**
-     * @cfg {String} [maxSelectionsText="Maximum {0}item(s) allowed"]
+     * @cfg {String} [maxSelectionsText="Maximum {0}item(s) allowed"] 
      * Validation message displayed when {@link #maxSelections} is not met
      * The {0} token will be replaced by the value of {@link #maxSelections}.
      */
@@ -13623,11 +13623,11 @@ Ext.define('Ext.ux.form.ItemSelector', {
     },
     /**
      * Get the selected records from the specified list.
-     *
+     * 
      * Records will be returned *in store order*, not in order of selection.
      * @param {Ext.view.BoundList} list The list to read selections from.
      * @return {Ext.data.Model[]} The selected records in store order.
-     *
+     * 
      */
     getSelections: function(list) {
         var store = list.getStore();
@@ -13904,7 +13904,7 @@ Ext.define('Ext.ux.form.SearchField', {
 });
 
 /**
- * A small grid nested within a parent grid's row.
+ * A small grid nested within a parent grid's row. 
  *
  * See the [Kitchen Sink](http://dev.sencha.com/extjs/5.0.1/examples/kitchensink/#customer-grid) for example usage.
  */
@@ -20762,7 +20762,7 @@ cptable[874] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22748,7 +22748,7 @@ cptable[1250] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22764,7 +22764,7 @@ cptable[1251] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22780,7 +22780,7 @@ cptable[1252] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22796,7 +22796,7 @@ cptable[1253] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22812,7 +22812,7 @@ cptable[1254] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22828,7 +22828,7 @@ cptable[1255] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22844,7 +22844,7 @@ cptable[1256] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22860,7 +22860,7 @@ cptable[1257] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22876,7 +22876,7 @@ cptable[1258] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22892,7 +22892,7 @@ cptable[10000] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22908,7 +22908,7 @@ cptable[10006] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22924,7 +22924,7 @@ cptable[10007] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22940,7 +22940,7 @@ cptable[10029] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22956,7 +22956,7 @@ cptable[10079] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22972,7 +22972,7 @@ cptable[10081] = (function() {
         if (d.charCodeAt(i) !== 65533)  {
             e[d[i]] = i;
         }
-
+        
         D[i] = d.charAt(i);
     }
     return {
@@ -22997,15 +22997,15 @@ if (typeof module !== 'undefined' && module.exports)  {
             else  {
                 root.cptable = factory(cpt);
             }
-
+            
         } else  {
             throw new Error("cptable not found");
         }
-
+        
     } else  {
         cptable = factory(cptable);
     }
-
+    
 }(this, function(cpt) {
     "use strict";
     var magic = {
@@ -23059,10 +23059,10 @@ if (typeof module !== 'undefined' && module.exports)  {
                 for (var ee = 0,
                     e = keys[ee]; ee < len; ++ee) {
                     if (!(e = keys[ee]))  {
-
+                        
                         continue;
                     }
-
+                    
                     EE[e.charCodeAt(0)] = E[e];
                 }
                 return EE;
@@ -23110,11 +23110,11 @@ if (typeof module !== 'undefined' && module.exports)  {
                     if (ofmt === undefined || ofmt === 'buf')  {
                         return out;
                     }
-
+                    
                     if (ofmt !== 'arr')  {
                         return out.toString('binary');
                     }
-
+                    
                     return [].slice.call(out);
                 };
             };
@@ -23125,10 +23125,10 @@ if (typeof module !== 'undefined' && module.exports)  {
                     c;
                 for (d = 0; d < D.length; ++d) {
                     if (!(c = D[d]))  {
-
+                        
                         continue;
                     }
-
+                    
                     var w = c.charCodeAt(0);
                     DD[2 * d] = w & 255;
                     DD[2 * d + 1] = w >> 8;
@@ -23172,10 +23172,10 @@ if (typeof module !== 'undefined' && module.exports)  {
                 for (var ee = 0,
                     e = keys[ee]; ee < keys.length; ++ee) {
                     if (!(e = keys[ee]))  {
-
+                        
                         continue;
                     }
-
+                    
                     var f = e.charCodeAt(0);
                     EE[2 * f] = E[e] & 255;
                     EE[2 * f + 1] = E[e] >> 8;
@@ -23191,7 +23191,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             if (EE[j + 1] > 0)  {
                                 out[k++] = EE[j];
                             }
-
+                            
                         }
                         out.length = k;
                     } else if (Buffer.isBuffer(data)) {
@@ -23216,7 +23216,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                                 if (EE[j + 1] > 0)  {
                                     out[k++] = EE[j];
                                 }
-
+                                
                             } else {
                                 jj = j - 65536;
                                 j = 2 * (55296 + ((jj >> 10) & 1023));
@@ -23224,13 +23224,13 @@ if (typeof module !== 'undefined' && module.exports)  {
                                 if (EE[j + 1] > 0)  {
                                     out[k++] = EE[j];
                                 }
-
+                                
                                 j = 2 * (56320 + (jj & 1023));
                                 out[k++] = EE[j + 1] || EE[j];
                                 if (EE[j + 1] > 0)  {
                                     out[k++] = EE[j];
                                 }
-
+                                
                             }
                         }
                         out.length = k;
@@ -23241,17 +23241,17 @@ if (typeof module !== 'undefined' && module.exports)  {
                             if (EE[j + 1] > 0)  {
                                 out[k++] = EE[j];
                             }
-
+                            
                         }
                     }
                     if (ofmt === undefined || ofmt === 'buf')  {
                         return out;
                     }
-
+                    
                     if (ofmt !== 'arr')  {
                         return out.toString('binary');
                     }
-
+                    
                     return [].slice.call(out);
                 };
             };
@@ -23269,10 +23269,10 @@ if (typeof module !== 'undefined' && module.exports)  {
                 }
                 for (d = 0; d < D.length; ++d) {
                     if (!(c = D[d]))  {
-
+                        
                         continue;
                     }
-
+                    
                     w = c.charCodeAt(0);
                     j = 2 * d;
                     DD[j] = w & 255;
@@ -23334,7 +23334,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 }
                 ;
             }
-
+            
             for (var j = 1,
                 k = 0,
                 D = 0; i < len; i += j) {
@@ -23405,11 +23405,11 @@ if (typeof module !== 'undefined' && module.exports)  {
             if (ofmt === undefined || ofmt === 'buf')  {
                 return mdb;
             }
-
+            
             if (ofmt !== 'arr')  {
                 return mdb.toString('binary');
             }
-
+            
             return [].slice.call(mdb);
         };
     }
@@ -23418,7 +23418,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (cpdcache[sbcs_cache[0]])  {
                     return;
                 }
-
+                
                 var i, s;
                 for (i = 0; i < sbcs_cache.length; ++i) {
                     s = sbcs_cache[i];
@@ -23439,11 +23439,11 @@ if (typeof module !== 'undefined' && module.exports)  {
                     if (magic_decode[s])  {
                         cpdcache[s] = magic_decode[s];
                     }
-
+                    
                     if (magic_encode[s])  {
                         cpecache[s] = magic_encode[s];
                     }
-
+                    
                 }
             }
         };
@@ -23455,7 +23455,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (!cpdcache[sbcs_cache[0]])  {
                     return;
                 }
-
+                
                 sbcs_cache.forEach(cp_decache);
                 dbcs_cache.forEach(cp_decache);
                 magic_cache.forEach(cp_decache);
@@ -23483,7 +23483,7 @@ if (typeof module !== 'undefined' && module.exports)  {
             if (typeof Buffer !== 'undefined' && Buffer.isBuffer(data))  {
                 data = data.toString('utf8');
             }
-
+            
             var len = data.length;
             var out = typeof Buffer !== 'undefined' ? new Buffer(4 * len) : [],
                 w, i,
@@ -23545,7 +23545,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             else  {
                                 throw new Error("bad ascii " + w);
                             }
-
+                            
                         };
                         break;
                     case "utf16le":
@@ -23573,7 +23573,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             if (w >= 55296 && w <= 57343)  {
                                 w = 65536 + ((w - 55296) << 10) + (data[++i].charCodeAt(0) - 56320);
                             }
-
+                            
                             out[j++] = w & 255;
                             w >>= 8;
                             out[j++] = w & 255;
@@ -23589,7 +23589,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             if (w >= 55296 && w <= 57343)  {
                                 w = 65536 + ((w - 55296) << 10) + (data[++i].charCodeAt(0) - 56320);
                             }
-
+                            
                             out[j + 3] = w & 255;
                             w >>= 8;
                             out[j + 2] = w & 255;
@@ -23607,12 +23607,12 @@ if (typeof module !== 'undefined' && module.exports)  {
                             if (c === "+") {
                                 out[j++] = 43;
                                 out[j++] = 45;
-
+                                
                                 continue;
                             }
                             if (SetD.indexOf(c) > -1) {
                                 out[j++] = c.charCodeAt(0);
-
+                                
                                 continue;
                             }
                             tt = encode(1201, c);
@@ -23630,20 +23630,20 @@ if (typeof module !== 'undefined' && module.exports)  {
             else  {
                 throw new Error("Unrecognized CP: " + cp);
             }
-
+            
             out.length = j;
             if (typeof Buffer === 'undefined')  {
                 return (ofmt == 'str') ? out.map(sfcc).join("") : out;
             }
-
+            
             if (ofmt === undefined || ofmt === 'buf')  {
                 return out;
             }
-
+            
             if (ofmt !== 'arr')  {
                 return out.toString('binary');
             }
-
+            
             return [].slice.call(out);
         };
     var decode = function decode(cp, data) {
@@ -23651,7 +23651,7 @@ if (typeof module !== 'undefined' && module.exports)  {
             if ((F = cpdcache[cp]))  {
                 return F(data);
             }
-
+            
             var len = data.length,
                 out = new Array(len),
                 w, i,
@@ -23664,7 +23664,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (typeof data === "string")  {
                     data = data.split("").map(cca);
                 }
-
+                
                 for (i = 0; i < len; i += j) {
                     j = 2;
                     w = D[(data[i] << 8) + data[i + 1]];
@@ -23675,7 +23675,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                     if (!w)  {
                         throw new Error('Unrecognized code: ' + data[i] + ' ' + data[i + j - 1] + ' ' + i + ' ' + j + ' ' + D[data[i]]);
                     }
-
+                    
                     out[k++] = w;
                 }
             } else if ((M = magic[cp]))  {
@@ -23774,7 +23774,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             } else  {
                                 out[k++] = String.fromCharCode(w);
                             }
-
+                            
                         };
                         break;
                     case "utf32be":
@@ -23796,7 +23796,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                             } else  {
                                 out[k++] = String.fromCharCode(w);
                             }
-
+                            
                         };
                         break;
                     case "utf7":
@@ -23808,20 +23808,20 @@ if (typeof module !== 'undefined' && module.exports)  {
                             else if (data[3] == 56 || data[3] == 57 || data[3] == 43 || data[3] == 47)  {
                                 i = 4;
                             }
-
+                            
                         };
                         for (; i < len; i += j) {
                             if (data[i] !== 43) {
                                 j = 1;
                                 out[k++] = String.fromCharCode(data[i]);
-
+                                
                                 continue;
                             }
                             j = 1;
                             if (data[i + 1] === 45) {
                                 j = 2;
                                 out[k++] = "+";
-
+                                
                                 continue;
                             }
                             while (String.fromCharCode(data[i + j]).match(/[A-Za-z0-9+\/]/)) j++;
@@ -23843,24 +23843,24 @@ if (typeof module !== 'undefined' && module.exports)  {
                                 if (e3 === -1)  {
                                     break;
                                 }
-
+                                
                                 c2 = (e2 & 15) << 4 | e3 >> 2;
                                 tt.push(c2);
                                 e4 = BM.indexOf(String.fromCharCode(data[i + l++]));
                                 if (e4 === -1)  {
                                     break;
                                 }
-
+                                
                                 c3 = (e3 & 3) << 6 | e4;
                                 if (e4 < 64)  {
                                     tt.push(c3);
                                 }
-
+                                
                             }
                             if ((tt.length & 1) === 1)  {
                                 tt.length--;
                             }
-
+                            
                             o64 = decode(1201, tt);
                             for (l = 0; l < o64.length; ++l) out[k++] = o64[l];
                         };
@@ -23872,7 +23872,7 @@ if (typeof module !== 'undefined' && module.exports)  {
             else  {
                 throw new Error("Unrecognized CP: " + cp);
             }
-
+            
             out.length = k;
             return out.join("");
         };
@@ -23938,7 +23938,7 @@ if (typeof module !== 'undefined' && module.exports)  {
             if (iterator(collection[_i], _i) === false)  {
                 break;
             }
-
+            
         }
     }
     function buildCell(index) {
@@ -24014,7 +24014,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (!options)  {
                     options = {};
                 }
-
+                
                 if (isArray(data)) {
                     this.mode = 'encode';
                 } else if (isString(data)) {
@@ -24045,7 +24045,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (text.slice(-lineDelimiter.length) != lineDelimiter)  {
                     text += lineDelimiter;
                 }
-
+                
                 return text;
             }
             CSV.prototype.set = function(setting, value) {
@@ -24061,11 +24061,11 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (this.mode != 'parse')  {
                     return;
                 }
-
+                
                 if (this.data.trim().length === 0)  {
                     return [];
                 }
-
+                
                 var data = this.data,
                     options = this.options,
                     header = options.header,
@@ -24125,7 +24125,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (options.lineDelimiter.length == 1)  {
                     saveLastCell = saveCell;
                 }
-
+                
                 var dataLength = data.length,
                     cellDelimiter = options.cellDelimiter.charCodeAt(0),
                     lineDelimiter = options.lineDelimiter.charCodeAt(options.lineDelimiter.length - 1),
@@ -24137,13 +24137,13 @@ if (typeof module !== 'undefined' && module.exports)  {
                         flag.cell = false;
                         if (_ch == 34) {
                             flag.escaped = true;
-
+                            
                             continue;
                         }
                     }
                     if (flag.escaped && _ch == 34) {
                         flag.quote = !flag.quote;
-
+                        
                         continue;
                     }
                     if ((flag.escaped && flag.quote) || !flag.escaped) {
@@ -24209,11 +24209,11 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (this.mode != 'encode')  {
                     return;
                 }
-
+                
                 if (this.data.length == 0)  {
                     return '';
                 }
-
+                
                 var data = this.data,
                     options = this.options,
                     header = options.header,
@@ -24345,7 +24345,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                         else  {
                             value = i + j;
                         }
-
+                        
                         prev = current[j];
                         current[j] = value;
                     }
@@ -24356,11 +24356,11 @@ if (typeof module !== 'undefined' && module.exports)  {
                     if (str1 === null && str2 === null)  {
                         throw 'Trying to compare two null values';
                     }
-
+                    
                     if (str1 === null || str2 === null)  {
                         return 0;
                     }
-
+                    
                     str1 = String(str1);
                     str2 = String(str2);
                     var distance = levenshtein(str1, str2);
@@ -24458,7 +24458,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                         if (obj.hasOwnProperty(prop))  {
                             return false;
                         }
-
+                        
                     }
                     return true;
                 }
@@ -24557,7 +24557,7 @@ if (typeof module !== 'undefined' && module.exports)  {
                 if (Object.prototype.toString.call(str) !== '[object String]')  {
                     throw 'Must use a string as argument to FuzzySet functions';
                 }
-
+                
                 return str.toLowerCase();
             };
             // return length of items in set
@@ -24899,7 +24899,7 @@ JSZip.prototype = (function() {
             if (o.compression !== null)  {
                 o.compression = o.compression.toUpperCase();
             }
-
+            
             return o;
         };
     /**
@@ -25164,7 +25164,7 @@ JSZip.prototype = (function() {
                 filename, relativePath, file, fileClone;
             for (filename in this.files) {
                 if (!this.files.hasOwnProperty(filename)) {
-
+                    
                     continue;
                 }
                 file = this.files[filename];
@@ -25283,7 +25283,7 @@ JSZip.prototype = (function() {
             // first, generate all the zip parts.
             for (var name in this.files) {
                 if (!this.files.hasOwnProperty(name)) {
-
+                    
                     continue;
                 }
                 var file = this.files[name];
@@ -26180,7 +26180,7 @@ JSZip.base64 = (function() {
                 !(c[0] in f) && f.execScript && f.execScript("var " + c[0]);
                 for (var a; c.length && (a = c.shift()); ) !c.length && d !== n ? f[a] = d : f = f[a] ? f[a] : f[a] = {};
             }
-
+            
             var C = "undefined" !== typeof Uint8Array && "undefined" !== typeof Uint16Array && "undefined" !== typeof Uint32Array;
             function K(e, d) {
                 this.index = "number" === typeof d ? d : 0;
@@ -26189,7 +26189,7 @@ JSZip.base64 = (function() {
                 if (2 * this.buffer.length <= this.index)  {
                     throw Error("invalid index");
                 }
-
+                
                 this.buffer.length <= this.index && ca(this);
             }
             function ca(e) {
@@ -26203,7 +26203,7 @@ JSZip.base64 = (function() {
                 else  {
                     for (c = 0; c < f; ++c) a[c] = d[c];
                 }
-
+                
                 return e.buffer = a;
             }
             K.prototype.a = function(e, d, c) {
@@ -26219,7 +26219,7 @@ JSZip.base64 = (function() {
                 else  {
                     for (m = 0; m < d; ++m) k = k << 1 | e >> d - m - 1 & 1 , 8 === ++b && (b = 0 , f[a++] = L[k] , k = 0 , a === f.length && (f = ca(this)));
                 }
-
+                
                 f[a] = k;
                 this.buffer = f;
                 this.d = b;
@@ -26279,7 +26279,7 @@ JSZip.base64 = (function() {
                     if (a >= this.length)  {
                         break;
                     }
-
+                    
                     a + 2 < this.length && c[a + 2] > c[a] && (a += 2);
                     if (c[a] > c[b])  {
                         f = c[b] , c[b] = c[a] , c[a] = f , f = c[b + 1] , c[b + 1] = c[a + 1] , c[a + 1] = f;
@@ -26287,7 +26287,7 @@ JSZip.base64 = (function() {
                     else  {
                         break;
                     }
-
+                    
                     b = a;
                 }
                 return {
@@ -26463,7 +26463,7 @@ JSZip.base64 = (function() {
                             else  {
                                 for (; 0 < s; ) A = 6 > s ? s : 6 , A > s - 3 && A < s && (A = s - 3) , E[D++] = 16 , E[D++] = A - 3 , H[16]++ , s -= A;
                             }
-
+                            
                         };
                         e = C ? E.subarray(0, D) : E.slice(0, D);
                         ea = oa(H, 7);
@@ -27000,7 +27000,7 @@ JSZip.base64 = (function() {
                     k = 3;
                     if (3 < b) {
                         for (g = b; 3 < g; g--) if (e[f + g - 1] !== e[d + g - 1])  {
-
+                            
                             continue a;
                         }
                         ;
@@ -27011,7 +27011,7 @@ JSZip.base64 = (function() {
                     if (258 === k)  {
                         break;
                     }
-
+                    
                 }
                 return new qa(b, d - a);
             }
@@ -27023,14 +27023,14 @@ JSZip.base64 = (function() {
                 if (!C)  {
                     for (g = 0; g < c; g++) a[g] = 0;
                 }
-
+                
                 for (g = 0; g < c; ++g) 0 < e[g] && f.push(g, e[g]);
                 b = Array(f.length / 2);
                 k = new (C ? Uint32Array : Array)(f.length / 2);
                 if (1 === b.length)  {
                     return a[f.pop().index] = 1 , a;
                 }
-
+                
                 g = 0;
                 for (p = f.length / 2; g < p; ++g) b[g] = f.pop() , k[g] = b[g].value;
                 m = Ja(k, k.length, d);
@@ -27091,7 +27091,7 @@ JSZip.base64 = (function() {
                 }
                 return d;
             }
-
+            
             ba("Zlib.RawDeflate", ka);
             ba("Zlib.RawDeflate.prototype.compress", ka.prototype.h);
             var Ka = {
@@ -27106,7 +27106,7 @@ JSZip.base64 = (function() {
             else  {
                 for (La in V = [] , $ = 0 , Ka) V[$++] = La;
             }
-
+            
             $ = 0;
             for (Ma = V.length; $ < Ma; ++$) La = V[$] , ba("Zlib.RawDeflate.CompressionType." + La, Ka[La]);
         }).call(this);
@@ -27153,7 +27153,7 @@ JSZip.base64 = (function() {
                 !(a[0] in b) && b.execScript && b.execScript("var " + a[0]);
                 for (var e; a.length && (e = a.shift()); ) !a.length && d !== l ? b[e] = d : b = b[e] ? b[e] : b[e] = {};
             }
-
+            
             var r = "undefined" !== typeof Uint8Array && "undefined" !== typeof Uint16Array && "undefined" !== typeof Uint32Array;
             function u(c) {
                 var d = c.length,
@@ -27183,7 +27183,7 @@ JSZip.base64 = (function() {
                     b
                 ];
             }
-
+            
             function v(c, d) {
                 this.g = [];
                 this.h = 32768;
@@ -27195,7 +27195,7 @@ JSZip.base64 = (function() {
                 if (d || !(d = {}))  {
                     d.index && (this.d = d.index) , d.bufferSize && (this.h = d.bufferSize) , d.bufferType && (this.i = d.bufferType) , d.resize && (this.p = d.resize);
                 }
-
+                
                 switch (this.i) {
                     case x:
                         this.a = 32768;
@@ -27274,7 +27274,7 @@ JSZip.base64 = (function() {
                                         else  {
                                             for (; m--; ) b[e++] = d[a++];
                                         }
-
+                                        
                                         this.a = e;
                                         b = this.e();
                                         e = this.a;
@@ -27487,7 +27487,7 @@ JSZip.base64 = (function() {
                     if (g === l)  {
                         throw Error("input buffer is broken");
                     }
-
+                    
                     a |= g << b;
                     b += 8;
                 }
@@ -27509,7 +27509,7 @@ JSZip.base64 = (function() {
                     if (k === l)  {
                         break;
                     }
-
+                    
                     a |= k << b;
                     b += 8;
                 }
@@ -27613,7 +27613,7 @@ JSZip.base64 = (function() {
                 else  {
                     for (a = 0; 32768 > a; ++a) e[a] = e[d + a];
                 }
-
+                
                 this.a = 32768;
                 return e;
             };
@@ -27638,7 +27638,7 @@ JSZip.base64 = (function() {
                 if (0 === a.length)  {
                     return r ? this.b.subarray(32768, this.a) : this.b.slice(32768, this.a);
                 }
-
+                
                 f = 0;
                 for (g = a.length; f < g; ++f) {
                     b = a[f];
@@ -27669,7 +27669,7 @@ JSZip.base64 = (function() {
             else  {
                 for (V in U = [] , W = 0 , T) U[W++] = V;
             }
-
+            
             W = 0;
             for (X = U.length; W < X; ++W) V = U[W] , q("Zlib.RawInflate.BufferType." + V, T[V]);
         }).call(this);
@@ -27731,7 +27731,7 @@ Dual licenced under the MIT license or GPLv3. See LICENSE.markdown.
     var findCompression = function(compressionMethod) {
             for (var method in JSZip.compressions) {
                 if (!JSZip.compressions.hasOwnProperty(method)) {
-
+                    
                     continue;
                 }
                 if (JSZip.compressions[method].magic === compressionMethod) {
@@ -28369,7 +28369,7 @@ var XLS = {};
         if (typeof cptable === 'undefined')  {
             cptable = require('./dist/cpexcel');
         }
-
+        
         current_cptable = cptable[current_codepage];
     }
     function reset_cp() {
@@ -28380,7 +28380,7 @@ var XLS = {};
         if (typeof cptable !== 'undefined')  {
             current_cptable = cptable[cp];
         }
-
+        
     }
     var _getchar = function _gc1(x) {
             return String.fromCharCode(x);
@@ -28390,14 +28390,14 @@ var XLS = {};
             if (current_codepage === 1200)  {
                 return String.fromCharCode(x);
             }
-
+            
             return cptable.utils.decode(current_codepage, [
                 x & 255,
                 x >> 8
             ])[0];
         };
     }
-
+    
     var has_buf = (typeof Buffer !== 'undefined');
     function new_buf(len) {
         /* jshint -W056 */
@@ -28453,7 +28453,7 @@ var XLS = {};
         if (has_buf)  {
             return new Buffer(s, "binary");
         }
-
+        
         var w = s.split("").map(function(x) {
                 return x.charCodeAt(0) & 255;
             });
@@ -28463,15 +28463,15 @@ var XLS = {};
         if (isLE === undefined)  {
             isLE = true;
         }
-
+        
         if (!nl)  {
             nl = 8;
         }
-
+        
         if (!ml && nl === 8)  {
             ml = 52;
         }
-
+        
         var e, m,
             el = nl * 8 - ml - 1,
             eMax = (1 << el) - 1,
@@ -28551,7 +28551,7 @@ var XLS = {};
             if (!Buffer.isBuffer(b))  {
                 return ___utf16le(b, s, e);
             }
-
+            
             return b.toString('utf16le', s, e);
         };
         __hexlify = function(b, s, l) {
@@ -28561,7 +28561,7 @@ var XLS = {};
             if (!Buffer.isBuffer(b))  {
                 return ___lpstr(b, i);
             }
-
+            
             var len = b.readUInt32LE(i);
             return len > 0 ? b.toString('utf8', i + 4, i + 4 + len - 1) : "";
         };
@@ -28569,7 +28569,7 @@ var XLS = {};
             if (!Buffer.isBuffer(b))  {
                 return ___lpwstr(b, i);
             }
-
+            
             var len = 2 * b.readUInt32LE(i);
             return b.toString('utf16le', i + 4, i + 4 + len - 1);
         };
@@ -28586,7 +28586,7 @@ var XLS = {};
             if (Buffer.isBuffer(b))  {
                 return b.readDoubleLE(i);
             }
-
+            
             return ___double(b, i);
         };
     }
@@ -28745,7 +28745,7 @@ var XLS = {};
         if (m !== hexstr)  {
             throw fld + 'Expected ' + hexstr + ' saw ' + m;
         }
-
+        
         this.l += hexstr.length >> 1;
     }
     function prep_blob(blob, pos) {
@@ -28793,7 +28793,7 @@ var XLS = {};
                 if (v > p2_32 || v < -p2_32)  {
                     return pad0r1(v, d);
                 }
-
+                
                 var i = Math.round(v);
                 return pad0r2(i, d);
             }
@@ -28963,7 +28963,7 @@ var XLS = {};
                     if ((B - A) < 5.0E-10)  {
                         break;
                     }
-
+                    
                     B = 1 / (B - A);
                     P_2 = P_1;
                     P_1 = P;
@@ -28985,11 +28985,11 @@ var XLS = {};
                         Q
                     ];
                 }
-
+                
                 if (Q === 0)  {
                     throw "Unexpected state: " + P + " " + P_1 + " " + P_2 + " " + Q + " " + Q_1 + " " + Q_2;
                 }
-
+                
                 var q = Math.floor(sgn * P / Q);
                 return [
                     q,
@@ -29013,12 +29013,12 @@ var XLS = {};
                         if (o.length <= w)  {
                             return o;
                         }
-
+                        
                         o = v.toPrecision(10);
                         if (o.length <= w)  {
                             return o;
                         }
-
+                        
                         return v.toExponential(5);
                     }
                     function gfn3(v) {
@@ -29026,7 +29026,7 @@ var XLS = {};
                         if (o.length > (v < 0 ? 12 : 11))  {
                             o = v.toPrecision(6);
                         }
-
+                        
                         return o;
                     }
                     function gfn4(o) {
@@ -29056,7 +29056,7 @@ var XLS = {};
                         else  {
                             o = gfn3(v);
                         }
-
+                        
                         return gfn5(gfn4(o));
                     };
                 })();
@@ -29080,7 +29080,7 @@ var XLS = {};
                 if (v > 2958465 || v < 0)  {
                     return null;
                 }
-
+                
                 var date = (v | 0),
                     time = Math.floor(86400 * (v - date)),
                     dow = 0;
@@ -29100,12 +29100,12 @@ var XLS = {};
                 if (Math.abs(out.u) < 1.0E-6)  {
                     out.u = 0;
                 }
-
+                
                 fixopts(opts != null ? opts : (opts = []));
                 if (opts.date1904)  {
                     date += 1462;
                 }
-
+                
                 if (out.u > 0.999) {
                     out.u = 0;
                     if (++time == 86400) {
@@ -29139,7 +29139,7 @@ var XLS = {};
                     if (date > 60)  {
                         --date;
                     }
-
+                    
                     /* 1 = Jan 1 1900 */
                     var d = new Date(1900, 0, 1);
                     d.setDate(d.getDate() + date - 1);
@@ -29152,11 +29152,11 @@ var XLS = {};
                     if (date < 60)  {
                         dow = (dow + 6) % 7;
                     }
-
+                    
                     if (b2)  {
                         dow = fix_hijri(d, dout);
                     }
-
+                    
                 }
                 out.y = dout[0];
                 out.m = dout[1];
@@ -29338,14 +29338,14 @@ var XLS = {};
                 else  {
                     return "";
                 }
-
+                
             }
             /*jshint +W086 */
             function commaify(s) {
                 if (s.length <= 3)  {
                     return s;
                 }
-
+                
                 var j = (s.length % 3),
                     o = s.substr(0, j);
                 for (; j != s.length; j += 3) o += (o.length > 0 ? "," : "") + s.substr(j, 3);
@@ -29371,12 +29371,12 @@ var XLS = {};
                             if (period === -1)  {
                                 period = fmt.indexOf('E');
                             }
-
+                            
                             var ee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E) % period;
                             if (ee < 0)  {
                                 ee += period;
                             }
-
+                            
                             o = (val / Math.pow(10, ee)).toPrecision(idx + 1 + (period + ee) % period);
                             if (o.indexOf("e") === -1) {
                                 var fakee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E);
@@ -29386,7 +29386,7 @@ var XLS = {};
                                 else  {
                                     o += "E+" + (fakee - ee);
                                 }
-
+                                
                                 while (o.substr(0, 2) === "0.") {
                                     o = o[0] + o.substr(2, period) + "." + o.substr(2 + period);
                                     o = o.replace(/^0+([1-9])/, "$1").replace(/^0+\./, "0.");
@@ -29399,15 +29399,15 @@ var XLS = {};
                         } else  {
                             o = val.toExponential(idx);
                         }
-
+                        
                         if (fmt.match(/E\+00$/) && o.match(/e[+-]\d$/))  {
                             o = o.substr(0, o.length - 1) + "0" + o[o.length - 1];
                         }
-
+                        
                         if (fmt.match(/E\-/) && o.match(/e\+/))  {
                             o = o.replace(/e\+/, "e");
                         }
-
+                        
                         return o.replace("e", "E");
                     }
                     var frac1 = /# (\?+)( ?)\/( ?)(\d+)/;
@@ -29453,7 +29453,7 @@ var XLS = {};
                         if (val < 2147483647 && val > -2.147483648E9)  {
                             return "" + (val >= 0 ? (val | 0) : (val - 1 | 0));
                         }
-
+                        
                         return "" + Math.floor(val);
                     }
                     function write_num_flt(type, fmt, val) {
@@ -29462,25 +29462,25 @@ var XLS = {};
                             if (val >= 0)  {
                                 return write_num_flt('n', ffmt, val);
                             }
-
+                            
                             return '(' + write_num_flt('n', ffmt, -val) + ')';
                         }
                         if (fmt.charCodeAt(fmt.length - 1) === 44)  {
                             return write_num_cm(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('%') !== -1)  {
                             return write_num_pct(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('E') !== -1)  {
                             return write_num_exp(fmt, val);
                         }
-
+                        
                         if (fmt.charCodeAt(0) === 36)  {
                             return "$" + write_num_flt(type, fmt.substr(fmt[1] == ' ' ? 2 : 1), val);
                         }
-
+                        
                         var o, oo;
                         var r, ri, ff,
                             aval = Math.abs(val),
@@ -29488,23 +29488,23 @@ var XLS = {};
                         if (fmt.match(/^00+$/))  {
                             return sign + pad0r(aval, fmt.length);
                         }
-
+                        
                         if (fmt.match(/^[#?]+$/)) {
                             o = pad0r(val, 0);
                             if (o === "0")  {
                                 o = "";
                             }
-
+                            
                             return o.length > fmt.length ? o : hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(frac1)) !== null)  {
                             return write_num_f1(r, aval, sign);
                         }
-
+                        
                         if (fmt.match(/^#+0+$/) !== null)  {
                             return sign + pad0r(aval, fmt.length - fmt.indexOf("0"));
                         }
-
+                        
                         if ((r = fmt.match(dec1)) !== null) {
                             o = rnd(val, r[1].length).replace(/^([^\.]+)$/, "$1." + r[1]).replace(/\.$/, "." + r[1]).replace(/\.(\d*)$/, function($$, $1) {
                                 return "." + $1 + fill("0", r[1].length - $1.length);
@@ -29518,14 +29518,14 @@ var XLS = {};
                         if ((r = fmt.match(/^#,##0(\.?)$/)) !== null)  {
                             return sign + commaify(pad0r(aval, 0));
                         }
-
+                        
                         if ((r = fmt.match(/^#,##0\.([#0]*0)$/)) !== null) {
                             return val < 0 ? "-" + write_num_flt(type, fmt, -val) : commaify("" + (Math.floor(val))) + "." + pad0(dec(val, r[1].length), r[1].length);
                         }
                         if ((r = fmt.match(/^#,#*,#0/)) !== null)  {
                             return write_num_flt(type, fmt.replace(/^#,#*,/, ""), val);
                         }
-
+                        
                         if ((r = fmt.match(/^([0#]+)(\\?-([0#]+))+$/)) !== null) {
                             o = _strrev(write_num_flt(type, fmt.replace(/[\\-]/g, ""), val));
                             ri = 0;
@@ -29546,13 +29546,13 @@ var XLS = {};
                             if (oa[oa.length - 1] == " ")  {
                                 oa = oa.substr(0, oa.length - 1) + "0";
                             }
-
+                            
                             o += oa + r[2] + "/" + r[3];
                             oa = rpad_(ff[2], ri);
                             if (oa.length < r[4].length)  {
                                 oa = hashq(r[4].substr(r[4].length - oa.length)) + oa;
                             }
-
+                            
                             o += oa;
                             return o;
                         }
@@ -29566,7 +29566,7 @@ var XLS = {};
                             if (fmt.length <= o.length)  {
                                 return o;
                             }
-
+                            
                             return hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(/^([#0?]+)\.([#0]+)$/)) !== null) {
@@ -29608,12 +29608,12 @@ var XLS = {};
                             if (period === -1)  {
                                 period = fmt.indexOf('E');
                             }
-
+                            
                             var ee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E) % period;
                             if (ee < 0)  {
                                 ee += period;
                             }
-
+                            
                             o = (val / Math.pow(10, ee)).toPrecision(idx + 1 + (period + ee) % period);
                             if (!o.match(/[Ee]/)) {
                                 var fakee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E);
@@ -29623,7 +29623,7 @@ var XLS = {};
                                 else  {
                                     o += "E+" + (fakee - ee);
                                 }
-
+                                
                                 o = o.replace(/\+-/, "-");
                             }
                             o = o.replace(/^([+-]?)(\d*)\.(\d*)[Ee]/, function($$, $1, $2, $3) {
@@ -29632,15 +29632,15 @@ var XLS = {};
                         } else  {
                             o = val.toExponential(idx);
                         }
-
+                        
                         if (fmt.match(/E\+00$/) && o.match(/e[+-]\d$/))  {
                             o = o.substr(0, o.length - 1) + "0" + o[o.length - 1];
                         }
-
+                        
                         if (fmt.match(/E\-/) && o.match(/e\+/))  {
                             o = o.replace(/e\+/, "e");
                         }
-
+                        
                         return o.replace("e", "E");
                     }
                     function write_num_int(type, fmt, val) {
@@ -29649,25 +29649,25 @@ var XLS = {};
                             if (val >= 0)  {
                                 return write_num_int('n', ffmt, val);
                             }
-
+                            
                             return '(' + write_num_int('n', ffmt, -val) + ')';
                         }
                         if (fmt.charCodeAt(fmt.length - 1) === 44)  {
                             return write_num_cm2(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('%') !== -1)  {
                             return write_num_pct2(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('E') !== -1)  {
                             return write_num_exp2(fmt, val);
                         }
-
+                        
                         if (fmt.charCodeAt(0) === 36)  {
                             return "$" + write_num_int(type, fmt.substr(fmt[1] == ' ' ? 2 : 1), val);
                         }
-
+                        
                         var o;
                         var r, ri, ff,
                             aval = Math.abs(val),
@@ -29675,23 +29675,23 @@ var XLS = {};
                         if (fmt.match(/^00+$/))  {
                             return sign + pad0(aval, fmt.length);
                         }
-
+                        
                         if (fmt.match(/^[#?]+$/)) {
                             o = ("" + val);
                             if (val === 0)  {
                                 o = "";
                             }
-
+                            
                             return o.length > fmt.length ? o : hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(frac1)) !== null)  {
                             return write_num_f2(r, aval, sign);
                         }
-
+                        
                         if (fmt.match(/^#+0+$/) !== null)  {
                             return sign + pad0(aval, fmt.length - fmt.indexOf("0"));
                         }
-
+                        
                         if ((r = fmt.match(dec1)) !== null) {
                             o = ("" + val).replace(/^([^\.]+)$/, "$1." + r[1]).replace(/\.$/, "." + r[1]).replace(/\.(\d*)$/, function($$, $1) {
                                 return "." + $1 + fill("0", r[1].length - $1.length);
@@ -29705,14 +29705,14 @@ var XLS = {};
                         if ((r = fmt.match(/^#,##0(\.?)$/)) !== null)  {
                             return sign + commaify(("" + aval));
                         }
-
+                        
                         if ((r = fmt.match(/^#,##0\.([#0]*0)$/)) !== null) {
                             return val < 0 ? "-" + write_num_int(type, fmt, -val) : commaify(("" + val)) + "." + fill('0', r[1].length);
                         }
                         if ((r = fmt.match(/^#,#*,#0/)) !== null)  {
                             return write_num_int(type, fmt.replace(/^#,#*,/, ""), val);
                         }
-
+                        
                         if ((r = fmt.match(/^([0#]+)(\\?-([0#]+))+$/)) !== null) {
                             o = _strrev(write_num_int(type, fmt.replace(/[\\-]/g, ""), val));
                             ri = 0;
@@ -29733,13 +29733,13 @@ var XLS = {};
                             if (oa[oa.length - 1] == " ")  {
                                 oa = oa.substr(0, oa.length - 1) + "0";
                             }
-
+                            
                             o += oa + r[2] + "/" + r[3];
                             oa = rpad_(ff[2], ri);
                             if (oa.length < r[4].length)  {
                                 oa = hashq(r[4].substr(r[4].length - oa.length)) + oa;
                             }
-
+                            
                             o += oa;
                             return o;
                         }
@@ -29753,7 +29753,7 @@ var XLS = {};
                             if (fmt.length <= o.length)  {
                                 return o;
                             }
-
+                            
                             return hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(/^([#0]+)\.([#0]+)$/)) !== null) {
@@ -29805,7 +29805,7 @@ var XLS = {};
                 if (in_str === true)  {
                     throw new Error("Format |" + fmt + "| unterminated string ");
                 }
-
+                
                 return out;
             }
             SSF._split = split_fmt;
@@ -29874,7 +29874,7 @@ var XLS = {};
                                     if (dt == null)  {
                                         return "";
                                     }
-
+                                    
                                 }
                                 out[out.length] = {
                                     t: 'X',
@@ -29909,7 +29909,7 @@ var XLS = {};
                                 if (dt == null)  {
                                     return "";
                                 }
-
+                                
                             };
                             o = c;
                             while (++i < fmt.length && fmt[i].toLowerCase() === c) o += c;
@@ -29941,7 +29941,7 @@ var XLS = {};
                                 if (dt != null)  {
                                     q.v = dt.H >= 12 ? "P" : "A";
                                 }
-
+                                
                                 q.t = 'T';
                                 hr = 'h';
                                 i += 3;
@@ -29949,7 +29949,7 @@ var XLS = {};
                                 if (dt != null)  {
                                     q.v = dt.H >= 12 ? "PM" : "AM";
                                 }
-
+                                
                                 q.t = 'T';
                                 i += 5;
                                 hr = 'h';
@@ -29977,7 +29977,7 @@ var XLS = {};
                                     if (dt == null)  {
                                         return "";
                                     }
-
+                                    
                                 }
                                 out[out.length] = {
                                     t: 'Z',
@@ -30106,7 +30106,7 @@ var XLS = {};
                                 if (bt < 2)  {
                                     bt = 2;
                                 }
-
+                                
                             };
                             break;
                         case 'X':
@@ -30219,10 +30219,10 @@ var XLS = {};
                     if (decpt === out.length && ostr.indexOf("E") === -1) {
                         for (i = out.length - 1; i >= 0; --i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1)  {
-
+                                
                                 continue;
                             }
-
+                            
                             if (jj >= out[i].v.length - 1) {
                                 jj -= out[i].v.length;
                                 out[i].v = ostr.substr(jj + 1, out[i].v.length);
@@ -30239,22 +30239,22 @@ var XLS = {};
                         if (jj >= 0 && lasti < out.length)  {
                             out[lasti].v = ostr.substr(0, jj + 1) + out[lasti].v;
                         }
-
+                        
                     } else if (decpt !== out.length && ostr.indexOf("E") === -1) {
                         jj = ostr.indexOf(".") - 1;
                         for (i = decpt; i >= 0; --i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1)  {
-
+                                
                                 continue;
                             }
-
+                            
                             j = out[i].v.indexOf(".") > -1 && i === decpt ? out[i].v.indexOf(".") - 1 : out[i].v.length - 1;
                             vv = out[i].v.substr(j + 1);
                             for (; j >= 0; --j) {
                                 if (jj >= 0 && (out[i].v[j] === "0" || out[i].v[j] === "#"))  {
                                     vv = ostr[jj--] + vv;
                                 }
-
+                                
                             }
                             out[i].v = vv;
                             out[i].t = 't';
@@ -30263,21 +30263,21 @@ var XLS = {};
                         if (jj >= 0 && lasti < out.length)  {
                             out[lasti].v = ostr.substr(0, jj + 1) + out[lasti].v;
                         }
-
+                        
                         jj = ostr.indexOf(".") + 1;
                         for (i = decpt; i < out.length; ++i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1 && i !== decpt)  {
-
+                                
                                 continue;
                             }
-
+                            
                             j = out[i].v.indexOf(".") > -1 && i === decpt ? out[i].v.indexOf(".") + 1 : 0;
                             vv = out[i].v.substr(0, j);
                             for (; j < out[i].v.length; ++j) {
                                 if (jj < ostr.length)  {
                                     vv += ostr[jj++];
                                 }
-
+                                
                             }
                             out[i].v = vv;
                             out[i].t = 't';
@@ -30304,7 +30304,7 @@ var XLS = {};
                 if (rr == null)  {
                     return false;
                 }
-
+                
                 var thresh = parseFloat(rr[2]);
                 switch (rr[1]) {
                     case "=":
@@ -30353,18 +30353,18 @@ var XLS = {};
                 if (l < 4 && lat > -1)  {
                     --l;
                 }
-
+                
                 if (fmt.length > 4)  {
                     throw "cannot find right format for |" + fmt + "|";
                 }
-
+                
                 if (typeof v !== "number")  {
                     return [
                         4,
                         fmt.length === 4 || lat > -1 ? fmt[fmt.length - 1] : "@"
                     ];
                 }
-
+                
                 switch (fmt.length) {
                     case 1:
                         fmt = lat > -1 ? [
@@ -30415,7 +30415,7 @@ var XLS = {};
                         ff
                     ];
                 }
-
+                
                 if (fmt[0].match(cfregex) != null || fmt[1].match(cfregex) != null) {
                     var m1 = fmt[0].match(cfregex2);
                     var m2 = fmt[1].match(cfregex2);
@@ -30449,12 +30449,12 @@ var XLS = {};
                 if (isgeneral(sfmt, 0))  {
                     return general_fmt(v, o);
                 }
-
+                
                 var f = choose_fmt(sfmt, v);
                 if (isgeneral(f[1]))  {
                     return general_fmt(v, o);
                 }
-
+                
                 if (v === true)  {
                     v = "TRUE";
                 }
@@ -30464,7 +30464,7 @@ var XLS = {};
                 else if (v === "" || v == null)  {
                     return "";
                 }
-
+                
                 return eval_fmt(f[1], v, o, f[0]);
             }
             SSF._table = table_fmt;
@@ -30728,7 +30728,7 @@ var XLS = {};
         for (var y in SpecialProperties) if (SpecialProperties.hasOwnProperty(y))  {
             DocSummaryPIDDSI[y] = SummaryPIDSI[y] = SpecialProperties[y];
         }
-
+        
     })();
     /* [MS-DTYP] 2.3.3 FILETIME */
     /* [MS-OLEDS] 2.1.3 FILETIME (Packet Version) */
@@ -30744,7 +30744,7 @@ var XLS = {};
         if (pad)  {
             blob.l += (4 - ((str.length + 1) & 3)) & 3;
         }
-
+        
         return str;
     }
     /* [MS-OSHARED] 2.3.3.1.6 Lpwstr */
@@ -30753,7 +30753,7 @@ var XLS = {};
         if (pad)  {
             blob.l += (4 - ((str.length + 1) & 3)) & 3;
         }
-
+        
         return str;
     }
     /* [MS-OSHARED] 2.3.3.1.11 VtString */
@@ -30763,7 +30763,7 @@ var XLS = {};
             /*VT_LPWSTR*/
             return parse_lpwstr(blob);
         }
-
+        
         return parse_lpstr(blob, stringType, pad);
     }
     function parse_VtString(blob, t, pad) {
@@ -30773,7 +30773,7 @@ var XLS = {};
         if (!t)  {
             throw new Error("dafuq?");
         }
-
+        
         return parse_VtStringBase(blob, t, 0);
     }
     /* [MS-OSHARED] 2.3.3.1.9 VtVecUnalignedLpstrValue */
@@ -30820,7 +30820,7 @@ var XLS = {};
         if (blob.l & 3)  {
             blob.l = (blob.l >> 2 + 1) << 2;
         }
-
+        
         return dict;
     }
     /* [MS-OLEPS] 2.9 BLOB */
@@ -30830,7 +30830,7 @@ var XLS = {};
         if (size & 3 > 0)  {
             blob.l += (4 - (size & 3)) & 3;
         }
-
+        
         return bytes;
     }
     /* [MS-OLEPS] 2.11 ClipboardData */
@@ -30863,7 +30863,7 @@ var XLS = {};
             }
             ;
         }
-
+        
         switch (type === VT_VARIANT ? t : type) {
             case 2:
                 /*VT_I2*/
@@ -30973,7 +30973,7 @@ var XLS = {};
                             break;
                     };
                 }
-
+                
                 if (!PIDSI && blob.l <= Props[i][1]) {
                     fail = false;
                     blob.l = Props[i][1];
@@ -30981,7 +30981,7 @@ var XLS = {};
                 if (fail)  {
                     throw new Error("Read Error: Expected address " + Props[i][1] + ' at ' + blob.l + ' :' + i);
                 }
-
+                
             }
             if (PIDSI) {
                 var piddsi = PIDSI[Props[i][0]];
@@ -30991,7 +30991,7 @@ var XLS = {};
                 if (piddsi.p === 'version')  {
                     PropH[piddsi.n] = String(PropH[piddsi.n] >> 16) + "." + String(PropH[piddsi.n] & 65535);
                 }
-
+                
                 if (piddsi.n == "CodePage")  {
                     switch (PropH[piddsi.n]) {
                         case 0:
@@ -31043,7 +31043,7 @@ var XLS = {};
                             throw new Error("Unsupported CodePage: " + PropH[piddsi.n]);
                     };
                 }
-
+                
             } else {
                 if (Props[i][0] === 1) {
                     CodePage = PropH.CodePage = parse_TypedPropertyValue(blob, VT_I2);
@@ -31058,7 +31058,7 @@ var XLS = {};
                     if (CodePage === 0) {
                         Dictionary = i;
                         blob.l = Props[i + 1][1];
-
+                        
                         continue;
                     }
                     DictObj = parse_dictionary(blob, CodePage);
@@ -31132,7 +31132,7 @@ var XLS = {};
         if (NumSets !== 1 && NumSets !== 2)  {
             throw "Unrecognized #Sets: " + NumSets;
         }
-
+        
         FMTID0 = blob.read_shift(16);
         Offset0 = blob.read_shift(4);
         if (NumSets === 1 && Offset0 !== blob.l)  {
@@ -31153,11 +31153,11 @@ var XLS = {};
         if (NumSets === 1)  {
             return rval;
         }
-
+        
         if (blob.l !== Offset1)  {
             throw "Length mismatch 2: " + blob.l + " !== " + Offset1;
         }
-
+        
         var PSet1;
         try {
             PSet1 = parse_PropertySet(blob, null);
@@ -31225,7 +31225,7 @@ var XLS = {};
                 if (mver === 3 && nds !== 0)  {
                     throw '# Directory Sectors: Expected 0 saw ' + nds;
                 }
-
+                
                 // Number of FAT Sectors
                 //var nfs = blob.read_shift(4, 'i');
                 blob.l += 4;
@@ -31251,7 +31251,7 @@ var XLS = {};
                     if (q < 0)  {
                         break;
                     }
-
+                    
                     fat_addrs[j] = q;
                 }
                 /** Break the file up into sectors */
@@ -31263,7 +31263,7 @@ var XLS = {};
                 if (nmfs > 0 && minifat_start !== ENDOFCHAIN)  {
                     sector_list[minifat_start].name = "!MiniFAT";
                 }
-
+                
                 sector_list[fat_addrs[0]].name = "!FAT";
                 sector_list.fat_addrs = fat_addrs;
                 sector_list.ssz = ssz;
@@ -31362,17 +31362,17 @@ var XLS = {};
                         dad[L] !== L)  {
                             dad[i] = dad[L];
                         }
-
+                        
                         if (R !== -1 && dad[R] !== R)  {
                             dad[i] = dad[R];
                         }
-
+                        
                     }
                     if (C !== -1)  {
                         /*NOSTREAM*/
                         dad[C] = i;
                     }
-
+                    
                     if (L !== -1) {
                         dad[L] = dad[i];
                         q.push(L);
@@ -31390,15 +31390,15 @@ var XLS = {};
                     else if (L !== -1 && dad[L] !== L)  {
                         dad[i] = dad[L];
                     }
-
+                    
                 };
                 for (i = 1; i < pl; ++i) {
                     if (FI[i].type === 0)  {
                         /* unknown */
-
+                        
                         continue;
                     }
-
+                    
                     j = dad[i];
                     if (j === 0)  {
                         FP[i] = FP[0] + "/" + FP[i];
@@ -31409,7 +31409,7 @@ var XLS = {};
                             j = dad[j];
                         };
                     }
-
+                    
                     dad[i] = 0;
                 }
                 FP[0] += "/";
@@ -31418,7 +31418,7 @@ var XLS = {};
                         /* stream */
                         FP[i] += "/";
                     }
-
+                    
                     FPD[FP[i]] = FI[i];
                 }
             }
@@ -31438,13 +31438,13 @@ var XLS = {};
                     } else  {
                         k = path.indexOf("/") !== -1;
                     }
-
+                    
                     var UCPath = path.toUpperCase().replace(chr0, '').replace(chr1, '!');
                     var w = k === true ? UCFullPaths.indexOf(UCPath) : UCPaths.indexOf(UCPath);
                     if (w === -1)  {
                         return null;
                     }
-
+                    
                     return k === true ? FileIndex[w] : files[Paths[w]];
                 };
             }
@@ -31456,7 +31456,7 @@ var XLS = {};
                     if (cnt !== 0)  {
                         throw "DIFAT chain shorter than expected";
                     }
-
+                    
                 } else if (idx !== -1) /*FREESECT*/
                 {
                     var sector = sectors[idx],
@@ -31465,7 +31465,7 @@ var XLS = {};
                         if ((q = __readInt32LE(sector, i * 4)) === ENDOFCHAIN)  {
                             break;
                         }
-
+                        
                         fat_addrs.push(q);
                     }
                     sleuth_fat(__readInt32LE(sector, ssz - 4), cnt - 1, sectors, ssz, fat_addrs);
@@ -31478,7 +31478,7 @@ var XLS = {};
                 if (!chkd)  {
                     chkd = new Array(sl);
                 }
-
+                
                 var modulus = ssz - 1,
                     j, jj;
                 buf = [];
@@ -31492,7 +31492,7 @@ var XLS = {};
                     if (ssz < 4 + jj)  {
                         throw "FAT boundary crossed: " + j + " 4 " + ssz;
                     }
-
+                    
                     j = __readInt32LE(sectors[addr], jj);
                 }
                 return {
@@ -31516,12 +31516,12 @@ var XLS = {};
                     if (k >= sl)  {
                         k -= sl;
                     }
-
+                    
                     if (chkd[k] === true)  {
-
+                        
                         continue;
                     }
-
+                    
                     buf_chain = [];
                     for (j = k; j >= 0; ) {
                         chkd[j] = true;
@@ -31532,7 +31532,7 @@ var XLS = {};
                         if (ssz < 4 + jj)  {
                             throw "FAT boundary crossed: " + j + " 4 " + ssz;
                         }
-
+                        
                         j = __readInt32LE(sectors[addr], jj);
                     }
                     sector_list[k] = {
@@ -31558,10 +31558,10 @@ var XLS = {};
                     prep_blob(blob, 64);
                     namelen = blob.read_shift(2);
                     if (namelen === 0)  {
-
+                        
                         continue;
                     }
-
+                    
                     name = __utf16le(blob, 0, namelen - pl);
                     Paths.push(name);
                     o = {
@@ -31592,7 +31592,7 @@ var XLS = {};
                         if (nmfs > 0 && minifat_store !== ENDOFCHAIN)  {
                             sector_list[minifat_store].name = "!StreamData";
                         }
-
+                        
                     }
                     /*minifat_size = o.size;*/
                     else if (o.size >= 4096) /* MSCSZ */
@@ -31601,7 +31601,7 @@ var XLS = {};
                         if (sector_list[o.start] === undefined)  {
                             sector_list[o.start] = get_sector_list(sectors, o.start, sector_list.fat_addrs, sector_list.ssz);
                         }
-
+                        
                         sector_list[o.start].name = o.name;
                         o.content = sector_list[o.start].data.slice(0, o.size);
                         prep_blob(o.content, 0);
@@ -31624,7 +31624,7 @@ var XLS = {};
                 if (fs === undefined)  {
                     fs = require('fs');
                 }
-
+                
                 return parse(fs.readFileSync(filename), options);
             }
             function readSync(blob, options) {
@@ -31701,7 +31701,7 @@ var XLS = {};
         if (target !== blob.l)  {
             throw new Error("Slurp error");
         }
-
+        
         return arr;
     }
     function parslurp2(blob, length, cb) {
@@ -31712,7 +31712,7 @@ var XLS = {};
         if (target !== blob.l)  {
             throw new Error("Slurp error");
         }
-
+        
         return arr;
     }
     function parsebool(blob, length) {
@@ -31761,22 +31761,22 @@ var XLS = {};
         if (fRichSt)  {
             cRun = blob.read_shift(2);
         }
-
+        
         if (fExtSt)  {
             cbExtRst = blob.read_shift(4);
         }
-
+        
         var encoding = (flags & 1) ? 'dbcs' : 'sbcs';
         var msg = cch === 0 ? "" : blob.read_shift(cch, encoding);
         if (fRichSt)  {
             blob.l += 4 * cRun;
         }
-
+        
         //TODO: parse this
         if (fExtSt)  {
             blob.l += cbExtRst;
         }
-
+        
         //TODO: parse this
         z.t = msg;
         if (!fRichSt) {
@@ -31810,7 +31810,7 @@ var XLS = {};
         if (opts.biff !== 5 && opts.biff !== 2)  {
             return parse_XLUnicodeString(blob, length, opts);
         }
-
+        
         var cch = blob.read_shift(1);
         if (cch === 0) {
             blob.l++;
@@ -31835,14 +31835,14 @@ var XLS = {};
                 if (blob.read_shift(16) === "795881f43b1d7f48af2c825dc4852763")  {
                     extra = true;
                 }
-
+                
                 blob.l = start;
             }
             var url = blob.read_shift((extra ? len - 24 : len) >> 1, 'utf16le').replace(chr0, "");
             if (extra)  {
                 blob.l += 24;
             }
-
+            
             return url;
         };
     /* [MS-OSHARED] 2.3.7.8 FileMoniker TODO: all fields */
@@ -31856,7 +31856,7 @@ var XLS = {};
             if (cbUnicodePathSize === 0)  {
                 return ansiPath.replace(/\\/g, "/");
             }
-
+            
             var cbUnicodePathBytes = blob.read_shift(4);
             var usKeyValue = blob.read_shift(2);
             var unicodePath = blob.read_shift(cbUnicodePathBytes >> 1, 'utf16le').replace(chr0, "");
@@ -31888,44 +31888,44 @@ var XLS = {};
             if (sVer !== 2)  {
                 throw new Error("Unrecognized streamVersion: " + sVer);
             }
-
+            
             var flags = blob.read_shift(2);
             blob.l += 2;
             var displayName, targetFrameName, moniker, oleMoniker, location, guid, fileTime;
             if (flags & 16)  {
                 displayName = parse_HyperlinkString(blob, end - blob.l);
             }
-
+            
             if (flags & 128)  {
                 targetFrameName = parse_HyperlinkString(blob, end - blob.l);
             }
-
+            
             if ((flags & 257) === 257)  {
                 moniker = parse_HyperlinkString(blob, end - blob.l);
             }
-
+            
             if ((flags & 257) === 1)  {
                 oleMoniker = parse_HyperlinkMoniker(blob, end - blob.l);
             }
-
+            
             if (flags & 8)  {
                 location = parse_HyperlinkString(blob, end - blob.l);
             }
-
+            
             if (flags & 32)  {
                 guid = blob.read_shift(16);
             }
-
+            
             if (flags & 64)  {
                 fileTime = parse_FILETIME(blob, 8);
             }
-
+            
             blob.l = end;
             var target = (targetFrameName || moniker || oleMoniker);
             if (location)  {
                 target += "#" + location;
             }
-
+            
             return {
                 Target: target
             };
@@ -32069,7 +32069,7 @@ var XLS = {};
             else  {
                 (o[obj[k]] = o[obj[k]] || []).push(k);
             }
-
+            
         }
         return o;
     }
@@ -32162,7 +32162,7 @@ var XLS = {};
         if (cb !== l)  {
             throw "Malformed AddinUdf: padding = " + l + " != " + cb;
         }
-
+        
         blob.l += cb;
         return udfName;
     }
@@ -32298,7 +32298,7 @@ var XLS = {};
         if (blob.l != s + length)  {
             blob.l = s + length;
         }
-
+        
         //throw "bad Object Ft-sequence";
         return fts;
     }
@@ -32330,12 +32330,12 @@ var XLS = {};
         if (length === 0)  {
             return 1200;
         }
-
+        
         var q;
         if ((q = blob.read_shift(2)) !== 1200)  {
             throw 'InterfaceHdr codePage ' + q;
         }
-
+        
         return 1200;
     }
     /* 2.4.349 */
@@ -32373,7 +32373,7 @@ var XLS = {};
         if (name.length === 0)  {
             name = "Sheet1";
         }
-
+        
         return {
             pos: pos,
             hs: hidden,
@@ -32426,7 +32426,7 @@ var XLS = {};
         if (header.type != 2211)  {
             throw "Invalid Future Record " + header.type;
         }
-
+        
         var fullcalc = blob.read_shift(4);
         return fullcalc !== 0;
     }
@@ -32550,12 +32550,12 @@ var XLS = {};
         if (blob.l !== target)  {
             throw "MulRK read error";
         }
-
+        
         var lastcol = blob.read_shift(2);
         if (rkrecs.length != lastcol - col + 1)  {
             throw "MulRK length mismatch";
         }
-
+        
         return {
             r: rw,
             c: col,
@@ -32602,15 +32602,15 @@ var XLS = {};
         if (out[0] !== 0)  {
             out[0]--;
         }
-
+        
         if (out[1] !== 0)  {
             out[1]--;
         }
-
+        
         if (out[0] > 7 || out[1] > 7)  {
             throw "Bad Gutters: " + out;
         }
-
+        
         return out;
     }
     /* 2.4.24 */
@@ -32639,7 +32639,7 @@ var XLS = {};
         if (cch >= 1 && cch <= 255)  {
             virtPath = parse_XLUnicodeStringNoCch(blob, cch);
         }
-
+        
         var rgst = blob.read_shift(end - blob.l);
         opts.sbcch = cch;
         return [
@@ -32665,7 +32665,7 @@ var XLS = {};
         if (opts.sbcch === 14849)  {
             body = parse_AddinUdf(blob, length - 2);
         }
-
+        
         //else throw new Error("unsupported SupBook cch: " + opts.sbcch);
         o.body = body || blob.read_shift(length - 2);
         return o;
@@ -32675,7 +32675,7 @@ var XLS = {};
         if (opts.biff < 8)  {
             return parse_Label(blob, length, opts);
         }
-
+        
         var target = blob.l + length;
         var flags = blob.read_shift(2);
         var chKey = blob.read_shift(1);
@@ -32697,7 +32697,7 @@ var XLS = {};
         if (opts.biff < 8)  {
             return parse_ShortXLUnicodeString(blob, length, opts);
         }
-
+        
         var o = parslurp2(blob, length, parse_XTI);
         var oo = [];
         if (opts.sbcch === 1025) {
@@ -32706,7 +32706,7 @@ var XLS = {};
         } else  {
             return o;
         }
-
+        
     }
     /* 2.4.260 */
     function parse_ShrFmla(blob, length, opts) {
@@ -32746,7 +32746,7 @@ var XLS = {};
         if (opts.biff < 8)  {
             return;
         }
-
+        
         var row = blob.read_shift(2),
             col = blob.read_shift(2);
         var flags = blob.read_shift(2),
@@ -32755,7 +32755,7 @@ var XLS = {};
         if (opts.biff < 8)  {
             blob.read_shift(1);
         }
-
+        
         return [
             {
                 r: row,
@@ -32813,7 +32813,7 @@ var XLS = {};
             else  {
                 controlInfo = parse_ControlInfo(blob, 6, opts);
             }
-
+            
             var cchText = blob.read_shift(2);
             var cbRuns = blob.read_shift(2);
             var ifntEmpty = parse_FontIndex(blob, 2);
@@ -32825,14 +32825,14 @@ var XLS = {};
                 if (blob.l - s != blob.lens[i])  {
                     throw "TxO: bad continue record";
                 }
-
+                
                 var hdr = blob[blob.l];
                 var t = parse_XLUnicodeStringNoCch(blob, blob.lens[i + 1] - blob.lens[i] - 1);
                 texts += t;
                 if (texts.length >= (hdr ? cchText : 2 * cchText))  {
                     break;
                 }
-
+                
             }
             if (texts.length !== cchText && texts.length !== cchText * 2) {
                 throw "cchText: " + cchText + " != " + texts.length;
@@ -33304,11 +33304,11 @@ var XLS = {};
         if (!skip_root)  {
             z[0] = words[0];
         }
-
+        
         if (words.length === 1)  {
             return z;
         }
-
+        
         var m = tag.match(attregexg),
             y, j, w, i;
         if (m)  {
@@ -33324,12 +33324,12 @@ var XLS = {};
                     else  {
                         w = y[1].substr(j + 1);
                     }
-
+                    
                     z[w] = y[2].substr(1, y[2].length - 2);
                 }
             };
         }
-
+        
         return z;
     }
     function parsexmltagobj(tag) {
@@ -33338,7 +33338,7 @@ var XLS = {};
         if (words.length === 1)  {
             return z;
         }
-
+        
         var m = tag.match(attregexg),
             y, j, w, i;
         if (m)  {
@@ -33354,12 +33354,12 @@ var XLS = {};
                     else  {
                         w = y[1].substr(j + 1);
                     }
-
+                    
                     z[w] = y[2].substr(1, y[2].length - 2);
                 }
             };
         }
-
+        
         return z;
     }
     var encodings = {
@@ -33425,7 +33425,7 @@ var XLS = {};
         if (typeof cptable !== 'undefined')  {
             return cptable.utils.encode(1252, str);
         }
-
+        
         return str.split("").map(function(x) {
             return x.charCodeAt(0);
         });
@@ -33446,7 +33446,7 @@ var XLS = {};
         if (tmp !== 0)  {
             throw 'Unrecognized SizeExtra: ' + tmp;
         }
-
+        
         o.AlgID = blob.read_shift(4);
         switch (o.AlgID) {
             case 0:
@@ -33473,11 +33473,11 @@ var XLS = {};
         if (vers.Minor != 2)  {
             throw 'unrecognized minor version code: ' + vers.Minor;
         }
-
+        
         if (vers.Major > 4 || vers.Major < 2)  {
             throw 'unrecognized major version code: ' + vers.Major;
         }
-
+        
         o.Flags = blob.read_shift(4);
         length -= 4;
         var sz = blob.read_shift(4);
@@ -33495,7 +33495,7 @@ var XLS = {};
         if (vers.Major != 1 || vers.Minor != 1)  {
             throw 'unrecognized version code ' + vers.Major + ' : ' + vers.Minor;
         }
-
+        
         o.Salt = blob.read_shift(16);
         o.EncryptedVerifier = blob.read_shift(16);
         o.EncryptedVerifierHash = blob.read_shift(16);
@@ -33679,7 +33679,7 @@ var XLS = {};
                             if (Char & 64)  {
                                 XorKey ^= XorMatrix[CurrentElement];
                             }
-
+                            
                             Char *= 2;
                             --CurrentElement;
                         }
@@ -33730,11 +33730,11 @@ var XLS = {};
             if (!O)  {
                 O = Data;
             }
-
+            
             if (!XorArray)  {
                 XorArray = crypto_CreateXorArray_Method1(password);
             }
-
+            
             var Index, Value;
             for (Index = 0; Index != Data.length; ++Index) {
                 Value = Data[Index];
@@ -33767,12 +33767,12 @@ var XLS = {};
         if (opts.password)  {
             o.verifier = crypto_CreatePasswordVerifier_Method1(opts.password);
         }
-
+        
         out.valid = o.verificationBytes === o.verifier;
         if (out.valid)  {
             out.insitu_decrypt = crypto_MakeXorDecryptor(opts.password);
         }
-
+        
         return o;
     }
     /* 2.4.117 */
@@ -33786,7 +33786,7 @@ var XLS = {};
         else  {
             o.Data = parse_RC4CryptoHeader(blob, length);
         }
-
+        
         return o;
     }
     function parse_FilePass(blob, length, opts) {
@@ -33800,7 +33800,7 @@ var XLS = {};
         else  {
             parse_XORObfuscation(blob, length - 2, opts, o);
         }
-
+        
         return o;
     }
     /* Small helpers */
@@ -33887,7 +33887,7 @@ var XLS = {};
         if (cRel !== 0)  {
             while (cl >= 256) cl -= 256;
         }
-
+        
         return {
             r: r,
             c: cl,
@@ -34542,15 +34542,15 @@ var XLS = {};
         if (C < 0 && $4.length === 0)  {
             C = 0;
         }
-
+        
         if ($4.length > 0)  {
             C += rcbase.c;
         }
-
+        
         if ($2.length > 0)  {
             R += rcbase.r;
         }
-
+        
         return $1 + encode_col(C) + encode_row(R);
     }
     function rc_to_a1(fstr, base) {
@@ -34571,7 +34571,7 @@ var XLS = {};
         else  {
             cbf = parse_CellParsedFormula(blob, length - 20, opts);
         }
-
+        
         return {
             cell: cell,
             val: val[0],
@@ -34589,7 +34589,7 @@ var XLS = {};
                 'n'
             ];
         }
-
+        
         switch (blob[blob.l]) {
             case 0:
                 blob.l += 8;
@@ -34624,7 +34624,7 @@ var XLS = {};
         if (opts.biff < 8)  {
             return parsenoop(blob, length);
         }
-
+        
         var target = blob.l + length;
         var o = [];
         for (var i = 0; i !== rgce.length; ++i) {
@@ -34647,7 +34647,7 @@ var XLS = {};
         if (length !== 0)  {
             o.push(parsenoop(blob, length));
         }
-
+        
         return o;
     }
     /* 2.5.198.21 */
@@ -34658,7 +34658,7 @@ var XLS = {};
         if (target !== blob.l)  {
             rgcb = parse_RgbExtra(blob, target - blob.l, rgce, opts);
         }
-
+        
         return [
             rgce,
             rgcb
@@ -34676,12 +34676,12 @@ var XLS = {};
                 parsenoop(blob, length - 2)
             ];
         }
-
+        
         var rgce = parse_Rgce(blob, cce);
         if (length !== cce + 2)  {
             rgcb = parse_RgbExtra(blob, length - cce - 2, rgce, opts);
         }
-
+        
         return [
             rgce,
             rgcb
@@ -34700,11 +34700,11 @@ var XLS = {};
                 parsenoop(blob, length - 2)
             ];
         }
-
+        
         if (length !== cce + 2)  {
             rgcb = parse_RgbExtra(blob, target - cce - 2, rgce, opts);
         }
-
+        
         return [
             rgce,
             rgcb
@@ -34722,12 +34722,12 @@ var XLS = {};
                 parsenoop(blob, length - 2)
             ];
         }
-
+        
         var rgce = parse_Rgce(blob, cce);
         if (length !== cce + 2)  {
             rgcb = parse_RgbExtra(blob, target - cce - 2, rgce, opts);
         }
-
+        
         return [
             rgce,
             rgcb
@@ -34768,7 +34768,7 @@ var XLS = {};
         if (opts !== undefined && opts.biff === 5)  {
             return "BIFF5??";
         }
-
+        
         var _range = range !== undefined ? range : {
                 s: {
                     c: 0,
@@ -34780,7 +34780,7 @@ var XLS = {};
         if (!formula[0] || !formula[0][0])  {
             return "";
         }
-
+        
         //console.log("--",cell,formula[0])
         for (var ff = 0,
             fflen = formula[0].length; ff < fflen; ++ff) {
@@ -35041,21 +35041,21 @@ var XLS = {};
                             /* TODO: should be something like range_has */
                             e2 = supbooks.arrayf[e1];
                             if (c.c < e2[0].s.c || c.c > e2[0].e.c)  {
-
+                                
                                 continue;
                             }
-
+                            
                             if (c.r < e2[0].s.r || c.r > e2[0].e.r)  {
-
+                                
                                 continue;
                             }
-
+                            
                             stack.push(stringify_formula(e2[1], _range, q, supbooks, opts));
                         }
                         if (!fnd)  {
                             stack.push(f[1]);
                         }
-
+                        
                     };
                     break;
                 /* 2.5.198.32 TODO */
@@ -36393,7 +36393,7 @@ var XLS = {};
         if (dwThemeVersion === 124226)  {
             return;
         }
-
+        
         blob.l += length - 4;
     }
     /* 2.5.49 */
@@ -38201,11 +38201,11 @@ var XLS = {};
                 if (opts[d[0]] === undefined)  {
                     opts[d[0]] = d[1];
                 }
-
+                
                 if (d[2] === 'n')  {
                     opts[d[0]] = Number(opts[d[0]]);
                 }
-
+                
             }
         };
     }
@@ -38290,7 +38290,7 @@ var XLS = {};
         if ((m = __readUInt32LE(o, l)) !== 1907550708)  {
             return v;
         }
-
+        
         throw "Unsupported Unicode Extension";
     }
     /* 2.4.58 Continue logic */
@@ -38316,7 +38316,7 @@ var XLS = {};
                     opts.enc.insitu_decrypt(d);
             };
         }
-
+        
         bufs.push(d);
         blob.l += l;
         var next = (RecordEnum[__readUInt16LE(blob, blob.l)]);
@@ -38340,7 +38340,7 @@ var XLS = {};
         if (!p.XF)  {
             return;
         }
-
+        
         try {
             var fmtid = p.XF.ifmt || 0;
             if (p.t === 'e') {
@@ -38353,24 +38353,24 @@ var XLS = {};
                     else  {
                         p.w = SSF._general_num(p.v);
                     }
-
+                    
                 } else  {
                     p.w = SSF._general(p.v);
                 }
-
+                
             } else  {
                 p.w = SSF.format(fmtid, p.v);
             }
-
+            
             if (opts.cellNF)  {
                 p.z = SSF._table[fmtid];
             }
-
+            
         } catch (e) {
             if (opts.WTF)  {
                 throw e;
             }
-
+            
         }
     }
     function make_cell(val, ixfe, t) {
@@ -38408,11 +38408,11 @@ var XLS = {};
                 if (icv < 8)  {
                     return Icv[icv];
                 }
-
+                
                 if (icv < 64)  {
                     return palette[icv - 8] || Icv[icv];
                 }
-
+                
                 return Icv[icv];
             };
         var process_cell_style = function pcs(cell, line) {
@@ -38420,7 +38420,7 @@ var XLS = {};
                 if (!xfd || !xfd.patternType)  {
                     return;
                 }
-
+                
                 line.s = {};
                 line.s.patternType = xfd.patternType;
                 var t;
@@ -38439,32 +38439,32 @@ var XLS = {};
                 if (!cell_valid)  {
                     return;
                 }
-
+                
                 if (options.cellStyles && line.XF && line.XF.data)  {
                     process_cell_style(cell, line);
                 }
-
+                
                 lastcell = cell;
                 last_cell = encode_cell(cell);
                 if (range.s) {
                     if (cell.r < range.s.r)  {
                         range.s.r = cell.r;
                     }
-
+                    
                     if (cell.c < range.s.c)  {
                         range.s.c = cell.c;
                     }
-
+                    
                 }
                 if (range.e) {
                     if (cell.r + 1 > range.e.r)  {
                         range.e.r = cell.r + 1;
                     }
-
+                    
                     if (cell.c + 1 > range.e.c)  {
                         range.e.c = cell.c + 1;
                     }
-
+                    
                 }
                 if (options.sheetRows && lastcell.r >= options.sheetRows)  {
                     cell_valid = false;
@@ -38472,7 +38472,7 @@ var XLS = {};
                 else  {
                     out[last_cell] = line;
                 }
-
+                
             };
         var opts = {
                 enc: false,
@@ -38500,7 +38500,7 @@ var XLS = {};
         if (options.password)  {
             opts.password = options.password;
         }
-
+        
         var mergecells = [];
         var objects = [];
         var supbooks = [
@@ -38522,7 +38522,7 @@ var XLS = {};
             if (RecordType === 0 && last_Rn === 'EOF')  {
                 break;
             }
-
+            
             var length = (blob.l === blob.length ? 0 : blob.read_shift(2)),
                 y;
             var R = RecordEnum[RecordType];
@@ -38531,7 +38531,7 @@ var XLS = {};
                     if (last_Rn === 'BoundSheet8' && R.n !== 'BoundSheet8')  {
                         break;
                     }
-
+                    
                 }
                 last_Rn = R.n;
                 if (R.r === 2 || R.r == 12) {
@@ -38540,7 +38540,7 @@ var XLS = {};
                     if (!opts.enc && rt !== RecordType)  {
                         throw "rt mismatch";
                     }
-
+                    
                     if (R.r == 12) {
                         blob.l += 10;
                         length -= 10;
@@ -38555,7 +38555,7 @@ var XLS = {};
                 else  {
                     val = slurp(R, blob, length, opts);
                 }
-
+                
                 var Rn = R.n;
                 /* BIFF5 overrides */
                 if (opts.biff === 5 || opts.biff === 2)  {
@@ -38565,7 +38565,7 @@ var XLS = {};
                             break;
                     };
                 }
-
+                
                 /* nested switch statements to workaround V8 128 limit */
                 switch (Rn) {
                     /* Workbook Options */
@@ -38639,7 +38639,7 @@ var XLS = {};
                             if (val[0] && val[1])  {
                                 throw "Unsupported threads: " + val;
                             }
-
+                            
                         };
                         break;
                     // TODO: actually support threads
@@ -38730,7 +38730,7 @@ var XLS = {};
                             if (--file_depth)  {
                                 break;
                             }
-
+                            
                             if (range.e) {
                                 out["!range"] = range;
                                 if (range.e.r > 0 && range.e.c > 0) {
@@ -38743,11 +38743,11 @@ var XLS = {};
                                 if (mergecells.length > 0)  {
                                     out["!merges"] = mergecells;
                                 }
-
+                                
                                 if (objects.length > 0)  {
                                     out["!objects"] = objects;
                                 }
-
+                                
                             }
                             if (cur_sheet === "")  {
                                 Preamble = out;
@@ -38755,7 +38755,7 @@ var XLS = {};
                             else  {
                                 Sheets[cur_sheet] = out;
                             }
-
+                            
                             out = {};
                         };
                         break;
@@ -38773,18 +38773,18 @@ var XLS = {};
                             else if (val.BIFFVer === 7)  {
                                 opts.biff = 2;
                             }
-
+                            
                             if (file_depth++)  {
                                 break;
                             }
-
+                            
                             cell_valid = true;
                             out = {};
                             if (opts.biff === 2) {
                                 if (cur_sheet === "")  {
                                     cur_sheet = "Sheet1";
                                 }
-
+                                
                                 range = {
                                     s: {
                                         r: 0,
@@ -38800,7 +38800,7 @@ var XLS = {};
                                     name: ""
                                 }).name;
                             }
-
+                            
                             mergecells = [];
                             objects = [];
                         };
@@ -38817,7 +38817,7 @@ var XLS = {};
                             if (temp_val.XF)  {
                                 safe_format_xf(temp_val, options);
                             }
-
+                            
                             addcell({
                                 c: val.c,
                                 r: val.r
@@ -38835,7 +38835,7 @@ var XLS = {};
                             if (temp_val.XF)  {
                                 safe_format_xf(temp_val, options);
                             }
-
+                            
                             addcell({
                                 c: val.c,
                                 r: val.r
@@ -38853,7 +38853,7 @@ var XLS = {};
                             if (temp_val.XF)  {
                                 safe_format_xf(temp_val, options);
                             }
-
+                            
                             addcell({
                                 c: val.c,
                                 r: val.r
@@ -38873,7 +38873,7 @@ var XLS = {};
                                 if (temp_val.XF)  {
                                     safe_format_xf(temp_val, options);
                                 }
-
+                                
                                 addcell({
                                     c: j,
                                     r: val.r
@@ -38922,11 +38922,11 @@ var XLS = {};
                                 if (options.cellFormula)  {
                                     temp_val.f = "=" + stringify_formula(last_formula.formula, range, last_formula.cell, supbooks, opts);
                                 }
-
+                                
                                 if (temp_val.XF)  {
                                     safe_format_xf(temp_val, options);
                                 }
-
+                                
                                 addcell(last_formula.cell, temp_val, options);
                                 last_formula = null;
                             }
@@ -38942,7 +38942,7 @@ var XLS = {};
                             if (!cell_valid)  {
                                 break;
                             }
-
+                            
                             //if(options.cellFormula) out[last_cell].f = stringify_formula(val[0], range, lastcell, supbooks, opts);
                             /* TODO: capture range */
                             shared_formulae[encode_cell(last_formula.cell)] = val[0];
@@ -38980,7 +38980,7 @@ var XLS = {};
                             if (file_depth === 1)  {
                                 range = val;
                             }
-
+                            
                         };
                         /* TODO: stack */
                         break;
@@ -39038,18 +39038,18 @@ var XLS = {};
                             if (opts.biff <= 5 && opts.biff >= 2)  {
                                 break;
                             }
-
+                            
                             /* TODO: BIFF5 */
                             cc = out[encode_cell(val[0])];
                             var noteobj = objects[val[2]];
                             if (!cc)  {
                                 break;
                             }
-
+                            
                             if (!cc.c)  {
                                 cc.c = [];
                             }
-
+                            
                             cmnt = {
                                 a: val[1],
                                 t: noteobj.TxO.t
@@ -39544,7 +39544,7 @@ var XLS = {};
             } else  {
                 blob.l += length;
             }
-
+            
         }
         var sheetnamesraw = opts.biff === 2 ? [
                 'Sheet1'
@@ -39559,26 +39559,26 @@ var XLS = {};
         if (!options.bookSheets)  {
             wb.Sheets = Sheets;
         }
-
+        
         wb.Preamble = Preamble;
         wb.Strings = sst;
         wb.SSF = SSF.get_table();
         if (opts.enc)  {
             wb.Encryption = opts.enc;
         }
-
+        
         wb.Metadata = {};
         if (country !== undefined)  {
             wb.Metadata.Country = country;
         }
-
+        
         return wb;
     }
     function parse_xlscfb(cfb, options) {
         if (!options)  {
             options = {};
         }
-
+        
         fix_read_opts(options);
         reset_cp();
         var CompObj, Summary, Workbook;
@@ -39595,12 +39595,12 @@ var XLS = {};
         if (!Workbook)  {
             Workbook = cfb.find('/Book');
         }
-
+        
         var CompObjP, SummaryP, WorkbookP;
         if (CompObj)  {
             CompObjP = parse_compobj(CompObj);
         }
-
+        
         if (options.bookProps && !options.bookSheets)  {
             WorkbookP = {};
         }
@@ -39611,12 +39611,12 @@ var XLS = {};
             else  {
                 throw new Error("Cannot find Workbook stream");
             }
-
+            
         }
         if (cfb.find)  {
             parse_props(cfb);
         }
-
+        
         var props = {};
         for (var y in cfb.Summary) props[y] = cfb.Summary[y];
         for (y in cfb.DocSummary) props[y] = cfb.DocSummary[y];
@@ -39625,7 +39625,7 @@ var XLS = {};
         if (options.bookFiles)  {
             WorkbookP.cfb = cfb;
         }
-
+        
         WorkbookP.CompObjP = CompObjP;
         return WorkbookP;
     }
@@ -39638,7 +39638,7 @@ var XLS = {};
                 cfb.DocSummary = parse_PropertySetStream(DSI, DocSummaryPIDDSI);
             } catch (e) {};
         }
-
+        
         /* [MS-OSHARED] 2.3.3.2.1 Summary Information Property Set*/
         var SI = cfb.find('!SummaryInformation');
         if (SI)  {
@@ -39646,7 +39646,7 @@ var XLS = {};
                 cfb.Summary = parse_PropertySetStream(SI, SummaryPIDSI);
             } catch (e) {};
         }
-
+        
     }
     // TODO: CP remap (need to read file version to determine OS)
     var encregex = /&[a-z]*;/g,
@@ -39661,7 +39661,7 @@ var XLS = {};
         if (s.indexOf("&") > -1)  {
             s = s.replace(encregex, encrepl);
         }
-
+        
         return s.indexOf("_") === -1 ? s : s.replace(coderegex, coderepl);
     }
     function parsexmlbool(value, tag) {
@@ -39738,7 +39738,7 @@ var XLS = {};
         if (fmt === "General")  {
             return SSF._general(value);
         }
-
+        
         return SSF.format(fmt, value);
     }
     function xlml_set_custprop(Custprops, Rn, cp, val) {
@@ -39784,24 +39784,24 @@ var XLS = {};
                     else  {
                         cell.w = SSF._general_num(cell.v);
                     }
-
+                    
                 } else  {
                     cell.w = SSF._general(cell.v);
                 }
-
+                
             } else  {
                 cell.w = xlml_format(nf || "General", cell.v);
             }
-
+            
             if (o.cellNF)  {
                 cell.z = magic_formats[nf] || nf || "General";
             }
-
+            
         } catch (e) {
             if (o.WTF)  {
                 throw e;
             }
-
+            
         }
     }
     function process_style_xlml(styles, stag, opts) {
@@ -39811,7 +39811,7 @@ var XLS = {};
                 if (I.Pattern)  {
                     I.patternType = PatternTypeMap[I.Pattern] || I.Pattern;
                 }
-
+                
             }
         }
         styles[stag.ID] = stag;
@@ -39826,24 +39826,24 @@ var XLS = {};
         if (sid === undefined && row)  {
             sid = row.StyleID;
         }
-
+        
         if (sid === undefined && csty)  {
             sid = csty.StyleID;
         }
-
+        
         while (styles[sid] !== undefined) {
             if (styles[sid].nf)  {
                 nf = styles[sid].nf;
             }
-
+            
             if (styles[sid].Interior)  {
                 interiors.push(styles[sid].Interior);
             }
-
+            
             if (!styles[sid].Parent)  {
                 break;
             }
-
+            
             sid = styles[sid].Parent;
         }
         switch (data.Type) {
@@ -39900,7 +39900,7 @@ var XLS = {};
                 if (!S.patternType && x.patternType)  {
                     S.patternType = x.patternType;
                 }
-
+                
             });
             cell.s = S;
         }
@@ -39914,11 +39914,11 @@ var XLS = {};
         if (has_buf && Buffer.isBuffer(d))  {
             return d.toString('utf8');
         }
-
+        
         if (typeof d === 'string')  {
             return d;
         }
-
+        
         throw "badf";
     }
     /* TODO: Everything */
@@ -39984,11 +39984,11 @@ var XLS = {};
                     if (comments.length > 0)  {
                         cell.c = comments;
                     }
-
+                    
                     if ((!opts.sheetRows || opts.sheetRows > r) && cell.v !== undefined)  {
                         cursheet[encode_col(c) + encode_row(r)] = cell;
                     }
-
+                    
                     if (cell.HRef) {
                         cell.l = {
                             Target: cell.HRef,
@@ -40014,25 +40014,25 @@ var XLS = {};
                     if (cell.MergeAcross)  {
                         c += +cell.MergeAcross;
                     }
-
+                    
                 } else {
                     cell = parsexmltagobj(Rn[0]);
                     if (cell.Index)  {
                         c = +cell.Index - 1;
                     }
-
+                    
                     if (c < refguess.s.c)  {
                         refguess.s.c = c;
                     }
-
+                    
                     if (c > refguess.e.c)  {
                         refguess.e.c = c;
                     }
-
+                    
                     if (Rn[0].substr(-2) === "/>")  {
                         ++c;
                     }
-
+                    
                     comments = [];
                 };
                 break;
@@ -40041,17 +40041,17 @@ var XLS = {};
                     if (r < refguess.s.r)  {
                         refguess.s.r = r;
                     }
-
+                    
                     if (r > refguess.e.r)  {
                         refguess.e.r = r;
                     }
-
+                    
                     if (Rn[0].substr(-2) === "/>") {
                         row = parsexmltag(Rn[0]);
                         if (row.Index)  {
                             r = +row.Index - 1;
                         }
-
+                        
                     }
                     c = 0;
                     ++r;
@@ -40060,7 +40060,7 @@ var XLS = {};
                     if (row.Index)  {
                         r = +row.Index - 1;
                     }
-
+                    
                 };
                 break;
             case 'Worksheet':
@@ -40069,16 +40069,16 @@ var XLS = {};
                     if ((tmp = state.pop())[0] !== Rn[3])  {
                         throw "Bad state: " + tmp;
                     }
-
+                    
                     sheetnames.push(sheetname);
                     if (refguess.s.r <= refguess.e.r && refguess.s.c <= refguess.e.c)  {
                         cursheet["!ref"] = encode_range(refguess);
                     }
-
+                    
                     if (mergecells.length)  {
                         cursheet["!merges"] = mergecells;
                     }
-
+                    
                     sheets[sheetname] = cursheet;
                 } else {
                     refguess = {
@@ -40107,7 +40107,7 @@ var XLS = {};
                     if ((tmp = state.pop())[0] !== Rn[3])  {
                         throw "Bad state: " + tmp;
                     }
-
+                    
                 } else if (Rn[0].slice(-2) == "/>")  {
                     break;
                 }
@@ -40221,7 +40221,7 @@ var XLS = {};
                     if ((tmp = state.pop())[0] !== Rn[3])  {
                         throw "Bad state: " + tmp;
                     }
-
+                    
                 } else  {
                     state.push([
                         Rn[3],
@@ -40235,7 +40235,7 @@ var XLS = {};
                     if ((tmp = state.pop())[0] !== Rn[3])  {
                         throw "Bad state: " + tmp;
                     }
-
+                    
                     xlml_clean_comment(comment);
                     comments.push(comment);
                 } else {
@@ -40276,7 +40276,7 @@ var XLS = {};
                     if ((tmp = state.pop())[0] !== Rn[3])  {
                         throw "Bad state: " + tmp;
                     }
-
+                    
                 } else if (Rn[0].charAt(Rn[0].length - 2) !== '/')  {
                     state.push([
                         Rn[3],
@@ -40935,7 +40935,7 @@ var XLS = {};
         if (!opts.bookSheets && !opts.bookProps)  {
             out.Sheets = sheets;
         }
-
+        
         out.SheetNames = sheetnames;
         out.SSF = SSF.get_table();
         out.Props = Props;
@@ -40980,11 +40980,11 @@ var XLS = {};
         if (!o)  {
             o = {};
         }
-
+        
         if (!o.type)  {
             o.type = (has_buf && Buffer.isBuffer(f)) ? "buffer" : "base64";
         }
-
+        
         switch (firstbyte(f, o)) {
             case 208:
                 return parse_xlscfb(CFB.read(f, o), o);
@@ -41001,7 +41001,7 @@ var XLS = {};
             if (!o)  {
                 o = {};
             }
-
+            
             switch (firstbyte(d, {
                 type: 'buffer'
             })) {
@@ -41045,11 +41045,11 @@ var XLS = {};
             if (cell.cRel)  {
                 cell.c += tgt.s.c;
             }
-
+            
             if (cell.rRel)  {
                 cell.r += tgt.s.r;
             }
-
+            
         } else {
             cell.c += tgt.c;
             cell.r += tgt.r;
@@ -41124,15 +41124,15 @@ var XLS = {};
         if (ce === undefined || typeof ce === 'number')  {
             return encode_range(cs.s, cs.e);
         }
-
+        
         if (typeof cs !== 'string')  {
             cs = encode_cell(cs);
         }
-
+        
         if (typeof ce !== 'string')  {
             ce = encode_cell(ce);
         }
-
+        
         return cs == ce ? cs : cs + ":" + ce;
     }
     function safe_decode_range(range) {
@@ -41154,7 +41154,7 @@ var XLS = {};
             if ((cc = range.charCodeAt(i) - 64) < 1 || cc > 26)  {
                 break;
             }
-
+            
             idx = 26 * idx + cc;
         }
         o.s.c = --idx;
@@ -41162,7 +41162,7 @@ var XLS = {};
             if ((cc = range.charCodeAt(i) - 48) < 0 || cc > 9)  {
                 break;
             }
-
+            
             idx = 10 * idx + cc;
         }
         o.s.r = --idx;
@@ -41175,7 +41175,7 @@ var XLS = {};
             if ((cc = range.charCodeAt(i) - 64) < 1 || cc > 26)  {
                 break;
             }
-
+            
             idx = 26 * idx + cc;
         }
         o.e.c = --idx;
@@ -41183,7 +41183,7 @@ var XLS = {};
             if ((cc = range.charCodeAt(i) - 48) < 0 || cc > 9)  {
                 break;
             }
-
+            
             idx = 10 * idx + cc;
         }
         o.e.r = --idx;
@@ -41195,11 +41195,11 @@ var XLS = {};
                 return (cell.w = SSF.format(cell.z, v));
             } catch (e) {};
         }
-
+        
         if (!cell.XF)  {
             return v;
         }
-
+        
         try {
             return (cell.w = SSF.format(cell.XF.ifmt || 0, v));
         } catch (e) {
@@ -41210,15 +41210,15 @@ var XLS = {};
         if (cell == null || cell.t == null)  {
             return "";
         }
-
+        
         if (cell.w !== undefined)  {
             return cell.w;
         }
-
+        
         if (v === undefined)  {
             return safe_format_cell(cell, cell.v);
         }
-
+        
         return safe_format_cell(cell, v);
     }
     function sheet_to_json(sheet, opts) {
@@ -41233,7 +41233,7 @@ var XLS = {};
         if (sheet == null || sheet["!ref"] == null)  {
             return [];
         }
-
+        
         range = o.range !== undefined ? o.range : sheet["!ref"];
         if (o.header === 1)  {
             header = 1;
@@ -41244,7 +41244,7 @@ var XLS = {};
         else if (Array.isArray(o.header))  {
             header = 3;
         }
-
+        
         switch (typeof range) {
             case 'string':
                 r = safe_decode_range(range);
@@ -41259,7 +41259,7 @@ var XLS = {};
         if (header > 0)  {
             offset = 0;
         }
-
+        
         var rr = encode_row(r.s.r);
         var cols = new Array(r.e.c - r.s.c + 1);
         var out = new Array(r.e.r - r.s.r - offset + 1);
@@ -41279,7 +41279,7 @@ var XLS = {};
                     break;
                 default:
                     if (val === undefined)  {
-
+                        
                         continue;
                     }
                     ;
@@ -41303,19 +41303,19 @@ var XLS = {};
                 else  {
                     row.__rowNum__ = R;
                 }
-
+                
             }
             for (C = r.s.c; C <= r.e.c; ++C) {
                 val = sheet[cols[C] + rr];
                 if (val === undefined || val.t === undefined)  {
-
+                    
                     continue;
                 }
-
+                
                 v = val.v;
                 switch (val.t) {
                     case 'e':
-
+                        
                         continue;
                     case 's':
                         break;
@@ -41333,7 +41333,7 @@ var XLS = {};
             if (isempty === false || header === 1)  {
                 out[outi++] = row;
             }
-
+            
         }
         out.length = outi;
         return out;
@@ -41349,7 +41349,7 @@ var XLS = {};
         if (sheet == null || sheet["!ref"] == null)  {
             return "";
         }
-
+        
         var r = safe_decode_range(sheet["!ref"]);
         var FS = o.FS !== undefined ? o.FS : ",",
             fs = FS.charCodeAt(0);
@@ -41389,7 +41389,7 @@ var XLS = {};
         if (sheet == null || sheet["!ref"] == null)  {
             return "";
         }
-
+        
         var r = safe_decode_range(sheet['!ref']),
             rr = "",
             cols = [],
@@ -41404,10 +41404,10 @@ var XLS = {};
                 x = sheet[y];
                 val = "";
                 if (x === undefined)  {
-
+                    
                     continue;
                 }
-
+                
                 if (x.f != null)  {
                     val = x.f;
                 }
@@ -41415,13 +41415,13 @@ var XLS = {};
                     val = "'" + x.w;
                 }
                 else if (x.v === undefined)  {
-
+                    
                     continue;
                 }
                 else  {
                     val = "" + x.v;
                 }
-
+                
                 cmds[i++] = y + "=" + val;
             }
         }
@@ -41468,7 +41468,7 @@ var XLSX = {};
         if (typeof cptable === 'undefined')  {
             cptable = require('./dist/cpexcel');
         }
-
+        
         current_cptable = cptable[current_codepage];
     }
     function reset_cp() {
@@ -41539,7 +41539,7 @@ var XLSX = {};
                 if (v > p2_32 || v < -p2_32)  {
                     return pad0r1(v, d);
                 }
-
+                
                 var i = Math.round(v);
                 return pad0r2(i, d);
             }
@@ -41709,7 +41709,7 @@ var XLSX = {};
                     if ((B - A) < 5.0E-10)  {
                         break;
                     }
-
+                    
                     B = 1 / (B - A);
                     P_2 = P_1;
                     P_1 = P;
@@ -41731,11 +41731,11 @@ var XLSX = {};
                         Q
                     ];
                 }
-
+                
                 if (Q === 0)  {
                     throw "Unexpected state: " + P + " " + P_1 + " " + P_2 + " " + Q + " " + Q_1 + " " + Q_2;
                 }
-
+                
                 var q = Math.floor(sgn * P / Q);
                 return [
                     q,
@@ -41759,12 +41759,12 @@ var XLSX = {};
                         if (o.length <= w)  {
                             return o;
                         }
-
+                        
                         o = v.toPrecision(10);
                         if (o.length <= w)  {
                             return o;
                         }
-
+                        
                         return v.toExponential(5);
                     }
                     function gfn3(v) {
@@ -41772,7 +41772,7 @@ var XLSX = {};
                         if (o.length > (v < 0 ? 12 : 11))  {
                             o = v.toPrecision(6);
                         }
-
+                        
                         return o;
                     }
                     function gfn4(o) {
@@ -41802,7 +41802,7 @@ var XLSX = {};
                         else  {
                             o = gfn3(v);
                         }
-
+                        
                         return gfn5(gfn4(o));
                     };
                 })();
@@ -41826,7 +41826,7 @@ var XLSX = {};
                 if (v > 2958465 || v < 0)  {
                     return null;
                 }
-
+                
                 var date = (v | 0),
                     time = Math.floor(86400 * (v - date)),
                     dow = 0;
@@ -41846,12 +41846,12 @@ var XLSX = {};
                 if (Math.abs(out.u) < 1.0E-6)  {
                     out.u = 0;
                 }
-
+                
                 fixopts(opts != null ? opts : (opts = []));
                 if (opts.date1904)  {
                     date += 1462;
                 }
-
+                
                 if (out.u > 0.999) {
                     out.u = 0;
                     if (++time == 86400) {
@@ -41885,7 +41885,7 @@ var XLSX = {};
                     if (date > 60)  {
                         --date;
                     }
-
+                    
                     /* 1 = Jan 1 1900 */
                     var d = new Date(1900, 0, 1);
                     d.setDate(d.getDate() + date - 1);
@@ -41898,11 +41898,11 @@ var XLSX = {};
                     if (date < 60)  {
                         dow = (dow + 6) % 7;
                     }
-
+                    
                     if (b2)  {
                         dow = fix_hijri(d, dout);
                     }
-
+                    
                 }
                 out.y = dout[0];
                 out.m = dout[1];
@@ -42084,14 +42084,14 @@ var XLSX = {};
                 else  {
                     return "";
                 }
-
+                
             }
             /*jshint +W086 */
             function commaify(s) {
                 if (s.length <= 3)  {
                     return s;
                 }
-
+                
                 var j = (s.length % 3),
                     o = s.substr(0, j);
                 for (; j != s.length; j += 3) o += (o.length > 0 ? "," : "") + s.substr(j, 3);
@@ -42117,12 +42117,12 @@ var XLSX = {};
                             if (period === -1)  {
                                 period = fmt.indexOf('E');
                             }
-
+                            
                             var ee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E) % period;
                             if (ee < 0)  {
                                 ee += period;
                             }
-
+                            
                             o = (val / Math.pow(10, ee)).toPrecision(idx + 1 + (period + ee) % period);
                             if (o.indexOf("e") === -1) {
                                 var fakee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E);
@@ -42132,7 +42132,7 @@ var XLSX = {};
                                 else  {
                                     o += "E+" + (fakee - ee);
                                 }
-
+                                
                                 while (o.substr(0, 2) === "0.") {
                                     o = o[0] + o.substr(2, period) + "." + o.substr(2 + period);
                                     o = o.replace(/^0+([1-9])/, "$1").replace(/^0+\./, "0.");
@@ -42145,15 +42145,15 @@ var XLSX = {};
                         } else  {
                             o = val.toExponential(idx);
                         }
-
+                        
                         if (fmt.match(/E\+00$/) && o.match(/e[+-]\d$/))  {
                             o = o.substr(0, o.length - 1) + "0" + o[o.length - 1];
                         }
-
+                        
                         if (fmt.match(/E\-/) && o.match(/e\+/))  {
                             o = o.replace(/e\+/, "e");
                         }
-
+                        
                         return o.replace("e", "E");
                     }
                     var frac1 = /# (\?+)( ?)\/( ?)(\d+)/;
@@ -42199,7 +42199,7 @@ var XLSX = {};
                         if (val < 2147483647 && val > -2.147483648E9)  {
                             return "" + (val >= 0 ? (val | 0) : (val - 1 | 0));
                         }
-
+                        
                         return "" + Math.floor(val);
                     }
                     function write_num_flt(type, fmt, val) {
@@ -42208,25 +42208,25 @@ var XLSX = {};
                             if (val >= 0)  {
                                 return write_num_flt('n', ffmt, val);
                             }
-
+                            
                             return '(' + write_num_flt('n', ffmt, -val) + ')';
                         }
                         if (fmt.charCodeAt(fmt.length - 1) === 44)  {
                             return write_num_cm(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('%') !== -1)  {
                             return write_num_pct(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('E') !== -1)  {
                             return write_num_exp(fmt, val);
                         }
-
+                        
                         if (fmt.charCodeAt(0) === 36)  {
                             return "$" + write_num_flt(type, fmt.substr(fmt[1] == ' ' ? 2 : 1), val);
                         }
-
+                        
                         var o, oo;
                         var r, ri, ff,
                             aval = Math.abs(val),
@@ -42234,23 +42234,23 @@ var XLSX = {};
                         if (fmt.match(/^00+$/))  {
                             return sign + pad0r(aval, fmt.length);
                         }
-
+                        
                         if (fmt.match(/^[#?]+$/)) {
                             o = pad0r(val, 0);
                             if (o === "0")  {
                                 o = "";
                             }
-
+                            
                             return o.length > fmt.length ? o : hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(frac1)) !== null)  {
                             return write_num_f1(r, aval, sign);
                         }
-
+                        
                         if (fmt.match(/^#+0+$/) !== null)  {
                             return sign + pad0r(aval, fmt.length - fmt.indexOf("0"));
                         }
-
+                        
                         if ((r = fmt.match(dec1)) !== null) {
                             o = rnd(val, r[1].length).replace(/^([^\.]+)$/, "$1." + r[1]).replace(/\.$/, "." + r[1]).replace(/\.(\d*)$/, function($$, $1) {
                                 return "." + $1 + fill("0", r[1].length - $1.length);
@@ -42264,14 +42264,14 @@ var XLSX = {};
                         if ((r = fmt.match(/^#,##0(\.?)$/)) !== null)  {
                             return sign + commaify(pad0r(aval, 0));
                         }
-
+                        
                         if ((r = fmt.match(/^#,##0\.([#0]*0)$/)) !== null) {
                             return val < 0 ? "-" + write_num_flt(type, fmt, -val) : commaify("" + (Math.floor(val))) + "." + pad0(dec(val, r[1].length), r[1].length);
                         }
                         if ((r = fmt.match(/^#,#*,#0/)) !== null)  {
                             return write_num_flt(type, fmt.replace(/^#,#*,/, ""), val);
                         }
-
+                        
                         if ((r = fmt.match(/^([0#]+)(\\?-([0#]+))+$/)) !== null) {
                             o = _strrev(write_num_flt(type, fmt.replace(/[\\-]/g, ""), val));
                             ri = 0;
@@ -42292,13 +42292,13 @@ var XLSX = {};
                             if (oa[oa.length - 1] == " ")  {
                                 oa = oa.substr(0, oa.length - 1) + "0";
                             }
-
+                            
                             o += oa + r[2] + "/" + r[3];
                             oa = rpad_(ff[2], ri);
                             if (oa.length < r[4].length)  {
                                 oa = hashq(r[4].substr(r[4].length - oa.length)) + oa;
                             }
-
+                            
                             o += oa;
                             return o;
                         }
@@ -42312,7 +42312,7 @@ var XLSX = {};
                             if (fmt.length <= o.length)  {
                                 return o;
                             }
-
+                            
                             return hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(/^([#0?]+)\.([#0]+)$/)) !== null) {
@@ -42354,12 +42354,12 @@ var XLSX = {};
                             if (period === -1)  {
                                 period = fmt.indexOf('E');
                             }
-
+                            
                             var ee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E) % period;
                             if (ee < 0)  {
                                 ee += period;
                             }
-
+                            
                             o = (val / Math.pow(10, ee)).toPrecision(idx + 1 + (period + ee) % period);
                             if (!o.match(/[Ee]/)) {
                                 var fakee = Math.floor(Math.log(Math.abs(val)) * Math.LOG10E);
@@ -42369,7 +42369,7 @@ var XLSX = {};
                                 else  {
                                     o += "E+" + (fakee - ee);
                                 }
-
+                                
                                 o = o.replace(/\+-/, "-");
                             }
                             o = o.replace(/^([+-]?)(\d*)\.(\d*)[Ee]/, function($$, $1, $2, $3) {
@@ -42378,15 +42378,15 @@ var XLSX = {};
                         } else  {
                             o = val.toExponential(idx);
                         }
-
+                        
                         if (fmt.match(/E\+00$/) && o.match(/e[+-]\d$/))  {
                             o = o.substr(0, o.length - 1) + "0" + o[o.length - 1];
                         }
-
+                        
                         if (fmt.match(/E\-/) && o.match(/e\+/))  {
                             o = o.replace(/e\+/, "e");
                         }
-
+                        
                         return o.replace("e", "E");
                     }
                     function write_num_int(type, fmt, val) {
@@ -42395,25 +42395,25 @@ var XLSX = {};
                             if (val >= 0)  {
                                 return write_num_int('n', ffmt, val);
                             }
-
+                            
                             return '(' + write_num_int('n', ffmt, -val) + ')';
                         }
                         if (fmt.charCodeAt(fmt.length - 1) === 44)  {
                             return write_num_cm2(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('%') !== -1)  {
                             return write_num_pct2(type, fmt, val);
                         }
-
+                        
                         if (fmt.indexOf('E') !== -1)  {
                             return write_num_exp2(fmt, val);
                         }
-
+                        
                         if (fmt.charCodeAt(0) === 36)  {
                             return "$" + write_num_int(type, fmt.substr(fmt[1] == ' ' ? 2 : 1), val);
                         }
-
+                        
                         var o;
                         var r, ri, ff,
                             aval = Math.abs(val),
@@ -42421,23 +42421,23 @@ var XLSX = {};
                         if (fmt.match(/^00+$/))  {
                             return sign + pad0(aval, fmt.length);
                         }
-
+                        
                         if (fmt.match(/^[#?]+$/)) {
                             o = ("" + val);
                             if (val === 0)  {
                                 o = "";
                             }
-
+                            
                             return o.length > fmt.length ? o : hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(frac1)) !== null)  {
                             return write_num_f2(r, aval, sign);
                         }
-
+                        
                         if (fmt.match(/^#+0+$/) !== null)  {
                             return sign + pad0(aval, fmt.length - fmt.indexOf("0"));
                         }
-
+                        
                         if ((r = fmt.match(dec1)) !== null) {
                             o = ("" + val).replace(/^([^\.]+)$/, "$1." + r[1]).replace(/\.$/, "." + r[1]).replace(/\.(\d*)$/, function($$, $1) {
                                 return "." + $1 + fill("0", r[1].length - $1.length);
@@ -42451,14 +42451,14 @@ var XLSX = {};
                         if ((r = fmt.match(/^#,##0(\.?)$/)) !== null)  {
                             return sign + commaify(("" + aval));
                         }
-
+                        
                         if ((r = fmt.match(/^#,##0\.([#0]*0)$/)) !== null) {
                             return val < 0 ? "-" + write_num_int(type, fmt, -val) : commaify(("" + val)) + "." + fill('0', r[1].length);
                         }
                         if ((r = fmt.match(/^#,#*,#0/)) !== null)  {
                             return write_num_int(type, fmt.replace(/^#,#*,/, ""), val);
                         }
-
+                        
                         if ((r = fmt.match(/^([0#]+)(\\?-([0#]+))+$/)) !== null) {
                             o = _strrev(write_num_int(type, fmt.replace(/[\\-]/g, ""), val));
                             ri = 0;
@@ -42479,13 +42479,13 @@ var XLSX = {};
                             if (oa[oa.length - 1] == " ")  {
                                 oa = oa.substr(0, oa.length - 1) + "0";
                             }
-
+                            
                             o += oa + r[2] + "/" + r[3];
                             oa = rpad_(ff[2], ri);
                             if (oa.length < r[4].length)  {
                                 oa = hashq(r[4].substr(r[4].length - oa.length)) + oa;
                             }
-
+                            
                             o += oa;
                             return o;
                         }
@@ -42499,7 +42499,7 @@ var XLSX = {};
                             if (fmt.length <= o.length)  {
                                 return o;
                             }
-
+                            
                             return hashq(fmt.substr(0, fmt.length - o.length)) + o;
                         }
                         if ((r = fmt.match(/^([#0]+)\.([#0]+)$/)) !== null) {
@@ -42551,7 +42551,7 @@ var XLSX = {};
                 if (in_str === true)  {
                     throw new Error("Format |" + fmt + "| unterminated string ");
                 }
-
+                
                 return out;
             }
             SSF._split = split_fmt;
@@ -42620,7 +42620,7 @@ var XLSX = {};
                                     if (dt == null)  {
                                         return "";
                                     }
-
+                                    
                                 }
                                 out[out.length] = {
                                     t: 'X',
@@ -42655,7 +42655,7 @@ var XLSX = {};
                                 if (dt == null)  {
                                     return "";
                                 }
-
+                                
                             };
                             o = c;
                             while (++i < fmt.length && fmt[i].toLowerCase() === c) o += c;
@@ -42687,7 +42687,7 @@ var XLSX = {};
                                 if (dt != null)  {
                                     q.v = dt.H >= 12 ? "P" : "A";
                                 }
-
+                                
                                 q.t = 'T';
                                 hr = 'h';
                                 i += 3;
@@ -42695,7 +42695,7 @@ var XLSX = {};
                                 if (dt != null)  {
                                     q.v = dt.H >= 12 ? "PM" : "AM";
                                 }
-
+                                
                                 q.t = 'T';
                                 i += 5;
                                 hr = 'h';
@@ -42723,7 +42723,7 @@ var XLSX = {};
                                     if (dt == null)  {
                                         return "";
                                     }
-
+                                    
                                 }
                                 out[out.length] = {
                                     t: 'Z',
@@ -42852,7 +42852,7 @@ var XLSX = {};
                                 if (bt < 2)  {
                                     bt = 2;
                                 }
-
+                                
                             };
                             break;
                         case 'X':
@@ -42965,10 +42965,10 @@ var XLSX = {};
                     if (decpt === out.length && ostr.indexOf("E") === -1) {
                         for (i = out.length - 1; i >= 0; --i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1)  {
-
+                                
                                 continue;
                             }
-
+                            
                             if (jj >= out[i].v.length - 1) {
                                 jj -= out[i].v.length;
                                 out[i].v = ostr.substr(jj + 1, out[i].v.length);
@@ -42985,22 +42985,22 @@ var XLSX = {};
                         if (jj >= 0 && lasti < out.length)  {
                             out[lasti].v = ostr.substr(0, jj + 1) + out[lasti].v;
                         }
-
+                        
                     } else if (decpt !== out.length && ostr.indexOf("E") === -1) {
                         jj = ostr.indexOf(".") - 1;
                         for (i = decpt; i >= 0; --i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1)  {
-
+                                
                                 continue;
                             }
-
+                            
                             j = out[i].v.indexOf(".") > -1 && i === decpt ? out[i].v.indexOf(".") - 1 : out[i].v.length - 1;
                             vv = out[i].v.substr(j + 1);
                             for (; j >= 0; --j) {
                                 if (jj >= 0 && (out[i].v[j] === "0" || out[i].v[j] === "#"))  {
                                     vv = ostr[jj--] + vv;
                                 }
-
+                                
                             }
                             out[i].v = vv;
                             out[i].t = 't';
@@ -43009,21 +43009,21 @@ var XLSX = {};
                         if (jj >= 0 && lasti < out.length)  {
                             out[lasti].v = ostr.substr(0, jj + 1) + out[lasti].v;
                         }
-
+                        
                         jj = ostr.indexOf(".") + 1;
                         for (i = decpt; i < out.length; ++i) {
                             if (out[i] == null || 'n?('.indexOf(out[i].t) === -1 && i !== decpt)  {
-
+                                
                                 continue;
                             }
-
+                            
                             j = out[i].v.indexOf(".") > -1 && i === decpt ? out[i].v.indexOf(".") + 1 : 0;
                             vv = out[i].v.substr(0, j);
                             for (; j < out[i].v.length; ++j) {
                                 if (jj < ostr.length)  {
                                     vv += ostr[jj++];
                                 }
-
+                                
                             }
                             out[i].v = vv;
                             out[i].t = 't';
@@ -43050,7 +43050,7 @@ var XLSX = {};
                 if (rr == null)  {
                     return false;
                 }
-
+                
                 var thresh = parseFloat(rr[2]);
                 switch (rr[1]) {
                     case "=":
@@ -43099,18 +43099,18 @@ var XLSX = {};
                 if (l < 4 && lat > -1)  {
                     --l;
                 }
-
+                
                 if (fmt.length > 4)  {
                     throw "cannot find right format for |" + fmt + "|";
                 }
-
+                
                 if (typeof v !== "number")  {
                     return [
                         4,
                         fmt.length === 4 || lat > -1 ? fmt[fmt.length - 1] : "@"
                     ];
                 }
-
+                
                 switch (fmt.length) {
                     case 1:
                         fmt = lat > -1 ? [
@@ -43161,7 +43161,7 @@ var XLSX = {};
                         ff
                     ];
                 }
-
+                
                 if (fmt[0].match(cfregex) != null || fmt[1].match(cfregex) != null) {
                     var m1 = fmt[0].match(cfregex2);
                     var m2 = fmt[1].match(cfregex2);
@@ -43195,12 +43195,12 @@ var XLSX = {};
                 if (isgeneral(sfmt, 0))  {
                     return general_fmt(v, o);
                 }
-
+                
                 var f = choose_fmt(sfmt, v);
                 if (isgeneral(f[1]))  {
                     return general_fmt(v, o);
                 }
-
+                
                 if (v === true)  {
                     v = "TRUE";
                 }
@@ -43210,7 +43210,7 @@ var XLSX = {};
                 else if (v === "" || v == null)  {
                     return "";
                 }
-
+                
                 return eval_fmt(f[1], v, o, f[0]);
             }
             SSF._table = table_fmt;
@@ -43260,7 +43260,7 @@ var XLSX = {};
             if (o[obj[K[i]]] == null)  {
                 o[obj[K[i]]] = [];
             }
-
+            
             o[obj[K[i]]].push(K[i]);
         }
         return o;
@@ -43270,7 +43270,7 @@ var XLSX = {};
         if (date1904)  {
             v += 1462;
         }
-
+        
         var epoch = Date.parse(v);
         return (epoch + 2.2091616E12) / (24 * 60 * 60 * 1000);
     }
@@ -43284,37 +43284,37 @@ var XLSX = {};
         if (!data)  {
             return null;
         }
-
+        
         if (data.name.substr(-4) === ".bin") {
             if (data.data)  {
                 return char_codes(data.data);
             }
-
+            
             if (data.asNodeBuffer && has_buf)  {
                 return data.asNodeBuffer();
             }
-
+            
             if (data._data && data._data.getContent)  {
                 return Array.prototype.slice.call(data._data.getContent());
             }
-
+            
         } else {
             if (data.data)  {
                 return data.name.substr(-4) !== ".bin" ? debom_xml(data.data) : char_codes(data.data);
             }
-
+            
             if (data.asNodeBuffer && has_buf)  {
                 return debom_xml(data.asNodeBuffer().toString('binary'));
             }
-
+            
             if (data.asBinary)  {
                 return debom_xml(data.asBinary());
             }
-
+            
             if (data._data && data._data.getContent)  {
                 return debom_xml(cc2str(Array.prototype.slice.call(data._data.getContent(), 0)));
             }
-
+            
         }
         return null;
     }
@@ -43323,17 +43323,17 @@ var XLSX = {};
         if (zip.files[f])  {
             return zip.files[f];
         }
-
+        
         f = file.toLowerCase();
         if (zip.files[f])  {
             return zip.files[f];
         }
-
+        
         f = f.replace(/\//g, '\\');
         if (zip.files[f])  {
             return zip.files[f];
         }
-
+        
         return null;
     }
     function getzipfile(zip, file) {
@@ -43341,18 +43341,18 @@ var XLSX = {};
         if (o == null)  {
             throw new Error("Cannot find file " + file + " in zip");
         }
-
+        
         return o;
     }
     function getzipdata(zip, file, safe) {
         if (!safe)  {
             return getdata(getzipfile(zip, file));
         }
-
+        
         if (!file)  {
             return null;
         }
-
+        
         try {
             return getzipdata(zip, file);
         } catch (e) {
@@ -43363,17 +43363,17 @@ var XLSX = {};
     if (typeof JSZip !== 'undefined')  {
         jszip = JSZip;
     }
-
+    
     if (typeof exports !== 'undefined') {
         if (typeof module !== 'undefined' && module.exports) {
             if (has_buf && typeof jszip === 'undefined')  {
                 jszip = require('js' + 'zip');
             }
-
+            
             if (typeof jszip === 'undefined')  {
                 jszip = require('./js' + 'zip').JSZip;
             }
-
+            
             _fs = require('f' + 's');
         }
     }
@@ -43392,11 +43392,11 @@ var XLSX = {};
         if (!skip_root)  {
             z[0] = tag.substr(0, eq);
         }
-
+        
         if (eq === tag.length)  {
             return z;
         }
-
+        
         var m = tag.match(attregexg),
             j = 0,
             w = "",
@@ -43423,10 +43423,10 @@ var XLSX = {};
                 else  {
                     z[(j === 5 && q.substr(0, 5) === "xmlns" ? "xmlns" : "") + q.substr(j + 1)] = v;
                 }
-
+                
             };
         }
-
+        
         return z;
     }
     function strip_ns(x) {
@@ -43485,19 +43485,19 @@ var XLSX = {};
                 c = orig.charCodeAt(i++);
                 if (c < 128) {
                     out += String.fromCharCode(c);
-
+                    
                     continue;
                 }
                 d = orig.charCodeAt(i++);
                 if (c > 191 && c < 224) {
                     out += String.fromCharCode(((c & 31) << 6) | (d & 63));
-
+                    
                     continue;
                 }
                 e = orig.charCodeAt(i++);
                 if (c < 240) {
                     out += String.fromCharCode(((c & 15) << 12) | ((d & 63) << 6) | (e & 63));
-
+                    
                     continue;
                 }
                 f = orig.charCodeAt(i++);
@@ -43548,14 +43548,14 @@ var XLSX = {};
         if (utf8read(corpus) == utf8readb(corpus))  {
             utf8read = utf8readb;
         }
-
+        
         var utf8readc = function utf8readc(data) {
                 return Buffer(data, 'binary').toString('utf8');
             };
         if (utf8read(corpus) == utf8readc(corpus))  {
             utf8read = utf8readc;
         }
-
+        
     }
     // matches <foo>...</foo> extracts content
     var matchtag = (function() {
@@ -43565,7 +43565,7 @@ var XLSX = {};
                 if (mtcache[t] !== undefined)  {
                     return mtcache[t];
                 }
-
+                
                 return (mtcache[t] = new RegExp('<(?:\\w+:)?' + f + '(?: xml:space="preserve")?(?:[^>]*)>([^☃]*)</(?:\\w+:)?' + f + '>', (g || "")));
             };
         })();
@@ -43575,7 +43575,7 @@ var XLSX = {};
                 if (vt_cache[bt] !== undefined)  {
                     return vt_cache[bt];
                 }
-
+                
                 return (vt_cache[bt] = new RegExp("<vt:" + bt + ">(.*?)</vt:" + bt + ">", 'g'));
             };
         })();
@@ -43587,7 +43587,7 @@ var XLSX = {};
         if (matches.length != h.size)  {
             throw "unexpected vector length " + matches.length + " != " + h.size;
         }
-
+        
         var res = [];
         matches.forEach(function(x) {
             var v = x.replace(vtvregex, "").match(vtmregex);
@@ -43617,7 +43617,7 @@ var XLSX = {};
             if (t)  {
                 throw e;
             }
-
+            
         }
     }
     function write_vt(s) {
@@ -43632,7 +43632,7 @@ var XLSX = {};
         if (s instanceof Date)  {
             return writextag('vt:filetime', write_w3cdtf(s));
         }
-
+        
         throw new Error("Unable to serialize " + s);
     }
     var XML_HEADER = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n';
@@ -43657,15 +43657,15 @@ var XLSX = {};
         if (isLE === undefined)  {
             isLE = true;
         }
-
+        
         if (!nl)  {
             nl = 8;
         }
-
+        
         if (!ml && nl === 8)  {
             ml = 52;
         }
-
+        
         var e, m,
             el = nl * 8 - ml - 1,
             eMax = (1 << el) - 1,
@@ -43718,7 +43718,7 @@ var XLSX = {};
             if (Buffer.isBuffer(b))  {
                 return b.readDoubleLE(i);
             }
-
+            
             return ___double(b, i);
         };
         is_buf = function is_buf_b(a) {
@@ -43756,7 +43756,7 @@ var XLSX = {};
                     loc += 2;
                 };
             }
-
+            
             size *= 2;
         } else  {
             switch (size) {
@@ -43776,7 +43776,7 @@ var XLSX = {};
                     };
             };
         }
-
+        
         this.l += size;
         return o;
     }
@@ -43818,7 +43818,7 @@ var XLSX = {};
                     break;
             };
         }
-
+        
         this.l += size;
         return this;
     }
@@ -43847,7 +43847,7 @@ var XLSX = {};
             if (RT & 128)  {
                 RT = (RT & 127) + ((data.read_shift(1) & 127) << 7);
             }
-
+            
             var R = RecordEnum[RT] || RecordEnum[65535];
             tmpbyte = data.read_shift(1);
             length = tmpbyte & 127;
@@ -43856,7 +43856,7 @@ var XLSX = {};
             if (cb(d, R, RT))  {
                 return;
             }
-
+            
         }
     }
     /* control buffer usage for fixed-length buffers */
@@ -43874,14 +43874,14 @@ var XLSX = {};
                 if (curbuf.length > 0)  {
                     bufs.push(curbuf);
                 }
-
+                
                 curbuf = null;
             };
         var next = function ba_next(sz) {
                 if (sz < curbuf.length - curbuf.l)  {
                     return curbuf;
                 }
-
+                
                 endbuf();
                 return (curbuf = newblk(Math.max(sz + 1, blksz)));
             };
@@ -43909,20 +43909,20 @@ var XLSX = {};
         if (!length)  {
             length = RecordEnum[t].p || (payload || []).length || 0;
         }
-
+        
         l = 1 + (t >= 128 ? 1 : 0) + 1 + length;
         if (length >= 128)  {
             ++l;
         }
-
+        
         if (length >= 16384)  {
             ++l;
         }
-
+        
         if (length >= 2097152)  {
             ++l;
         }
-
+        
         var o = ba.next(l);
         if (t <= 127)  {
             o.write_shift(1, t);
@@ -43943,7 +43943,7 @@ var XLSX = {};
         if (length > 0 && is_buf(payload))  {
             ba.push(payload);
         }
-
+        
     }
     /* [MS-XLSB] 2.5.143 */
     function parse_StrRun(data, length) {
@@ -43971,7 +43971,7 @@ var XLSX = {};
         } else  {
             z.r = "<t>" + escapexml(str) + "</t>";
         }
-
+        
         if ((flags & 2) !== 0) {}
         /* fExtStr */
         /* TODO: phonetic string */
@@ -43983,7 +43983,7 @@ var XLSX = {};
         if (o == null)  {
             o = new_buf(5 + 2 * str.t.length);
         }
-
+        
         o.write_shift(1, 0);
         write_XLWideString(str.t, o);
         return o;
@@ -44003,7 +44003,7 @@ var XLSX = {};
         if (o == null)  {
             o = new_buf(8);
         }
-
+        
         o.write_shift(-4, cell.c);
         o.write_shift(3, cell.iStyleRef === undefined ? cell.iStyleRef : cell.s);
         o.write_shift(1, 0);
@@ -44023,12 +44023,12 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(127);
         }
-
+        
         o.write_shift(4, data.length > 0 ? data.length : 4.294967295E9);
         if (data.length > 0)  {
             o.write_shift(0, data, 'dbcs');
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.5.168 */
@@ -44040,12 +44040,12 @@ var XLSX = {};
         if (o == null)  {
             o = new_buf(4 + 2 * data.length);
         }
-
+        
         o.write_shift(4, data.length);
         if (data.length > 0)  {
             o.write_shift(0, data, 'dbcs');
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.5.114 */
@@ -44086,7 +44086,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(16);
         }
-
+        
         o.write_shift(4, r.s.r);
         o.write_shift(4, r.e.r);
         o.write_shift(4, r.s.c);
@@ -44282,7 +44282,7 @@ var XLSX = {};
                 if (!o[k].xlsm)  {
                     o[k].xlsm = o[k].xlsx;
                 }
-
+                
             });
             keys(o).forEach(function(k) {
                 keys(o[k]).forEach(function(v) {
@@ -44298,7 +44298,7 @@ var XLSX = {};
         if (!data || !data.match)  {
             return data;
         }
-
+        
         var ct = {
                 workbooks: [],
                 sheets: [],
@@ -44343,7 +44343,7 @@ var XLSX = {};
         if (ct.xmlns !== XMLNS.CT)  {
             throw new Error("Unknown Namespace: " + ct.xmlns);
         }
-
+        
         ct.calcchain = ct.calcchains.length > 0 ? ct.calcchains[0] : "";
         ct.sst = ct.strs.length > 0 ? ct.strs[0] : "";
         ct.style = ct.styles.length > 0 ? ct.styles[0] : "";
@@ -44433,7 +44433,7 @@ var XLSX = {};
         if (!data)  {
             return data;
         }
-
+        
         if (currentFilePath.charAt(0) !== '/') {
             currentFilePath = '/' + currentFilePath;
         }
@@ -44577,11 +44577,11 @@ var XLSX = {};
             if (cur != null && cur.length > 0)  {
                 p[f[1]] = cur[1];
             }
-
+            
             if (f[2] === 'date' && p[f[1]])  {
                 p[f[1]] = new Date(p[f[1]]);
             }
-
+            
         }
         return p;
     }
@@ -44597,7 +44597,7 @@ var XLSX = {};
         if (p[f] != null || g == null || g === "")  {
             return;
         }
-
+        
         p[f] = g;
         o[o.length] = (h ? writextag(f, g, h) : writetag(f, g));
     }
@@ -44610,19 +44610,19 @@ var XLSX = {};
         if (!cp)  {
             return o.join("");
         }
-
+        
         if (cp.CreatedDate != null)  {
             cp_doit("dcterms:created", typeof cp.CreatedDate === "string" ? cp.CreatedDate : write_w3cdtf(cp.CreatedDate, opts.WTF), {
                 "xsi:type": "dcterms:W3CDTF"
             }, o, p);
         }
-
+        
         if (cp.ModifiedDate != null)  {
             cp_doit("dcterms:modified", typeof cp.ModifiedDate === "string" ? cp.ModifiedDate : write_w3cdtf(cp.ModifiedDate, opts.WTF), {
                 "xsi:type": "dcterms:W3CDTF"
             }, o, p);
         }
-
+        
         for (var i = 0; i != CORE_PROPS.length; ++i) {
             var f = CORE_PROPS[i];
             cp_doit(f[0], cp[f[1]], null, o, p);
@@ -44699,7 +44699,7 @@ var XLSX = {};
         if (!p)  {
             p = {};
         }
-
+        
         EXT_PROPS.forEach(function(f) {
             switch (f[2]) {
                 case "string":
@@ -44751,7 +44751,7 @@ var XLSX = {};
         if (!cp)  {
             cp = {};
         }
-
+        
         cp.Application = "SheetJS";
         o[o.length] = (XML_HEADER);
         o[o.length] = (EXT_PROPS_XML_ROOT);
@@ -44759,7 +44759,7 @@ var XLSX = {};
             if (cp[f[1]] === undefined)  {
                 return;
             }
-
+            
             var v;
             switch (f[2]) {
                 case 'string':
@@ -44772,7 +44772,7 @@ var XLSX = {};
             if (v !== undefined)  {
                 o[o.length] = (W(f[0], v));
             }
-
+            
         });
         /* TODO: HeadingPairs, TitlesOfParts */
         o[o.length] = (W('HeadingPairs', W('vt:vector', W('vt:variant', '<vt:lpstr>Worksheets</vt:lpstr>') + W('vt:variant', W('vt:i4', String(cp.Worksheets))), {
@@ -44872,7 +44872,7 @@ var XLSX = {};
                 }
             };
         }
-
+        
         return p;
     }
     var CUST_PROPS_XML_ROOT = writextag('Properties', null, {
@@ -44887,7 +44887,7 @@ var XLSX = {};
         if (!cp)  {
             return o.join("");
         }
-
+        
         var pid = 1;
         keys(cp).forEach(function custprop(k) {
             ++pid;
@@ -45071,17 +45071,17 @@ var XLSX = {};
                             }
                         };
                     }
-
+                    
                     /* TODO: These should be generated styles, not inline */
                     var style = [];
                     if (font.b)  {
                         style.push("font-weight: bold;");
                     }
-
+                    
                     if (font.i)  {
                         style.push("font-style: italic;");
                     }
-
+                    
                     intro.push('<span style="' + style.join("") + '">');
                     outro.push("</span>");
                     return cp;
@@ -45099,13 +45099,13 @@ var XLSX = {};
                 if (!isval(t))  {
                     return "";
                 }
-
+                
                 terms[1] = t[1];
                 var rpr = r.match(rpregex);
                 if (isval(rpr))  {
                     cp = parse_rpr(rpr[1], terms[0], terms[2]);
                 }
-
+                
                 return terms[0].join("") + terms[1].replace(nlregex, '<br/>') + terms[2].join("");
             }
             return function parse_rs(rs) {
@@ -45121,7 +45121,7 @@ var XLSX = {};
         if (!x)  {
             return null;
         }
-
+        
         var y;
         /* 18.4.12 t ST_Xstring (Plaintext String) */
         if (x.charCodeAt(1) === 116) {
@@ -45130,7 +45130,7 @@ var XLSX = {};
             if (html)  {
                 z.h = z.t;
             }
-
+            
         }
         /* 18.4.4 r CT_RElt (Rich Text Run) */
         else if ((y = x.match(sirregex))) {
@@ -45139,7 +45139,7 @@ var XLSX = {};
             if (html)  {
                 z.h = parse_rs(x);
             }
-
+            
         }
         /* 18.4.3 phoneticPr CT_PhoneticPr (TODO: needed for Asian support) */
         /* 18.4.6 rPh CT_PhoneticRun (TODO: needed for Asian support) */
@@ -45161,7 +45161,7 @@ var XLSX = {};
                 if (o != null)  {
                     s[s.length] = o;
                 }
-
+                
             }
             sst = parsexmltag(sst[1]);
             s.Count = sst.count;
@@ -45175,7 +45175,7 @@ var XLSX = {};
         if (!opts.bookSST)  {
             return "";
         }
-
+        
         var o = [
                 XML_HEADER
             ];
@@ -45186,10 +45186,10 @@ var XLSX = {};
         }));
         for (var i = 0; i != sst.length; ++i) {
             if (sst[i] == null)  {
-
+                
                 continue;
             }
-
+            
             var s = sst[i];
             var sitag = "<si>";
             if (s.r)  {
@@ -45200,7 +45200,7 @@ var XLSX = {};
                 if (s.t.match(straywsregex))  {
                     sitag += ' xml:space="preserve"';
                 }
-
+                
                 sitag += ">" + escapexml(s.t) + "</t>";
             }
             sitag += "</si>";
@@ -45254,7 +45254,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(8);
         }
-
+        
         o.write_shift(4, sst.Count);
         o.write_shift(4, sst.Unique);
         return o;
@@ -45294,7 +45294,7 @@ var XLSX = {};
                 R
             ];
         }
-
+        
         var H6 = 0,
             S = 0,
             L2 = (M + m);
@@ -45364,7 +45364,7 @@ var XLSX = {};
                     break;
             };
         }
-
+        
         for (var i = 0; i != 3; ++i) rgb[i] = Math.round(rgb[i] * 255);
         return rgb;
     }
@@ -45373,7 +45373,7 @@ var XLSX = {};
         if (tint === 0)  {
             return hex;
         }
-
+        
         var hsl = rgb2HSL(hex2RGB(hex));
         if (tint < 0)  {
             hsl[2] = hsl[2] * (1 + tint);
@@ -45381,7 +45381,7 @@ var XLSX = {};
         else  {
             hsl[2] = 1 - (1 - hsl[2]) * (1 - tint);
         }
-
+        
         return rgb2Hex(hsl2RGB(hsl));
     }
     /* 18.3.1.13 width calculations */
@@ -45413,11 +45413,11 @@ var XLSX = {};
                 }
                 ;
             }
-
+            
             if (MDW === MAX_MDW)  {
                 MDW = DEF_MDW;
             }
-
+            
         }
     }
     var styles = {};
@@ -45532,7 +45532,7 @@ var XLSX = {};
                         if (j > 0)  {
                             SSF.load(f, j);
                         }
-
+                        
                     };
                     break;
                 default:
@@ -45580,7 +45580,7 @@ var XLSX = {};
         if (o.length === 1)  {
             return "";
         }
-
+        
         o[o.length] = ("</numFmts>");
         o[0] = writextag('numFmts', null, {
             count: o.length - 2
@@ -45645,7 +45645,7 @@ var XLSX = {};
         if (o.length === 2)  {
             return "";
         }
-
+        
         o[0] = writextag('cellXfs', null, {
             count: o.length - 2
         }).replace("/>", ">");
@@ -45663,21 +45663,21 @@ var XLSX = {};
                 if ((t = data.match(numFmtRegex)))  {
                     parse_numFmts(t, opts);
                 }
-
+                
                 /* fonts CT_Fonts ? */
                 //	if((t=data.match(/<fonts([^>]*)>.*<\/fonts>/))) parse_fonts(t, opts);
                 /* fills CT_Fills */
                 if ((t = data.match(fillsRegex)))  {
                     parse_fills(t, opts);
                 }
-
+                
                 /* borders CT_Borders ? */
                 /* cellStyleXfs CT_CellStyleXfs ? */
                 /* cellXfs CT_CellXfs ? */
                 if ((t = data.match(cellXfRegex)))  {
                     parse_cellXfs(t, opts);
                 }
-
+                
                 /* dxfs CT_Dxfs ? */
                 /* tableStyles CT_TableStyles ? */
                 /* colors CT_Colors ? */
@@ -45699,7 +45699,7 @@ var XLSX = {};
         if ((w = write_numFmts(wb.SSF)) != null)  {
             o[o.length] = w;
         }
-
+        
         o[o.length] = ('<fonts count="1"><font><sz val="12"/><color theme="1"/><name val="Calibri"/><family val="2"/><scheme val="minor"/></font></fonts>');
         o[o.length] = ('<fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills>');
         o[o.length] = ('<borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>');
@@ -45707,7 +45707,7 @@ var XLSX = {};
         if ((w = write_cellXfs(opts.cellXfs)))  {
             o[o.length] = (w);
         }
-
+        
         o[o.length] = ('<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>');
         o[o.length] = ('<dxfs count="0"/>');
         o[o.length] = ('<tableStyles count="0" defaultTableStyle="TableStyleMedium9" defaultPivotStyle="PivotStyleMedium4"/>');
@@ -46020,14 +46020,14 @@ var XLSX = {};
         if (!data || data.length === 0)  {
             return themes;
         }
-
+        
         themes.themeElements = {};
         var t;
         /* clrScheme CT_ColorScheme */
         if ((t = data.match(clrsregex)))  {
             parse_clrScheme(t, opts);
         }
-
+        
         return themes;
     }
     function write_theme() {
@@ -46077,11 +46077,11 @@ var XLSX = {};
         if (flags & 2)  {
             out.l = '1';
         }
-
+        
         if (flags & 8)  {
             out.a = '1';
         }
-
+        
         return out;
     }
     /* 18.6 Calculation Chain */
@@ -46112,10 +46112,10 @@ var XLSX = {};
             var canonicalpath = dirComments[i];
             var comments = parse_cmnt(getzipdata(zip, canonicalpath.replace(/^\//, ''), true), canonicalpath, opts);
             if (!comments || !comments.length)  {
-
+                
                 continue;
             }
-
+            
             // find the sheets targeted by these comments
             var sheetNames = keys(sheets);
             for (var j = 0; j != sheetNames.length; ++j) {
@@ -46126,7 +46126,7 @@ var XLSX = {};
                     if (rel)  {
                         insertCommentsIntoSheet(sheetName, sheets[sheetName], comments);
                     }
-
+                    
                 }
             }
         }
@@ -46142,29 +46142,29 @@ var XLSX = {};
                 if (range.s.r > thisCell.r)  {
                     range.s.r = thisCell.r;
                 }
-
+                
                 if (range.e.r < thisCell.r)  {
                     range.e.r = thisCell.r;
                 }
-
+                
                 if (range.s.c > thisCell.c)  {
                     range.s.c = thisCell.c;
                 }
-
+                
                 if (range.e.c < thisCell.c)  {
                     range.e.c = thisCell.c;
                 }
-
+                
                 var encoded = encode_range(range);
                 if (encoded !== sheet["!ref"])  {
                     sheet["!ref"] = encoded;
                 }
-
+                
             }
             if (!cell.c)  {
                 cell.c = [];
             }
-
+            
             var o = {
                     a: comment.author,
                     t: comment.t,
@@ -46173,7 +46173,7 @@ var XLSX = {};
             if (comment.h)  {
                 o.h = comment.h;
             }
-
+            
             cell.c.push(o);
         });
     }
@@ -46182,14 +46182,14 @@ var XLSX = {};
         if (data.match(/<(?:\w+:)?comments *\/>/))  {
             return [];
         }
-
+        
         var authors = [];
         var commentList = [];
         data.match(/<(?:\w+:)?authors>([^\u2603]*)<\/(?:\w+:)?authors>/)[1].split(/<\/\w*:?author>/).forEach(function(x) {
             if (x === "" || x.trim() === "")  {
                 return;
             }
-
+            
             authors.push(x.match(/<(?:\w+:)?author[^>]*>(.*)/)[1]);
         });
         (data.match(/<(?:\w+:)?commentList>([^\u2603]*)<\/(?:\w+:)?commentList>/) || [
@@ -46199,7 +46199,7 @@ var XLSX = {};
             if (x === "" || x.trim() === "")  {
                 return;
             }
-
+            
             var y = parsexmltag(x.match(/<(?:\w+:)?comment[^>]*>/)[0]);
             var comment = {
                     author: y.authorId && authors[y.authorId] ? authors[y.authorId] : undefined,
@@ -46210,12 +46210,12 @@ var XLSX = {};
             if (opts.sheetRows && opts.sheetRows <= cell.r)  {
                 return;
             }
-
+            
             var textMatch = x.match(/<text>([^\u2603]*)<\/text>/);
             if (!textMatch || !textMatch[1])  {
                 return;
             }
-
+            
             // a comment may contain an empty text tag.
             var rt = parse_si(textMatch[1]);
             comment.r = rt.r;
@@ -46223,7 +46223,7 @@ var XLSX = {};
             if (opts.cellHTML)  {
                 comment.h = rt.h;
             }
-
+            
             commentList.push(comment);
         });
         return commentList;
@@ -46345,27 +46345,27 @@ var XLSX = {};
                     else  {
                         p.w = SSF._general_num(p.v, _ssfopts);
                     }
-
+                    
                 } else if (p.v === undefined)  {
                     return "";
                 }
                 else  {
                     p.w = SSF._general(p.v, _ssfopts);
                 }
-
+                
             } else  {
                 p.w = SSF.format(fmtid, p.v, _ssfopts);
             }
-
+            
             if (opts.cellNF)  {
                 p.z = SSF._table[fmtid];
             }
-
+            
         } catch (e) {
             if (opts.WTF)  {
                 throw e;
             }
-
+            
         }
         if (fillid)  {
             try {
@@ -46375,30 +46375,30 @@ var XLSX = {};
                     if (opts.WTF)  {
                         p.s.fgColor.raw_rgb = themes.themeElements.clrScheme[p.s.fgColor.theme].rgb;
                     }
-
+                    
                 }
                 if (p.s.bgColor && p.s.bgColor.theme) {
                     p.s.bgColor.rgb = rgb_tint(themes.themeElements.clrScheme[p.s.bgColor.theme].rgb, p.s.bgColor.tint || 0);
                     if (opts.WTF)  {
                         p.s.bgColor.raw_rgb = themes.themeElements.clrScheme[p.s.bgColor.theme].rgb;
                     }
-
+                    
                 }
             } catch (e) {
                 if (opts.WTF)  {
                     throw e;
                 }
-
+                
             };
         }
-
+        
     }
     function parse_ws_xml_dim(ws, s) {
         var d = safe_decode_range(s);
         if (d.s.r <= d.e.r && d.s.c <= d.e.c && d.s.r >= 0 && d.s.c >= 0)  {
             ws["!ref"] = encode_range(d);
         }
-
+        
     }
     var mergecregex = /<mergeCell ref="[A-Z0-9:]+"\s*\/>/g;
     var sheetdataregex = /<(?:\w+:)?sheetData>([^\u2603]*)<\/(?:\w+:)?sheetData>/;
@@ -46410,7 +46410,7 @@ var XLSX = {};
         if (!data)  {
             return data;
         }
-
+        
         /* 18.3.1.99 worksheet CT_Worksheet */
         var s = {};
         /* 18.3.1.35 dimension CT_SheetDimension ? */
@@ -46420,7 +46420,7 @@ var XLSX = {};
             if (ref != null)  {
                 parse_ws_xml_dim(s, ref[1]);
             }
-
+            
         }
         /* 18.3.1.55 mergeCells CT_MergeCells */
         var mergecells = [];
@@ -46450,16 +46450,16 @@ var XLSX = {};
         if (mtch)  {
             parse_ws_xml_data(mtch[1], s, opts, refguess);
         }
-
+        
         /* 18.3.1.48 hyperlinks CT_Hyperlinks */
         if (data.indexOf("</hyperlinks>") !== -1)  {
             parse_ws_xml_hlinks(s, data.match(hlinkregex), rels);
         }
-
+        
         if (!s["!ref"] && refguess.e.c >= refguess.s.c && refguess.e.r >= refguess.s.r)  {
             s["!ref"] = encode_range(refguess);
         }
-
+        
         if (opts.sheetRows > 0 && s["!ref"]) {
             var tmpref = safe_decode_range(s["!ref"]);
             if (opts.sheetRows < +tmpref.e.r) {
@@ -46467,19 +46467,19 @@ var XLSX = {};
                 if (tmpref.e.r > refguess.e.r)  {
                     tmpref.e.r = refguess.e.r;
                 }
-
+                
                 if (tmpref.e.r < tmpref.s.r)  {
                     tmpref.s.r = tmpref.e.r;
                 }
-
+                
                 if (tmpref.e.c > refguess.e.c)  {
                     tmpref.e.c = refguess.e.c;
                 }
-
+                
                 if (tmpref.e.c < tmpref.s.c)  {
                     tmpref.s.c = tmpref.e.c;
                 }
-
+                
                 s["!fullref"] = s["!ref"];
                 s["!ref"] = encode_range(tmpref);
             }
@@ -46487,18 +46487,18 @@ var XLSX = {};
         if (mergecells.length > 0)  {
             s["!merges"] = mergecells;
         }
-
+        
         if (columns.length > 0)  {
             s["!cols"] = columns;
         }
-
+        
         return s;
     }
     function write_ws_xml_merges(merges) {
         if (merges.length == 0)  {
             return "";
         }
-
+        
         var o = '<mergeCells count="' + merges.length + '">';
         for (var i = 0; i != merges.length; ++i) o += '<mergeCell ref="' + encode_range(merges[i]) + '"/>';
         return o + '</mergeCells>';
@@ -46509,14 +46509,14 @@ var XLSX = {};
             if (!val.ref)  {
                 return;
             }
-
+            
             var rel = rels['!id'][val.id];
             if (rel) {
                 val.Target = rel.Target;
                 if (val.location)  {
                     val.Target += "#" + val.location;
                 }
-
+                
                 val.Rel = rel;
             }
             var rng = safe_decode_range(val.ref);
@@ -46531,7 +46531,7 @@ var XLSX = {};
                         v: undefined
                     };
                 }
-
+                
                 s[addr].l = val;
             }
         }
@@ -46563,10 +46563,10 @@ var XLSX = {};
             col, width;
         for (var i = 0; i != cols.length; ++i) {
             if (!(col = cols[i]))  {
-
+                
                 continue;
             }
-
+            
             var p = {
                     min: i + 1,
                     max: i + 1
@@ -46579,7 +46579,7 @@ var XLSX = {};
             else if (col.wch)  {
                 width = col.wch;
             }
-
+            
             if (width > -1) {
                 p.width = char2width(width);
                 p.customWidth = 1;
@@ -46593,7 +46593,7 @@ var XLSX = {};
         if (cell.v === undefined)  {
             return "";
         }
-
+        
         var vv = "";
         switch (cell.t) {
             case 'b':
@@ -46616,7 +46616,7 @@ var XLSX = {};
         if (os !== 0)  {
             o.s = os;
         }
-
+        
         switch (cell.t) {
             case 'n':
                 break;
@@ -46668,10 +46668,10 @@ var XLSX = {};
                     x = marr[mt].trim();
                     var xlen = x.length;
                     if (xlen === 0)  {
-
+                        
                         continue;
                     }
-
+                    
                     /* 18.3.1.73 row CT_Row */
                     for (ri = 0; ri < xlen; ++ri) if (x.charCodeAt(ri) === 62)  {
                         break;
@@ -46683,27 +46683,27 @@ var XLSX = {};
                     tagr = typeof tag.r !== 'undefined' ? parseInt(tag.r, 10) : tagr + 1;
                     tagc = -1;
                     if (opts.sheetRows && opts.sheetRows < tagr)  {
-
+                        
                         continue;
                     }
-
+                    
                     if (guess.s.r > tagr - 1)  {
                         guess.s.r = tagr - 1;
                     }
-
+                    
                     if (guess.e.r < tagr - 1)  {
                         guess.e.r = tagr - 1;
                     }
-
+                    
                     /* 18.3.1.4 c CT_Cell */
                     cells = x.substr(ri).split(cellregex);
                     for (ri = typeof tag.r === 'undefined' ? 0 : 1; ri != cells.length; ++ri) {
                         x = cells[ri].trim();
                         if (x.length === 0)  {
-
+                            
                             continue;
                         }
-
+                        
                         cref = x.match(rregex);
                         idx = ri;
                         i = 0;
@@ -46716,7 +46716,7 @@ var XLSX = {};
                                 if ((cc = d.charCodeAt(i) - 64) < 1 || cc > 26)  {
                                     break;
                                 }
-
+                                
                                 idx = 26 * idx + cc;
                             }
                             --idx;
@@ -46724,7 +46724,7 @@ var XLSX = {};
                         } else  {
                             ++tagc;
                         }
-
+                        
                         for (i = 0; i != x.length; ++i) if (x.charCodeAt(i) === 62)  {
                             break;
                         }
@@ -46737,7 +46737,7 @@ var XLSX = {};
                                 c: tagc
                             });
                         }
-
+                        
                         d = x.substr(i);
                         p = {
                             t: ""
@@ -46745,31 +46745,31 @@ var XLSX = {};
                         if ((cref = d.match(match_v)) !== null && cref[1] !== '')  {
                             p.v = unescapexml(cref[1]);
                         }
-
+                        
                         if (opts.cellFormula && (cref = d.match(match_f)) !== null)  {
                             p.f = unescapexml(cref[1]);
                         }
-
+                        
                         /* SCHEMA IS ACTUALLY INCORRECT HERE.  IF A CELL HAS NO T, EMIT "" */
                         if (tag.t === undefined && p.v === undefined) {
                             if (!opts.sheetStubs)  {
-
+                                
                                 continue;
                             }
-
+                            
                             p.t = "str";
                         } else  {
                             p.t = tag.t || "n";
                         }
-
+                        
                         if (guess.s.c > idx)  {
                             guess.s.c = idx;
                         }
-
+                        
                         if (guess.e.c < idx)  {
                             guess.e.c = idx;
                         }
-
+                        
                         /* 18.18.11 t ST_CellType */
                         switch (p.t) {
                             case 'n':
@@ -46825,11 +46825,11 @@ var XLSX = {};
                                 if (cf.numFmtId != null)  {
                                     fmtid = cf.numFmtId;
                                 }
-
+                                
                                 if (opts.cellStyles && cf.fillId != null)  {
                                     fillid = cf.fillId;
                                 }
-
+                                
                             }
                         }
                         safe_format(p, fmtid, fillid, opts);
@@ -46853,21 +46853,21 @@ var XLSX = {};
             for (C = range.s.c; C <= range.e.c; ++C) {
                 ref = cols[C] + rr;
                 if (ws[ref] === undefined)  {
-
+                    
                     continue;
                 }
-
+                
                 if ((cell = write_ws_xml_cell(ws[ref], ref, ws, opts, idx, wb)) != null)  {
                     r.push(cell);
                 }
-
+                
             }
             if (r.length > 0)  {
                 o[o.length] = (writextag('row', r.join(""), {
                     r: rr
                 }));
             }
-
+            
         }
         return o.join("");
     }
@@ -46887,26 +46887,26 @@ var XLSX = {};
         if (ws === undefined)  {
             ws = {};
         }
-
+        
         var ref = ws['!ref'];
         if (ref === undefined)  {
             ref = 'A1';
         }
-
+        
         o[o.length] = (writextag('dimension', null, {
             'ref': ref
         }));
         if (ws['!cols'] !== undefined && ws['!cols'].length > 0)  {
             o[o.length] = (write_ws_xml_cols(ws, ws['!cols']));
         }
-
+        
         o[sidx = o.length] = '<sheetData/>';
         if (ws['!ref'] !== undefined) {
             rdata = write_ws_xml_data(ws, opts, idx, wb);
             if (rdata.length > 0)  {
                 o[o.length] = (rdata);
             }
-
+            
         }
         if (o.length > sidx + 1) {
             o[o.length] = ('</sheetData>');
@@ -46915,7 +46915,7 @@ var XLSX = {};
         if (ws['!merges'] !== undefined && ws['!merges'].length > 0)  {
             o[o.length] = (write_ws_xml_merges(ws['!merges']));
         }
-
+        
         if (o.length > 2) {
             o[o.length] = ('</worksheet>');
             o[1] = o[1].replace("/>", ">");
@@ -46951,7 +46951,7 @@ var XLSX = {};
         if (o == null)  {
             o = new_buf(8);
         }
-
+        
         return write_Cell(val, o);
     }
     /* [MS-XLSB] 2.4.304 BrtCellBool */
@@ -47030,7 +47030,7 @@ var XLSX = {};
             /* TODO */
             data.l += length - 9;
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.4.648 BrtFmlaError */
@@ -47049,7 +47049,7 @@ var XLSX = {};
             /* TODO */
             data.l += length - 9;
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.4.649 BrtFmlaNum */
@@ -47068,7 +47068,7 @@ var XLSX = {};
             /* TODO */
             data.l += length - 16;
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.4.650 BrtFmlaString */
@@ -47086,7 +47086,7 @@ var XLSX = {};
         } else  {
             data.l = start + length;
         }
-
+        
         return o;
     }
     /* [MS-XLSB] 2.4.676 BrtMergeCell */
@@ -47113,13 +47113,13 @@ var XLSX = {};
         if (!data)  {
             return data;
         }
-
+        
         if (!rels)  {
             rels = {
                 '!id': {}
             };
         }
-
+        
         var s = {};
         var ref;
         var refguess = {
@@ -47140,7 +47140,7 @@ var XLSX = {};
             if (end)  {
                 return;
             }
-
+            
             switch (R.n) {
                 case 'BrtWsDim':
                     ref = val;
@@ -47254,7 +47254,7 @@ var XLSX = {};
                         if (val.loc)  {
                             val.Target += "#" + val.loc;
                         }
-
+                        
                         val.Rel = rel;
                     };
                     for (R = val.rfx.s.r; R <= val.rfx.e.r; ++R) for (C = val.rfx.s.c; C <= val.rfx.e.c; ++C) {
@@ -47268,7 +47268,7 @@ var XLSX = {};
                                 v: undefined
                             };
                         }
-
+                        
                         s[addr].l = val;
                     };
                     break;
@@ -47543,7 +47543,7 @@ var XLSX = {};
         if (!s["!ref"] && (refguess.s.r < 1000000 || ref.e.r > 0 || ref.e.c > 0 || ref.s.r > 0 || ref.s.c > 0))  {
             s["!ref"] = encode_range(ref);
         }
-
+        
         if (opts.sheetRows && s["!ref"]) {
             var tmpref = safe_decode_range(s["!ref"]);
             if (opts.sheetRows < +tmpref.e.r) {
@@ -47551,19 +47551,19 @@ var XLSX = {};
                 if (tmpref.e.r > refguess.e.r)  {
                     tmpref.e.r = refguess.e.r;
                 }
-
+                
                 if (tmpref.e.r < tmpref.s.r)  {
                     tmpref.s.r = tmpref.e.r;
                 }
-
+                
                 if (tmpref.e.c > refguess.e.c)  {
                     tmpref.e.c = refguess.e.c;
                 }
-
+                
                 if (tmpref.e.c < tmpref.s.c)  {
                     tmpref.s.c = tmpref.e.c;
                 }
-
+                
                 s["!fullref"] = s["!ref"];
                 s["!ref"] = encode_range(tmpref);
             }
@@ -47571,7 +47571,7 @@ var XLSX = {};
         if (mergecells.length > 0)  {
             s["!merges"] = mergecells;
         }
-
+        
         return s;
     }
     /* TODO: something useful -- this is a stub */
@@ -47579,7 +47579,7 @@ var XLSX = {};
         if (cell.v === undefined)  {
             return "";
         }
-
+        
         var vv = "";
         switch (cell.t) {
             case 'b':
@@ -47635,13 +47635,13 @@ var XLSX = {};
                 if (R === range.s.r)  {
                     cols[C] = encode_col(C);
                 }
-
+                
                 ref = cols[C] + rr;
                 if (!ws[ref])  {
-
+                    
                     continue;
                 }
-
+                
                 /* write cell */
                 write_ws_bin_cell(ba, ws[ref], R, C, opts);
             }
@@ -47941,7 +47941,7 @@ var XLSX = {};
                 if (w[z[0]] == null)  {
                     w[z[0]] = z[1];
                 }
-
+                
             }
         }
     }
@@ -47951,7 +47951,7 @@ var XLSX = {};
             if (target[z[0]] == null)  {
                 target[z[0]] = z[1];
             }
-
+            
         }
     }
     function parse_wb_defaults(wb) {
@@ -48153,7 +48153,7 @@ var XLSX = {};
         if (XMLNS.main.indexOf(wb.xmlns) === -1)  {
             throw new Error("Unknown Namespace: " + wb.xmlns);
         }
-
+        
         parse_wb_defaults(wb);
         return wb;
     }
@@ -48206,7 +48206,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(127);
         }
-
+        
         o.write_shift(4, data.hsState);
         o.write_shift(4, data.iTabID);
         write_RelID(data.strRelID, o);
@@ -48227,7 +48227,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(8);
         }
-
+        
         o.write_shift(4, 0);
         o.write_shift(4, 0);
         return o;
@@ -48369,7 +48369,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(127);
         }
-
+        
         for (var i = 0; i != 4; ++i) o.write_shift(4, 0);
         write_XLWideString("SheetJS", o);
         write_XLWideString(XLSX.version, o);
@@ -48389,7 +48389,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(26);
         }
-
+        
         o.write_shift(4, 0);
         /* force recalc */
         o.write_shift(4, 1);
@@ -48404,7 +48404,7 @@ var XLSX = {};
         if (!o)  {
             o = new_buf(1);
         }
-
+        
         o.write_shift(1, 0);
         return o;
     }
@@ -51769,11 +51769,11 @@ function write_cc(data, name, opts) {
         if (typeof module !== "undefined" && typeof require !== 'undefined' && typeof ODS === 'undefined')  {
             ODS = require('./dist/od' + 's');
         }
-
+        
         if (typeof ODS === 'undefined' || !ODS.parse_ods)  {
             throw new Error("Unsupported ODS");
         }
-
+        
         return ODS.parse_ods(zip, opts);
     }
     function fix_opts_func(defaults) {
@@ -51783,11 +51783,11 @@ function write_cc(data, name, opts) {
                 if (opts[d[0]] === undefined)  {
                     opts[d[0]] = d[1];
                 }
-
+                
                 if (d[2] === 'n')  {
                     opts[d[0]] = Number(opts[d[0]]);
                 }
-
+                
             }
         };
     }
@@ -51875,7 +51875,7 @@ function write_cc(data, name, opts) {
         if (!wbrels)  {
             return 0;
         }
-
+        
         try {
             wbrels = sheets.map(function pwbr(w) {
                 return [
@@ -51896,7 +51896,7 @@ function write_cc(data, name, opts) {
             if (opts.WTF)  {
                 throw e;
             }
-
+            
         }
     }
     var nodirs = function nodirs(x) {
@@ -51911,7 +51911,7 @@ function write_cc(data, name, opts) {
         if (safegetzipfile(zip, 'META-INF/manifest.xml'))  {
             return parse_ods(zip, opts);
         }
-
+        
         var entries = keys(zip.files).filter(nodirs).sort();
         var dir = parse_ct(getzipdata(zip, '[Content_Types].xml'), opts);
         var xlsb = false;
@@ -51921,41 +51921,41 @@ function write_cc(data, name, opts) {
             if (getzipdata(zip, binname, true))  {
                 dir.workbooks.push(binname);
             }
-
+            
         }
         if (dir.workbooks.length === 0) {
             binname = "xl/workbook.bin";
             if (!getzipfile(zip, binname, true))  {
                 throw new Error("Could not find workbook");
             }
-
+            
             dir.workbooks.push(binname);
             xlsb = true;
         }
         if (dir.workbooks[0].substr(-3) == "bin")  {
             xlsb = true;
         }
-
+        
         if (xlsb)  {
             set_cp(1200);
         }
-
+        
         if (!opts.bookSheets && !opts.bookProps) {
             strs = [];
             if (dir.sst)  {
                 strs = parse_sst(getzipdata(zip, dir.sst.replace(/^\//, '')), dir.sst, opts);
             }
-
+            
             styles = {};
             if (dir.style)  {
                 styles = parse_sty(getzipdata(zip, dir.style.replace(/^\//, '')), dir.style, opts);
             }
-
+            
             themes = {};
             if (opts.cellStyles && dir.themes.length)  {
                 themes = parse_theme(getzipdata(zip, dir.themes[0].replace(/^\//, ''), true), dir.themes[0], opts);
             }
-
+            
         }
         var wb = parse_wb(getzipdata(zip, dir.workbooks[0].replace(/^\//, '')), dir.workbooks[0], opts);
         var props = {},
@@ -51965,13 +51965,13 @@ function write_cc(data, name, opts) {
             if (propdata)  {
                 props = parse_core_props(propdata);
             }
-
+            
             if (dir.extprops.length !== 0) {
                 propdata = getzipdata(zip, dir.extprops[0].replace(/^\//, ''), true);
                 if (propdata)  {
                     parse_ext_props(propdata, props);
                 }
-
+                
             }
         }
         var custprops = {};
@@ -51981,7 +51981,7 @@ function write_cc(data, name, opts) {
                 if (propdata)  {
                     custprops = parse_cust_props(propdata, opts);
                 }
-
+                
             }
         }
         var out = {};
@@ -51994,7 +51994,7 @@ function write_cc(data, name, opts) {
                     return x.name;
                 });
             }
-
+            
             if (opts.bookProps) {
                 out.Props = props;
                 out.Custprops = custprops;
@@ -52002,18 +52002,18 @@ function write_cc(data, name, opts) {
             if (typeof sheets !== 'undefined')  {
                 out.SheetNames = sheets;
             }
-
+            
             if (opts.bookSheets ? out.SheetNames : opts.bookProps)  {
                 return out;
             }
-
+            
         }
         sheets = {};
         var deps = {};
         if (opts.bookDeps && dir.calcchain)  {
             deps = parse_cc(getzipdata(zip, dir.calcchain.replace(/^\//, '')), dir.calcchain, opts);
         }
-
+        
         var i = 0;
         var sheetRels = {};
         var path, relsPath;
@@ -52031,7 +52031,7 @@ function write_cc(data, name, opts) {
         if (wbrels)  {
             wbrels = safe_parse_wbrels(wbrels, wb.Sheets);
         }
-
+        
         /* Numbers iOS hack */
         var nmode = (getzipdata(zip, "xl/worksheets/sheet.xml", true)) ? 1 : 0;
         for (i = 0; i != props.Worksheets; ++i) {
@@ -52048,7 +52048,7 @@ function write_cc(data, name, opts) {
         if (dir.comments)  {
             parse_comments(zip, dir.comments, sheets, sheetRels, opts);
         }
-
+        
         out = {
             Directory: dir,
             Workbook: wb,
@@ -52073,7 +52073,7 @@ function write_cc(data, name, opts) {
             else if (dir.defaults.bin === 'application/vnd.ms-office.vbaProject')  {
                 out.vbaraw = getzipdata(zip, 'xl/vbaProject.bin', true);
             }
-
+            
         }
         return out;
     }
@@ -52081,18 +52081,18 @@ function write_cc(data, name, opts) {
         if (!relobj)  {
             relobj = {};
         }
-
+        
         if (!rels['!id'])  {
             rels['!id'] = {};
         }
-
+        
         relobj.Id = 'rId' + rId;
         relobj.Type = type;
         relobj.Target = f;
         if (rels['!id'][relobj.Id])  {
             throw new Error("Cannot rewrite rId " + rId);
         }
-
+        
         rels['!id'][relobj.Id] = relobj;
         rels[('/' + relobj.Target).replace("//", "/")] = relobj;
     }
@@ -52146,7 +52146,7 @@ function write_cc(data, name, opts) {
         if (!wb.Props)  {
             wb.Props = {};
         }
-
+        
         wb.Props.SheetNames = wb.SheetNames;
         wb.Props.Worksheets = wb.SheetNames.length;
         zip.file(f, write_ext_props(wb.Props, opts));
@@ -52196,7 +52196,7 @@ function write_cc(data, name, opts) {
         if (!o.type)  {
             o.type = (has_buf && Buffer.isBuffer(data)) ? "buffer" : "base64";
         }
-
+        
         switch (o.type) {
             case "base64":
                 zip = new jszip(d, {
@@ -52322,15 +52322,15 @@ function write_cc(data, name, opts) {
         if (ce === undefined || typeof ce === 'number')  {
             return encode_range(cs.s, cs.e);
         }
-
+        
         if (typeof cs !== 'string')  {
             cs = encode_cell(cs);
         }
-
+        
         if (typeof ce !== 'string')  {
             ce = encode_cell(ce);
         }
-
+        
         return cs == ce ? cs : cs + ":" + ce;
     }
     function safe_decode_range(range) {
@@ -52352,7 +52352,7 @@ function write_cc(data, name, opts) {
             if ((cc = range.charCodeAt(i) - 64) < 1 || cc > 26)  {
                 break;
             }
-
+            
             idx = 26 * idx + cc;
         }
         o.s.c = --idx;
@@ -52360,7 +52360,7 @@ function write_cc(data, name, opts) {
             if ((cc = range.charCodeAt(i) - 48) < 0 || cc > 9)  {
                 break;
             }
-
+            
             idx = 10 * idx + cc;
         }
         o.s.r = --idx;
@@ -52373,7 +52373,7 @@ function write_cc(data, name, opts) {
             if ((cc = range.charCodeAt(i) - 64) < 1 || cc > 26)  {
                 break;
             }
-
+            
             idx = 26 * idx + cc;
         }
         o.e.c = --idx;
@@ -52381,7 +52381,7 @@ function write_cc(data, name, opts) {
             if ((cc = range.charCodeAt(i) - 48) < 0 || cc > 9)  {
                 break;
             }
-
+            
             idx = 10 * idx + cc;
         }
         o.e.r = --idx;
@@ -52393,11 +52393,11 @@ function write_cc(data, name, opts) {
                 return (cell.w = SSF.format(cell.z, v));
             } catch (e) {};
         }
-
+        
         if (!cell.XF)  {
             return v;
         }
-
+        
         try {
             return (cell.w = SSF.format(cell.XF.ifmt || 0, v));
         } catch (e) {
@@ -52408,15 +52408,15 @@ function write_cc(data, name, opts) {
         if (cell == null || cell.t == null)  {
             return "";
         }
-
+        
         if (cell.w !== undefined)  {
             return cell.w;
         }
-
+        
         if (v === undefined)  {
             return safe_format_cell(cell, cell.v);
         }
-
+        
         return safe_format_cell(cell, v);
     }
     function sheet_to_json(sheet, opts) {
@@ -52431,7 +52431,7 @@ function write_cc(data, name, opts) {
         if (sheet == null || sheet["!ref"] == null)  {
             return [];
         }
-
+        
         range = o.range !== undefined ? o.range : sheet["!ref"];
         if (o.header === 1)  {
             header = 1;
@@ -52442,7 +52442,7 @@ function write_cc(data, name, opts) {
         else if (Array.isArray(o.header))  {
             header = 3;
         }
-
+        
         switch (typeof range) {
             case 'string':
                 r = safe_decode_range(range);
@@ -52457,7 +52457,7 @@ function write_cc(data, name, opts) {
         if (header > 0)  {
             offset = 0;
         }
-
+        
         var rr = encode_row(r.s.r);
         var cols = new Array(r.e.c - r.s.c + 1);
         var out = new Array(r.e.r - r.s.r - offset + 1);
@@ -52477,7 +52477,7 @@ function write_cc(data, name, opts) {
                     break;
                 default:
                     if (val === undefined)  {
-
+                        
                         continue;
                     }
                     ;
@@ -52493,14 +52493,14 @@ function write_cc(data, name, opts) {
             for (C = r.s.c; C <= r.e.c; ++C) {
                 val = sheet[cols[C] + rr];
                 if (val === undefined || val.t === undefined)  {
-
+                    
                     continue;
                 }
-
+                
                 v = val.v;
                 switch (val.t) {
                     case 'e':
-
+                        
                         continue;
                     case 's':
                     case 'str':
@@ -52519,7 +52519,7 @@ function write_cc(data, name, opts) {
             if (isempty === false)  {
                 out[outi++] = row;
             }
-
+            
         }
         out.length = outi;
         return out;
@@ -52535,7 +52535,7 @@ function write_cc(data, name, opts) {
         if (sheet == null || sheet["!ref"] == null)  {
             return "";
         }
-
+        
         var r = safe_decode_range(sheet["!ref"]);
         var FS = o.FS !== undefined ? o.FS : ",",
             fs = FS.charCodeAt(0);
@@ -52575,7 +52575,7 @@ function write_cc(data, name, opts) {
         if (sheet == null || sheet["!ref"] == null)  {
             return "";
         }
-
+        
         var r = safe_decode_range(sheet['!ref']),
             rr = "",
             cols = [],
@@ -52590,10 +52590,10 @@ function write_cc(data, name, opts) {
                 x = sheet[y];
                 val = "";
                 if (x === undefined)  {
-
+                    
                     continue;
                 }
-
+                
                 if (x.f != null)  {
                     val = x.f;
                 }
@@ -52601,13 +52601,13 @@ function write_cc(data, name, opts) {
                     val = "'" + x.w;
                 }
                 else if (x.v === undefined)  {
-
+                    
                     continue;
                 }
                 else  {
                     val = "" + x.v;
                 }
-
+                
                 cmds[i++] = y + "=" + val;
             }
         }
@@ -53360,9 +53360,6 @@ Ext.define('sl.panel.grid.DisplayGrid', {
         'Ext.grid.Panel',
         'Ext.toolbar.Separator'
     ],
-    defaults: {
-        sortable: true
-    },
     config: {
         /**
              * @cfg {Boolean} [includeSearch=true]
@@ -53533,6 +53530,7 @@ Ext.define('sl.panel.grid.DisplayGrid', {
          * Set `true` to keep a selected row in view on resize event
          */
     keepSelectedInView: false,
+    disableCellWrappedColumns: false,
     /**
          * @event beforeuiupdate
          * @preventable
@@ -54503,6 +54501,9 @@ Ext.define('sl.panel.grid.DisplayGrid', {
             }
             if (grid.stateful && Ext.isEmpty(col.stateId)) {
                 col.stateId = col.dataIndex + '-' + grid.stateId;
+            }
+            if (!grid.disableCellWrappedColumns) {
+                col.cellWrap = true;
             }
         });
     },

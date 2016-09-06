@@ -31,7 +31,8 @@ Ext.application({
     views: [
         'MyViewport',
         'UsersGrid',
-        'TodosGrid'
+        'TodosGrid',
+        'PostsGrid'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

@@ -1,0 +1,96 @@
+{
+    "type": "sl.panel.grid.EditorGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoCancel": true,
+        "clicksToEdit": 2,
+        "clicksToMoveEditor": 2,
+        "columnLines": true,
+        "designer|userAlias": "postsgrid",
+        "designer|userClassName": "PostsGrid",
+        "errorSummary": true,
+        "filterLocal": true,
+        "filterParamPrefix": "filter",
+        "filterUpdateBuffer": 550,
+        "height": null,
+        "includeRefreshBtn": true,
+        "includeRowCount": true,
+        "includeSearch": true,
+        "includeValidationStatus": true,
+        "isLocalExcelExport": true,
+        "moveEditorOnEnter": true,
+        "reference": "posts",
+        "searchAlign": "right",
+        "searchWidth": 200,
+        "selModelMode": "MULTI",
+        "showEditCursor": true,
+        "store": [
+            "{postsStore}"
+        ],
+        "title": "Todo",
+        "useDefaultButtons": true,
+        "useDefaultDeleteConfig": true,
+        "useDefaultEnterKeyHandler": true,
+        "useDefaultNewConfig": true,
+        "useDefaultSaveConfig": true,
+        "useDefaultUndoDeleteConfig": true,
+        "useStewartsRenderer": true,
+        "width": null
+    },
+    "name": "TodosGrid1",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
+    "viewControllerInstanceId": "315a8d62-1e6d-4938-b527-add3a196006f",
+    "viewModelInstanceId": "cfe43112-4cea-4112-9c85-2fcfcb0ee8f8",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "c967b29e-f0ee-4065-9a98-fbb1a2413d29"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cellWrap": true,
+                "dataIndex": "title",
+                "flex": 1,
+                "text": "Title"
+            },
+            "name": "MyColumn",
+            "designerId": "d43d5d3d-f5de-411e-9395-ce470bbb8728"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cellWrap": true,
+                "dataIndex": "body",
+                "flex": 2,
+                "text": "Body",
+                "variableRowHeight": true
+            },
+            "name": "MyColumn1",
+            "designerId": "caa7eab4-7d43-4509-ab38-0fab034ca3a4"
+        }
+    ]
+}

@@ -16,7 +16,8 @@
         "views": [
             "MyViewport",
             "UsersGrid",
-            "TodosGrid"
+            "TodosGrid",
+            "PostsGrid"
         ]
     },
     "name": "Application",

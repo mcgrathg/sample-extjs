@@ -21,6 +21,7 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.MyViewportViewModel',
         'Examples.view.UsersGrid',
         'Examples.view.TodosGrid',
+        'Examples.view.PostsGrid',
         'sl.panel.grid.EditorGrid',
         'sl.panel.grid.ParentChildGridPairing'
     ],
@@ -49,6 +50,10 @@ Ext.define('Examples.view.MyViewport', {
                 {
                     xtype: 'todosgrid',
                     flex: 1
+                },
+                {
+                    xtype: 'postsgrid',
+                    flex: 1
                 }
             ]
         }
@@ -61,7 +66,20 @@ Ext.define('Examples.view.MyViewport', {
             parentFieldName: 'id',
             cacheParamName: 'userId',
             childForeignKeyFieldName: 'userId',
-            directionArrow: 'bl',
+            directionArrow: 'l',
+            parentFieldsForChildGridTitle: [
+                'name'
+            ],
+            monitorUIUpdate: true
+        },
+        {
+            ptype: 'parentchild',
+            parentGridReference: 'users',
+            childGridReference: 'posts',
+            parentFieldName: 'id',
+            cacheParamName: 'userId',
+            childForeignKeyFieldName: 'userId',
+            directionArrow: 'l',
             parentFieldsForChildGridTitle: [
                 'name'
             ],
