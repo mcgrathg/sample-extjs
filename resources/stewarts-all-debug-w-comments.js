@@ -1133,6 +1133,31 @@ Ext.define('sl.override.StoreOverride', {
         }
     },
     /**
+     * @private
+     * Validates all records when Store has been loaded
+     */
+    validateOnStoreLoad: function(store, eOpts) {
+        store.validateRecords();
+    },
+    /**
+     * @private
+     * Validates when a Model instance has been edited
+     */
+    validateOnRecordChange: function(store, record, operation, modifiedFieldName, eOpts) {
+        if (operation === Ext.data.Model.EDIT) {
+            store.validateRecords([
+                record
+            ]);
+        }
+    },
+    /**
+     * @private
+     * Validates when a Model instance has been added to this Store
+     */
+    validateOnRecordAdded: function(store, records, index, eOpts) {
+        store.validateRecords(records);
+    },
+    /**
      * Validates records
      * @param {Ext.data.Model[]} [records=store.getRecords()] Array of records to validate
      * @return {Ext.data.Model[]} Array of invalid records (subset of the `records` param)
@@ -14610,27 +14635,6 @@ Ext.define('sl.data.CacheStore', {
             });
             Ext.Msg.alert("Request Error", this.reader.jsonData.error.Msg);
         }
-    },
-    validateOnStoreLoad: function(store, eOpts) {
-        store.validateRecords();
-    },
-    /**
-         * @private
-         * Validates when a Model instance has been edited
-         */
-    validateOnRecordChange: function(store, record, operation, modifiedFieldName, eOpts) {
-        if (operation === Ext.data.Model.EDIT) {
-            store.validateRecords([
-                record
-            ]);
-        }
-    },
-    /**
-         * @private
-         * Validates when a Model instance has been added to this Store
-         */
-    validateOnRecordAdded: function(store, records, index, eOpts) {
-        store.validateRecords(records);
     },
     showValidationErrorToast: function() {
         var errors = this.validateRecords();
