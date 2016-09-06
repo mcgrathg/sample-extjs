@@ -20,6 +20,7 @@ Ext.define('Examples.view.TodosGrid', {
     requires: [
         'Examples.view.TodosGridViewModel',
         'Ext.view.Table',
+        'Ext.form.field.Text',
         'Ext.grid.column.Check'
     ],
 
@@ -35,6 +36,7 @@ Ext.define('Examples.view.TodosGrid', {
     includeRefreshBtn: true,
     isLocalExcelExport: true,
     includeValidationStatus: true,
+    singleName: 'Todo',
     searchAlign: 'right',
     searchWidth: 200,
     filterLocal: true,
@@ -62,10 +64,14 @@ Ext.define('Examples.view.TodosGrid', {
             xtype: 'gridcolumn',
             dataIndex: 'title',
             text: 'Title',
-            flex: 1
+            flex: 1,
+            editor: {
+                xtype: 'textfield'
+            }
         },
         {
             xtype: 'checkcolumn',
+            readOnly: true,
             dataIndex: 'completed',
             text: 'Completed'
         }
