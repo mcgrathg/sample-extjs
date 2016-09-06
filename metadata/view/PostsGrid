@@ -28,10 +28,11 @@
         "searchWidth": 200,
         "selModelMode": "MULTI",
         "showEditCursor": true,
+        "singleName": "Post",
         "store": [
             "{postsStore}"
         ],
-        "title": "Todo",
+        "title": "Posts",
         "useDefaultButtons": true,
         "useDefaultDeleteConfig": true,
         "useDefaultEnterKeyHandler": true,

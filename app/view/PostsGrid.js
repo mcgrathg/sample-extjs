@@ -27,7 +27,7 @@ Ext.define('Examples.view.PostsGrid', {
         type: 'postsgrid'
     },
     reference: 'posts',
-    title: 'Todo',
+    title: 'Posts',
     columnLines: true,
     includeSearch: true,
     includeRowCount: true,
@@ -35,6 +35,7 @@ Ext.define('Examples.view.PostsGrid', {
     includeRefreshBtn: true,
     isLocalExcelExport: true,
     includeValidationStatus: true,
+    singleName: 'Post',
     searchAlign: 'right',
     searchWidth: 200,
     filterLocal: true,

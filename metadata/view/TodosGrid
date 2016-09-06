@@ -28,6 +28,8 @@
         "searchWidth": 200,
         "selModelMode": "MULTI",
         "showEditCursor": true,
+        "singleName": "Todo",
+        "singleton": null,
         "store": [
             "{todosStore}"
         ],
@@ -72,7 +74,19 @@
                 "text": "Title"
             },
             "name": "MyColumn2",
-            "designerId": "4af8d97a-d4ea-46b9-9244-80a6ba928470"
+            "designerId": "4af8d97a-d4ea-46b9-9244-80a6ba928470",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField",
+                    "designerId": "34dc06fd-7f29-4bde-9069-4b7e83041949"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Check",
@@ -83,10 +97,21 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "completed",
+                "readOnly": true,
                 "text": "Completed"
             },
             "name": "MyCheck",
-            "designerId": "2e59416d-7bed-4eb4-abe5-df112f409edf"
+            "configAlternates": {
+                "readOnly": "boolean"
+            },
+            "designerId": "2e59416d-7bed-4eb4-abe5-df112f409edf",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "readOnly",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }
