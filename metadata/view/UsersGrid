@@ -1,0 +1,287 @@
+{
+    "type": "sl.panel.grid.EditorGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usersgrid",
+        "designer|userClassName": "UsersGrid",
+        "height": null,
+        "reference": "users",
+        "singleName": "User",
+        "store": [
+            "{test}"
+        ],
+        "title": "Users",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6",
+    "viewControllerInstanceId": "73942749-751f-425e-ba91-13c3c9c0ce2d",
+    "viewModelInstanceId": "8f8f9778-82cd-47eb-ab57-7cc82495f8fb",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable1",
+            "designerId": "49153fdc-12e2-47bd-b649-3d8336fce920"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "text": "Name"
+            },
+            "name": "MyColumn4",
+            "designerId": "3fe95ee4-f09a-4edd-b298-2e74dca25b92",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField5",
+                    "designerId": "e2114153-f018-4d17-be4f-bb24c9a47ee4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "username",
+                "text": "Username"
+            },
+            "name": "MyColumn7",
+            "designerId": "570ee0d2-6e57-4de1-84d3-6952f3fc54b1",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField6",
+                    "designerId": "dde10712-0519-498c-9e9d-0d143184712e"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "record"
+                        ],
+                        "fn": "isEditable",
+                        "implHandler": [
+                            "return (",
+                            "    !Ext.isEmpty(record.get('name')) ?",
+                            "    true :",
+                            "    'Please enter a <b>Name</b> first'",
+                            ");"
+                        ]
+                    },
+                    "name": "isEditable",
+                    "designerId": "2ee9faec-2499-41cd-ac41-1ee1416c0a47"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Template",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "email",
+                "text": "Email"
+            },
+            "name": "MyTemplateColumn1",
+            "designerId": "d8a378aa-5bcb-49ff-8311-513a613da1b5",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<a href=\"mailto:{email}\">{email}</a>"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "9605720a-a791-4c2c-bb6d-9f8bdd7f72d1"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField7",
+                    "designerId": "2dd2109e-82c9-4fe7-b1c8-7d1216429e08"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "phone",
+                "text": "Phone"
+            },
+            "name": "MyColumn8",
+            "designerId": "e3c1b259-3b57-4048-8e16-55901a24deac",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField8",
+                    "designerId": "f8b842b0-ad77-4cda-8771-d738e5edf0d4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "website",
+                "text": "Website"
+            },
+            "name": "MyColumn9",
+            "designerId": "77c4706e-d839-447f-b5ef-e49dbe61a2aa",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField9",
+                    "designerId": "9a4ed250-bb3d-41d7-a00f-6957718a3f1e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.plugin.RowExpander",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "expandOnDblClick": false,
+                "expandOnEnter": false
+            },
+            "name": "MyRowExpanderPlugin1",
+            "designerId": "1c8059c3-baf2-47a6-b440-fba29b9c45ef",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "rowBodyTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "rowBodyTpl",
+                        "implHandler": [
+                            "<div style=\"display:inline-flex;width:100%;\">",
+                            "    <div style=\"flex:1;\">",
+                            "        <h3>Address:</h3>",
+                            "        <div><b>Street:</b> {address.street}</div>",
+                            "        <div><b>Suite:</b> {address.suite}</div>",
+                            "        <div><b>City:</b> {address.city}</div>",
+                            "        <div><b>Zip Code:</b> {address.zipcode}</div>",
+                            "    </div>",
+                            "    <div style=\"flex:2;\">",
+                            "        <h3>Company:</h2>",
+                            "        <div><b>Name:</b> {company.name}</div>",
+                            "        <div><b>Slogan:</b> {company.catchPhrase}</div>",
+                            "        <div><b>Category:</b> {company.bs}</div>",
+                            "    </div>",
+                            "</div>"
+                        ]
+                    },
+                    "name": "rowBodyTpl",
+                    "designerId": "31512ee0-e305-4b9b-99aa-e4beb9645569"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid",
+                    "defaultProperties"
+                ],
+                "fn": "onGridpanelBeforeRecordcreated",
+                "implHandler": [
+                    "defaultProperties.address = {",
+                    "    \"street\": undefined,",
+                    "    \"suite\": undefined,",
+                    "    \"city\": undefined,",
+                    "    \"zipcode\": undefined",
+                    "};",
+                    "",
+                    "defaultProperties.company = {",
+                    "    \"name\": undefined,",
+                    "    \"catchPhrase\": undefined,",
+                    "    \"bs\": undefined",
+                    "};"
+                ],
+                "name": "beforerecordcreated",
+                "scope": "me"
+            },
+            "name": "onGridpanelBeforeRecordcreated",
+            "designerId": "a28c32f6-c41d-458a-8703-f674c74284b2"
+        }
+    ]
+}

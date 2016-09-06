@@ -1,0 +1,16 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js_8ko9d1gf",
+        "url": "resources/stewarts-all-debug-w-comments.js",
+        "x-compile": true
+    },
+    "name": "js",
+    "designerId": "54ca454d-f7f6-4463-b39c-375d2894d0f8"
+}

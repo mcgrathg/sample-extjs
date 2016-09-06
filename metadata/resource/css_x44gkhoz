@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_x44gkhoz",
+        "url": "resources/stewarts-all.css"
+    },
+    "name": "css",
+    "designerId": "ddcc4c7c-033d-43ea-8023-9075cc64cb96"
+}

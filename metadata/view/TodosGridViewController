@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "todosgrid",
+        "designer|userClassName": "TodosGridViewController"
+    },
+    "designerId": "e4c8ff74-9f07-4a22-8153-056c030ae993"
+}

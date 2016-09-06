@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "todosgrid",
+        "designer|userClassName": "TodosGridViewModel"
+    },
+    "designerId": "1359cb9f-3e63-444c-9d32-e4189e4db108",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Todo",
+                "name": "todosStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore1",
+            "designerId": "f143e1f2-b651-4c9c-967c-1c6bf453d0b9",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/todos"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "fe123eac-4197-4c6c-a553-deb58108dbe3",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "d17c34e0-24ea-456d-bb21-5395d4ffc83e"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
