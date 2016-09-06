@@ -46,6 +46,7 @@
             "userConfig": {
                 "cellWrap": null,
                 "dataIndex": "name",
+                "flex": 1,
                 "text": "Name"
             },
             "name": "MyColumn4",
@@ -73,7 +74,8 @@
             "userConfig": {
                 "cellWrap": null,
                 "dataIndex": "username",
-                "text": "Username"
+                "text": "Username",
+                "width": 150
             },
             "name": "MyColumn7",
             "designerId": "570ee0d2-6e57-4de1-84d3-6952f3fc54b1",
@@ -123,6 +125,7 @@
             "userConfig": {
                 "cellWrap": null,
                 "dataIndex": "email",
+                "flex": 1,
                 "text": "Email"
             },
             "name": "MyTemplateColumn1",
@@ -138,7 +141,7 @@
                     "userConfig": {
                         "designer|displayName": "tpl",
                         "implHandler": [
-                            "<a href=\"mailto:{email}\">{email}</a>"
+                            "<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>"
                         ]
                     },
                     "name": "tpl",
@@ -165,6 +168,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "phone",
+                "flex": 1,
                 "text": "Phone"
             },
             "name": "MyColumn8",
@@ -192,7 +196,8 @@
             "userConfig": {
                 "cellWrap": null,
                 "dataIndex": "website",
-                "text": "Website"
+                "text": "Website",
+                "width": 150
             },
             "name": "MyColumn9",
             "designerId": "77c4706e-d839-447f-b5ef-e49dbe61a2aa",
@@ -233,19 +238,48 @@
                     "userConfig": {
                         "designer|displayName": "rowBodyTpl",
                         "implHandler": [
-                            "<div style=\"display:inline-flex;width:100%;\">",
-                            "    <div style=\"flex:1;\">",
-                            "        <h3>Address:</h3>",
-                            "        <div><b>Street:</b> {address.street}</div>",
-                            "        <div><b>Suite:</b> {address.suite}</div>",
-                            "        <div><b>City:</b> {address.city}</div>",
-                            "        <div><b>Zip Code:</b> {address.zipcode}</div>",
+                            "<div class=\"flex-full\">",
+                            "    <div class=\"flex-one expanded-grid-table\" style=\"margin-right:25px;\">",
+                            "        <table>",
+                            "            <tr>",
+                            "                <th colspan=\"2\">Address</th>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Street:</td>",
+                            "                <td>{address.street}</td>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Suite:</td>",
+                            "                <td>{address.suite}</td>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>City:</td>",
+                            "                <td>{address.city}</td>",
+                            "            </tr>",
+                            "        </table>",
                             "    </div>",
-                            "    <div style=\"flex:2;\">",
-                            "        <h3>Company:</h2>",
-                            "        <div><b>Name:</b> {company.name}</div>",
-                            "        <div><b>Slogan:</b> {company.catchPhrase}</div>",
-                            "        <div><b>Category:</b> {company.bs}</div>",
+                            "    <div class=\"flex-two expanded-grid-table\">",
+                            "        <table>",
+                            "            <tr>",
+                            "                <th colspan=\"2\">Company</th>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Name:</td>",
+                            "                <td>{company.name}</td>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Slogan:</td>",
+                            "                <td>{company.catchPhrase}</td>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Category:</td>",
+                            "                <td>{company.bs}</td>",
+                            "            </tr>",
+                            "            <tr>",
+                            "                <td>Zip Code:</td>",
+                            "                <td>{address.zipcode}</td>",
+                            "            </tr>",
+                            "        </table>",
                             "    </div>",
                             "</div>"
                         ]
