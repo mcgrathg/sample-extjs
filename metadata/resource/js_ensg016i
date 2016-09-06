@@ -1,0 +1,19 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bootstrap": true,
+        "defer": false,
+        "designer|userClassName": "js_ensg016i",
+        "includeInBundle": true,
+        "requireSdk": true,
+        "url": "overrides/data/Store.js",
+        "x-compile": true
+    },
+    "name": "js1",
+    "designerId": "51aab8f3-c63b-4800-8c3a-126623856df9"
+}
