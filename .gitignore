@@ -4,7 +4,8 @@
 /.sass-cache/*
 /ext/*
 /packages/Stewarts-5/*
-resources/stewarts-all-debug-w-comments.js
+/resources/stewarts-all-debug-w-comments.js
+/resources/stewarts-all.css
 
 # Windows image file caches
 Thumbs.db
