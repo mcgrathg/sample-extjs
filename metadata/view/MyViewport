@@ -61,6 +61,20 @@
                     "name": "todosgrid",
                     "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
                     "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "name": "postsgrid",
+                    "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
+                    "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4"
                 }
             ]
         },
@@ -76,7 +90,7 @@
                 "childForeignKeyFieldName": "userId",
                 "childGridReference": "todos",
                 "designer|displayName": "users -> todos parentchild",
-                "directionArrow": "bl",
+                "directionArrow": "l",
                 "monitorUIUpdate": true,
                 "parentFieldName": "id",
                 "parentFieldsForChildGridTitle": [
@@ -86,6 +100,29 @@
             },
             "name": "MyParentChildGridPairing",
             "designerId": "ac936dc0-3343-495b-96b3-a97520f88288"
+        },
+        {
+            "type": "sl.panel.grid.ParentChildGridPairing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cacheParamName": "userId",
+                "childForeignKeyFieldName": "userId",
+                "childGridReference": "posts",
+                "designer|displayName": "users -> posts parentChild",
+                "directionArrow": "l",
+                "monitorUIUpdate": true,
+                "parentFieldName": "id",
+                "parentFieldsForChildGridTitle": [
+                    "['name']"
+                ],
+                "parentGridReference": "users"
+            },
+            "name": "MyParentChildGridPairing1",
+            "designerId": "c0bedbcc-9c3f-454a-a64d-4b91e0be4501"
         }
     ]
 }
