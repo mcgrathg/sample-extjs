@@ -1,0 +1,68 @@
+{
+    "name": "examples",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.1.2.15",
+            "frameworkVersion": "5.1.2.748"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:1841/",
+        "exportPath": "",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "sdkPath": "",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.5.1",
+    "xdsBuild": 348,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "e48da4b2-b83a-4366-8750-e8b710a50a54",
+            "86ac9e9b-036e-41b7-9dd1-2a8299decbc5",
+            "e1541dd2-78b7-4a2d-88f4-4a332f5393d8",
+            "09e3b21b-d456-4fcc-8498-65194fd7c5d6",
+            "8f8f9778-82cd-47eb-ab57-7cc82495f8fb",
+            "73942749-751f-425e-ba91-13c3c9c0ce2d",
+            "42475572-55e1-4f87-a60d-9e6caed54962",
+            "1359cb9f-3e63-444c-9d32-e4189e4db108",
+            "e4c8ff74-9f07-4a22-8153-056c030ae993"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [
+            "52784a65-a755-4742-a4c1-2947177b427b",
+            "a35f6128-3ddb-49d0-aa95-65887004a64f",
+            "dd668b82-45b7-4dbf-9587-46f8ab6accaf"
+        ],
+        "resource": [
+            "a14f42fa-786f-48ba-92ed-01ded1bc7cdf",
+            "54ca454d-f7f6-4463-b39c-375d2894d0f8",
+            "ddcc4c7c-033d-43ea-8023-9075cc64cb96",
+            "bfa26ec3-987f-4a1f-aa7d-3985133a84fa",
+            "6ed0c18f-e314-478f-8827-accf070a4a75"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

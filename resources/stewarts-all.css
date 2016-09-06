@@ -1,0 +1,452 @@
+
+
+.stw-hidden-iframe {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+#img-chooser-dlg .details{
+    padding: 10px;
+    text-align: center;
+}
+#img-chooser-dlg .details-info{
+    border-top: 1px solid #cccccc;
+    font: 11px Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    padding-top: 5px;
+    text-align: left;
+}
+#img-chooser-dlg .details-info b{
+    color: #555555;
+    display: block;
+    margin-bottom: 4px;
+}
+#img-chooser-dlg .details-info span{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#img-chooser-view{
+    background: white;
+    font: 11px Arial, Helvetica, sans-serif;
+}
+#img-chooser-view .thumb{
+    background: #dddddd;
+    padding: 3px;
+}
+#img-chooser-view .thumb img{
+    height: 60px;
+    width: 80px;
+}
+#img-chooser-view .thumb-wrap{
+    float: left;
+    margin: 4px;
+    margin-right: 0;
+    padding: 5px;
+}
+#img-chooser-view .thumb-wrap span{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+#img-chooser-view .x-view-over{
+    border:1px solid #dddddd;
+    background: #efefef url(../../resources/images/default/grid/row-over.gif) repeat-x left top;
+    padding: 4px;
+}
+#img-chooser-view .x-view-selected{
+    background: #DFEDFF;
+    border: 1px solid #6593cf;
+    padding: 4px;
+}
+#img-chooser-view .x-view-selected .thumb{
+    background:transparent;
+}
+#img-chooser-view .x-view-selected span{
+    color:#1A4D8F;
+}
+#img-chooser-view .loading-indicator {
+    font-size:11px;
+    background-image:url('../../resources/images/grid/loading.gif');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left:20px;
+    margin:10px;
+}
+
+/* Trigger Field (Add Button Image)*/
+.x-form-add-trigger {
+    background-image: url('/resources/icons/trigger-add.gif');
+}
+
+/* Trigger Field (Edit Button Image)*/
+.x-form-edit-trigger {
+    background-image: url('/resources/icons/trigger-edit.gif');
+}
+
+/* Trigger Field (Options Button Image)*/
+.x-form-options-trigger {
+    background-image: url('/resources/icons/trigger-options.gif');
+}
+
+.x-statusbar .x-status-warning {
+    cursor: pointer;
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    color: #C33;
+    background-image: url('/resources/icons/fam/error.png');
+}
+
+.x-statusbar .x-status-saving {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    background-image: url('/resources/icons/fam/saving.gif');
+}
+.x-statusbar .x-status-saved {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    background-image: url('/resources/icons/fam/disk.png');
+}
+
+.x-grid-filters-filtered-column {
+    background-color: #FAAFAF;
+    background-image: none;
+}
+
+.x-grid-filters-filtered-column .x-column-header-over, .x-grid-filters-filtered-column .x-column-header-open {
+    background-color: #FFDCDC;
+    background-image: none;
+}
+
+.x-spotlight {
+    background-color: #ccc;
+    z-index: 8999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    width: 0;
+    height: 0;
+    zoom: 1;
+    font-size: 0;
+}
+
+.has_tooltip {
+  border-bottom: 1px dotted gray;
+  display: inline;
+  cursor: help;
+}
+
+.x-grid-row .error-cell {
+    background-color: #FFFFC3;
+    border-color: #EC705B;
+    border-width: 4px;
+}
+
+.gridrowcount {
+    color: black;
+    font-weight: normal;
+}
+
+.hiddenrows {
+    color: red;
+    font-weight: bold;
+}
+
+.x-grid-row-summary, .x-grid-row-summary .x-grid-cell,.x-grid-row-summary .x-grid-rowwrap,.x-grid-row-summary .x-grid-cell-rowbody {
+    font-weight: bold;
+    background-color: #DCE7F5!important;
+}
+
+/* hovered-over/highlighted row in a combo grid */
+.combogrid-row-over .x-grid-td {
+    background-color: #BCBCBC;
+}
+
+.x-stewarts-mask-msg-text {
+    /*padding: 5px 5px 5px 20px; default */
+    padding: 5px 5px 5px 5px;
+    /*background-image: url(images/grid/loading.gif); default */
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+.x-mask-msg {
+    /*z-index: 20001; default*/
+
+    /*lowering value because mask msg was wrongly above a modal window*/
+    z-index: 10001;
+}
+
+.x-statusbar .x-status-valid {
+    background-image: url('/resources/icons/fam/gray_checkmark.png') !important;
+}
+
+/*remove indent in the statusbar's error list*/
+.x-status-error-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.dotted-underline {
+    border-bottom: 1px dashed gray;
+}
+
+/* when hovering over a grid row, bold the text */
+.x-grid-item-over {
+    font-weight: bold;
+}
+
+/* gets rid of ellipsis because cell expands to fit text */
+/*.x-grid-cell-inner {
+    white-space: normal;
+}*/
+
+/* clear column sort icon */
+.x-hmenu-sort-clear {
+    background-image: url('/resources/icons/fam/hmenu-clear.gif');
+}
+
+/**************************/
+/* Notification/Toast CSS */
+/**************************/
+
+/*inner box will be same style as rest of toast*/
+.x-toast .x-window-body-default  {
+  border-color: inherit;
+  background: none;
+  border-width: 0;
+}
+
+/*make toast title bigger*/
+.x-toast .x-title-item {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.x-toast {
+    background-color: #F6F6F6;
+}
+
+.x-toast .x-window-header-default-top {
+  background-color: #F6F6F6;
+}
+
+.warning-toast {
+    background-color: #F2D654;
+}
+
+.warning-toast .x-window-header-default-top{
+  background-color: #F2D654;
+}
+
+.error-toast {
+    background-color: #F2D654;
+}
+
+.error-toast .x-window-header-default-top{
+  background-color: #E36D62;
+}
+
+.error-toast {
+    background-color: #E36D62;
+}
+
+.success-toast {
+    background-color: #8EC986;
+}
+
+.success-toast .x-window-header-default-top{
+  background-color: #8EC986;
+}
+
+.x-search-match {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.x-filter-match {
+    font-weight: bold;
+    background-color: #FFCC66;
+}
+
+.x-grid-center-icon {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* when a row can be dragged, change cursor to grab */
+.can-drag-view {
+  cursor: -webkit-grab !important;
+}
+
+.can-edit-cell {
+  cursor: url('/resources/cursors/edit.cur'), crosshair !important;
+}
+
+.cannot-edit-cell {
+  cursor: url('/resources/cursors/edit_no.cur'), not-allowed !important;
+}
+
+.can-edit-cell-special {
+  cursor: url('/resources/cursors/edit_special.cur'), crosshair !important;
+}
+
+.cannot-edit-cell-msg {
+    font-style:italic;
+}
+
+.x-dd-drag-proxy {
+    cursor: -webkit-grabbing !important;
+}
+
+/* when a row can be dragged, add drag icon next to cell in first column */
+td.can-drag-view.first-visible-column {
+  background-image: url(/resources/icons/fam/drag_handle.png);
+  background-repeat: no-repeat;
+  padding-left: 10px;
+}
+
+/*
+    relevant properties from .x-resizable-handle-south-over & .x-resizable-handle-over
+    in order to add visual cue that splitter is draggable
+*/
+.x-splitter-horizontal {
+    background-image: url(/resources/images/sizer/s-handle.gif);
+    background-position: top;
+    opacity: 1;
+}
+
+/*
+    relevant properties from .x-resizable-handle-east-over & .x-resizable-handle-over
+    in order to add visual cue that splitter is draggable
+*/
+.x-splitter-vertical {
+    background-image: url(/resources/images/sizer/e-handle.gif);
+    background-position: left;
+    opacity: 1;
+}
+
+.arrow-left-mask {
+  background-image: url(/resources/icons/fam/arrow_left_dark.png);
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  background-position: left;
+}
+
+.arrow-down-mask {
+  background-image: url(/resources/icons/fam/arrow_down_dark.png);
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: center bottom;
+}
+
+.arrow-up-mask {
+  background-image: url(/resources/icons/fam/arrow_up_dark.png);
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: center top;
+}
+
+.arrow-right-mask {
+  background-image: url(/resources/icons/fam/arrow_right_dark.png);
+  background-repeat: no-repeat;
+  padding-right: 25px;
+  background-position: right;
+}
+
+.arrow-bottomright-mask {
+  background-image: url(/resources/icons/fam/arrow_bottomright_dark.png);
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: right bottom;
+}
+
+.arrow-bottomleft-mask {
+  background-image: url(/resources/icons/fam/arrow_bottomleft_dark.png);
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: left bottom;
+}
+
+.arrow-topright-mask {
+  background-image: url(/resources/icons/fam/arrow_topright_dark.png);
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: right top;
+}
+
+.arrow-topleft-mask {
+  background-image: url(/resources/icons/fam/arrow_topleft_dark.png);
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: left top;
+}
+
+/*center horizontally and vertically*/
+.centered-on-page {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0px;
+}
+
+/* app splash screen */
+#stewarts-splashscreen {
+    /* correctly position stewarts logo at top and loading image at bottom */
+    padding-top: 200px;
+
+    /* stewarts logo & loading image */
+    background-image: url('/resources/images/stewarts-shops-logo.png'), url('/resources/images/ajax-loader.gif');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+
+    /*modeled after mask msg text */
+    font: normal 15px tahoma,arial,verdana,sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 15px;
+    line-height: normal;
+    font-family: tahoma, arial, verdana, sans-serif;
+    color: #222;
+
+    text-align: center;
+}
+/* end app splash screen */
+
+ul {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/*make checkbox cell editor look like other active editor fields*/
+.has-editor-focus.x-grid-cell-checkcolumn {
+    /*remove existing border*/
+    border-right:0px;
+
+    /*add context border, like textfield/combo/field/etc*/
+    outline: 1px solid #a1a1a1;
+
+    background-color: white;
+}
+
+/* styling for gridview's `emptyText` */
+.combogrid .x-grid-empty {
+    font-size: large;
+    font-weight: bold;
+}
