@@ -1,7 +1,7 @@
 {
    "name": "Examples",
    "indexHtmlPath": "index.html",
-   "classpath": "${app.dir}/app,${app.dir}/resources/",
+   "classpath": "${app.dir}/app,${app.dir}/resources/,${app.dir}/overrides/data/",
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
    "theme": "ext-theme-gray-6ed0c18f-e314-478f-8827-accf070a4a75",
@@ -18,6 +18,13 @@
       {
          "path": "resources/stewarts-all-debug-w-comments.js",
          "x-compile": true
+      },
+      {
+         "path": "overrides/data/Store.js",
+         "bootstrap": true,
+         "requireSdk": true,
+         "x-compile": true,
+         "includeInBundle": true
       },
       {
          "path": "app.js",
