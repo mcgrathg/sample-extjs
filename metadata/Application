@@ -1,0 +1,42 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Post",
+            "User",
+            "Todo"
+        ],
+        "name": "Examples",
+        "title": "Greg McGrath's Examples",
+        "views": [
+            "MyViewport",
+            "UsersGrid",
+            "TodosGrid"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.create('Examples.view.MyViewport');"
+                ]
+            },
+            "name": "launch",
+            "designerId": "a2ff7fc7-efe1-4e4c-b337-31e2522041af"
+        }
+    ]
+}

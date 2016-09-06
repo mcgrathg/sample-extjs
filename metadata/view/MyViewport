@@ -1,0 +1,90 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "layout": "hbox"
+    },
+    "name": "MyViewport",
+    "designerId": "e48da4b2-b83a-4366-8750-e8b710a50a54",
+    "viewControllerInstanceId": "e1541dd2-78b7-4a2d-88f4-4a332f5393d8",
+    "viewModelInstanceId": "86ac9e9b-036e-41b7-9dd1-2a8299decbc5",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": null
+            },
+            "name": "usersgrid",
+            "designerId": "09bf438c-941a-44c7-afba-910f20d258b4",
+            "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1
+            },
+            "name": "MyContainer",
+            "designerId": "d083f390-4e63-42cb-9f08-e9d854e8c5fd",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "reference": null
+                    },
+                    "name": "todosgrid",
+                    "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
+                    "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
+                }
+            ]
+        },
+        {
+            "type": "sl.panel.grid.ParentChildGridPairing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cacheParamName": "userId",
+                "childForeignKeyFieldName": "userId",
+                "childGridReference": "todos",
+                "designer|displayName": "users -> todos parentchild",
+                "directionArrow": "bl",
+                "monitorUIUpdate": true,
+                "parentFieldName": "id",
+                "parentFieldsForChildGridTitle": [
+                    "['name']"
+                ],
+                "parentGridReference": "users"
+            },
+            "name": "MyParentChildGridPairing",
+            "designerId": "ac936dc0-3343-495b-96b3-a97520f88288"
+        }
+    ]
+}
