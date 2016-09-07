@@ -102,7 +102,7 @@ Ext.define('Examples.view.UsersGrid', {
             expandOnEnter: false,
             rowBodyTpl: [
                 '<div class="flex-full">',
-                '    <div class="flex-one expanded-grid-table" style="margin-right:25px;">',
+                '    <div class="flex-one expanded-grid-table">',
                 '        <table>',
                 '            <tr>',
                 '                <th colspan="2">Address</th>',

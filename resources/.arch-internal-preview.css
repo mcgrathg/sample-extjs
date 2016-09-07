@@ -24837,18 +24837,21 @@ a.x-color-picker-item:hover {
   .flex-full .flex-two {
     flex: 2; }
 
-.expanded-grid-table table {
-  border-collapse: collapse;
-  width: 100%;
-  background-color: lightgray;
-  /* First Column */
-  /* Striped Rows */ }
-  .expanded-grid-table table th, .expanded-grid-table table td {
-    text-align: left;
-    padding: 8px; }
-  .expanded-grid-table table th {
-    font-size: larger; }
-  .expanded-grid-table table td:first-child {
-    font-weight: bold; }
-  .expanded-grid-table table tr:nth-child(even) {
-    background-color: #f2f2f2; }
+.expanded-grid-table {
+  margin: 10px; }
+  .expanded-grid-table table {
+    border-collapse: collapse;
+    width: 100%;
+    /* First Column */
+    /* Striped Rows */ }
+    .expanded-grid-table table th, .expanded-grid-table table td {
+      text-align: left;
+      padding: 8px; }
+    .expanded-grid-table table th {
+      font-size: larger; }
+    .expanded-grid-table table td:first-child {
+      font-weight: bold; }
+    .expanded-grid-table table tr {
+      background-color: wheat; }
+    .expanded-grid-table table tr:nth-child(even) {
+      background-color: papayawhip; }

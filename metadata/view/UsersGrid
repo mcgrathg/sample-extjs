@@ -47,7 +47,9 @@
                 "cellWrap": null,
                 "dataIndex": "name",
                 "flex": 1,
-                "text": "Name"
+                "locked": null,
+                "text": "Name",
+                "width": null
             },
             "name": "MyColumn4",
             "designerId": "3fe95ee4-f09a-4edd-b298-2e74dca25b92",
@@ -239,7 +241,7 @@
                         "designer|displayName": "rowBodyTpl",
                         "implHandler": [
                             "<div class=\"flex-full\">",
-                            "    <div class=\"flex-one expanded-grid-table\" style=\"margin-right:25px;\">",
+                            "    <div class=\"flex-one expanded-grid-table\">",
                             "        <table>",
                             "            <tr>",
                             "                <th colspan=\"2\">Address</th>",
