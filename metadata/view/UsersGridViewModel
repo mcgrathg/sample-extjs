@@ -9,21 +9,5 @@
         "designer|userAlias": "usersgrid",
         "designer|userClassName": "UsersGridViewModel"
     },
-    "designerId": "8f8f9778-82cd-47eb-ab57-7cc82495f8fb",
-    "cn": [
-        {
-            "type": "Ext.data.ChainedStore",
-            "reference": {
-                "name": "stores",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "usersStore",
-                "source": "Users"
-            },
-            "name": "MyChainedStore",
-            "designerId": "94f3f7a3-1674-4822-89a6-ce77de906988"
-        }
-    ]
+    "designerId": "8f8f9778-82cd-47eb-ab57-7cc82495f8fb"
 }

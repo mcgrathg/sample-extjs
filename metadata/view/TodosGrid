@@ -6,17 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoCancel": true,
+        "autoCancel": null,
         "clicksToEdit": 2,
-        "clicksToMoveEditor": 2,
+        "clicksToMoveEditor": null,
         "columnLines": true,
         "designer|userAlias": "todosgrid",
         "designer|userClassName": "TodosGrid",
-        "errorSummary": true,
-        "filterLocal": true,
-        "filterParamPrefix": "filter",
-        "filterUpdateBuffer": 550,
+        "errorSummary": null,
+        "filterLocal": null,
+        "filterParamPrefix": null,
+        "filterUpdateBuffer": null,
         "height": null,
+        "includeExcelBtn": true,
         "includeRefreshBtn": true,
         "includeRowCount": true,
         "includeSearch": true,
@@ -35,11 +36,11 @@
         ],
         "title": "Todo",
         "useDefaultButtons": true,
-        "useDefaultDeleteConfig": true,
+        "useDefaultDeleteConfig": false,
         "useDefaultEnterKeyHandler": true,
         "useDefaultNewConfig": true,
-        "useDefaultSaveConfig": true,
-        "useDefaultUndoDeleteConfig": true,
+        "useDefaultSaveConfig": false,
+        "useDefaultUndoDeleteConfig": null,
         "useStewartsRenderer": true,
         "width": null
     },
@@ -71,7 +72,7 @@
             "userConfig": {
                 "dataIndex": "userId",
                 "hidden": [
-                    "{!includeUser}"
+                    "{includeUser}"
                 ],
                 "hideable": false,
                 "text": "User"
@@ -80,7 +81,33 @@
             "configAlternates": {
                 "hidden": "binding"
             },
-            "designerId": "eccec780-d87d-4a88-9caf-d221dcda0926"
+            "designerId": "eccec780-d87d-4a88-9caf-d221dcda0926",
+            "cn": [
+                {
+                    "type": "sl.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "anyMatch": true,
+                        "displayField": "name",
+                        "forceSelection": true,
+                        "matchFieldWidth": false,
+                        "minChars": 2,
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": "Users",
+                        "triggerAction": "all",
+                        "typeAhead": true,
+                        "typeAheadDelay": 500,
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "9ce5edea-4601-4044-b0c8-b3c431e76322"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",

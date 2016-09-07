@@ -27,6 +27,7 @@ Ext.define('Examples.store.Users', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             pageSize: 0,
+            storeId: 'Users',
             autoLoad: true,
             model: 'Examples.model.User',
             proxy: {

@@ -15,16 +15,6 @@
 
 Ext.define('Examples.view.UsersGridViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.usersgrid',
-
-    requires: [
-        'Ext.data.ChainedStore'
-    ],
-
-    stores: {
-        usersStore: {
-            source: 'Users'
-        }
-    }
+    alias: 'viewmodel.usersgrid'
 
 });

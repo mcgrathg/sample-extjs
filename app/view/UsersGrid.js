@@ -33,11 +33,28 @@ Ext.define('Examples.view.UsersGrid', {
     },
     reference: 'users',
     title: 'Users',
+    columnLines: true,
+    store: 'Users',
+    includeSearch: true,
+    includeRowCount: true,
+    useStewartsRenderer: true,
+    includeRefreshBtn: true,
+    includeExcelBtn: true,
+    isLocalExcelExport: true,
+    includeValidationStatus: true,
     singleName: 'User',
+    searchAlign: 'right',
+    searchWidth: 200,
+    selModelMode: 'MULTI',
+    clicksToEdit: 2,
+    useDefaultButtons: true,
+    useDefaultSaveConfig: false,
+    useDefaultDeleteConfig: false,
+    useDefaultNewConfig: true,
+    moveEditorOnEnter: true,
+    useDefaultEnterKeyHandler: true,
+    showEditCursor: true,
 
-    bind: {
-        store: '{usersStore}'
-    },
     columns: [
         {
             xtype: 'gridcolumn',

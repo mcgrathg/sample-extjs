@@ -20,7 +20,7 @@ Ext.define('Examples.view.TodosGrid', {
     requires: [
         'Examples.view.TodosGridViewModel',
         'Ext.view.Table',
-        'Ext.form.field.Text',
+        'sl.field.ComboBox',
         'Ext.grid.column.Check'
     ],
 
@@ -34,23 +34,17 @@ Ext.define('Examples.view.TodosGrid', {
     includeRowCount: true,
     useStewartsRenderer: true,
     includeRefreshBtn: true,
+    includeExcelBtn: true,
     isLocalExcelExport: true,
     includeValidationStatus: true,
     singleName: 'Todo',
     searchAlign: 'right',
     searchWidth: 200,
-    filterLocal: true,
-    filterUpdateBuffer: 550,
-    filterParamPrefix: 'filter',
     selModelMode: 'MULTI',
     clicksToEdit: 2,
-    autoCancel: true,
-    clicksToMoveEditor: 2,
-    errorSummary: true,
     useDefaultButtons: true,
-    useDefaultSaveConfig: true,
-    useDefaultDeleteConfig: true,
-    useDefaultUndoDeleteConfig: true,
+    useDefaultSaveConfig: false,
+    useDefaultDeleteConfig: false,
     useDefaultNewConfig: true,
     moveEditorOnEnter: true,
     useDefaultEnterKeyHandler: true,
@@ -66,7 +60,22 @@ Ext.define('Examples.view.TodosGrid', {
             hideable: false,
             text: 'User',
             bind: {
-                hidden: '{!includeUser}'
+                hidden: '{includeUser}'
+            },
+            editor: {
+                xtype: 'slcombo',
+                selectOnFocus: true,
+                matchFieldWidth: false,
+                anyMatch: true,
+                displayField: 'name',
+                forceSelection: true,
+                minChars: 2,
+                queryMode: 'local',
+                store: 'Users',
+                triggerAction: 'all',
+                typeAhead: true,
+                typeAheadDelay: 500,
+                valueField: 'id'
             }
         },
         {
