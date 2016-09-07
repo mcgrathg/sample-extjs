@@ -26,7 +26,12 @@ Ext.define('Examples.model.Todo', {
     fields: [
         {
             type: 'int',
-            name: 'userId'
+            name: 'userId',
+            validators: [
+                {
+                    type: 'presence'
+                }
+            ]
         },
         {
             type: 'int',
@@ -34,7 +39,12 @@ Ext.define('Examples.model.Todo', {
         },
         {
             type: 'string',
-            name: 'title'
+            name: 'title',
+            validators: [
+                {
+                    type: 'presence'
+                }
+            ]
         },
         {
             type: 'boolean',

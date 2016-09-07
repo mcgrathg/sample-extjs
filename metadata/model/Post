@@ -22,7 +22,19 @@
                 "name": "userId"
             },
             "name": "MyInteger",
-            "designerId": "35fabbb4-513b-4e3f-a534-17801d9b6d2b"
+            "designerId": "35fabbb4-513b-4e3f-a534-17801d9b6d2b",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation9",
+                    "designerId": "189c937f-d639-4e8a-9684-76c60e2c2af4"
+                }
+            ]
         },
         {
             "type": "Ext.data.field.Integer",
@@ -61,7 +73,19 @@
                 "name": "body"
             },
             "name": "MyString1",
-            "designerId": "1e5d726f-db20-49c3-8416-359b99270cce"
+            "designerId": "1e5d726f-db20-49c3-8416-359b99270cce",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation10",
+                    "designerId": "2832743f-39dc-43f3-b78d-614fbda1a037"
+                }
+            ]
         }
     ]
 }

@@ -25,7 +25,12 @@ Ext.define('Examples.model.Post', {
     fields: [
         {
             type: 'int',
-            name: 'userId'
+            name: 'userId',
+            validators: [
+                {
+                    type: 'presence'
+                }
+            ]
         },
         {
             type: 'int',
@@ -37,7 +42,12 @@ Ext.define('Examples.model.Post', {
         },
         {
             type: 'string',
-            name: 'body'
+            name: 'body',
+            validators: [
+                {
+                    type: 'presence'
+                }
+            ]
         }
     ]
 });

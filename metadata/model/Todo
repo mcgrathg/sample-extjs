@@ -22,7 +22,19 @@
                 "name": "userId"
             },
             "name": "MyInteger3",
-            "designerId": "3353f618-0373-444d-b4e9-db0069637aa1"
+            "designerId": "3353f618-0373-444d-b4e9-db0069637aa1",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation11",
+                    "designerId": "970cfe4b-1e81-4083-a910-0d79a59c7030"
+                }
+            ]
         },
         {
             "type": "Ext.data.field.Integer",
@@ -48,7 +60,19 @@
                 "name": "title"
             },
             "name": "MyString7",
-            "designerId": "09f0befa-778a-4462-92e9-a7984902b326"
+            "designerId": "09f0befa-778a-4462-92e9-a7984902b326",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation12",
+                    "designerId": "606b9555-ac69-48a8-a9a9-3ca2c3f89384"
+                }
+            ]
         },
         {
             "type": "Ext.data.field.Boolean",
