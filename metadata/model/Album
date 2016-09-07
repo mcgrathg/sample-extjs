@@ -1,0 +1,78 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Album"
+    },
+    "name": "MyModel",
+    "designerId": "cc1d2e02-582c-4f2a-84c7-17edd58c10d4",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userId"
+            },
+            "name": "MyInteger10",
+            "designerId": "6c0a223f-131a-4771-9424-44f918bde986",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation5",
+                    "designerId": "ab2f5083-ad05-44ca-af4b-9bdd7c915ca7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger9",
+            "designerId": "cfaeccca-6d41-473e-8c9b-dc2f6b5aeed1"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "name": "MyString11",
+            "designerId": "ebb5dcd4-c8ad-491a-8132-cb4830e0c1f5",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation4",
+                    "designerId": "c785dcea-7d72-479f-84b5-901b021223a6"
+                }
+            ]
+        }
+    ]
+}

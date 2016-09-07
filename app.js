@@ -26,7 +26,10 @@ Ext.application({
     models: [
         'Post',
         'User',
-        'Todo'
+        'Todo',
+        'Comment',
+        'Album',
+        'Photo'
     ],
     views: [
         'MyViewport',

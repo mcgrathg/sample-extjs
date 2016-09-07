@@ -1,0 +1,116 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Comment"
+    },
+    "name": "MyModel",
+    "designerId": "3b03feb0-5570-4879-8ed7-60c0fdd856c1",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "postId"
+            },
+            "name": "MyInteger8",
+            "designerId": "69b9bc6b-bb50-4dba-825f-123b59cbfdab",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation6",
+                    "designerId": "cb5b8b18-6c8b-4522-b993-34ec0efbd976"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger7",
+            "designerId": "ebf25465-7194-4fd5-990f-f0140456e5a8"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyString14",
+            "designerId": "c4503aa3-2bd8-4d6d-8ae6-2d9714834b7b",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation1",
+                    "designerId": "d417ba55-8f3c-4f52-ae39-2975876c40e6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "name": "MyString13",
+            "designerId": "7e218b48-6f8e-483d-8bd1-74ba3747161c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "body"
+            },
+            "name": "MyString12",
+            "designerId": "739055a5-f89c-4aa3-b73c-99d13efe3e30",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation3",
+                    "designerId": "d6eb7f60-f4ab-473f-b2fa-82764c36df9b"
+                }
+            ]
+        }
+    ]
+}
