@@ -1,0 +1,125 @@
+{
+    "type": "sl.panel.grid.EditorGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoCancel": null,
+        "clicksToEdit": 2,
+        "clicksToMoveEditor": null,
+        "columnLines": true,
+        "designer|userAlias": "commentsgrid",
+        "designer|userClassName": "CommentsGrid",
+        "errorSummary": null,
+        "filterLocal": null,
+        "filterParamPrefix": null,
+        "filterUpdateBuffer": null,
+        "height": null,
+        "includeExcelBtn": true,
+        "includeRefreshBtn": true,
+        "includeRowCount": true,
+        "includeSearch": true,
+        "includeValidationStatus": true,
+        "isLocalExcelExport": true,
+        "moveEditorOnEnter": true,
+        "reference": "comments",
+        "searchAlign": "right",
+        "searchWidth": 200,
+        "selModelMode": "MULTI",
+        "showEditCursor": true,
+        "singleName": "Comment",
+        "store": [
+            "{commentsStore}"
+        ],
+        "title": "Comments",
+        "useDefaultButtons": true,
+        "useDefaultDeleteConfig": false,
+        "useDefaultEnterKeyHandler": true,
+        "useDefaultNewConfig": true,
+        "useDefaultSaveConfig": false,
+        "useDefaultUndoDeleteConfig": null,
+        "useStewartsRenderer": true,
+        "width": null
+    },
+    "name": "PostsGrid1",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2",
+    "viewControllerInstanceId": "21ccaedf-9a60-4475-ba67-2be59010a6c9",
+    "viewModelInstanceId": "ff3494b8-61aa-4932-b559-61cd4a2732f4",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "73aa8179-482b-48e4-a7ca-f3a70d8d45a7"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "text": "Name"
+            },
+            "name": "MyColumn5",
+            "designerId": "795ec6ec-236b-40bc-bab4-c8acf404a12e"
+        },
+        {
+            "type": "Ext.grid.column.Template",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "email",
+                "text": "Email"
+            },
+            "name": "MyTemplateColumn",
+            "designerId": "a8b61233-6866-4ef5-a389-d55bf029ffb5",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<a href=\"mailto:{email}\">{email}</a>"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "36dbf370-3b80-4f05-8d5e-091db40ae92d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "body",
+                "text": "Body"
+            },
+            "name": "MyColumn6",
+            "designerId": "6d5f4290-07ab-4567-bf45-8c3aef2d33db"
+        }
+    ]
+}

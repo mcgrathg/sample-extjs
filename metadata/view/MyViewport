@@ -25,12 +25,28 @@
             },
             "codeClass": null,
             "userConfig": {
+                "collapseDirection": "left",
                 "layout|flex": 1,
                 "reference": null
             },
             "name": "usersgrid",
             "designerId": "09bf438c-941a-44c7-afba-910f20d258b4",
             "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
+        },
+        {
+            "type": "Ext.resizer.Splitter",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseOnDblClick": false,
+                "collapseTarget": "prev",
+                "collapsible": true
+            },
+            "name": "MySplitter1",
+            "designerId": "54fc3989-f607-4215-9fc3-93a99d22a13b"
         },
         {
             "type": "Ext.container.Container",
@@ -40,8 +56,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "container|align": "stretch",
-                "layout": "vbox",
+                "layout": "accordion",
                 "layout|flex": 1
             },
             "name": "MyContainer",
@@ -55,7 +70,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
                         "reference": null
                     },
                     "name": "todosgrid",
@@ -63,18 +77,124 @@
                     "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
                 },
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "reference": "postsandcomments",
+                        "title": "Posts and Comments"
                     },
-                    "name": "postsgrid",
-                    "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
-                    "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4"
+                    "name": "MyPanel",
+                    "designerId": "f04e04b5-1dd5-4e87-85b1-a7da08c5bf19",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "name": "postsgrid",
+                            "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
+                            "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "postsGrid",
+                                            "newTitle",
+                                            "defaultTitle",
+                                            "divider",
+                                            "recordText"
+                                        ],
+                                        "fn": "onPostsGridTitleChange",
+                                        "implHandler": [
+                                            "var me = this,",
+                                            "    panel = me.lookupReference('postsandcomments'),",
+                                            "    comments = me.lookupReference('comments'),",
+                                            "",
+                                            "    title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;",
+                                            "",
+                                            "panel.setTitle(title);",
+                                            "postsGrid.setTitle(defaultTitle);"
+                                        ],
+                                        "name": "parentchildtitlechange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPostsGridTitleChange",
+                                    "designerId": "03ddf03e-514f-4c05-8d29-05123a65175e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapseOnDblClick": false,
+                                "collapseTarget": "prev",
+                                "collapsible": true
+                            },
+                            "name": "MySplitter",
+                            "designerId": "665f49df-d18f-4f61-ab04-d7355ee33c0d"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "minHeight": null
+                            },
+                            "name": "commentsgrid",
+                            "designerId": "54f93ec5-68f3-4510-9684-d246cf9bbf54",
+                            "masterInstanceId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2"
+                        },
+                        {
+                            "type": "sl.panel.grid.ParentChildGridPairing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cacheParamName": "postId",
+                                "childForeignKeyFieldName": "postId",
+                                "childGridReference": "comments",
+                                "designer|displayName": "post -> comments parentChild",
+                                "directionArrow": "u",
+                                "monitorUIUpdate": true,
+                                "parentFieldName": "id",
+                                "parentFieldsForChildGridTitle": [
+                                    "['title']"
+                                ],
+                                "parentGridReference": "posts",
+                                "pluginId": "postToComments"
+                            },
+                            "name": "MyParentChildGridPairing2",
+                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12"
+                        }
+                    ]
                 }
             ]
         },
@@ -86,20 +206,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "baseAndParentDivider": " For ",
                 "cacheParamName": "userId",
                 "childForeignKeyFieldName": "userId",
                 "childGridReference": "todos",
-                "designer|displayName": "users -> todos parentchild",
+                "designer|displayName": "users -> todo parentchild",
                 "directionArrow": "l",
                 "monitorUIUpdate": true,
                 "parentFieldName": "id",
                 "parentFieldsForChildGridTitle": [
                     "['name']"
                 ],
-                "parentGridReference": "users"
+                "parentGridReference": "users",
+                "pluginId": "userToTodos"
             },
             "name": "MyParentChildGridPairing",
-            "designerId": "ac936dc0-3343-495b-96b3-a97520f88288"
+            "designerId": "ac936dc0-3343-495b-96b3-a97520f88288",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "baseAndParentDivider",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "sl.panel.grid.ParentChildGridPairing",
@@ -109,6 +238,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "baseAndParentDivider": " By ",
                 "cacheParamName": "userId",
                 "childForeignKeyFieldName": "userId",
                 "childGridReference": "posts",
@@ -119,10 +249,18 @@
                 "parentFieldsForChildGridTitle": [
                     "['name']"
                 ],
-                "parentGridReference": "users"
+                "parentGridReference": "users",
+                "pluginId": "userToPosts"
             },
             "name": "MyParentChildGridPairing1",
-            "designerId": "c0bedbcc-9c3f-454a-a64d-4b91e0be4501"
+            "designerId": "c0bedbcc-9c3f-454a-a64d-4b91e0be4501",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "baseAndParentDivider",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

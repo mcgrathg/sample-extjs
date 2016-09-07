@@ -19,13 +19,17 @@ Ext.define('Examples.view.MyViewport', {
 
     requires: [
         'Examples.view.MyViewportViewModel',
+        'Examples.view.MyViewportViewController',
         'Examples.view.UsersGrid',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
+        'Examples.view.CommentsGrid',
         'sl.panel.grid.EditorGrid',
+        'Ext.resizer.Splitter',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
+    controller: 'myviewport',
     viewModel: {
         type: 'myviewport'
     },
@@ -37,23 +41,66 @@ Ext.define('Examples.view.MyViewport', {
     items: [
         {
             xtype: 'usersgrid',
+            collapseDirection: 'left',
             flex: 1
+        },
+        {
+            xtype: 'splitter',
+            collapseOnDblClick: false,
+            collapseTarget: 'prev',
+            collapsible: true
         },
         {
             xtype: 'container',
             flex: 1,
-            layout: {
-                type: 'vbox',
-                align: 'stretch'
-            },
+            layout: 'accordion',
             items: [
                 {
-                    xtype: 'todosgrid',
-                    flex: 1
+                    xtype: 'todosgrid'
                 },
                 {
-                    xtype: 'postsgrid',
-                    flex: 1
+                    xtype: 'panel',
+                    reference: 'postsandcomments',
+                    title: 'Posts and Comments',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'postsgrid',
+                            flex: 1,
+                            listeners: {
+                                parentchildtitlechange: 'onPostsGridTitleChange'
+                            }
+                        },
+                        {
+                            xtype: 'splitter',
+                            collapseOnDblClick: false,
+                            collapseTarget: 'prev',
+                            collapsible: true
+                        },
+                        {
+                            xtype: 'commentsgrid',
+                            flex: 1
+                        }
+                    ],
+                    plugins: [
+                        {
+                            ptype: 'parentchild',
+                            pluginId: 'postToComments',
+                            parentGridReference: 'posts',
+                            childGridReference: 'comments',
+                            parentFieldName: 'id',
+                            cacheParamName: 'postId',
+                            childForeignKeyFieldName: 'postId',
+                            directionArrow: 'u',
+                            parentFieldsForChildGridTitle: [
+                                'title'
+                            ],
+                            monitorUIUpdate: true
+                        }
+                    ]
                 }
             ]
         }
@@ -61,6 +108,8 @@ Ext.define('Examples.view.MyViewport', {
     plugins: [
         {
             ptype: 'parentchild',
+            baseAndParentDivider: ' For ',
+            pluginId: 'userToTodos',
             parentGridReference: 'users',
             childGridReference: 'todos',
             parentFieldName: 'id',
@@ -74,6 +123,8 @@ Ext.define('Examples.view.MyViewport', {
         },
         {
             ptype: 'parentchild',
+            baseAndParentDivider: ' By ',
+            pluginId: 'userToPosts',
             parentGridReference: 'users',
             childGridReference: 'posts',
             parentFieldName: 'id',

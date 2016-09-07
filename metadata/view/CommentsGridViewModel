@@ -1,0 +1,58 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commentsgrid",
+        "designer|userClassName": "CommentsGridViewModel"
+    },
+    "name": "PostsGridViewModel1",
+    "designerId": "ff3494b8-61aa-4932-b559-61cd4a2732f4",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Comment",
+                "name": "commentsStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore1",
+            "designerId": "4e60b7a6-f697-4f86-a61d-2b7202ca71e4",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/comments"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "f698bfb1-a154-45c5-b931-9ddee596dd58",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "27a3da25-53ef-4e5a-a725-d7bfe7dc9986"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

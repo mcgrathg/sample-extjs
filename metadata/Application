@@ -23,7 +23,8 @@
             "MyViewport",
             "UsersGrid",
             "TodosGrid",
-            "PostsGrid"
+            "PostsGrid",
+            "CommentsGrid"
         ]
     },
     "name": "Application",

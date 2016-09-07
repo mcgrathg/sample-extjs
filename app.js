@@ -39,7 +39,8 @@ Ext.application({
         'MyViewport',
         'UsersGrid',
         'TodosGrid',
-        'PostsGrid'
+        'PostsGrid',
+        'CommentsGrid'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

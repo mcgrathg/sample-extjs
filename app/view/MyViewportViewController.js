@@ -15,5 +15,17 @@
 
 Ext.define('Examples.view.MyViewportViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.myviewport'
+    alias: 'controller.myviewport',
+
+    onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
+        var me = this,
+            panel = me.lookupReference('postsandcomments'),
+            comments = me.lookupReference('comments'),
+
+            title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;
+
+        panel.setTitle(title);
+        postsGrid.setTitle(defaultTitle);
+    }
+
 });

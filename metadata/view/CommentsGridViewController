@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commentsgrid",
+        "designer|userClassName": "CommentsGridViewController"
+    },
+    "name": "PostsGridViewController1",
+    "designerId": "21ccaedf-9a60-4475-ba67-2be59010a6c9"
+}
