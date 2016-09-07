@@ -15,6 +15,9 @@
             "Photo"
         ],
         "name": "Examples",
+        "stores": [
+            "Users"
+        ],
         "title": "Greg McGrath's Examples",
         "views": [
             "MyViewport",

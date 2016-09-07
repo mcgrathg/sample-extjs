@@ -31,6 +31,9 @@ Ext.application({
         'Album',
         'Photo'
     ],
+    stores: [
+        'Users'
+    ],
     views: [
         'MyViewport',
         'UsersGrid',

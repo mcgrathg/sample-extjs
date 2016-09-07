@@ -1,0 +1,44 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "Users",
+        "model": "User",
+        "pageSize": 0,
+        "storeId": null
+    },
+    "name": "MyJsonPStore2",
+    "designerId": "642eb705-45e1-49ff-a98f-3519ad393c77",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "https://jsonplaceholder.typicode.com/users"
+            },
+            "name": "MyJsonPProxy2",
+            "designerId": "bc78d53b-300a-4525-b54c-e675ffeb6b26",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader2",
+                    "designerId": "07677049-d2f5-44d6-b2ef-c7ad6b424115"
+                }
+            ]
+        }
+    ]
+}

@@ -18,23 +18,12 @@ Ext.define('Examples.view.UsersGridViewModel', {
     alias: 'viewmodel.usersgrid',
 
     requires: [
-        'Ext.data.Store',
-        'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
+        'Ext.data.ChainedStore'
     ],
 
     stores: {
         usersStore: {
-            pageSize: 0,
-            autoLoad: true,
-            model: 'Examples.model.User',
-            proxy: {
-                type: 'jsonp',
-                url: 'https://jsonplaceholder.typicode.com/users',
-                reader: {
-                    type: 'json'
-                }
-            }
+            source: 'Users'
         }
     }
 

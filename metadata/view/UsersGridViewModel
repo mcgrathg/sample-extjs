@@ -12,47 +12,18 @@
     "designerId": "8f8f9778-82cd-47eb-ab57-7cc82495f8fb",
     "cn": [
         {
-            "type": "jsonpstore",
+            "type": "Ext.data.ChainedStore",
             "reference": {
                 "name": "stores",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "autoLoad": true,
-                "model": "User",
                 "name": "usersStore",
-                "pageSize": 0
+                "source": "Users"
             },
-            "name": "MyJsonPStore2",
-            "designerId": "0c2d1c65-2993-445f-a35b-8206ef620b7c",
-            "cn": [
-                {
-                    "type": "Ext.data.proxy.JsonP",
-                    "reference": {
-                        "name": "proxy",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "url": "https://jsonplaceholder.typicode.com/users"
-                    },
-                    "name": "MyJsonPProxy2",
-                    "designerId": "bc78d53b-300a-4525-b54c-e675ffeb6b26",
-                    "cn": [
-                        {
-                            "type": "Ext.data.reader.Json",
-                            "reference": {
-                                "name": "reader",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "name": "MyJsonReader2",
-                            "designerId": "07677049-d2f5-44d6-b2ef-c7ad6b424115"
-                        }
-                    ]
-                }
-            ]
+            "name": "MyChainedStore",
+            "designerId": "94f3f7a3-1674-4822-89a6-ce77de906988"
         }
     ]
 }
