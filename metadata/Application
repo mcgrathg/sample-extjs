@@ -9,7 +9,10 @@
         "models": [
             "Post",
             "User",
-            "Todo"
+            "Todo",
+            "Comment",
+            "Album",
+            "Photo"
         ],
         "name": "Examples",
         "title": "Greg McGrath's Examples",
