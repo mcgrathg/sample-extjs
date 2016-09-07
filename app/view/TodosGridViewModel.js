@@ -23,6 +23,10 @@ Ext.define('Examples.view.TodosGridViewModel', {
         'Ext.data.reader.Json'
     ],
 
+    data: {
+        includeUser: false
+    },
+
     stores: {
         todosStore: {
             pageSize: 0,

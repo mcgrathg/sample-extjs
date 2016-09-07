@@ -69,6 +69,27 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "userId",
+                "hidden": [
+                    "{!includeUser}"
+                ],
+                "hideable": false,
+                "text": "User"
+            },
+            "name": "MyColumn3",
+            "configAlternates": {
+                "hidden": "binding"
+            },
+            "designerId": "eccec780-d87d-4a88-9caf-d221dcda0926"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "title",
                 "flex": 1,
                 "text": "Title"

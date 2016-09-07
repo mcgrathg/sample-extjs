@@ -62,6 +62,15 @@ Ext.define('Examples.view.TodosGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            dataIndex: 'userId',
+            hideable: false,
+            text: 'User',
+            bind: {
+                hidden: '{!includeUser}'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             dataIndex: 'title',
             text: 'Title',
             flex: 1,

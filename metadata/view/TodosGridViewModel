@@ -6,6 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{",
+            "    includeUser: false",
+            "}"
+        ],
         "designer|userAlias": "todosgrid",
         "designer|userClassName": "TodosGridViewModel"
     },
