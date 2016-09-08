@@ -17,7 +17,7 @@
         "urlPrefix": "http://localhost:1841/",
         "exportPath": "",
         "lockUrlPrefix": true,
-        "buildShouldOverwriteIndex": true,
+        "buildShouldOverwriteIndex": false,
         "generateArchitectVersion": true,
         "spacesToIndent": 4,
         "lineEnding": "LF",
@@ -28,7 +28,8 @@
         "lastBuildSelection": {
             "value": "webBuild",
             "display": "Build web app"
-        }
+        },
+        "displayfield-ExtBox1-1210-inputEl": "a new version of the framework is available"
     },
     "xdsVersion": "3.5.1",
     "xdsBuild": 348,
@@ -67,10 +68,8 @@
         ],
         "resource": [
             "a14f42fa-786f-48ba-92ed-01ded1bc7cdf",
-            "54ca454d-f7f6-4463-b39c-375d2894d0f8",
-            "ddcc4c7c-033d-43ea-8023-9075cc64cb96",
-            "bfa26ec3-987f-4a1f-aa7d-3985133a84fa",
             "6ed0c18f-e314-478f-8827-accf070a4a75",
+            "54ca454d-f7f6-4463-b39c-375d2894d0f8",
             "51aab8f3-c63b-4800-8c3a-126623856df9"
         ],
         "app": [

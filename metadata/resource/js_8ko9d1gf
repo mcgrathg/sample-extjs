@@ -6,8 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "bootstrap": true,
         "defer": false,
         "designer|userClassName": "js_8ko9d1gf",
+        "includeInBundle": true,
+        "requireSdk": true,
         "url": "resources/stewarts-all-debug-w-comments.js",
         "x-compile": true
     },

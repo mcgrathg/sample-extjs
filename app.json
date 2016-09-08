@@ -17,7 +17,10 @@
       },
       {
          "path": "resources/stewarts-all-debug-w-comments.js",
-         "x-compile": true
+         "bootstrap": true,
+         "requireSdk": true,
+         "x-compile": true,
+         "includeInBundle": true
       },
       {
          "path": "overrides/data/Store.js",
@@ -35,12 +38,6 @@
       {
          "path": "bootstrap.css",
          "bootstrap": true
-      },
-      {
-         "path": "resources/stewarts-all.css"
-      },
-      {
-         "path": "ext\\examples/ux/ux-css-all.css"
       }
    ],
    "production": {},
@@ -64,10 +61,7 @@
       ],
       "fallback": []
    },
-   "resources": [
-      "resources/stewarts-all.css",
-      "ext\\examples/ux/ux-css-all.css"
-   ],
+   "resources": [],
    "ignore": [
       "(^|/)CVS(/?$|/.*?$)"
    ],

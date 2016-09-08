@@ -43,3 +43,833 @@
         }
     }
 }
+/*
+ * Stewarts CSS Library
+ * Jeff Fisher.
+ *
+ */
+
+
+
+
+
+
+.stw-hidden-iframe {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+#img-chooser-dlg .details{
+    padding: 10px;
+    text-align: center;
+}
+#img-chooser-dlg .details-info{
+    border-top: 1px solid #cccccc;
+    font: 11px Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    padding-top: 5px;
+    text-align: left;
+}
+#img-chooser-dlg .details-info b{
+    color: #555555;
+    display: block;
+    margin-bottom: 4px;
+}
+#img-chooser-dlg .details-info span{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#img-chooser-view{
+    background: white;
+    font: 11px Arial, Helvetica, sans-serif;
+}
+#img-chooser-view .thumb{
+    background: #dddddd;
+    padding: 3px;
+}
+#img-chooser-view .thumb img{
+    height: 60px;
+    width: 80px;
+}
+#img-chooser-view .thumb-wrap{
+    float: left;
+    margin: 4px;
+    margin-right: 0;
+    padding: 5px;
+}
+#img-chooser-view .thumb-wrap span{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+#img-chooser-view .x-view-over{
+    border:1px solid #dddddd;
+    background: #efefef url(./images/default/grid/row-over.gif) repeat-x left top;
+    padding: 4px;
+}
+#img-chooser-view .x-view-selected{
+    background: #DFEDFF;
+    border: 1px solid #6593cf;
+    padding: 4px;
+}
+#img-chooser-view .x-view-selected .thumb{
+    background:transparent;
+}
+#img-chooser-view .x-view-selected span{
+    color:#1A4D8F;
+}
+#img-chooser-view .loading-indicator {
+    font-size:11px;
+    background-image:url('./images/grid/loading.gif');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left:20px;
+    margin:10px;
+}
+
+/* Trigger Field (Add Button Image)*/
+.x-form-add-trigger {
+    background-image: url('./icons/trigger-add.gif');
+}
+
+/* Trigger Field (Edit Button Image)*/
+.x-form-edit-trigger {
+    background-image: url('./icons/trigger-edit.gif');
+}
+
+/* Trigger Field (Options Button Image)*/
+.x-form-options-trigger {
+    background-image: url('./icons/trigger-options.gif');
+}
+
+.x-statusbar .x-status-warning {
+    cursor: pointer;
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    color: #C33;
+    background-image: url('./icons/fam/error.png');
+}
+
+.x-statusbar .x-status-saving {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    background-image: url('./icons/fam/saving.gif');
+}
+.x-statusbar .x-status-saved {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+
+    background-image: url('./icons/fam/disk.png');
+}
+
+.x-grid-filters-filtered-column {
+    background-color: #FAAFAF;
+    background-image: none;
+}
+
+.x-grid-filters-filtered-column .x-column-header-over, .x-grid-filters-filtered-column .x-column-header-open {
+    background-color: #FFDCDC;
+    background-image: none;
+}
+
+.x-spotlight {
+    background-color: #ccc;
+    z-index: 8999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    width: 0;
+    height: 0;
+    zoom: 1;
+    font-size: 0;
+}
+
+.has_tooltip {
+  border-bottom: 1px dotted gray;
+  display: inline;
+  cursor: help;
+}
+
+.x-grid-row .error-cell {
+    background-color: #FFFFC3;
+    border-color: #EC705B;
+    border-width: 4px;
+}
+
+.gridrowcount {
+    color: black;
+    font-weight: normal;
+}
+
+.hiddenrows {
+    color: red;
+    font-weight: bold;
+}
+
+.x-grid-row-summary, .x-grid-row-summary .x-grid-cell,.x-grid-row-summary .x-grid-rowwrap,.x-grid-row-summary .x-grid-cell-rowbody {
+    font-weight: bold;
+    background-color: #DCE7F5!important;
+}
+
+/* hovered-over/highlighted row in a combo grid */
+.combogrid-row-over .x-grid-td {
+    background-color: #BCBCBC;
+}
+
+.x-stewarts-mask-msg-text {
+    /*padding: 5px 5px 5px 20px; default */
+    padding: 5px 5px 5px 5px;
+    /*background-image: url(images/grid/loading.gif); default */
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+.x-mask-msg {
+    /*z-index: 20001; default*/
+
+    /*lowering value because mask msg was wrongly above a modal window*/
+    z-index: 10001;
+}
+
+.x-statusbar .x-status-valid {
+    background-image: url('./icons/fam/gray_checkmark.png') !important;
+}
+
+/*remove indent in the statusbar's error list*/
+.x-status-error-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.dotted-underline {
+    border-bottom: 1px dashed gray;
+}
+
+/* when hovering over a grid row, bold the text */
+.x-grid-item-over {
+    font-weight: bold;
+}
+
+/* gets rid of ellipsis because cell expands to fit text */
+/*.x-grid-cell-inner {
+    white-space: normal;
+}*/
+
+/* clear column sort icon */
+.x-hmenu-sort-clear {
+    background-image: url('./icons/fam/hmenu-clear.gif');
+}
+
+/**************************/
+/* Notification/Toast CSS */
+/**************************/
+
+/*inner box will be same style as rest of toast*/
+.x-toast .x-window-body-default  {
+  border-color: inherit;
+  background: none;
+  border-width: 0;
+}
+
+/*make toast title bigger*/
+.x-toast .x-title-item {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.x-toast {
+    background-color: #F6F6F6;
+}
+
+.x-toast .x-window-header-default-top {
+  background-color: #F6F6F6;
+}
+
+.warning-toast {
+    background-color: #F2D654;
+}
+
+.warning-toast .x-window-header-default-top{
+  background-color: #F2D654;
+}
+
+.error-toast {
+    background-color: #F2D654;
+}
+
+.error-toast .x-window-header-default-top{
+  background-color: #E36D62;
+}
+
+.error-toast {
+    background-color: #E36D62;
+}
+
+.success-toast {
+    background-color: #8EC986;
+}
+
+.success-toast .x-window-header-default-top{
+  background-color: #8EC986;
+}
+
+.x-search-match {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.x-filter-match {
+    font-weight: bold;
+    background-color: #FFCC66;
+}
+
+.x-grid-center-icon {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* when a row can be dragged, change cursor to grab */
+.can-drag-view {
+  cursor: -webkit-grab !important;
+}
+
+.can-edit-cell {
+  cursor: url('./cursors/edit.cur'), crosshair !important;
+}
+
+.cannot-edit-cell {
+  cursor: url('./cursors/edit_no.cur'), not-allowed !important;
+}
+
+.can-edit-cell-special {
+  cursor: url('./cursors/edit_special.cur'), crosshair !important;
+}
+
+.cannot-edit-cell-msg {
+    font-style:italic;
+}
+
+.x-dd-drag-proxy {
+    cursor: -webkit-grabbing !important;
+}
+
+/* when a row can be dragged, add drag icon next to cell in first column */
+td.can-drag-view.first-visible-column {
+  background-image: url('./icons/fam/drag_handle.png');
+  background-repeat: no-repeat;
+  padding-left: 10px;
+}
+
+/*
+    relevant properties from .x-resizable-handle-south-over & .x-resizable-handle-over
+    in order to add visual cue that splitter is draggable
+*/
+.x-splitter-horizontal {
+    background-image: url('./images/sizer/s-handle.gif');
+    background-position: top;
+    opacity: 1;
+}
+
+/*
+    relevant properties from .x-resizable-handle-east-over & .x-resizable-handle-over
+    in order to add visual cue that splitter is draggable
+*/
+.x-splitter-vertical {
+    background-image: url('./images/sizer/e-handle.gif');
+    background-position: left;
+    opacity: 1;
+}
+
+.arrow-left-mask {
+  background-image: url('./icons/fam/arrow_left_dark.png');
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  background-position: left;
+}
+
+.arrow-down-mask {
+  background-image: url('./icons/fam/arrow_down_dark.png');
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: center bottom;
+}
+
+.arrow-up-mask {
+  background-image: url('./icons/fam/arrow_up_dark.png');
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: center top;
+}
+
+.arrow-right-mask {
+  background-image: url('./icons/fam/arrow_right_dark.png');
+  background-repeat: no-repeat;
+  padding-right: 25px;
+  background-position: right;
+}
+
+.arrow-bottomright-mask {
+  background-image: url('./icons/fam/arrow_bottomright_dark.png');
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: right bottom;
+}
+
+.arrow-bottomleft-mask {
+  background-image: url('./icons/fam/arrow_bottomleft_dark.png');
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-position: left bottom;
+}
+
+.arrow-topright-mask {
+  background-image: url('./icons/fam/arrow_topright_dark.png');
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: right top;
+}
+
+.arrow-topleft-mask {
+  background-image: url('./icons/fam/arrow_topleft_dark.png');
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  background-position: left top;
+}
+
+/*center horizontally and vertically*/
+.centered-on-page {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0px;
+}
+
+/* app splash screen */
+#stewarts-splashscreen {
+    /* correctly position stewarts logo at top and loading image at bottom */
+    padding-top: 200px;
+
+    /* stewarts logo & loading image */
+    background-image: url('./images/stewarts-shops-logo.png'), url('./images/ajax-loader.gif');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+
+    /*modeled after mask msg text */
+    font: normal 15px tahoma,arial,verdana,sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 15px;
+    line-height: normal;
+    font-family: tahoma, arial, verdana, sans-serif;
+    color: #222;
+
+    text-align: center;
+}
+/* end app splash screen */
+
+ul {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/*make checkbox cell editor look like other active editor fields*/
+.has-editor-focus.x-grid-cell-checkcolumn {
+    /*remove existing border*/
+    border-right:0px;
+
+    /*add context border, like textfield/combo/field/etc*/
+    outline: 1px solid #a1a1a1;
+
+    background-color: white;
+}
+
+/* styling for gridview's `emptyText` */
+.combogrid .x-grid-empty {
+    font-size: large;
+    font-weight: bold;
+}
+
+.x-explorer-view {
+    background-color: #fff;
+}
+
+.x-explorer-item {
+    float: left;
+}
+
+.x-explorer-item-text {
+    text-align: center;
+}
+
+.x-explorer-node-icon {
+    height: 100px;
+    width: 100px;
+    background: url(images/explorer-node.png);
+}
+
+.x-explorer-leaf-icon {
+    background: url(images/explorer-leaf.png);
+}
+/* Main GroupTabPanel style */
+.x-grouptabpanel {
+    background-color: #4E78B1;
+    border: solid 15px #4E78B1;
+}
+/* End of GroupTabPanel style */
+
+/* Card Layout container */
+.x-grouptabcontainer {
+    background-color: white;
+    border-top: 1px solid #d9d9d9 !important;    
+    border-bottom: 1px solid #d9d9d9 !important;
+    border-right: 1px solid #d9d9d9 !important;
+}
+/* End of Card Layout container */
+
+.x-grouptabpanel .x-grouptab .x-grid-cell-inner  {
+    font-family: tahoma, arial, sans-serif;
+    text-decoration: none!important;
+}
+
+.x-grouptabpanel .x-grouptab-first .x-grid-cell-inner  {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.x-grouptabbar .x-grid-row .x-grid-cell {
+    background-color: transparent;
+    padding-left: 6px;
+}
+
+.x-grouptabbar .x-grid-cell-inner  {
+    color: #DFE8F6;
+}
+
+.x-grouptabpanel .x-active-group .x-grid-cell-inner  {
+    color: #395B8E;
+}
+
+.x-grouptabbar .x-grouptab {
+    line-height: 24px;
+    background-color: transparent;
+    font-size: 12px;
+    position: relative;
+    padding-left: 6px;
+    padding-bottom: 2px;
+    overflow: visible; /* To allow round corner blobs (.x-grouptabs-corner) to occlude the element border */
+}
+
+.x-grouptabbar .x-grouptab-first {
+    padding-top: 6px;
+}
+
+.x-grouptabbar .x-grouptab-last {
+    margin-bottom: 3px;
+}
+
+.x-grouptabbar .x-active-tab .x-grid-cell-inner  {
+    background-color: #EDEEF0;
+}
+
+.x-grouptabbar .x-tree-elbow-line, 
+.x-grouptabbar .x-tree-elbow-empty {
+    width: 0;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab {
+    background-color: white!important;
+    border: 0 none!important;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab-first {
+    border-top: 1px solid #d9d9d9!important;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab-center {
+    border-left: 1px solid #d9d9d9!important;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab-last {
+    border-bottom: 1px solid #d9d9d9!important;
+    padding-bottom: 3px;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab-first,
+.x-grouptabbar .x-active-group .x-grouptab-last {
+    border-left: 1px solid #d9d9d9!important;
+}
+
+.x-grouptab-cell {
+    border: 0 none!important;
+}
+
+/* Tab corners */
+.x-grouptabbar .x-grouptabs-corner {
+    background-image: url('images/x-grouptabs-corners.gif');
+    display: none;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    font-size: 1px;
+    line-height: 6px;
+    overflow: hidden;
+    zoom:1;
+}
+
+.x-grouptabbar .x-grouptabs-corner {
+    display: none;
+}
+
+.x-grouptabbar .x-active-group .x-grouptab-first .x-grouptabs-corner-top-left,
+.x-grouptabbar .x-active-group .x-grouptab-last .x-grouptabs-corner-bottom-left {
+    display: block;
+}
+
+.x-grouptabbar .x-grouptabs-corner-top-left {
+    background-position: top left;
+    left: 0; top: 0;
+}
+.x-grouptabbar .x-grouptabs-corner-bottom-left {
+    background-position: bottom left;
+    left: 0; bottom: 0;
+}
+.x-grouptabbar .x-grouptabs-corner-top-right {
+    background-position: top right;
+    right: 0; top: 0;
+}
+.x-grouptabbar .x-grouptabs-corner-bottom-right {
+    background-position: bottom right;
+    right: 0; bottom: 0;
+}
+.x-grouptabbar .x-active-group .x-grouptabs-corner-bottom-left{
+    bottom: -4px; left: -4px;
+}
+.x-grouptabbar .x-active-group .x-grouptabs-corner-bottom-right{
+    bottom: -4px; right: -4px;
+}
+.x-grouptabbar .x-active-group .x-grouptabs-corner-top-left{
+    top: -4px; left: -4px;
+}
+.x-grouptabbar .x-active-group .x-grouptabs-corner-top-right{
+    top: -4px; right: -4px;
+}
+
+.x-grouptabbar .x-tree-panel .x-grid-cell {
+    overflow: visible;
+}
+
+.x-grouptabbar .x-panel-body  {
+    background-color: #4E78B1;
+}
+
+.x-grouptabbar {
+    top: 0 !important;
+    margin-top: -1px !important;
+}
+
+.x-strict .x-ie7 .x-grouptabbar, .x-strict .x-ie6 .x-grouptabbar {
+    margin-top: -2px !important;
+}
+
+.x-grouptabbar .x-grouptab .x-tree-icon-parent {
+    display: none;
+}
+
+.x-grouptabbar .x-grouptab .x-tree-elbow,
+.x-grouptabbar .x-grouptab .x-tree-elbow-end {
+    display: none;
+}
+
+.x-grouptabbar .x-grouptab .x-tree-expander {
+    background: transparent url('images/elbow-plus-nl.gif') no-repeat;
+}
+
+.x-grouptabbar .x-grid-tree-node-expanded .x-grouptab .x-tree-expander {
+    background: transparent url('images/elbow-minus-nl.gif') no-repeat;
+}/* Styles used by Ext.ux.form.ItemSelector */
+
+.x-form-multiselect-body .x-boundlist .x-mask {
+    background: none;
+}
+
+.x-form-itemselector-body .x-form-item {
+    margin: 0;
+}
+
+.x-form-itemselector-top {
+    background-image: url(images/top2.gif);
+}
+.x-form-itemselector-up {
+    background-image: url(images/up2.gif);
+}
+.x-form-itemselector-add {
+    background-image: url(images/right2.gif);
+}
+.x-form-itemselector-remove {
+    background-image: url(images/left2.gif);
+}
+.x-form-itemselector-down {
+    background-image: url(images/down2.gif);
+}
+.x-form-itemselector-bottom {
+    background-image: url(images/bottom2.gif);
+}
+.x-livesearch-match {
+    font-weight: bold;
+    background-color: yellow;
+}
+.x-tab-tabmenu-right {
+    background: transparent url('images/tab-scroller-menu.gif') no-repeat 0 0;
+    width:18px;
+    height: 20px;
+    cursor:pointer;
+    zoom: 1;
+    z-index: 6;
+    float: right;
+}
+.x-tab-tabmenu-over {
+    background-position: -18px 0;
+}
+.x-tab-tabmenu-disabled {
+    background-position: 0 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}
+.x-view-selector {
+    position: absolute;
+    border: 1px dotted #3399BB;
+}/* StatusBar - structure */
+.x-statusbar .x-status-text {
+    cursor: default;
+/*
+    height: 21px;
+    line-height: 21px;
+    padding: 0 4px;
+*/
+}
+.x-statusbar .x-status-busy {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+}
+
+.x-toolbar div.xtb-text
+
+.x-statusbar .x-status-text-panel {
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    padding: 2px 8px 2px 5px;
+}
+
+/* StatusBar word processor example styles */
+
+#word-status .x-status-text-panel .spacer {
+    width: 60px;
+    font-size:0;
+    line-height:0;
+}
+#word-status .x-status-busy {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+}
+#word-status .x-status-saved {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+}
+
+/* StatusBar form validation example styles */
+
+.x-statusbar .x-status-error {
+    cursor: pointer;
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+}
+.x-statusbar .x-status-valid {
+    padding-left: 25px !important;
+    background: transparent no-repeat 3px 0;
+}
+.x-status-error-list {
+    font: 11px tahoma,arial,verdana,sans-serif;
+    position: absolute;
+    z-index: 9999;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    padding: 5px 10px;
+}
+.x-status-error-list li {
+    cursor: pointer;
+    list-style: disc;
+    margin-left: 10px;
+}
+.x-status-error-list li a {
+    text-decoration: none;
+}
+.x-status-error-list li a:hover {
+    text-decoration: underline;
+}
+
+
+/* *********************************************************** */
+/* *********************************************************** */
+/* *********************************************************** */
+
+
+/* StatusBar - visual */
+
+.x-statusbar .x-status-busy {
+    background-image: url(../images/loading.gif);
+}
+.x-statusbar .x-status-text-panel {
+    border-color: #99bbe8 #fff #fff #99bbe8;
+}
+
+/* StatusBar word processor example styles */
+
+#word-status .x-status-text {
+    color: #777;
+}
+#word-status .x-status-busy {
+    background-image: url(../images/saving.gif);
+}
+#word-status .x-status-saved {
+    background-image: url(../images/saved.png);
+}
+
+/* StatusBar form validation example styles */
+
+.x-statusbar .x-status-error {
+    color: #C33;
+    background-image: url(../images/exclamation.gif);
+}
+.x-statusbar .x-status-valid {
+    background-image: url(../images/accept.png);
+}
+.x-status-error-list {
+    border-color: #C33;
+    background: white;
+}
+.x-status-error-list li a {
+    color: #15428B;
+}
