@@ -24,7 +24,9 @@
             "UsersGrid",
             "TodosGrid",
             "PostsGrid",
-            "CommentsGrid"
+            "CommentsGrid",
+            "AlbumsGrid",
+            "PhotosGrid"
         ]
     },
     "name": "Application",

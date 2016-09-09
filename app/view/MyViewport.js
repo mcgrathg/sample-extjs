@@ -24,6 +24,8 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
+        'Examples.view.AlbumsGrid',
+        'Examples.view.PhotosGrid',
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'sl.panel.grid.ParentChildGridPairing'
@@ -101,6 +103,50 @@ Ext.define('Examples.view.MyViewport', {
                             monitorUIUpdate: true
                         }
                     ]
+                },
+                {
+                    xtype: 'panel',
+                    reference: 'albumsandphotos',
+                    title: 'Albums And Photos',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'albumsgrid',
+                            flex: 1,
+                            listeners: {
+                                parentchildtitlechange: 'onAlbumsGridTitleChange'
+                            }
+                        },
+                        {
+                            xtype: 'splitter',
+                            collapseOnDblClick: false,
+                            collapseTarget: 'prev',
+                            collapsible: true
+                        },
+                        {
+                            xtype: 'photosgrid',
+                            flex: 1
+                        }
+                    ],
+                    plugins: [
+                        {
+                            ptype: 'parentchild',
+                            pluginId: 'albumToPhotos',
+                            parentGridReference: 'albums',
+                            childGridReference: 'photos',
+                            parentFieldName: 'id',
+                            cacheParamName: 'albumId',
+                            childForeignKeyFieldName: 'albumId',
+                            directionArrow: 'u',
+                            parentFieldsForChildGridTitle: [
+                                'title'
+                            ],
+                            monitorUIUpdate: true
+                        }
+                    ]
                 }
             ]
         }
@@ -130,6 +176,20 @@ Ext.define('Examples.view.MyViewport', {
             parentFieldName: 'id',
             cacheParamName: 'userId',
             childForeignKeyFieldName: 'userId',
+            directionArrow: 'l',
+            parentFieldsForChildGridTitle: [
+                'name'
+            ],
+            monitorUIUpdate: true
+        },
+        {
+            ptype: 'parentchild',
+            baseAndParentDivider: ' By ',
+            pluginId: 'userToAlbums',
+            parentGridReference: 'users',
+            childGridReference: 'albums',
+            parentFieldName: 'id',
+            cacheParamName: 'userId',
             directionArrow: 'l',
             parentFieldsForChildGridTitle: [
                 'name'

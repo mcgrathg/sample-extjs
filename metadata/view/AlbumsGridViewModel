@@ -1,0 +1,58 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "albumsgrid",
+        "designer|userClassName": "AlbumsGridViewModel"
+    },
+    "name": "PostsGridViewModel1",
+    "designerId": "2b7a18c5-32a7-45df-bd2c-8442ff0b5658",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Album",
+                "name": "albumsStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore1",
+            "designerId": "a5efc374-0bc7-47e6-8db7-ebd446c3703a",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/albums"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "e64374a8-8c3b-4864-8fbe-79b99d13ea00",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "44fad189-5e04-4d1a-9dc2-7233e3ae557a"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

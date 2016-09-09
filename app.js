@@ -19,10 +19,6 @@ Ext.Loader.setConfig({
 });
 
 
-Ext.Loader.setPath('sl.field.ComboBox','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.panel.grid.EditorGrid','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.panel.grid.ParentChildGridPairing','packages/Stewarts-5/src/../stewarts-all.js');
-
 Ext.application({
     models: [
         'Post',
@@ -40,7 +36,9 @@ Ext.application({
         'UsersGrid',
         'TodosGrid',
         'PostsGrid',
-        'CommentsGrid'
+        'CommentsGrid',
+        'AlbumsGrid',
+        'PhotosGrid'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

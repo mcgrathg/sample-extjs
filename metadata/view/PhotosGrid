@@ -1,0 +1,110 @@
+{
+    "type": "sl.panel.grid.EditorGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoCancel": null,
+        "clicksToEdit": 2,
+        "clicksToMoveEditor": null,
+        "columnLines": true,
+        "designer|userAlias": "photosgrid",
+        "designer|userClassName": "PhotosGrid",
+        "errorSummary": null,
+        "filterLocal": null,
+        "filterParamPrefix": null,
+        "filterUpdateBuffer": null,
+        "height": null,
+        "includeExcelBtn": true,
+        "includeRefreshBtn": true,
+        "includeRowCount": true,
+        "includeSearch": true,
+        "includeValidationStatus": true,
+        "isLocalExcelExport": true,
+        "moveEditorOnEnter": true,
+        "reference": "photos",
+        "searchAlign": "right",
+        "searchWidth": 200,
+        "selModelMode": "MULTI",
+        "showEditCursor": true,
+        "singleName": "Photo",
+        "store": [
+            "{photosStore}"
+        ],
+        "title": "Photos",
+        "useDefaultButtons": true,
+        "useDefaultDeleteConfig": false,
+        "useDefaultEnterKeyHandler": true,
+        "useDefaultNewConfig": true,
+        "useDefaultSaveConfig": false,
+        "useDefaultUndoDeleteConfig": null,
+        "useStewartsRenderer": true,
+        "width": null
+    },
+    "name": "PostsGrid1",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "75092282-cccd-4241-8856-09df395efc97",
+    "viewControllerInstanceId": "05312ee2-67e4-4d36-9579-2bc2435ec04f",
+    "viewModelInstanceId": "f1a5e601-8912-4cd0-9f0f-197c812d522f",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "5bd60531-caa7-4969-9f11-5b7dbd0ef9bd"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "title",
+                "flex": 1,
+                "text": "Title"
+            },
+            "name": "MyColumn2",
+            "designerId": "9759fefb-ac03-4150-a45b-79cde51e6e61"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "url",
+                "flex": 1,
+                "text": "Url"
+            },
+            "name": "MyColumn3",
+            "designerId": "cff2987e-28fa-42c0-9fac-f6fc57f0a912"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "thumbnailUrl",
+                "flex": 1,
+                "text": "Thumbnail Url"
+            },
+            "name": "MyColumn4",
+            "designerId": "7931b6df-977e-4016-be3f-0f511694ec49"
+        }
+    ]
+}

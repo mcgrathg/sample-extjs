@@ -1,0 +1,80 @@
+{
+    "type": "sl.panel.grid.EditorGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoCancel": null,
+        "clicksToEdit": 2,
+        "clicksToMoveEditor": null,
+        "columnLines": true,
+        "designer|userAlias": "albumsgrid",
+        "designer|userClassName": "AlbumsGrid",
+        "errorSummary": null,
+        "filterLocal": null,
+        "filterParamPrefix": null,
+        "filterUpdateBuffer": null,
+        "height": null,
+        "includeExcelBtn": true,
+        "includeRefreshBtn": true,
+        "includeRowCount": true,
+        "includeSearch": true,
+        "includeValidationStatus": true,
+        "isLocalExcelExport": true,
+        "moveEditorOnEnter": true,
+        "reference": "albums",
+        "searchAlign": "right",
+        "searchWidth": 200,
+        "selModelMode": "MULTI",
+        "showEditCursor": true,
+        "singleName": "Album",
+        "store": [
+            "{albumsStore}"
+        ],
+        "title": "Albums",
+        "useDefaultButtons": true,
+        "useDefaultDeleteConfig": false,
+        "useDefaultEnterKeyHandler": true,
+        "useDefaultNewConfig": true,
+        "useDefaultSaveConfig": false,
+        "useDefaultUndoDeleteConfig": null,
+        "useStewartsRenderer": true,
+        "width": null
+    },
+    "name": "PostsGrid1",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "7180c313-00f2-4862-9459-deba5b9f701a",
+    "viewControllerInstanceId": "951255b3-f003-4e34-962c-08c53af02ee6",
+    "viewModelInstanceId": "2b7a18c5-32a7-45df-bd2c-8442ff0b5658",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "925559b1-18c5-426f-8a1b-f9ee4111c366"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "title",
+                "flex": 1,
+                "text": "Title"
+            },
+            "name": "MyColumn10",
+            "designerId": "92ba0c40-375d-4e05-a11b-f61569de690e"
+        }
+    ]
+}

@@ -19,13 +19,26 @@ Ext.define('Examples.view.MyViewportViewController', {
 
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
         var me = this,
-            panel = me.lookupReference('postsandcomments'),
-            comments = me.lookupReference('comments'),
+            refs = me.getReferences(),
+            panel = refs.postsandcomments,
+            comments = refs.comments;
 
-            title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;
+        title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;
 
         panel.setTitle(title);
-        postsGrid.setTitle(defaultTitle);
+        postsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
+    },
+
+    onAlbumsGridTitleChange: function(albumsGrid, newTitle, defaultTitle, divider, recordText) {
+        var me = this,
+            refs = me.getReferences(),
+            panel = refs.albumsandphotos,
+            photos = refs.photos;
+
+        title = defaultTitle + ' And ' + photos.getDefaultTitle() + (recordText ? divider : '') + recordText;
+
+        panel.setTitle(title);
+        albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
     }
 
 });
