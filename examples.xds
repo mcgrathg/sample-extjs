@@ -3,8 +3,8 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "6.1.2.15",
-            "frameworkVersion": "5.1.2.748"
+            "cmdVersion": "6.2.0.103",
+            "frameworkVersion": "5.1.3.228"
         },
         "canvasControls": {
             "viewportSize": {
@@ -14,7 +14,7 @@
                 "width": null
             }
         },
-        "urlPrefix": "http://localhost:1841/",
+        "urlPrefix": "http://localhost:62539/",
         "exportPath": "",
         "lockUrlPrefix": true,
         "buildShouldOverwriteIndex": false,
@@ -27,12 +27,14 @@
         "sdkPath": "",
         "lastBuildSelection": {
             "value": "webBuild",
-            "display": "Build web app"
+            "display": "Build web app",
+            "buildPlatform": false
         },
-        "displayfield-ExtBox1-1210-inputEl": "a new version of the framework is available"
+        "displayfield-ExtBox1-1210-inputEl": "a new version of the framework is available",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "3.5.1",
-    "xdsBuild": 348,
+    "xdsVersion": "4.0.0",
+    "xdsBuild": 168,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",

@@ -10,7 +10,7 @@
         "designer|userClassName": "Users",
         "model": "User",
         "pageSize": 0,
-        "storeId": null
+        "storeId": "Users"
     },
     "name": "MyJsonPStore2",
     "designerId": "642eb705-45e1-49ff-a98f-3519ad393c77",
