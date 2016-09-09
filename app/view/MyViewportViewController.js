@@ -29,6 +29,10 @@ Ext.define('Examples.view.MyViewportViewController', {
         albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
     },
 
+    onPhotoSelect: function(dataviewmodel, record, index, eOpts) {
+        console.warn('focus thumbail into view, cause the dataview may have changed sizes automatically');
+    },
+
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
         var me = this,
             refs = me.getReferences(),

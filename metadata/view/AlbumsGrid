@@ -17,11 +17,15 @@
         "filterParamPrefix": null,
         "filterUpdateBuffer": null,
         "height": null,
-        "includeExcelBtn": true,
-        "includeRefreshBtn": true,
-        "includeRowCount": true,
-        "includeSearch": true,
-        "includeValidationStatus": true,
+        "hideHeaders": true,
+        "includeBufferedRenderer": false,
+        "includeExcelBtn": false,
+        "includeFilters": false,
+        "includeRefreshBtn": false,
+        "includeRowCount": false,
+        "includeSearch": false,
+        "includeStateViewPanel": false,
+        "includeValidationStatus": false,
         "isLocalExcelExport": true,
         "moveEditorOnEnter": true,
         "reference": "albums",
@@ -34,20 +38,29 @@
             "{albumsStore}"
         ],
         "title": "Albums",
-        "useDefaultButtons": true,
+        "useDefaultButtons": false,
         "useDefaultDeleteConfig": false,
         "useDefaultEnterKeyHandler": true,
-        "useDefaultNewConfig": true,
+        "useDefaultNewConfig": false,
         "useDefaultSaveConfig": false,
         "useDefaultUndoDeleteConfig": null,
+        "useStatusBar": false,
         "useStewartsRenderer": true,
         "width": null
     },
     "name": "PostsGrid1",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "useStatusBar": "boolean"
     },
     "designerId": "7180c313-00f2-4862-9459-deba5b9f701a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "useStatusBar",
+            "type": "string"
+        }
+    ],
     "viewControllerInstanceId": "951255b3-f003-4e34-962c-08c53af02ee6",
     "viewModelInstanceId": "2b7a18c5-32a7-45df-bd2c-8442ff0b5658",
     "cn": [

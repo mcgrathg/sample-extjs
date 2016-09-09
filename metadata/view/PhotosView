@@ -64,6 +64,21 @@
             },
             "name": "tpl",
             "designerId": "27644250-e194-40fd-a46c-ab6259eb24e2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPhotoSelect",
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onPhotoSelect",
+            "designerId": "cac6cc52-708d-45ef-9666-c9e15438f627"
         }
     ]
 }

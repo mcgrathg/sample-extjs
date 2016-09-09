@@ -5,7 +5,10 @@
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
    "theme": "ext-theme-gray-6ed0c18f-e314-478f-8827-accf070a4a75",
-   "requires": [],
+   "requires": [
+      "sencha-charts",
+      "Stewarts-5"
+   ],
    "sass": {
       "namespace": "Examples"
    },

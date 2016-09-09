@@ -29,6 +29,8 @@ Ext.define('Examples.view.MyViewport', {
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'Ext.view.View',
+        'Ext.Img',
+        'Ext.form.field.Display',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -63,13 +65,14 @@ Ext.define('Examples.view.MyViewport', {
                     reference: 'albumsandphotos',
                     title: 'Albums And Photos',
                     layout: {
-                        type: 'vbox',
+                        type: 'hbox',
                         align: 'stretch'
                     },
                     items: [
                         {
                             xtype: 'albumsgrid',
-                            flex: 1,
+                            width: 300,
+                            collapseDirection: 'left',
                             listeners: {
                                 parentchildtitlechange: 'onAlbumsGridTitleChange'
                             }
@@ -81,10 +84,70 @@ Ext.define('Examples.view.MyViewport', {
                             collapsible: true
                         },
                         {
-                            xtype: 'photosview',
+                            xtype: 'container',
                             flex: 1,
-                            reference: 'photos',
-                            id: 'photo-chooser-view'
+                            layout: {
+                                type: 'vbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'photosview',
+                                    reference: 'photos',
+                                    id: 'photo-chooser-view',
+                                    flex: 1,
+                                    bind: {
+                                        selection: '{photo}'
+                                    },
+                                    listeners: {
+                                        select: 'onPhotoSelect'
+                                    }
+                                },
+                                {
+                                    xtype: 'container',
+                                    frame: true,
+                                    bind: {
+                                        hidden: '{!photo}'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            items: [
+                                                {
+                                                    xtype: 'image',
+                                                    height: 600,
+                                                    width: 600,
+                                                    imgCls: 'centered-image',
+                                                    bind: {
+                                                        src: '{photo.url}'
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            fieldLabel: 'Title',
+                                            bind: {
+                                                value: '{photo.title}'
+                                            }
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            fieldLabel: 'URL',
+                                            bind: {
+                                                value: '<a href="{photo.url}" target="_blank">{photo.url}</a>'
+                                            }
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            fieldLabel: 'Thumbnail URL',
+                                            bind: {
+                                                value: '<a href="{photo.thumbnailUrl}" target="_blank">{photo.thumbnailUrl}</a>'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     plugins: [
@@ -96,7 +159,7 @@ Ext.define('Examples.view.MyViewport', {
                             parentFieldName: 'id',
                             cacheParamName: 'albumId',
                             childForeignKeyFieldName: 'albumId',
-                            directionArrow: 'u',
+                            directionArrow: 'l',
                             parentFieldsForChildGridTitle: [
                                 'title'
                             ],

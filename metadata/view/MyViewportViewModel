@@ -6,6 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{",
+            "    photo: null",
+            "}"
+        ],
         "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewportViewModel"
     },

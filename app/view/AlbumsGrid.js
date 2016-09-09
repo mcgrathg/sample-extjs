@@ -23,28 +23,36 @@ Ext.define('Examples.view.AlbumsGrid', {
         'Ext.grid.column.Column'
     ],
 
+    config: {
+        useStatusBar: false
+    },
+
     viewModel: {
         type: 'albumsgrid'
     },
     reference: 'albums',
     title: 'Albums',
     columnLines: true,
-    includeSearch: true,
-    includeRowCount: true,
+    hideHeaders: true,
+    includeSearch: false,
+    includeRowCount: false,
+    includeBufferedRenderer: false,
+    includeFilters: false,
+    includeStateViewPanel: false,
     useStewartsRenderer: true,
-    includeRefreshBtn: true,
-    includeExcelBtn: true,
+    includeRefreshBtn: false,
+    includeExcelBtn: false,
     isLocalExcelExport: true,
-    includeValidationStatus: true,
+    includeValidationStatus: false,
     singleName: 'Album',
     searchAlign: 'right',
     searchWidth: 200,
     selModelMode: 'MULTI',
     clicksToEdit: 2,
-    useDefaultButtons: true,
+    useDefaultButtons: false,
     useDefaultSaveConfig: false,
     useDefaultDeleteConfig: false,
-    useDefaultNewConfig: true,
+    useDefaultNewConfig: false,
     moveEditorOnEnter: true,
     useDefaultEnterKeyHandler: true,
     showEditCursor: true,

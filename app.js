@@ -19,6 +19,9 @@ Ext.Loader.setConfig({
 });
 
 
+Ext.Loader.setPath('sl.panel.grid.EditorGrid','packages/Stewarts-5/src/../stewarts-all.js');
+Ext.Loader.setPath('sl.panel.grid.ParentChildGridPairing','packages/Stewarts-5/src/../stewarts-all.js');
+
 Ext.application({
     models: [
         'Post',
@@ -39,7 +42,8 @@ Ext.application({
         'CommentsGrid',
         'AlbumsGrid',
         'PhotosGrid',
-        'PhotosView'
+        'PhotosView',
+        'PhotoForm'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

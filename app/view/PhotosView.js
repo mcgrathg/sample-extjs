@@ -19,6 +19,7 @@ Ext.define('Examples.view.PhotosView', {
 
     requires: [
         'Examples.view.PhotosViewViewModel',
+        'Examples.view.PhotosViewViewController',
         'Ext.XTemplate'
     ],
 
@@ -27,6 +28,7 @@ Ext.define('Examples.view.PhotosView', {
         defaultTitle: 'Photos'
     },
 
+    controller: 'photosview',
     viewModel: {
         type: 'photosview'
     },
@@ -47,6 +49,9 @@ Ext.define('Examples.view.PhotosView', {
 
     bind: {
         store: '{photosStore}'
+    },
+    listeners: {
+        select: 'onPhotoSelect'
     }
 
 });

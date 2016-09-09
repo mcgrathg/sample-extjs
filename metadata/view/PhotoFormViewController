@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "photoform",
+        "designer|userClassName": "PhotoFormViewController"
+    },
+    "designerId": "72b770df-7211-4844-a74c-8dd87c885382"
+}
