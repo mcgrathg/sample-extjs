@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "photosview",
+        "designer|userClassName": "PhotosViewViewModel"
+    },
+    "designerId": "22613069-6ba1-4df8-9111-8cddaef06926",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Photo",
+                "name": "photosStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore",
+            "designerId": "f563083f-e6d7-4644-b782-b8a7fcf6f61d",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/photos"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "086c7fb2-a5b0-4bfb-ae36-a1f4b35eb05f",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "1eb5d541-8206-471c-b3f2-972c3ca70b72"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -38,7 +38,8 @@ Ext.application({
         'PostsGrid',
         'CommentsGrid',
         'AlbumsGrid',
-        'PhotosGrid'
+        'PhotosGrid',
+        'PhotosView'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "photosview",
+        "designer|userClassName": "PhotosViewViewController"
+    },
+    "designerId": "3a1db6d4-c095-449b-af79-21f5d37c7848"
+}

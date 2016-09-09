@@ -63,6 +63,128 @@
             "designerId": "d083f390-4e63-42cb-9f08-e9d854e8c5fd",
             "cn": [
                 {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "reference": "albumsandphotos",
+                        "title": "Albums And Photos"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "bd60371d-8b3c-40a7-8cba-2bd8170010bd",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "name": "albumsgrid",
+                            "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
+                            "masterInstanceId": "7180c313-00f2-4862-9459-deba5b9f701a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "albumsGrid",
+                                            "newTitle",
+                                            "defaultTitle",
+                                            "divider",
+                                            "recordText"
+                                        ],
+                                        "fn": "onAlbumsGridTitleChange",
+                                        "implHandler": [
+                                            "var me = this,",
+                                            "    refs = me.getReferences(),",
+                                            "    panel = refs.albumsandphotos,",
+                                            "    photos = refs.photos;",
+                                            "",
+                                            "    title = defaultTitle + ' And ' + photos.getDefaultTitle() + (recordText ? divider : '') + recordText;",
+                                            "",
+                                            "panel.setTitle(title);",
+                                            "albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title"
+                                        ],
+                                        "name": "parentchildtitlechange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAlbumsGridTitleChange",
+                                    "designerId": "1393c37d-d343-476c-a2ba-8322c05dd5ac"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapseOnDblClick": false,
+                                "collapseTarget": "prev",
+                                "collapsible": true
+                            },
+                            "name": "MySplitter",
+                            "designerId": "50678b9c-a6c9-4aa2-ad1a-c24e33a9345f"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "photo-chooser-view",
+                                "layout|flex": 1,
+                                "reference": "photos"
+                            },
+                            "name": "photosview",
+                            "designerId": "c58ae0cc-d7cf-4c37-8165-da47da4e1c14",
+                            "masterInstanceId": "23ef963a-3ab5-4da9-906e-69d627c5fc6f"
+                        },
+                        {
+                            "type": "sl.panel.grid.ParentChildGridPairing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cacheParamName": "albumId",
+                                "childForeignKeyFieldName": "albumId",
+                                "childGridReference": "photos",
+                                "designer|displayName": "albums -> photos parentChild",
+                                "directionArrow": "u",
+                                "monitorUIUpdate": true,
+                                "parentFieldName": "id",
+                                "parentFieldsForChildGridTitle": [
+                                    "['title']"
+                                ],
+                                "parentGridReference": "albums",
+                                "pluginId": "albumToPhotos"
+                            },
+                            "name": "MyParentChildGridPairing2",
+                            "designerId": "94af5e1b-7b61-4f97-87c6-f2be189a90f4"
+                        }
+                    ]
+                },
+                {
                     "type": "linkedinstance",
                     "reference": {
                         "name": "items",
@@ -194,126 +316,6 @@
                             },
                             "name": "MyParentChildGridPairing2",
                             "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "layout": "vbox",
-                        "reference": "albumsandphotos",
-                        "title": "Albums And Photos"
-                    },
-                    "name": "MyPanel1",
-                    "designerId": "bd60371d-8b3c-40a7-8cba-2bd8170010bd",
-                    "cn": [
-                        {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1
-                            },
-                            "name": "albumsgrid",
-                            "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
-                            "masterInstanceId": "7180c313-00f2-4862-9459-deba5b9f701a",
-                            "cn": [
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|params": [
-                                            "albumsGrid",
-                                            "newTitle",
-                                            "defaultTitle",
-                                            "divider",
-                                            "recordText"
-                                        ],
-                                        "fn": "onAlbumsGridTitleChange",
-                                        "implHandler": [
-                                            "var me = this,",
-                                            "    refs = me.getReferences(),",
-                                            "    panel = refs.albumsandphotos,",
-                                            "    photos = refs.photos;",
-                                            "",
-                                            "    title = defaultTitle + ' And ' + photos.getDefaultTitle() + (recordText ? divider : '') + recordText;",
-                                            "",
-                                            "panel.setTitle(title);",
-                                            "albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title"
-                                        ],
-                                        "name": "parentchildtitlechange",
-                                        "scope": "me"
-                                    },
-                                    "name": "onAlbumsGridTitleChange",
-                                    "designerId": "1393c37d-d343-476c-a2ba-8322c05dd5ac"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.resizer.Splitter",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "collapseOnDblClick": false,
-                                "collapseTarget": "prev",
-                                "collapsible": true
-                            },
-                            "name": "MySplitter",
-                            "designerId": "50678b9c-a6c9-4aa2-ad1a-c24e33a9345f"
-                        },
-                        {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1
-                            },
-                            "name": "photosgrid",
-                            "designerId": "6800f997-6200-424d-a2ab-85243c89cd55",
-                            "masterInstanceId": "75092282-cccd-4241-8856-09df395efc97"
-                        },
-                        {
-                            "type": "sl.panel.grid.ParentChildGridPairing",
-                            "reference": {
-                                "name": "plugins",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "cacheParamName": "albumId",
-                                "childForeignKeyFieldName": "albumId",
-                                "childGridReference": "photos",
-                                "designer|displayName": "albums -> photos parentChild",
-                                "directionArrow": "u",
-                                "monitorUIUpdate": true,
-                                "parentFieldName": "id",
-                                "parentFieldsForChildGridTitle": [
-                                    "['title']"
-                                ],
-                                "parentGridReference": "albums",
-                                "pluginId": "albumToPhotos"
-                            },
-                            "name": "MyParentChildGridPairing2",
-                            "designerId": "94af5e1b-7b61-4f97-87c6-f2be189a90f4"
                         }
                     ]
                 }

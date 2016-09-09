@@ -14,7 +14,7 @@
 
 .expanded-grid-table {
     margin: 10px;
-    
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -32,7 +32,7 @@
         td:first-child {
             font-weight: bold;
         }
-        
+
         tr {
             background-color: wheat;
         }
@@ -40,6 +40,48 @@
         /* Striped Rows */
         tr:nth-child(even){
             background-color: papayawhip;
+        }
+    }
+}
+
+#photo-chooser-view {
+    background: white;
+    font: 11px Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    .thumb {
+        padding: 3px;
+    }
+    .thumb-wrap {
+        float: left;
+        margin: 4px;
+        margin-right: 10px;
+        padding: 5px;
+
+        width: 166px;
+        height: 200px;
+
+        span {
+            display: block;
+            overflow: hidden;
+        }
+    }
+    .x-view-over {
+        border:1px solid #dddddd;
+        background-color: #efefef;
+        padding: 4px;
+    }
+    .x-item-selected {
+        background: #DFEDFF;
+        border: 1px solid #6593cf;
+        padding: 4px;
+
+        .thumb {
+            background:transparent;
+        }
+
+        span {
+            color:#1A4D8F;
         }
     }
 }

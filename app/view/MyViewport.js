@@ -21,13 +21,14 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.MyViewportViewModel',
         'Examples.view.MyViewportViewController',
         'Examples.view.UsersGrid',
+        'Examples.view.AlbumsGrid',
+        'Examples.view.PhotosView',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
-        'Examples.view.AlbumsGrid',
-        'Examples.view.PhotosGrid',
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
+        'Ext.view.View',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -57,6 +58,52 @@ Ext.define('Examples.view.MyViewport', {
             flex: 1,
             layout: 'accordion',
             items: [
+                {
+                    xtype: 'panel',
+                    reference: 'albumsandphotos',
+                    title: 'Albums And Photos',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'albumsgrid',
+                            flex: 1,
+                            listeners: {
+                                parentchildtitlechange: 'onAlbumsGridTitleChange'
+                            }
+                        },
+                        {
+                            xtype: 'splitter',
+                            collapseOnDblClick: false,
+                            collapseTarget: 'prev',
+                            collapsible: true
+                        },
+                        {
+                            xtype: 'photosview',
+                            flex: 1,
+                            reference: 'photos',
+                            id: 'photo-chooser-view'
+                        }
+                    ],
+                    plugins: [
+                        {
+                            ptype: 'parentchild',
+                            pluginId: 'albumToPhotos',
+                            parentGridReference: 'albums',
+                            childGridReference: 'photos',
+                            parentFieldName: 'id',
+                            cacheParamName: 'albumId',
+                            childForeignKeyFieldName: 'albumId',
+                            directionArrow: 'u',
+                            parentFieldsForChildGridTitle: [
+                                'title'
+                            ],
+                            monitorUIUpdate: true
+                        }
+                    ]
+                },
                 {
                     xtype: 'todosgrid'
                 },
@@ -96,50 +143,6 @@ Ext.define('Examples.view.MyViewport', {
                             parentFieldName: 'id',
                             cacheParamName: 'postId',
                             childForeignKeyFieldName: 'postId',
-                            directionArrow: 'u',
-                            parentFieldsForChildGridTitle: [
-                                'title'
-                            ],
-                            monitorUIUpdate: true
-                        }
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    reference: 'albumsandphotos',
-                    title: 'Albums And Photos',
-                    layout: {
-                        type: 'vbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'albumsgrid',
-                            flex: 1,
-                            listeners: {
-                                parentchildtitlechange: 'onAlbumsGridTitleChange'
-                            }
-                        },
-                        {
-                            xtype: 'splitter',
-                            collapseOnDblClick: false,
-                            collapseTarget: 'prev',
-                            collapsible: true
-                        },
-                        {
-                            xtype: 'photosgrid',
-                            flex: 1
-                        }
-                    ],
-                    plugins: [
-                        {
-                            ptype: 'parentchild',
-                            pluginId: 'albumToPhotos',
-                            parentGridReference: 'albums',
-                            childGridReference: 'photos',
-                            parentFieldName: 'id',
-                            cacheParamName: 'albumId',
-                            childForeignKeyFieldName: 'albumId',
                             directionArrow: 'u',
                             parentFieldsForChildGridTitle: [
                                 'title'

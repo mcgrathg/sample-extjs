@@ -5,9 +5,7 @@
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
    "theme": "ext-theme-gray-6ed0c18f-e314-478f-8827-accf070a4a75",
-   "requires": [
-      "Stewarts-5"
-   ],
+   "requires": [],
    "sass": {
       "namespace": "Examples"
    },

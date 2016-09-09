@@ -1,0 +1,69 @@
+{
+    "type": "Ext.view.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultTitle": "Photos",
+        "designer|userAlias": "photosview",
+        "designer|userClassName": "PhotosView",
+        "dock": null,
+        "height": null,
+        "itemSelector": "div.thumb-wrap",
+        "overItemCls": "x-view-over",
+        "scrollable": true,
+        "store": [
+            "{photosStore}"
+        ],
+        "title": "Photos",
+        "trackOver": true,
+        "width": null
+    },
+    "name": "MyView",
+    "configAlternates": {
+        "store": "binding",
+        "scrollable": "boolean"
+    },
+    "designerId": "23ef963a-3ab5-4da9-906e-69d627c5fc6f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "defaultTitle",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "3a1db6d4-c095-449b-af79-21f5d37c7848",
+    "viewModelInstanceId": "22613069-6ba1-4df8-9111-8cddaef06926",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<tpl for=\".\">",
+                    "    <div class=\"thumb-wrap\">",
+                    "        <div class=\"thumb\">",
+                    "            <img src=\"{thumbnailUrl}\" />",
+                    "        </div>",
+                    "        <span>{title}</span>",
+                    "    </div>",
+                    "</tpl>"
+                ]
+            },
+            "name": "tpl",
+            "designerId": "27644250-e194-40fd-a46c-ab6259eb24e2"
+        }
+    ]
+}

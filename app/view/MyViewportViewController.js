@@ -17,18 +17,6 @@ Ext.define('Examples.view.MyViewportViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.myviewport',
 
-    onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
-        var me = this,
-            refs = me.getReferences(),
-            panel = refs.postsandcomments,
-            comments = refs.comments;
-
-        title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;
-
-        panel.setTitle(title);
-        postsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
-    },
-
     onAlbumsGridTitleChange: function(albumsGrid, newTitle, defaultTitle, divider, recordText) {
         var me = this,
             refs = me.getReferences(),
@@ -39,6 +27,18 @@ Ext.define('Examples.view.MyViewportViewController', {
 
         panel.setTitle(title);
         albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
+    },
+
+    onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
+        var me = this,
+            refs = me.getReferences(),
+            panel = refs.postsandcomments,
+            comments = refs.comments;
+
+        title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;
+
+        panel.setTitle(title);
+        postsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
     }
 
 });
