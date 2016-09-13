@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "expandedphotowindow",
+        "designer|userClassName": "ExpandedPhotoWindowViewModel"
+    },
+    "designerId": "c206ae23-ea6b-4fc8-bf36-994879a276f7"
+}

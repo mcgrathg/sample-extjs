@@ -29,8 +29,6 @@ Ext.define('Examples.view.MyViewport', {
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'Ext.view.View',
-        'Ext.Img',
-        'Ext.form.field.Display',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -78,76 +76,13 @@ Ext.define('Examples.view.MyViewport', {
                             }
                         },
                         {
-                            xtype: 'splitter',
-                            collapseOnDblClick: false,
-                            collapseTarget: 'prev',
-                            collapsible: true
-                        },
-                        {
-                            xtype: 'container',
+                            xtype: 'photosview',
                             flex: 1,
-                            layout: {
-                                type: 'vbox',
-                                align: 'stretch'
-                            },
-                            items: [
-                                {
-                                    xtype: 'photosview',
-                                    reference: 'photos',
-                                    id: 'photo-chooser-view',
-                                    flex: 1,
-                                    bind: {
-                                        selection: '{photo}'
-                                    },
-                                    listeners: {
-                                        select: 'onPhotoSelect'
-                                    }
-                                },
-                                {
-                                    xtype: 'container',
-                                    frame: true,
-                                    bind: {
-                                        hidden: '{!photo}'
-                                    },
-                                    items: [
-                                        {
-                                            xtype: 'container',
-                                            items: [
-                                                {
-                                                    xtype: 'image',
-                                                    height: 600,
-                                                    width: 600,
-                                                    imgCls: 'centered-image',
-                                                    bind: {
-                                                        src: '{photo.url}'
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'displayfield',
-                                            fieldLabel: 'Title',
-                                            bind: {
-                                                value: '{photo.title}'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'displayfield',
-                                            fieldLabel: 'URL',
-                                            bind: {
-                                                value: '<a href="{photo.url}" target="_blank">{photo.url}</a>'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'displayfield',
-                                            fieldLabel: 'Thumbnail URL',
-                                            bind: {
-                                                value: '<a href="{photo.thumbnailUrl}" target="_blank">{photo.thumbnailUrl}</a>'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
+                            cls: 'photo-chooser-view',
+                            bind: {
+                                hidden: '{!isPhotoViewVisible}',
+                                selection: '{photo}'
+                            }
                         }
                     ],
                     plugins: [
@@ -200,6 +135,7 @@ Ext.define('Examples.view.MyViewport', {
                     plugins: [
                         {
                             ptype: 'parentchild',
+                            baseAndParentDivider: ' On ',
                             pluginId: 'postToComments',
                             parentGridReference: 'posts',
                             childGridReference: 'comments',

@@ -24860,35 +24860,44 @@ a.x-color-picker-item:hover {
     .expanded-grid-table table tr:nth-child(even) {
       background-color: papayawhip; }
 
-#photo-chooser-view {
+.photo-chooser-view {
   background: white;
   font: 11px Arial, Helvetica, sans-serif;
   text-align: center; }
-  #photo-chooser-view .thumb {
+  .photo-chooser-view .thumb {
     padding: 3px; }
-  #photo-chooser-view .thumb-wrap {
+  .photo-chooser-view .thumb-wrap {
     float: left;
     margin: 4px;
     margin-right: 10px;
     padding: 5px;
     width: 166px;
     height: 200px; }
-    #photo-chooser-view .thumb-wrap span {
+    .photo-chooser-view .thumb-wrap span {
       display: block;
       overflow: hidden; }
-  #photo-chooser-view .x-view-over {
+  .photo-chooser-view .x-view-over {
     border: 1px solid #dddddd;
     background-color: #efefef;
     padding: 4px;
     cursor: zoom-in; }
-  #photo-chooser-view .x-item-selected {
+  .photo-chooser-view .x-item-selected {
     background: #DFEDFF;
     border: 1px solid #6593cf;
     padding: 4px; }
-    #photo-chooser-view .x-item-selected .thumb {
+    .photo-chooser-view .x-item-selected .thumb {
       background: transparent; }
-    #photo-chooser-view .x-item-selected span {
+    .photo-chooser-view .x-item-selected span {
       color: #1A4D8F; }
+
+.expanded-photo {
+  padding: 15px;
+  background: #FAFAFA;
+  /*     margin-top: 10px !important; */ }
+  .expanded-photo img {
+    max-width: 600px;
+    width: 100%;
+    height: auto; }
 
 /*
  * Stewarts CSS Library

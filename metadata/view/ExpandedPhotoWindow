@@ -1,0 +1,190 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "closeAction": "hide",
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "expandedphotowindow",
+        "designer|userClassName": "ExpandedPhotoWindow",
+        "frame": true,
+        "height": null,
+        "title": [
+            "{photo.title} (Full Size)"
+        ],
+        "width": null
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "bc3a2e6c-e24e-4984-b7ba-9c0f9a8c9f05",
+    "viewControllerInstanceId": "d32bef3b-23fc-4ee1-ba8f-db53ae52b998",
+    "viewModelInstanceId": "c206ae23-ea6b-4fc8-bf36-994879a276f7",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoEl": "div",
+                "height": 600,
+                "hidden": null,
+                "imgCls": "centered-image",
+                "src": [
+                    "{photo.url}"
+                ],
+                "title": "Full-Size Image",
+                "width": 600
+            },
+            "name": "MyImg",
+            "configAlternates": {
+                "src": "binding",
+                "hidden": "binding"
+            },
+            "designerId": "f7dad9f4-9bd7-4b2c-ae6a-7052499d3153",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "autoEl",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null,
+                "fieldLabel": null,
+                "height": null,
+                "width": null
+            },
+            "name": "MyFieldContainer",
+            "designerId": "68dc94f6-db4f-4f75-b628-17d878352071",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Title",
+                        "labelWidth": null,
+                        "value": [
+                            "{photo.title}"
+                        ]
+                    },
+                    "name": "MyDisplayField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "ee376aa2-d6e5-4875-83ff-ebf1bd2e5e4a"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "URL",
+                        "value": [
+                            "<a href=\"{photo.url}\" target=\"_blank\">{photo.url}</a>"
+                        ]
+                    },
+                    "name": "MyDisplayField1",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "75fd6114-7a46-4e23-b1e6-1614b96bbf06"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Thumbnail URL",
+                        "value": [
+                            "<a href=\"{photo.thumbnailUrl}\" target=\"_blank\">{photo.thumbnailUrl}</a>"
+                        ]
+                    },
+                    "name": "MyDisplayField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "10cc6454-4ced-427e-a7f8-6dd11b637e5c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "minus"
+            },
+            "name": "MyTool1",
+            "designerId": "05e3a87c-4df0-4c76-a7d1-9cfc390ada22"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "minimize"
+            },
+            "name": "MyTool2",
+            "designerId": "a5d27631-5f55-4dbf-9b4a-a9c3b79eb0e8"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "maximize"
+            },
+            "name": "MyTool3",
+            "designerId": "fe7ae565-6594-4fa8-833d-c71ddc141df2"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "plus"
+            },
+            "name": "MyTool4",
+            "designerId": "b1009cbe-c1eb-4d1b-bd62-40e7e818fa7e"
+        }
+    ]
+}

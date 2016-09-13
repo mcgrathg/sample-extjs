@@ -8,11 +8,90 @@
     "userConfig": {
         "data": [
             "{",
-            "    photo: null",
+            "    photo: null,",
+            "    isPhotoWindowVisible: false",
             "}"
         ],
         "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewportViewModel"
     },
-    "designerId": "86ac9e9b-036e-41b7-9dd1-2a8299decbc5"
+    "designerId": "86ac9e9b-036e-41b7-9dd1-2a8299decbc5",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Photo",
+                "name": "photosStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore",
+            "designerId": "45799357-1494-4b0a-97e4-393b256d2621",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/photos"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "a789c6be-26d8-4f00-9c28-e38cf666761b",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "15c22076-a7c2-401c-b421-b4dbdfe39b8f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isSinglePhotoPanelVisible"
+            },
+            "name": "MyFormula",
+            "designerId": "88cb1663-5048-48da-968a-584a81cb6209",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "return get('photo');"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "db85b43f-853d-4a1c-ad04-a9675b86ed62"
+                }
+            ]
+        }
+    ]
 }

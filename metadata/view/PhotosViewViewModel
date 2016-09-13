@@ -9,7 +9,7 @@
         "designer|userAlias": "photosview",
         "designer|userClassName": "PhotosViewViewModel"
     },
-    "designerId": "22613069-6ba1-4df8-9111-8cddaef06926",
+    "designerId": "51b9a8fb-a3d9-4e0d-8714-c912a000561b",
     "cn": [
         {
             "type": "jsonpstore",
@@ -24,7 +24,7 @@
                 "pageSize": 0
             },
             "name": "MyJsonPStore",
-            "designerId": "f563083f-e6d7-4644-b782-b8a7fcf6f61d",
+            "designerId": "d6d5582b-cde6-4212-a87f-cf3898d2af20",
             "cn": [
                 {
                     "type": "Ext.data.proxy.JsonP",

@@ -9,5 +9,86 @@
         "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewportViewController"
     },
-    "designerId": "e1541dd2-78b7-4a2d-88f4-4a332f5393d8"
+    "designerId": "e1541dd2-78b7-4a2d-88f4-4a332f5393d8",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "viewModel"
+                ],
+                "fn": "initViewModel",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "// keep site title matching the selected tree node",
+                    "viewModel.bind({",
+                    "    bindTo: '{photo}'",
+                    "}, me.reactPhotoChange, me);"
+                ]
+            },
+            "name": "initViewModel",
+            "designerId": "cca4a942-eb6c-4922-86d8-c9153c16fbcb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "photo"
+                ],
+                "fn": "reactPhotoChange",
+                "implHandler": [
+                    "var win = this.getExpandedPhotoWindow();",
+                    "",
+                    "this.getViewModel().set('isPhotoWindowVisible', !!photo);",
+                    "",
+                    "if (photo) {",
+                    "    win.show();",
+                    "} else {",
+                    "    win.hide();",
+                    "}"
+                ]
+            },
+            "name": "reactPhotoChange",
+            "designerId": "22b6d08c-0d04-4fe3-a8e2-5cb87db8538f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getExpandedPhotoWindow",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (!me._expandedPhotoWindow) {",
+                    "",
+                    "    me._expandedPhotoWindow = me.getView().add({",
+                    "        xtype: 'expandedphotowindow',",
+                    "        bind: {",
+                    "            hidden: '{!isPhotoWindowVisible}'",
+                    "        }",
+                    "    });",
+                    "}",
+                    "",
+                    "return me._expandedPhotoWindow;"
+                ]
+            },
+            "name": "getExpandedPhotoWindow",
+            "designerId": "527fe28a-f4d2-470c-8c13-845aa9bf81d7"
+        }
+    ]
 }

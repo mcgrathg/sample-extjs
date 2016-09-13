@@ -26,9 +26,8 @@
             "PostsGrid",
             "CommentsGrid",
             "AlbumsGrid",
-            "PhotosGrid",
-            "PhotosView",
-            "PhotoForm"
+            "ExpandedPhotoWindow",
+            "PhotosView"
         ]
     },
     "name": "Application",

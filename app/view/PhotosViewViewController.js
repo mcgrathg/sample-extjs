@@ -15,10 +15,5 @@
 
 Ext.define('Examples.view.PhotosViewViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.photosview',
-
-    onPhotoSelect: function(dataviewmodel, record, index, eOpts) {
-
-    }
-
+    alias: 'controller.photosview'
 });

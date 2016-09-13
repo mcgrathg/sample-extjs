@@ -17,6 +17,43 @@ Ext.define('Examples.view.MyViewportViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.myviewport',
 
+    initViewModel: function(viewModel) {
+        var me = this;
+
+        // keep site title matching the selected tree node
+        viewModel.bind({
+            bindTo: '{photo}'
+        }, me.reactPhotoChange, me);
+    },
+
+    reactPhotoChange: function(photo) {
+        var win = this.getExpandedPhotoWindow();
+
+        this.getViewModel().set('isPhotoWindowVisible', !!photo);
+
+        if (photo) {
+            win.show();
+        } else {
+            win.hide();
+        }
+    },
+
+    getExpandedPhotoWindow: function() {
+        var me = this;
+
+        if (!me._expandedPhotoWindow) {
+
+            me._expandedPhotoWindow = me.getView().add({
+                xtype: 'expandedphotowindow',
+                bind: {
+                    hidden: '{!isPhotoWindowVisible}'
+                }
+            });
+        }
+
+        return me._expandedPhotoWindow;
+    },
+
     onAlbumsGridTitleChange: function(albumsGrid, newTitle, defaultTitle, divider, recordText) {
         var me = this,
             refs = me.getReferences(),
@@ -27,10 +64,6 @@ Ext.define('Examples.view.MyViewportViewController', {
 
         panel.setTitle(title);
         albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
-    },
-
-    onPhotoSelect: function(dataviewmodel, record, index, eOpts) {
-        console.warn('focus thumbail into view, cause the dataview may have changed sizes automatically');
     },
 
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {

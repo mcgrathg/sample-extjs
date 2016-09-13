@@ -14,7 +14,7 @@
                 "width": null
             }
         },
-        "urlPrefix": "http://localhost:62539/",
+        "urlPrefix": "http://localhost:57140/",
         "exportPath": "",
         "lockUrlPrefix": true,
         "buildShouldOverwriteIndex": false,
@@ -48,25 +48,22 @@
             "73942749-751f-425e-ba91-13c3c9c0ce2d",
             "42475572-55e1-4f87-a60d-9e6caed54962",
             "1bbd63d4-f5a9-472d-967c-22df414fdab4",
-            "75092282-cccd-4241-8856-09df395efc97",
             "7180c313-00f2-4862-9459-deba5b9f701a",
             "a8b638a0-1fc0-4881-9edd-15cb5d061ae2",
             "1359cb9f-3e63-444c-9d32-e4189e4db108",
             "cfe43112-4cea-4112-9c85-2fcfcb0ee8f8",
-            "f1a5e601-8912-4cd0-9f0f-197c812d522f",
             "2b7a18c5-32a7-45df-bd2c-8442ff0b5658",
             "ff3494b8-61aa-4932-b559-61cd4a2732f4",
             "e4c8ff74-9f07-4a22-8153-056c030ae993",
             "315a8d62-1e6d-4938-b527-add3a196006f",
-            "05312ee2-67e4-4d36-9579-2bc2435ec04f",
             "951255b3-f003-4e34-962c-08c53af02ee6",
             "21ccaedf-9a60-4475-ba67-2be59010a6c9",
-            "23ef963a-3ab5-4da9-906e-69d627c5fc6f",
-            "22613069-6ba1-4df8-9111-8cddaef06926",
-            "3a1db6d4-c095-449b-af79-21f5d37c7848",
-            "23f59588-f83b-4dd9-9ba1-94a7f8685ee8",
-            "83e6db05-f06d-4192-8ea9-71f0d5596078",
-            "72b770df-7211-4844-a74c-8dd87c885382"
+            "bc3a2e6c-e24e-4984-b7ba-9c0f9a8c9f05",
+            "c206ae23-ea6b-4fc8-bf36-994879a276f7",
+            "d32bef3b-23fc-4ee1-ba8f-db53ae52b998",
+            "b5a678d6-d346-4f75-b111-b9773deac3f5",
+            "51b9a8fb-a3d9-4e0d-8714-c912a000561b",
+            "737f4bfa-8726-4e04-81b7-f101e8624902"
         ],
         "store": [
             "642eb705-45e1-49ff-a98f-3519ad393c77"

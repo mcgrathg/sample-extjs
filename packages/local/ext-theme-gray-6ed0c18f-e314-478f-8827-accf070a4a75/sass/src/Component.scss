@@ -48,7 +48,7 @@
     }
 }
 
-#photo-chooser-view {
+.photo-chooser-view {
     background: white;
     font: 11px Arial, Helvetica, sans-serif;
     text-align: center;
@@ -88,6 +88,18 @@
         span {
             color:#1A4D8F;
         }
+    }
+}
+
+.expanded-photo {
+    padding: 15px;
+    background: #FAFAFA;
+    /*     margin-top: 10px !important; */
+
+    img {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
     }
 }
 /*
