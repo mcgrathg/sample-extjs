@@ -26,8 +26,10 @@
             "codeClass": null,
             "userConfig": {
                 "collapseDirection": "left",
+                "includeStateViewPanel": true,
                 "layout|flex": 1,
-                "reference": null
+                "reference": null,
+                "stateful": true
             },
             "name": "usersgrid",
             "designerId": "09bf438c-941a-44c7-afba-910f20d258b4",

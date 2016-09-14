@@ -27,7 +27,8 @@
             "CommentsGrid",
             "AlbumsGrid",
             "ExpandedPhotoWindow",
-            "PhotosView"
+            "PhotosView",
+            "FullSizePhoto"
         ]
     },
     "name": "Application",

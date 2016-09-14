@@ -27,36 +27,15 @@
     "viewModelInstanceId": "c206ae23-ea6b-4fc8-bf36-994879a276f7",
     "cn": [
         {
-            "type": "Ext.Img",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {
-                "autoEl": "div",
-                "height": 600,
-                "hidden": null,
-                "imgCls": "centered-image",
-                "src": [
-                    "{photo.url}"
-                ],
-                "title": "Full-Size Image",
-                "width": 600
-            },
-            "name": "MyImg",
-            "configAlternates": {
-                "src": "binding",
-                "hidden": "binding"
-            },
-            "designerId": "f7dad9f4-9bd7-4b2c-ae6a-7052499d3153",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "autoEl",
-                    "type": "string"
-                }
-            ]
+            "name": "FullSizePhoto",
+            "designerId": "320d5e62-f95b-4722-ae87-f3875a25593f",
+            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
         },
         {
             "type": "Ext.form.FieldContainer",
@@ -158,7 +137,27 @@
                 "type": "minimize"
             },
             "name": "MyTool2",
-            "designerId": "a5d27631-5f55-4dbf-9b4a-a9c3b79eb0e8"
+            "designerId": "a5d27631-5f55-4dbf-9b4a-a9c3b79eb0e8",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onToolClick",
+                        "implHandler": [
+                            "console.log('use the non-floating panel instead of this window');"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onToolClick",
+                    "designerId": "322aa24c-262d-4258-9114-ed8e745cc756"
+                }
+            ]
         },
         {
             "type": "Ext.panel.Tool",

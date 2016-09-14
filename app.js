@@ -43,7 +43,8 @@ Ext.application({
         'CommentsGrid',
         'AlbumsGrid',
         'ExpandedPhotoWindow',
-        'PhotosView'
+        'PhotosView',
+        'FullSizePhoto'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

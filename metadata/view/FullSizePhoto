@@ -1,0 +1,83 @@
+{
+    "type": "Ext.Img",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoEl": "div",
+        "designer|userAlias": "fullsizephoto",
+        "designer|userClassName": "FullSizePhoto",
+        "height": 600,
+        "hidden": null,
+        "imgCls": "centered-image",
+        "src": [
+            "{photo.url}"
+        ],
+        "title": "Full-Size Image",
+        "width": 600
+    },
+    "name": "MyImg",
+    "configAlternates": {
+        "src": "binding",
+        "hidden": "binding"
+    },
+    "designerId": "de27ded7-5413-4a54-a576-4eba53237620",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "autoEl",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "07a813da-194b-44de-a7fa-a664227705fc",
+    "viewModelInstanceId": "25c8393e-71f9-40e7-b27b-54c774646a5e",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newSrc"
+                ],
+                "fn": "setSrc",
+                "implHandler": [
+                    "var img = this;",
+                    "",
+                    "img.setLoading('Loading...');",
+                    "",
+                    "return this.callParent(arguments);"
+                ]
+            },
+            "name": "setSrc",
+            "designerId": "ed7cf03a-79e1-4f3d-b36c-f88ceb98ad92"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImageAfterRender",
+                "implHandler": [
+                    "component.getEl().down('img').on({",
+                    "    load: function (evt, ele, opts) {",
+                    "        component.setLoading(false);",
+                    "    }",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onImageAfterRender",
+            "designerId": "622d0b41-8adf-49dc-9a57-cd88afb39a3f"
+        }
+    ]
+}

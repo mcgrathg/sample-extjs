@@ -44,7 +44,9 @@ Ext.define('Examples.view.MyViewport', {
     items: [
         {
             xtype: 'usersgrid',
+            stateful: true,
             collapseDirection: 'left',
+            includeStateViewPanel: true,
             flex: 1
         },
         {

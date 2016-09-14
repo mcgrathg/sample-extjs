@@ -19,12 +19,15 @@ Ext.define('Examples.view.ExpandedPhotoWindow', {
 
     requires: [
         'Examples.view.ExpandedPhotoWindowViewModel',
+        'Examples.view.ExpandedPhotoWindowViewController',
+        'Examples.view.FullSizePhoto',
         'Ext.Img',
         'Ext.form.FieldContainer',
         'Ext.form.field.Display',
         'Ext.panel.Tool'
     ],
 
+    controller: 'expandedphotowindow',
     viewModel: {
         type: 'expandedphotowindow'
     },
@@ -37,15 +40,7 @@ Ext.define('Examples.view.ExpandedPhotoWindow', {
     },
     items: [
         {
-            xtype: 'image',
-            autoEl: 'div',
-            height: 600,
-            width: 600,
-            imgCls: 'centered-image',
-            title: 'Full-Size Image',
-            bind: {
-                src: '{photo.url}'
-            }
+            xtype: 'fullsizephoto'
         },
         {
             xtype: 'fieldcontainer',
@@ -81,7 +76,10 @@ Ext.define('Examples.view.ExpandedPhotoWindow', {
         },
         {
             xtype: 'tool',
-            type: 'minimize'
+            type: 'minimize',
+            listeners: {
+                click: 'onToolClick'
+            }
         },
         {
             xtype: 'tool',
