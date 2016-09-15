@@ -7,13 +7,16 @@
     "codeClass": null,
     "userConfig": {
         "autoEl": null,
+        "cls": [
+            "photo"
+        ],
         "designer|userAlias": "fullsizephoto.selectedimage",
         "designer|userClassName": "FullSizePhoto.SelectedImage",
         "height": null,
         "hidden": null,
         "imgCls": null,
-        "maxHeight": 600,
-        "maxWidth": 600,
+        "maxHeight": null,
+        "maxWidth": null,
         "src": [
             "{photo.url}"
         ],

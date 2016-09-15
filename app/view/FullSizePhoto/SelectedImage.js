@@ -26,8 +26,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedImage', {
     viewModel: {
         type: 'fullsizephoto.selectedimage'
     },
-    maxHeight: 600,
-    maxWidth: 600,
+    cls: 'photo',
     title: 'Full-Size Image',
 
     bind: {

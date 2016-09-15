@@ -28,7 +28,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedInformation', {
     viewModel: {
         type: 'fullsizephoto.selectedinformation'
     },
-    cls: 'fullsizephoto',
+    cls: 'full-size-photo',
     scrollable: 'y',
 
     layout: {

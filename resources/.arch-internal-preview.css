@@ -24899,10 +24899,15 @@ a.x-color-picker-item:hover {
     width: 100%;
     height: auto; }
 
-.fullsizephoto img {
+.full-size-photo img.photo {
   max-width: 600px;
   width: 100%;
-  height: auto; }
+  height: auto;
+  margin: auto !important;
+  /*         left: 0 !important;
+          right: 0 !important; */ }
+.full-size-photo .details .x-autocontainer-form-item {
+  margin-bottom: 0; }
 
 /*
  * Stewarts CSS Library
