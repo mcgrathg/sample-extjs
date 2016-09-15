@@ -24866,8 +24866,6 @@ a.x-color-picker-item:hover {
   text-align: center; }
   .photo-chooser-view .thumb {
     padding: 3px; }
-    .photo-chooser-view .thumb img {
-      border: 3px solid whitesmoke; }
   .photo-chooser-view .thumb-wrap {
     float: left;
     margin: 4px;
