@@ -79,8 +79,9 @@ Ext.define('Examples.view.MyViewport', {
                         },
                         {
                             xtype: 'photosview',
-                            flex: 1,
+                            defaultTitle: 'Photos',
                             cls: 'photo-chooser-view',
+                            flex: 1,
                             bind: {
                                 hidden: '{!isPhotoViewVisible}',
                                 selection: '{photo}'
