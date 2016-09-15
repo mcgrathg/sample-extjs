@@ -26,9 +26,10 @@
             "PostsGrid",
             "CommentsGrid",
             "AlbumsGrid",
-            "PhotosGrid",
+            "FullSizePhoto.SelectedWindow",
             "PhotosView",
-            "PhotoForm"
+            "FullSizePhoto.SelectedImage",
+            "FullSizePhoto.SelectedInformation"
         ]
     },
     "name": "Application",

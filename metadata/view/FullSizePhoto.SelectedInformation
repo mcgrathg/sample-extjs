@@ -1,0 +1,121 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "full-size-photo"
+        ],
+        "container|align": "stretch",
+        "designer|userAlias": "fullsizephoto.selectedinformation",
+        "designer|userClassName": "FullSizePhoto.SelectedInformation",
+        "frame": null,
+        "height": null,
+        "layout": "vbox",
+        "scrollable": "y",
+        "width": null
+    },
+    "name": "MyContainer2",
+    "designerId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a",
+    "viewControllerInstanceId": "a2e0c7e3-7a51-40c3-9ef8-f61d2fd4e184",
+    "viewModelInstanceId": "a3dd58d5-e300-4cac-a2dd-1878e4921fc4",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "FullSizePhoto.SelectedImage",
+            "designerId": "de3091e5-47cc-4fca-a856-b327e9dc45d8",
+            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": null,
+                "cls": [
+                    "details"
+                ],
+                "fieldLabel": null,
+                "height": null,
+                "layout|flex": null,
+                "margin": null,
+                "padding": null,
+                "scrollable": "x",
+                "width": null
+            },
+            "name": "MyFieldContainer",
+            "designerId": "1ef820c5-eb10-4009-b70f-a4db4bb348f0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Title",
+                        "labelWidth": null,
+                        "value": [
+                            "{photo.title}"
+                        ]
+                    },
+                    "name": "MyDisplayField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "ee376aa2-d6e5-4875-83ff-ebf1bd2e5e4a"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "URL",
+                        "value": [
+                            "<a href=\"{photo.url}\" target=\"_blank\">{photo.url}</a>"
+                        ]
+                    },
+                    "name": "MyDisplayField1",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "75fd6114-7a46-4e23-b1e6-1614b96bbf06"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Thumbnail URL",
+                        "value": [
+                            "<a href=\"{photo.thumbnailUrl}\" target=\"_blank\">{photo.thumbnailUrl}</a>"
+                        ]
+                    },
+                    "name": "MyDisplayField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "10cc6454-4ced-427e-a7f8-6dd11b637e5c"
+                }
+            ]
+        }
+    ]
+}

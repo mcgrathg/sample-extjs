@@ -26,10 +26,12 @@
             "codeClass": null,
             "userConfig": {
                 "collapseDirection": "left",
+                "includeStateViewPanel": true,
                 "layout|flex": 1,
-                "reference": null
+                "reference": null,
+                "stateful": true
             },
-            "name": "usersgrid1",
+            "name": "usersgrid",
             "designerId": "09bf438c-941a-44c7-afba-910f20d258b4",
             "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
         },
@@ -143,196 +145,35 @@
                             ]
                         },
                         {
-                            "type": "Ext.resizer.Splitter",
+                            "type": "linkedinstance",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "collapseOnDblClick": false,
-                                "collapseTarget": "prev",
-                                "collapsible": true
+                                "cls": [
+                                    "photo-chooser-view"
+                                ],
+                                "defaultTitle": "Photos",
+                                "floating": null,
+                                "hidden": [
+                                    "{!isPhotoViewVisible}"
+                                ],
+                                "layout|flex": 1,
+                                "reference": null,
+                                "selection": [
+                                    "{photo}"
+                                ],
+                                "title": null
                             },
-                            "name": "MySplitter",
-                            "designerId": "50678b9c-a6c9-4aa2-ad1a-c24e33a9345f"
-                        },
-                        {
-                            "type": "Ext.container.Container",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
+                            "name": "photosview",
+                            "configAlternates": {
+                                "hidden": "binding",
+                                "selection": "binding"
                             },
-                            "codeClass": null,
-                            "userConfig": {
-                                "container|align": "stretch",
-                                "layout": "vbox",
-                                "layout|flex": 1
-                            },
-                            "name": "MyContainer2",
-                            "designerId": "686c5073-98a9-4351-a69e-75c9ca34f31c",
-                            "cn": [
-                                {
-                                    "type": "linkedinstance",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "id": "photo-chooser-view",
-                                        "layout|flex": 1,
-                                        "reference": "photos",
-                                        "selection": [
-                                            "{photo}"
-                                        ]
-                                    },
-                                    "name": "photosview",
-                                    "configAlternates": {
-                                        "selection": "binding"
-                                    },
-                                    "designerId": "c58ae0cc-d7cf-4c37-8165-da47da4e1c14",
-                                    "masterInstanceId": "23ef963a-3ab5-4da9-906e-69d627c5fc6f",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onPhotoSelect",
-                                                "implHandler": [
-                                                    "console.warn('focus thumbail into view, cause the dataview may have changed sizes automatically');"
-                                                ],
-                                                "name": "select",
-                                                "scope": "me"
-                                            },
-                                            "name": "onPhotoSelect",
-                                            "designerId": "327d0c22-bb43-4311-90c7-12faefa8953a"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.container.Container",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "border": null,
-                                        "frame": true,
-                                        "height": null,
-                                        "hidden": [
-                                            "{!photo}"
-                                        ],
-                                        "layout|flex": null,
-                                        "width": null
-                                    },
-                                    "name": "MyContainer1",
-                                    "configAlternates": {
-                                        "hidden": "binding"
-                                    },
-                                    "designerId": "0831ebe7-62ea-402a-b8d8-44f04b758f90",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.container.Container",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "name": "MyContainer3",
-                                            "designerId": "ad8b22c8-10da-4454-9468-c6b819889c46",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.Img",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "height": 600,
-                                                        "hidden": null,
-                                                        "imgCls": "centered-image",
-                                                        "src": [
-                                                            "{photo.url}"
-                                                        ],
-                                                        "width": 600
-                                                    },
-                                                    "name": "MyImg",
-                                                    "configAlternates": {
-                                                        "src": "binding",
-                                                        "hidden": "binding"
-                                                    },
-                                                    "designerId": "cd668f29-1b50-47d2-9976-1ea009081567"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Display",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fieldLabel": "Title",
-                                                "labelWidth": null,
-                                                "value": [
-                                                    "{photo.title}"
-                                                ]
-                                            },
-                                            "name": "MyDisplayField",
-                                            "configAlternates": {
-                                                "value": "binding"
-                                            },
-                                            "designerId": "ee376aa2-d6e5-4875-83ff-ebf1bd2e5e4a"
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Display",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fieldLabel": "URL",
-                                                "value": [
-                                                    "<a href=\"{photo.url}\" target=\"_blank\">{photo.url}</a>"
-                                                ]
-                                            },
-                                            "name": "MyDisplayField1",
-                                            "configAlternates": {
-                                                "value": "binding"
-                                            },
-                                            "designerId": "75fd6114-7a46-4e23-b1e6-1614b96bbf06"
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Display",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fieldLabel": "Thumbnail URL",
-                                                "value": [
-                                                    "<a href=\"{photo.thumbnailUrl}\" target=\"_blank\">{photo.thumbnailUrl}</a>"
-                                                ]
-                                            },
-                                            "name": "MyDisplayField2",
-                                            "configAlternates": {
-                                                "value": "binding"
-                                            },
-                                            "designerId": "10cc6454-4ced-427e-a7f8-6dd11b637e5c"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "designerId": "3b7520fd-06e5-4772-8cc3-b196811cc693",
+                            "masterInstanceId": "b5a678d6-d346-4f75-b111-b9773deac3f5"
                         },
                         {
                             "type": "sl.panel.grid.ParentChildGridPairing",
@@ -370,7 +211,7 @@
                     "userConfig": {
                         "reference": null
                     },
-                    "name": "todosgrid1",
+                    "name": "todosgrid",
                     "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
                     "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
                 },
@@ -400,7 +241,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
-                            "name": "postsgrid2",
+                            "name": "postsgrid",
                             "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
                             "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
                             "cn": [
@@ -465,7 +306,7 @@
                                 "layout|flex": 1,
                                 "minHeight": null
                             },
-                            "name": "commentsgrid2",
+                            "name": "commentsgrid",
                             "designerId": "54f93ec5-68f3-4510-9684-d246cf9bbf54",
                             "masterInstanceId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2"
                         },
@@ -477,6 +318,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseAndParentDivider": " On ",
                                 "cacheParamName": "postId",
                                 "childForeignKeyFieldName": "postId",
                                 "childGridReference": "comments",
@@ -491,7 +333,14 @@
                                 "pluginId": "postToComments"
                             },
                             "name": "MyParentChildGridPairing2",
-                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12"
+                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "baseAndParentDivider",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

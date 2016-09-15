@@ -48,7 +48,7 @@
     }
 }
 
-#photo-chooser-view {
+.photo-chooser-view {
     background: white;
     font: 11px Arial, Helvetica, sans-serif;
     text-align: center;
@@ -87,6 +87,22 @@
 
         span {
             color:#1A4D8F;
+        }
+    }
+}
+
+.full-size-photo {
+    img.photo  {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+    }
+
+    .details {
+         margin: 10px;
+        
+        .x-autocontainer-form-item {
+            margin-bottom: 0;
         }
     }
 }
