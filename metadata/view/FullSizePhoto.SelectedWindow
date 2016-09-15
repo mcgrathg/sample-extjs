@@ -6,14 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoEl": null,
         "autoShow": true,
         "closeAction": "hide",
-        "designer|uiInterfaceName": "default-framed",
+        "designer|uiInterfaceName": "default",
         "designer|userAlias": "fullsizephoto.selectedwindow",
         "designer|userClassName": "FullSizePhoto.SelectedWindow",
-        "frame": true,
         "height": null,
         "layout": "fit",
+        "maxWidth": 612,
         "maximizable": true,
         "title": [
             "{photo.title} (Full Size)"
@@ -81,6 +82,11 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "container|pack": null,
+                "layout": null
+            },
             "name": "fullsizephoto.selectedinformation",
             "designerId": "93ee0647-e37f-46e3-b225-42b7913be767",
             "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"

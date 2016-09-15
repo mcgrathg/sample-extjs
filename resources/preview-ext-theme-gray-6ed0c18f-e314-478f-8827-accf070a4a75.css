@@ -24890,21 +24890,14 @@ a.x-color-picker-item:hover {
     .photo-chooser-view .x-item-selected span {
       color: #1A4D8F; }
 
-.expanded-photo {
-  padding: 15px;
-  background: #FAFAFA;
-  /*     margin-top: 10px !important; */ }
-  .expanded-photo img {
-    max-width: 600px;
-    width: 100%;
-    height: auto; }
-
 .full-size-photo img.photo {
   max-width: 600px;
   width: 100%;
   height: auto; }
-.full-size-photo .details .x-autocontainer-form-item {
-  margin-bottom: 0; }
+.full-size-photo .details {
+  margin: 10px; }
+  .full-size-photo .details .x-autocontainer-form-item {
+    margin-bottom: 0; }
 
 /*
  * Stewarts CSS Library
