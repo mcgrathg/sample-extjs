@@ -72,28 +72,50 @@ Ext.define('Examples.view.MyViewport', {
                     items: [
                         {
                             xtype: 'albumsgrid',
-                            width: 300,
+                            flex: 1,
+                            minWidth: 150,
+                            scrollable: 'y',
                             collapseDirection: 'left',
                             listeners: {
                                 parentchildtitlechange: 'onAlbumsGridTitleChange'
                             }
                         },
                         {
-                            xtype: 'photosview',
-                            defaultTitle: 'Photos',
-                            cls: 'photo-chooser-view',
-                            flex: 1,
-                            bind: {
-                                hidden: '{!isPhotoViewVisible}',
-                                selection: '{photo}'
-                            }
+                            xtype: 'splitter'
                         },
                         {
-                            xtype: 'fullsizephoto.selectedpanel',
+                            xtype: 'container',
                             flex: 1,
-                            bind: {
-                                hidden: '{!photo}'
-                            }
+                            maxWidth: 612,
+                            minWidth: 200,
+                            layout: {
+                                type: 'vbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'photosview',
+                                    defaultTitle: 'Photos',
+                                    cls: 'photo-chooser-view',
+                                    minHeight: 215,
+                                    flex: 1,
+                                    bind: {
+                                        hidden: '{!isPhotoViewVisible}',
+                                        selection: '{photo}'
+                                    }
+                                },
+                                {
+                                    xtype: 'splitter'
+                                },
+                                {
+                                    xtype: 'fullsizephoto.selectedpanel',
+                                    flex: 3,
+                                    minHeight: 215,
+                                    bind: {
+                                        hidden: '{!photo}'
+                                    }
+                                }
+                            ]
                         }
                     ],
                     plugins: [

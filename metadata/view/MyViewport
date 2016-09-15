@@ -59,7 +59,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout": "accordion",
-                "layout|flex": 1
+                "layout|flex": 1,
+                "maxWidth": null
             },
             "name": "MyContainer",
             "designerId": "d083f390-4e63-42cb-9f08-e9d854e8c5fd",
@@ -74,6 +75,7 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout": "hbox",
+                        "maxWidth": null,
                         "reference": "albumsandphotos",
                         "title": "Albums And Photos"
                     },
@@ -89,6 +91,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "collapseDirection": "left",
+                                "flex": 1,
                                 "includeBufferedRenderer": null,
                                 "includeExcelBtn": null,
                                 "includeFilters": null,
@@ -98,12 +101,14 @@
                                 "includeStateViewPanel": null,
                                 "includeValidationStatus": null,
                                 "layout|flex": null,
+                                "minWidth": 150,
+                                "scrollable": "y",
                                 "useDefaultButtons": null,
                                 "useDefaultDeleteConfig": null,
                                 "useDefaultEnterKeyHandler": null,
                                 "useDefaultSaveConfig": null,
                                 "useDefaultUndoDeleteConfig": null,
-                                "width": 300
+                                "width": null
                             },
                             "name": "albumsgrid1",
                             "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
@@ -145,35 +150,102 @@
                             ]
                         },
                         {
-                            "type": "linkedinstance",
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySplitter3",
+                            "designerId": "f5191dc8-f5d3-4e59-8847-bb61bc300650"
+                        },
+                        {
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "cls": [
-                                    "photo-chooser-view"
-                                ],
-                                "defaultTitle": "Photos",
-                                "floating": null,
-                                "hidden": [
-                                    "{!isPhotoViewVisible}"
-                                ],
+                                "container|align": "stretch",
+                                "container|pack": null,
+                                "layout": "vbox",
                                 "layout|flex": 1,
-                                "reference": null,
-                                "selection": [
-                                    "{photo}"
-                                ],
-                                "title": null
+                                "maxWidth": 612,
+                                "minWidth": 200,
+                                "width": null
                             },
-                            "name": "photosview1",
-                            "configAlternates": {
-                                "hidden": "binding",
-                                "selection": "binding"
-                            },
-                            "designerId": "3b7520fd-06e5-4772-8cc3-b196811cc693",
-                            "masterInstanceId": "b5a678d6-d346-4f75-b111-b9773deac3f5"
+                            "name": "MyContainer1",
+                            "designerId": "894c3950-6d89-4267-8c5d-25a09b948fd1",
+                            "cn": [
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "photo-chooser-view"
+                                        ],
+                                        "defaultTitle": "Photos",
+                                        "deferInitialRefresh": null,
+                                        "floating": null,
+                                        "hidden": [
+                                            "{!isPhotoViewVisible}"
+                                        ],
+                                        "layout|flex": 1,
+                                        "minHeight": 215,
+                                        "minWidth": null,
+                                        "reference": null,
+                                        "selection": [
+                                            "{photo}"
+                                        ],
+                                        "title": null,
+                                        "width": null
+                                    },
+                                    "name": "photosview1",
+                                    "configAlternates": {
+                                        "hidden": "binding",
+                                        "selection": "binding"
+                                    },
+                                    "designerId": "3b7520fd-06e5-4772-8cc3-b196811cc693",
+                                    "masterInstanceId": "b5a678d6-d346-4f75-b111-b9773deac3f5"
+                                },
+                                {
+                                    "type": "Ext.resizer.Splitter",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MySplitter2",
+                                    "designerId": "03a699de-d747-4123-9507-12a5e19ae423"
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "flex": 3,
+                                        "hidden": [
+                                            "{!photo}"
+                                        ],
+                                        "layout|flex": null,
+                                        "minHeight": 215
+                                    },
+                                    "name": "fullsizephoto.selectedpanel",
+                                    "configAlternates": {
+                                        "hidden": "binding"
+                                    },
+                                    "designerId": "5649490b-0fd7-434e-a611-a8748c459e6a",
+                                    "masterInstanceId": "1e484597-fefd-4328-a759-f66bc4cab8b4"
+                                }
+                            ]
                         },
                         {
                             "type": "sl.panel.grid.ParentChildGridPairing",
@@ -198,26 +270,6 @@
                             },
                             "name": "MyParentChildGridPairing2",
                             "designerId": "94af5e1b-7b61-4f97-87c6-f2be189a90f4"
-                        },
-                        {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "hidden": [
-                                    "{!photo}"
-                                ],
-                                "layout|flex": 1
-                            },
-                            "name": "fullsizephoto.selectedpanel",
-                            "configAlternates": {
-                                "hidden": "binding"
-                            },
-                            "designerId": "5649490b-0fd7-434e-a611-a8748c459e6a",
-                            "masterInstanceId": "1e484597-fefd-4328-a759-f66bc4cab8b4"
                         }
                     ]
                 },
