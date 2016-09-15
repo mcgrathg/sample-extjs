@@ -224,28 +224,86 @@
                                     "designerId": "03a699de-d747-4123-9507-12a5e19ae423"
                                 },
                                 {
-                                    "type": "linkedinstance",
+                                    "type": "Ext.panel.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "autoEl": "div",
-                                        "cls": [
-                                            "full-size-photo"
-                                        ],
                                         "flex": 3,
                                         "hidden": [
                                             "{!photo}"
                                         ],
-                                        "imgCls": "photo",
-                                        "layout|flex": null,
-                                        "maxHeight": 600
+                                        "maxHeight": 600,
+                                        "title": [
+                                            "<a href=\"{photo.url}\" target=\"_blank\">{photo.title}</a>"
+                                        ]
                                     },
-                                    "name": "fullsizephoto.selectedimage",
-                                    "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",
-                                    "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
+                                    "name": "MyPanel2",
+                                    "configAlternates": {
+                                        "title": "binding",
+                                        "hidden": "binding"
+                                    },
+                                    "designerId": "e1a7f37c-8446-44ea-a45e-c8d6e5afcc6f",
+                                    "cn": [
+                                        {
+                                            "type": "linkedinstance",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "autoEl": "div",
+                                                "cls": [
+                                                    "full-size-photo"
+                                                ],
+                                                "flex": null,
+                                                "hidden": [
+                                                    "{!photo}"
+                                                ],
+                                                "imgCls": null,
+                                                "maxHeight": null
+                                            },
+                                            "name": "fullsizephoto.selectedimage",
+                                            "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",
+                                            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
+                                        },
+                                        {
+                                            "type": "Ext.panel.Tool",
+                                            "reference": {
+                                                "name": "tools",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "type": "maximize"
+                                            },
+                                            "name": "MyTool1",
+                                            "designerId": "c20759f1-e063-47ee-8e26-cb854507c8b8",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onExpandPhotoToolClick",
+                                                        "implHandler": [
+                                                            "this.getExpandedPhotoWindow().show();"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onExpandPhotoToolClick",
+                                                    "designerId": "4594f08a-fbcf-4006-b15b-dff082f2fcd8"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
                         },

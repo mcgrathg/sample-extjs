@@ -31,6 +31,7 @@ Ext.define('Examples.view.MyViewport', {
         'Ext.resizer.Splitter',
         'Ext.view.View',
         'Ext.Img',
+        'Ext.panel.Tool',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -109,15 +110,32 @@ Ext.define('Examples.view.MyViewport', {
                                     xtype: 'splitter'
                                 },
                                 {
-                                    xtype: 'fullsizephoto.selectedimage',
-                                    autoEl: 'div',
-                                    cls: 'full-size-photo',
+                                    xtype: 'panel',
                                     flex: 3,
                                     maxHeight: 600,
-                                    imgCls: 'photo',
                                     bind: {
-                                        hidden: '{!photo}'
-                                    }
+                                        hidden: '{!photo}',
+                                        title: '<a href="{photo.url}" target="_blank">{photo.title}</a>'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'fullsizephoto.selectedimage',
+                                            autoEl: 'div',
+                                            cls: 'full-size-photo',
+                                            bind: {
+                                                hidden: '{!photo}'
+                                            }
+                                        }
+                                    ],
+                                    tools: [
+                                        {
+                                            xtype: 'tool',
+                                            type: 'maximize',
+                                            listeners: {
+                                                click: 'onExpandPhotoToolClick'
+                                            }
+                                        }
+                                    ]
                                 }
                             ]
                         }

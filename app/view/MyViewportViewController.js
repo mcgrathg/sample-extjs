@@ -66,6 +66,10 @@ Ext.define('Examples.view.MyViewportViewController', {
         albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
     },
 
+    onExpandPhotoToolClick: function(tool, e, owner, eOpts) {
+        this.getExpandedPhotoWindow().show();
+    },
+
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
         var me = this,
             refs = me.getReferences(),
