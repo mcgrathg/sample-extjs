@@ -170,7 +170,7 @@
                                 "container|align": "stretch",
                                 "container|pack": null,
                                 "layout": "vbox",
-                                "layout|flex": 1,
+                                "layout|flex": 3,
                                 "maxWidth": 612,
                                 "minWidth": 200,
                                 "width": null
@@ -235,11 +235,13 @@
                                         "cls": [
                                             "full-size-photo"
                                         ],
+                                        "flex": 3,
                                         "hidden": [
                                             "{!photo}"
                                         ],
                                         "imgCls": "photo",
-                                        "layout|flex": 1
+                                        "layout|flex": null,
+                                        "maxHeight": 600
                                     },
                                     "name": "fullsizephoto.selectedimage",
                                     "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",

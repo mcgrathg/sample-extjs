@@ -86,7 +86,7 @@ Ext.define('Examples.view.MyViewport', {
                         },
                         {
                             xtype: 'container',
-                            flex: 1,
+                            flex: 3,
                             maxWidth: 612,
                             minWidth: 200,
                             layout: {
@@ -110,9 +110,10 @@ Ext.define('Examples.view.MyViewport', {
                                 },
                                 {
                                     xtype: 'fullsizephoto.selectedimage',
-                                    flex: 1,
                                     autoEl: 'div',
                                     cls: 'full-size-photo',
+                                    flex: 3,
+                                    maxHeight: 600,
                                     imgCls: 'photo',
                                     bind: {
                                         hidden: '{!photo}'
