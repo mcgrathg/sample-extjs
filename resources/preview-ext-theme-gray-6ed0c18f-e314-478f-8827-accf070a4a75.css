@@ -24903,6 +24903,8 @@ a.x-color-picker-item:hover {
   max-width: 600px;
   width: 100%;
   height: auto; }
+.fullsizephoto .details {
+  margin-top: 25px; }
 
 /*
  * Stewarts CSS Library

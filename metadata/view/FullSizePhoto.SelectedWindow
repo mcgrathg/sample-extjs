@@ -14,6 +14,7 @@
         "frame": true,
         "height": null,
         "layout": "fit",
+        "maximizable": true,
         "title": [
             "{photo.title} (Full Size)"
         ],

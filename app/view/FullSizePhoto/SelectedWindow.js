@@ -33,6 +33,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     frame: true,
     layout: 'fit',
     closeAction: 'hide',
+    maximizable: true,
 
     bind: {
         title: '{photo.title} (Full Size)'

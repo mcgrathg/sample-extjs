@@ -29,6 +29,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedInformation', {
         type: 'fullsizephoto.selectedinformation'
     },
     cls: 'fullsizephoto',
+    scrollable: 'y',
 
     layout: {
         type: 'vbox',
@@ -40,6 +41,8 @@ Ext.define('Examples.view.FullSizePhoto.SelectedInformation', {
         },
         {
             xtype: 'fieldcontainer',
+            cls: 'details',
+            scrollable: 'x',
             items: [
                 {
                     xtype: 'displayfield',

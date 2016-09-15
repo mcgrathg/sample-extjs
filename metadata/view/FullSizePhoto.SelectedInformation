@@ -15,6 +15,7 @@
         "frame": null,
         "height": null,
         "layout": "vbox",
+        "scrollable": "y",
         "width": null
     },
     "name": "MyContainer2",
@@ -41,9 +42,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "border": null,
+                "cls": [
+                    "details"
+                ],
                 "fieldLabel": null,
                 "height": null,
                 "layout|flex": null,
+                "margin": null,
+                "padding": null,
+                "scrollable": "x",
                 "width": null
             },
             "name": "MyFieldContainer",
