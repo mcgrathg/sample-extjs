@@ -15,5 +15,15 @@
 
 Ext.define('Examples.view.PhotosViewViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.photosview'
+    alias: 'controller.photosview',
+
+    addPhotoTooltip: function(component, eOpts) {
+        component.tip = Ext.create('Ext.tip.ToolTip', {
+            target: component.getEl(),
+            delegate: component.getItemSelector(),
+            trackMouse: true,
+            html: "Click to view photo's details"
+        });
+    }
+
 });

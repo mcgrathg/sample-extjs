@@ -64,6 +64,29 @@
             },
             "name": "tpl",
             "designerId": "e4e1a333-9109-4753-b61b-e498bdffcf19"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addPhotoTooltip",
+                "implHandler": [
+                    "component.tip = Ext.create('Ext.tip.ToolTip', {",
+                    "    target: component.getEl(),",
+                    "    delegate: component.getItemSelector(),",
+                    "    trackMouse: true,",
+                    "    html: \"Click to view photo's details\"",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "addPhotoTooltip",
+            "designerId": "6848908e-4adc-46ad-a955-3e364005dcd3"
         }
     ]
 }
