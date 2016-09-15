@@ -45,7 +45,8 @@ Ext.application({
         'FullSizePhoto.SelectedWindow',
         'PhotosView',
         'FullSizePhoto.SelectedImage',
-        'FullSizePhoto.SelectedInformation'
+        'FullSizePhoto.SelectedInformation',
+        'FullSizePhoto.SelectedPanel'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

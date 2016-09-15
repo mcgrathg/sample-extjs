@@ -1,0 +1,39 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fullsizephoto.selectedpanel",
+        "designer|userClassName": "FullSizePhoto.SelectedPanel",
+        "height": null,
+        "layout": "fit",
+        "maxWidth": 612,
+        "title": [
+            "{photo.title}"
+        ],
+        "width": 612
+    },
+    "name": "MyPanel2",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "1e484597-fefd-4328-a759-f66bc4cab8b4",
+    "viewControllerInstanceId": "b689a7c5-c3a1-49a8-9999-62e7d53a6822",
+    "viewModelInstanceId": "764a4c5f-e6a7-4df5-bc18-302705ba2a6f",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "fullsizephoto.selectedinformation2",
+            "designerId": "64b58367-f1c7-40a8-86d8-069a559eee07",
+            "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"
+        }
+    ]
+}

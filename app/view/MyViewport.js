@@ -23,6 +23,7 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.UsersGrid',
         'Examples.view.AlbumsGrid',
         'Examples.view.PhotosView',
+        'Examples.view.FullSizePhoto.SelectedPanel',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
@@ -85,6 +86,13 @@ Ext.define('Examples.view.MyViewport', {
                             bind: {
                                 hidden: '{!isPhotoViewVisible}',
                                 selection: '{photo}'
+                            }
+                        },
+                        {
+                            xtype: 'fullsizephoto.selectedpanel',
+                            flex: 1,
+                            bind: {
+                                hidden: '{!photo}'
                             }
                         }
                     ],

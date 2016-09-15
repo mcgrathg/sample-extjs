@@ -31,7 +31,7 @@
                 "reference": null,
                 "stateful": true
             },
-            "name": "usersgrid",
+            "name": "usersgrid1",
             "designerId": "09bf438c-941a-44c7-afba-910f20d258b4",
             "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
         },
@@ -105,7 +105,7 @@
                                 "useDefaultUndoDeleteConfig": null,
                                 "width": 300
                             },
-                            "name": "albumsgrid",
+                            "name": "albumsgrid1",
                             "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
                             "masterInstanceId": "7180c313-00f2-4862-9459-deba5b9f701a",
                             "cn": [
@@ -167,7 +167,7 @@
                                 ],
                                 "title": null
                             },
-                            "name": "photosview",
+                            "name": "photosview1",
                             "configAlternates": {
                                 "hidden": "binding",
                                 "selection": "binding"
@@ -198,6 +198,26 @@
                             },
                             "name": "MyParentChildGridPairing2",
                             "designerId": "94af5e1b-7b61-4f97-87c6-f2be189a90f4"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!photo}"
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "fullsizephoto.selectedpanel",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "5649490b-0fd7-434e-a611-a8748c459e6a",
+                            "masterInstanceId": "1e484597-fefd-4328-a759-f66bc4cab8b4"
                         }
                     ]
                 },
@@ -211,7 +231,7 @@
                     "userConfig": {
                         "reference": null
                     },
-                    "name": "todosgrid",
+                    "name": "todosgrid1",
                     "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
                     "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
                 },
@@ -241,7 +261,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
-                            "name": "postsgrid",
+                            "name": "postsgrid1",
                             "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
                             "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
                             "cn": [
@@ -306,7 +326,7 @@
                                 "layout|flex": 1,
                                 "minHeight": null
                             },
-                            "name": "commentsgrid",
+                            "name": "commentsgrid1",
                             "designerId": "54f93ec5-68f3-4510-9684-d246cf9bbf54",
                             "masterInstanceId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2"
                         },

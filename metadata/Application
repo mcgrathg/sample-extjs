@@ -29,7 +29,8 @@
             "FullSizePhoto.SelectedWindow",
             "PhotosView",
             "FullSizePhoto.SelectedImage",
-            "FullSizePhoto.SelectedInformation"
+            "FullSizePhoto.SelectedInformation",
+            "FullSizePhoto.SelectedPanel"
         ]
     },
     "name": "Application",
