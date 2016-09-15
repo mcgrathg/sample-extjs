@@ -42,9 +42,10 @@ Ext.application({
         'PostsGrid',
         'CommentsGrid',
         'AlbumsGrid',
-        'ExpandedPhotoWindow',
+        'FullSizePhoto.SelectedWindow',
         'PhotosView',
-        'FullSizePhoto'
+        'FullSizePhoto.SelectedImage',
+        'FullSizePhoto.SelectedInformation'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

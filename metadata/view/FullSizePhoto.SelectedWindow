@@ -1,0 +1,88 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "closeAction": "hide",
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "fullsizephoto.selectedwindow",
+        "designer|userClassName": "FullSizePhoto.SelectedWindow",
+        "frame": true,
+        "height": null,
+        "layout": "fit",
+        "title": [
+            "{photo.title} (Full Size)"
+        ],
+        "width": null
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "bc3a2e6c-e24e-4984-b7ba-9c0f9a8c9f05",
+    "viewControllerInstanceId": "d32bef3b-23fc-4ee1-ba8f-db53ae52b998",
+    "viewModelInstanceId": "c206ae23-ea6b-4fc8-bf36-994879a276f7",
+    "cn": [
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "minimize"
+            },
+            "name": "MyTool2",
+            "designerId": "a5d27631-5f55-4dbf-9b4a-a9c3b79eb0e8",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onToolClick",
+                        "implHandler": [
+                            "console.log('use the non-floating panel instead of this window');"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onToolClick",
+                    "designerId": "322aa24c-262d-4258-9114-ed8e745cc756"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "maximize"
+            },
+            "name": "MyTool3",
+            "designerId": "fe7ae565-6594-4fa8-833d-c71ddc141df2"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "fullsizephoto.selectedinformation",
+            "designerId": "93ee0647-e37f-46e3-b225-42b7913be767",
+            "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"
+        }
+    ]
+}

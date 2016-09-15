@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fullsizephoto.selectedinformation",
+        "designer|userClassName": "FullSizePhoto.SelectedInformationViewController"
+    },
+    "designerId": "a2e0c7e3-7a51-40c3-9ef8-f61d2fd4e184"
+}

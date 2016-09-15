@@ -24899,6 +24899,11 @@ a.x-color-picker-item:hover {
     width: 100%;
     height: auto; }
 
+.fullsizephoto img {
+  max-width: 600px;
+  width: 100%;
+  height: auto; }
+
 /*
  * Stewarts CSS Library
  * Jeff Fisher.

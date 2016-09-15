@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "expandedphotowindow",
-        "designer|userClassName": "ExpandedPhotoWindowViewModel"
+        "designer|userAlias": "fullsizephoto.selectedwindow",
+        "designer|userClassName": "FullSizePhoto.SelectedWindowViewModel"
     },
     "designerId": "c206ae23-ea6b-4fc8-bf36-994879a276f7"
 }

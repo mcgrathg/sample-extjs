@@ -44,7 +44,7 @@ Ext.define('Examples.view.MyViewportViewController', {
         if (!me._expandedPhotoWindow) {
 
             me._expandedPhotoWindow = me.getView().add({
-                xtype: 'expandedphotowindow',
+                xtype: 'fullsizephoto.selectedwindow',
                 bind: {
                     hidden: '{!isPhotoWindowVisible}'
                 }

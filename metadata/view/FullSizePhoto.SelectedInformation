@@ -1,30 +1,26 @@
 {
-    "type": "Ext.window.Window",
+    "type": "Ext.container.Container",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "autoShow": true,
-        "closeAction": "hide",
-        "designer|uiInterfaceName": "default-framed",
-        "designer|userAlias": "expandedphotowindow",
-        "designer|userClassName": "ExpandedPhotoWindow",
-        "frame": true,
-        "height": null,
-        "title": [
-            "{photo.title} (Full Size)"
+        "cls": [
+            "fullsizephoto"
         ],
+        "container|align": "stretch",
+        "designer|userAlias": "fullsizephoto.selectedinformation",
+        "designer|userClassName": "FullSizePhoto.SelectedInformation",
+        "frame": null,
+        "height": null,
+        "layout": "vbox",
         "width": null
     },
-    "name": "MyWindow",
-    "configAlternates": {
-        "title": "binding"
-    },
-    "designerId": "bc3a2e6c-e24e-4984-b7ba-9c0f9a8c9f05",
-    "viewControllerInstanceId": "d32bef3b-23fc-4ee1-ba8f-db53ae52b998",
-    "viewModelInstanceId": "c206ae23-ea6b-4fc8-bf36-994879a276f7",
+    "name": "MyContainer2",
+    "designerId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a",
+    "viewControllerInstanceId": "a2e0c7e3-7a51-40c3-9ef8-f61d2fd4e184",
+    "viewModelInstanceId": "a3dd58d5-e300-4cac-a2dd-1878e4921fc4",
     "cn": [
         {
             "type": "linkedinstance",
@@ -33,8 +29,8 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "FullSizePhoto",
-            "designerId": "320d5e62-f95b-4722-ae87-f3875a25593f",
+            "name": "FullSizePhoto.SelectedImage",
+            "designerId": "de3091e5-47cc-4fca-a856-b327e9dc45d8",
             "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
         },
         {
@@ -45,13 +41,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": null,
                 "fieldLabel": null,
                 "height": null,
+                "layout|flex": null,
                 "width": null
             },
             "name": "MyFieldContainer",
-            "designerId": "68dc94f6-db4f-4f75-b628-17d878352071",
+            "designerId": "1ef820c5-eb10-4009-b70f-a4db4bb348f0",
             "cn": [
                 {
                     "type": "Ext.form.field.Display",
@@ -112,78 +108,6 @@
                     "designerId": "10cc6454-4ced-427e-a7f8-6dd11b637e5c"
                 }
             ]
-        },
-        {
-            "type": "Ext.panel.Tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "type": "minus"
-            },
-            "name": "MyTool1",
-            "designerId": "05e3a87c-4df0-4c76-a7d1-9cfc390ada22"
-        },
-        {
-            "type": "Ext.panel.Tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "type": "minimize"
-            },
-            "name": "MyTool2",
-            "designerId": "a5d27631-5f55-4dbf-9b4a-a9c3b79eb0e8",
-            "cn": [
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onToolClick",
-                        "implHandler": [
-                            "console.log('use the non-floating panel instead of this window');"
-                        ],
-                        "name": "click",
-                        "scope": "me"
-                    },
-                    "name": "onToolClick",
-                    "designerId": "322aa24c-262d-4258-9114-ed8e745cc756"
-                }
-            ]
-        },
-        {
-            "type": "Ext.panel.Tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "type": "maximize"
-            },
-            "name": "MyTool3",
-            "designerId": "fe7ae565-6594-4fa8-833d-c71ddc141df2"
-        },
-        {
-            "type": "Ext.panel.Tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "type": "plus"
-            },
-            "name": "MyTool4",
-            "designerId": "b1009cbe-c1eb-4d1b-bd62-40e7e818fa7e"
         }
     ]
 }

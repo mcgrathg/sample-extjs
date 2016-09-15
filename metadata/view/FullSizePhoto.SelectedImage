@@ -6,17 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoEl": "div",
-        "designer|userAlias": "fullsizephoto",
-        "designer|userClassName": "FullSizePhoto",
-        "height": 600,
+        "autoEl": null,
+        "designer|userAlias": "fullsizephoto.selectedimage",
+        "designer|userClassName": "FullSizePhoto.SelectedImage",
+        "height": null,
         "hidden": null,
-        "imgCls": "centered-image",
+        "imgCls": null,
+        "maxHeight": 600,
+        "maxWidth": 600,
         "src": [
             "{photo.url}"
         ],
         "title": "Full-Size Image",
-        "width": 600
+        "width": null
     },
     "name": "MyImg",
     "configAlternates": {
@@ -67,8 +69,8 @@
             "userConfig": {
                 "fn": "onImageAfterRender",
                 "implHandler": [
-                    "component.getEl().down('img').on({",
-                    "    load: function (evt, ele, opts) {",
+                    "component.getEl().on({",
+                    "    'load': function() {",
                     "        component.setLoading(false);",
                     "    }",
                     "});"
