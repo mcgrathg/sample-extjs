@@ -231,19 +231,19 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "flex": 3,
+                                        "autoEl": "div",
+                                        "cls": [
+                                            "full-size-photo"
+                                        ],
                                         "hidden": [
                                             "{!photo}"
                                         ],
-                                        "layout|flex": null,
-                                        "minHeight": 215
+                                        "imgCls": "photo",
+                                        "layout|flex": 1
                                     },
-                                    "name": "fullsizephoto.selectedpanel",
-                                    "configAlternates": {
-                                        "hidden": "binding"
-                                    },
-                                    "designerId": "5649490b-0fd7-434e-a611-a8748c459e6a",
-                                    "masterInstanceId": "1e484597-fefd-4328-a759-f66bc4cab8b4"
+                                    "name": "fullsizephoto.selectedimage",
+                                    "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",
+                                    "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
                                 }
                             ]
                         },

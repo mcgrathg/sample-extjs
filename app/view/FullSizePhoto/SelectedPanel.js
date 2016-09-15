@@ -19,8 +19,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedPanel', {
 
     requires: [
         'Examples.view.FullSizePhoto.SelectedPanelViewModel',
-        'Examples.view.FullSizePhoto.SelectedInformation',
-        'Ext.container.Container'
+        'Ext.panel.Tool'
     ],
 
     viewModel: {
@@ -33,9 +32,10 @@ Ext.define('Examples.view.FullSizePhoto.SelectedPanel', {
     bind: {
         title: '{photo.title}'
     },
-    items: [
+    tools: [
         {
-            xtype: 'fullsizephoto.selectedinformation'
+            xtype: 'tool',
+            type: 'toggle'
         }
     ]
 

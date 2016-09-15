@@ -26,7 +26,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedImage', {
     viewModel: {
         type: 'fullsizephoto.selectedimage'
     },
-    cls: 'photo',
+    imgCls: 'photo',
     title: 'Full-Size Image',
 
     bind: {

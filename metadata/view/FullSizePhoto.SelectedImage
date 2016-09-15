@@ -7,16 +7,14 @@
     "codeClass": null,
     "userConfig": {
         "autoEl": null,
-        "cls": [
-            "photo"
-        ],
         "designer|userAlias": "fullsizephoto.selectedimage",
         "designer|userClassName": "FullSizePhoto.SelectedImage",
         "height": null,
         "hidden": null,
-        "imgCls": null,
+        "imgCls": "photo",
         "maxHeight": null,
         "maxWidth": null,
+        "scrollable": null,
         "src": [
             "{photo.url}"
         ],
@@ -72,7 +70,14 @@
             "userConfig": {
                 "fn": "onImageAfterRender",
                 "implHandler": [
-                    "component.getEl().on({",
+                    "var el = component.getEl(),",
+                    "    imgEl = (",
+                    "        (component.autoEl !== 'img') ? ",
+                    "        el.down('img') : ",
+                    "        el",
+                    "    );",
+                    "",
+                    "imgEl.on({",
                     "    'load': function() {",
                     "        component.setLoading(false);",
                     "    }",

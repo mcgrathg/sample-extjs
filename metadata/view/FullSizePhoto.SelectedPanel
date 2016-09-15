@@ -25,15 +25,17 @@
     "viewModelInstanceId": "764a4c5f-e6a7-4df5-bc18-302705ba2a6f",
     "cn": [
         {
-            "type": "linkedinstance",
+            "type": "Ext.panel.Tool",
             "reference": {
-                "name": "items",
+                "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
-            "name": "fullsizephoto.selectedinformation2",
-            "designerId": "64b58367-f1c7-40a8-86d8-069a559eee07",
-            "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"
+            "userConfig": {
+                "type": "toggle"
+            },
+            "name": "MyTool",
+            "designerId": "d0f8f416-0aec-4124-8666-1cbbb29fb6f8"
         }
     ]
 }

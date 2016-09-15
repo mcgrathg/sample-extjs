@@ -23,13 +23,14 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.UsersGrid',
         'Examples.view.AlbumsGrid',
         'Examples.view.PhotosView',
-        'Examples.view.FullSizePhoto.SelectedPanel',
+        'Examples.view.FullSizePhoto.SelectedImage',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'Ext.view.View',
+        'Ext.Img',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -108,9 +109,11 @@ Ext.define('Examples.view.MyViewport', {
                                     xtype: 'splitter'
                                 },
                                 {
-                                    xtype: 'fullsizephoto.selectedpanel',
-                                    flex: 3,
-                                    minHeight: 215,
+                                    xtype: 'fullsizephoto.selectedimage',
+                                    flex: 1,
+                                    autoEl: 'div',
+                                    cls: 'full-size-photo',
+                                    imgCls: 'photo',
                                     bind: {
                                         hidden: '{!photo}'
                                     }

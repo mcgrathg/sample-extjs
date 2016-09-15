@@ -18,7 +18,14 @@ Ext.define('Examples.view.FullSizePhoto.SelectedImageViewController', {
     alias: 'controller.fullsizephoto.selectedimage',
 
     onImageAfterRender: function(component, eOpts) {
-        component.getEl().on({
+        var el = component.getEl(),
+            imgEl = (
+            (component.autoEl !== 'img') ?
+            el.down('img') :
+            el
+            );
+
+        imgEl.on({
             'load': function() {
                 component.setLoading(false);
             }
