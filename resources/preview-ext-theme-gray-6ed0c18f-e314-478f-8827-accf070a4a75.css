@@ -24866,6 +24866,8 @@ a.x-color-picker-item:hover {
   text-align: center; }
   .photo-chooser-view .thumb {
     padding: 3px; }
+    .photo-chooser-view .thumb img {
+      border: 3px solid whitesmoke; }
   .photo-chooser-view .thumb-wrap {
     float: left;
     margin: 4px;
@@ -24890,12 +24892,15 @@ a.x-color-picker-item:hover {
     .photo-chooser-view .x-item-selected span {
       color: #1A4D8F; }
 
+.thumb
 .full-size-photo img.photo {
   max-width: 600px;
   width: 100%;
   height: auto; }
+.thumb
 .full-size-photo .details {
   margin: 10px; }
+  .thumb
   .full-size-photo .details .x-autocontainer-form-item {
     margin-bottom: 0; }
 

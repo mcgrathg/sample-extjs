@@ -31,6 +31,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     },
     autoShow: true,
     maxWidth: 612,
+    width: 612,
     layout: 'fit',
     closeAction: 'hide',
     maximizable: true,

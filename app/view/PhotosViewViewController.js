@@ -22,7 +22,8 @@ Ext.define('Examples.view.PhotosViewViewController', {
             target: component.getEl(),
             delegate: component.getItemSelector(),
             trackMouse: true,
-            html: "Click to view photo's details"
+            showDelay: 1000,
+            html: "Click to view this photo's details"
         });
     }
 

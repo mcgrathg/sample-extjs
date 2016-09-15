@@ -55,6 +55,10 @@
 
     .thumb {
         padding: 3px;
+
+        img {
+            border: 3px solid whitesmoke;
+        }
     }
     .thumb-wrap {
         float: left;
@@ -91,6 +95,8 @@
     }
 }
 
+.thumb 
+
 .full-size-photo {
     img.photo  {
         max-width: 600px;
@@ -99,8 +105,8 @@
     }
 
     .details {
-         margin: 10px;
-        
+        margin: 10px;
+
         .x-autocontainer-form-item {
             margin-bottom: 0;
         }

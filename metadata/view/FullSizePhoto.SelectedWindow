@@ -19,7 +19,7 @@
         "title": [
             "{photo.title} (Full Size)"
         ],
-        "width": null
+        "width": 612
     },
     "name": "MyWindow",
     "configAlternates": {
@@ -87,7 +87,7 @@
                 "container|pack": null,
                 "layout": null
             },
-            "name": "fullsizephoto.selectedinformation",
+            "name": "fullsizephoto.selectedinformation1",
             "designerId": "93ee0647-e37f-46e3-b225-42b7913be767",
             "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"
         }
