@@ -53,7 +53,7 @@
                     "this.getViewModel().set('isPhotoWindowVisible', !!photo);",
                     "",
                     "if (photo) {",
-                    "    win.show();",
+                    "//     win.show();",
                     "} else {",
                     "    win.hide();",
                     "}"

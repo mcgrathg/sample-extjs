@@ -32,7 +32,7 @@ Ext.define('Examples.view.MyViewportViewController', {
         this.getViewModel().set('isPhotoWindowVisible', !!photo);
 
         if (photo) {
-            win.show();
+        //     win.show();
         } else {
             win.hide();
         }
@@ -68,6 +68,7 @@ Ext.define('Examples.view.MyViewportViewController', {
 
     onExpandPhotoToolClick: function(tool, e, owner, eOpts) {
         this.getExpandedPhotoWindow().show();
+        this.lookupReference('selectedphotopanel').hide();
     },
 
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {

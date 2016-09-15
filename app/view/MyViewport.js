@@ -111,6 +111,7 @@ Ext.define('Examples.view.MyViewport', {
                                 },
                                 {
                                     xtype: 'panel',
+                                    reference: 'selectedphotopanel',
                                     flex: 3,
                                     maxHeight: 600,
                                     bind: {
