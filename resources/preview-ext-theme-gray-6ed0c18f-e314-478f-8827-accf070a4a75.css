@@ -24902,10 +24902,7 @@ a.x-color-picker-item:hover {
 .full-size-photo img.photo {
   max-width: 600px;
   width: 100%;
-  height: auto;
-  margin: auto !important;
-  /*         left: 0 !important;
-          right: 0 !important; */ }
+  height: auto; }
 .full-size-photo .details .x-autocontainer-form-item {
   margin-bottom: 0; }
 
