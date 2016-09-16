@@ -26,10 +26,10 @@
                 "implHandler": [
                     "var me = this;",
                     "",
-                    "// keep site title matching the selected tree node",
                     "viewModel.bind({",
-                    "    bindTo: '{photo}'",
-                    "}, me.reactPhotoChange, me);"
+                    "    photo: '{photo}',",
+                    "    viewer: '{singlephotoviewer}'",
+                    "}, me.reactPhotoAndViewerChange, me);"
                 ]
             },
             "name": "initViewModel",
@@ -43,23 +43,45 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|params": [
-                    "photo"
+                "designer|commentHeader": [
+                    "Show appropriate panel when there is a selected photo.",
+                    "If not photo, hide everything."
                 ],
-                "fn": "reactPhotoChange",
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "reactPhotoAndViewerChange",
                 "implHandler": [
-                    "var win = this.getExpandedPhotoWindow();",
+                    "var me = this,",
                     "",
-                    "this.getViewModel().set('isPhotoWindowVisible', !!photo);",
+                    "    photo = value.photo,",
+                    "    viewer = value.viewer,",
                     "",
-                    "if (photo) {",
-                    "//     win.show();",
-                    "} else {",
-                    "    win.hide();",
-                    "}"
+                    "    hasPhoto = !Ext.isEmpty(photo),",
+                    "",
+                    "    panel = me.lookupReference('selectedphotopanel'),",
+                    "    win = me.getSelectedPhotoWindow();",
+                    "",
+                    "switch (viewer) {",
+                    "",
+                    "    case 'panel':",
+                    "        win.hide();",
+                    "        active = panel;",
+                    "        break;",
+                    "",
+                    "    case 'window':",
+                    "        panel.hide();",
+                    "        active = win;",
+                    "        break;",
+                    "",
+                    "    default:",
+                    "        console.error('Unknown Viewer Type: ' + viewer);",
+                    "}",
+                    "",
+                    "active.setVisible(hasPhoto);"
                 ]
             },
-            "name": "reactPhotoChange",
+            "name": "reactPhotoAndViewerChange",
             "designerId": "22b6d08c-0d04-4fe3-a8e2-5cb87db8538f"
         },
         {
@@ -70,25 +92,56 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "getExpandedPhotoWindow",
+                "designer|commentHeader": [
+                    "Returns the Selected Photo Window instance.",
+                    "Will create a new photo window if it is not yet defined."
+                ],
+                "fn": "getSelectedPhotoWindow",
                 "implHandler": [
                     "var me = this;",
                     "",
-                    "if (!me._expandedPhotoWindow) {",
+                    "if (!me._selectedPhotoWindow) {",
                     "",
-                    "    me._expandedPhotoWindow = me.getView().add({",
+                    "    me._selectedPhotoWindow = me.getView().add({",
                     "        xtype: 'selectedwindow',",
-                    "        bind: {",
-                    "            hidden: '{!isPhotoWindowVisible}'",
-                    "        }",
+                    "        tools: [",
+                    "            {",
+                    "                xtype: 'tool',",
+                    "                type: 'minimize',",
+                    "                listeners: {",
+                    "                    scope: me,",
+                    "                    click: me.onUseSelectedPhotoPanelClick",
+                    "                }",
+                    "            }",
+                    "        ]",
                     "    });",
                     "}",
                     "",
-                    "return me._expandedPhotoWindow;"
+                    "return me._selectedPhotoWindow;"
                 ]
             },
-            "name": "getExpandedPhotoWindow",
+            "name": "getSelectedPhotoWindow",
             "designerId": "527fe28a-f4d2-470c-8c13-845aa9bf81d7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "Returns the Selected Photo Window instance.",
+                    "Will create a new photo window if it is not yet defined."
+                ],
+                "fn": "onUseSelectedPhotoPanelClick",
+                "implHandler": [
+                    "this.getViewModel().set('singlephotoviewer', 'panel');"
+                ]
+            },
+            "name": "onUseSelectedPhotoPanelClick",
+            "designerId": "2d2e0ed4-a2ed-49d1-a52c-b86c3f78482f"
         }
     ]
 }
