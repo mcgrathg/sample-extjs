@@ -221,7 +221,7 @@
                                     },
                                     "codeClass": null,
                                     "name": "MySplitter2",
-                                    "designerId": "03a699de-d747-4123-9507-12a5e19ae423"
+                                    "designerId": "54f07b09-322d-471a-a38f-2f6c28158e07"
                                 },
                                 {
                                     "type": "Ext.panel.Panel",
@@ -231,12 +231,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "flex": 3,
+                                        "flex": null,
+                                        "height": null,
                                         "hidden": [
                                             "{!photo}"
                                         ],
                                         "maxHeight": 600,
                                         "reference": "selectedphotopanel",
+                                        "resizable": null,
                                         "title": [
                                             "<a href=\"{photo.url}\" target=\"_blank\">{photo.title}</a>"
                                         ]
@@ -244,7 +246,9 @@
                                     "name": "MyPanel2",
                                     "configAlternates": {
                                         "title": "binding",
-                                        "hidden": "binding"
+                                        "hidden": "binding",
+                                        "height": "binding",
+                                        "resizable": "boolean"
                                     },
                                     "designerId": "e1a7f37c-8446-44ea-a45e-c8d6e5afcc6f",
                                     "cn": [
@@ -261,15 +265,43 @@
                                                     "full-size-photo"
                                                 ],
                                                 "flex": null,
+                                                "height": null,
                                                 "hidden": [
                                                     "{!photo}"
                                                 ],
                                                 "imgCls": null,
-                                                "maxHeight": null
+                                                "maxHeight": null,
+                                                "reference": null
                                             },
-                                            "name": "fullsizephoto.selectedimage",
+                                            "name": "FullSizePhoto.SelectedPhoto",
+                                            "configAlternates": {
+                                                "height": "binding"
+                                            },
                                             "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",
-                                            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
+                                            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|commentHeader": [
+                                                            "adjust parent panel's height so that when the photo shrinks, there's not wasted space"
+                                                        ],
+                                                        "fn": "onSelectedPhotoResize",
+                                                        "implHandler": [
+                                                            "this.lookupReference('selectedphotopanel').setHeight(height);"
+                                                        ],
+                                                        "name": "resize",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onSelectedPhotoResize",
+                                                    "designerId": "c49a3b86-b557-4935-b02a-ecbcc02196e2"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.panel.Tool",

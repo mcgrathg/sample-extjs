@@ -44,7 +44,7 @@ Ext.application({
         'AlbumsGrid',
         'FullSizePhoto.SelectedWindow',
         'PhotosView',
-        'FullSizePhoto.SelectedImage',
+        'FullSizePhoto.SelectedPhoto',
         'FullSizePhoto.SelectedInformation',
         'FullSizePhoto.SelectedPanel'
     ],

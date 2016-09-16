@@ -10,7 +10,7 @@
         "autoShow": true,
         "closeAction": "hide",
         "designer|uiInterfaceName": "default",
-        "designer|userAlias": "fullsizephoto.selectedwindow",
+        "designer|userAlias": "selectedwindow",
         "designer|userClassName": "FullSizePhoto.SelectedWindow",
         "height": null,
         "layout": "fit",
@@ -87,7 +87,7 @@
                 "container|pack": null,
                 "layout": null
             },
-            "name": "fullsizephoto.selectedinformation1",
+            "name": "fullsizephoto.selectedinformation",
             "designerId": "93ee0647-e37f-46e3-b225-42b7913be767",
             "masterInstanceId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a"
         }

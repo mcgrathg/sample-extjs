@@ -15,7 +15,7 @@
 
 Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     extend: 'Ext.window.Window',
-    alias: 'widget.fullsizephoto.selectedwindow',
+    alias: 'widget.selectedwindow',
 
     requires: [
         'Examples.view.FullSizePhoto.SelectedWindowViewModel',
@@ -54,7 +54,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     ],
     items: [
         {
-            xtype: 'fullsizephoto.selectedinformation'
+            xtype: 'selectedinformation'
         }
     ]
 

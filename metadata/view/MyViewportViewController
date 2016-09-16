@@ -77,7 +77,7 @@
                     "if (!me._expandedPhotoWindow) {",
                     "",
                     "    me._expandedPhotoWindow = me.getView().add({",
-                    "        xtype: 'fullsizephoto.selectedwindow',",
+                    "        xtype: 'selectedwindow',",
                     "        bind: {",
                     "            hidden: '{!isPhotoWindowVisible}'",
                     "        }",

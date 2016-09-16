@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "fullsizephoto.selectedpanel",
+        "designer|userAlias": "selectedpanel",
         "designer|userClassName": "FullSizePhoto.SelectedPanel",
         "height": null,
         "layout": "fit",

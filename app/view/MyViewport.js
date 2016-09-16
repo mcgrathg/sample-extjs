@@ -23,7 +23,7 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.UsersGrid',
         'Examples.view.AlbumsGrid',
         'Examples.view.PhotosView',
-        'Examples.view.FullSizePhoto.SelectedImage',
+        'Examples.view.FullSizePhoto.SelectedPhoto',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
@@ -112,7 +112,6 @@ Ext.define('Examples.view.MyViewport', {
                                 {
                                     xtype: 'panel',
                                     reference: 'selectedphotopanel',
-                                    flex: 3,
                                     maxHeight: 600,
                                     bind: {
                                         hidden: '{!photo}',
@@ -120,11 +119,14 @@ Ext.define('Examples.view.MyViewport', {
                                     },
                                     items: [
                                         {
-                                            xtype: 'fullsizephoto.selectedimage',
+                                            xtype: 'selectedphoto',
                                             autoEl: 'div',
                                             cls: 'full-size-photo',
                                             bind: {
                                                 hidden: '{!photo}'
+                                            },
+                                            listeners: {
+                                                resize: 'onSelectedPhotoResize'
                                             }
                                         }
                                     ],

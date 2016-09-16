@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "fullsizephoto.selectedimage",
-        "designer|userClassName": "FullSizePhoto.SelectedImageViewModel"
+        "designer|userAlias": "fullsizephoto.selectedphoto",
+        "designer|userClassName": "FullSizePhoto.SelectedPhotoViewModel"
     },
     "designerId": "25c8393e-71f9-40e7-b27b-54c774646a5e"
 }

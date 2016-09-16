@@ -15,7 +15,7 @@
 
 Ext.define('Examples.view.FullSizePhoto.SelectedPanel', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.fullsizephoto.selectedpanel',
+    alias: 'widget.selectedpanel',
 
     requires: [
         'Examples.view.FullSizePhoto.SelectedPanelViewModel',
