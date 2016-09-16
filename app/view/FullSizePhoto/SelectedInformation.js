@@ -15,11 +15,11 @@
 
 Ext.define('Examples.view.FullSizePhoto.SelectedInformation', {
     extend: 'Ext.container.Container',
-    alias: 'widget.fullsizephoto.selectedinformation',
+    alias: 'widget.selectedinformation',
 
     requires: [
         'Examples.view.FullSizePhoto.SelectedInformationViewModel',
-        'Examples.view.FullSizePhoto.SelectedImage',
+        'Examples.view.FullSizePhoto.SelectedPhoto',
         'Ext.Img',
         'Ext.form.FieldContainer',
         'Ext.form.field.Display'
@@ -37,7 +37,7 @@ Ext.define('Examples.view.FullSizePhoto.SelectedInformation', {
     },
     items: [
         {
-            xtype: 'fullsizephoto.selectedimage'
+            xtype: 'selectedphoto'
         },
         {
             xtype: 'fieldcontainer',

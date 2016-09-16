@@ -23,12 +23,15 @@ Ext.define('Examples.view.MyViewport', {
         'Examples.view.UsersGrid',
         'Examples.view.AlbumsGrid',
         'Examples.view.PhotosView',
+        'Examples.view.FullSizePhoto.SelectedPhoto',
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'Ext.view.View',
+        'Ext.Img',
+        'Ext.panel.Tool',
         'sl.panel.grid.ParentChildGridPairing'
     ],
 
@@ -71,21 +74,73 @@ Ext.define('Examples.view.MyViewport', {
                     items: [
                         {
                             xtype: 'albumsgrid',
-                            width: 300,
+                            flex: 1,
+                            minWidth: 150,
+                            scrollable: 'y',
                             collapseDirection: 'left',
                             listeners: {
                                 parentchildtitlechange: 'onAlbumsGridTitleChange'
                             }
                         },
                         {
-                            xtype: 'photosview',
-                            defaultTitle: 'Photos',
-                            cls: 'photo-chooser-view',
-                            flex: 1,
-                            bind: {
-                                hidden: '{!isPhotoViewVisible}',
-                                selection: '{photo}'
-                            }
+                            xtype: 'splitter'
+                        },
+                        {
+                            xtype: 'container',
+                            flex: 3,
+                            maxWidth: 612,
+                            minWidth: 200,
+                            layout: {
+                                type: 'vbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'photosview',
+                                    defaultTitle: 'Photos',
+                                    cls: 'photo-chooser-view',
+                                    minHeight: 215,
+                                    flex: 1,
+                                    bind: {
+                                        hidden: '{!isPhotoViewVisible}',
+                                        selection: '{photo}'
+                                    }
+                                },
+                                {
+                                    xtype: 'splitter'
+                                },
+                                {
+                                    xtype: 'panel',
+                                    reference: 'selectedphotopanel',
+                                    maxHeight: 600,
+                                    bind: {
+                                        hidden: '{!photo}',
+                                        title: '<a href="{photo.url}" target="_blank">{photo.title}</a>'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'selectedphoto',
+                                            autoEl: 'div',
+                                            cls: 'full-size-photo',
+                                            bind: {
+                                                hidden: '{!photo}'
+                                            },
+                                            listeners: {
+                                                resize: 'onSelectedPhotoResize'
+                                            }
+                                        }
+                                    ],
+                                    tools: [
+                                        {
+                                            xtype: 'tool',
+                                            type: 'maximize',
+                                            listeners: {
+                                                click: 'onExpandPhotoToolClick'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     plugins: [

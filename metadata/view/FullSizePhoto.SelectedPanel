@@ -1,0 +1,41 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "selectedpanel",
+        "designer|userClassName": "FullSizePhoto.SelectedPanel",
+        "height": null,
+        "layout": "fit",
+        "maxWidth": 612,
+        "title": [
+            "{photo.title}"
+        ],
+        "width": 612
+    },
+    "name": "MyPanel2",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "1e484597-fefd-4328-a759-f66bc4cab8b4",
+    "viewControllerInstanceId": "b689a7c5-c3a1-49a8-9999-62e7d53a6822",
+    "viewModelInstanceId": "764a4c5f-e6a7-4df5-bc18-302705ba2a6f",
+    "cn": [
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "toggle"
+            },
+            "name": "MyTool",
+            "designerId": "d0f8f416-0aec-4124-8666-1cbbb29fb6f8"
+        }
+    ]
+}

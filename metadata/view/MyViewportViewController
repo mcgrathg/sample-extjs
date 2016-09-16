@@ -53,7 +53,7 @@
                     "this.getViewModel().set('isPhotoWindowVisible', !!photo);",
                     "",
                     "if (photo) {",
-                    "    win.show();",
+                    "//     win.show();",
                     "} else {",
                     "    win.hide();",
                     "}"
@@ -77,7 +77,7 @@
                     "if (!me._expandedPhotoWindow) {",
                     "",
                     "    me._expandedPhotoWindow = me.getView().add({",
-                    "        xtype: 'fullsizephoto.selectedwindow',",
+                    "        xtype: 'selectedwindow',",
                     "        bind: {",
                     "            hidden: '{!isPhotoWindowVisible}'",
                     "        }",

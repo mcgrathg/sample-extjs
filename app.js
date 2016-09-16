@@ -44,8 +44,9 @@ Ext.application({
         'AlbumsGrid',
         'FullSizePhoto.SelectedWindow',
         'PhotosView',
-        'FullSizePhoto.SelectedImage',
-        'FullSizePhoto.SelectedInformation'
+        'FullSizePhoto.SelectedPhoto',
+        'FullSizePhoto.SelectedInformation',
+        'FullSizePhoto.SelectedPanel'
     ],
     name: 'Examples',
     title: 'Greg McGrath\'s Examples',

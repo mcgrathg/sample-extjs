@@ -10,7 +10,7 @@
             "full-size-photo"
         ],
         "container|align": "stretch",
-        "designer|userAlias": "fullsizephoto.selectedinformation",
+        "designer|userAlias": "selectedinformation",
         "designer|userClassName": "FullSizePhoto.SelectedInformation",
         "frame": null,
         "height": null,
@@ -30,7 +30,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "FullSizePhoto.SelectedImage",
+            "name": "FullSizePhoto.SelectedPhoto",
             "designerId": "de3091e5-47cc-4fca-a856-b327e9dc45d8",
             "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620"
         },

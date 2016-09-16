@@ -52,7 +52,8 @@ Ext.define('Examples.view.PhotosView', {
         store: '{photosStore}'
     },
     listeners: {
-        afterrender: 'addPhotoTooltip'
+        afterrender: 'addTooltipForEachPhoto',
+        resize: 'onPhotosViewResize'
     }
 
 });

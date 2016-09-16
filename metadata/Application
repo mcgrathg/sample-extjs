@@ -28,8 +28,9 @@
             "AlbumsGrid",
             "FullSizePhoto.SelectedWindow",
             "PhotosView",
-            "FullSizePhoto.SelectedImage",
-            "FullSizePhoto.SelectedInformation"
+            "FullSizePhoto.SelectedPhoto",
+            "FullSizePhoto.SelectedInformation",
+            "FullSizePhoto.SelectedPanel"
         ]
     },
     "name": "Application",

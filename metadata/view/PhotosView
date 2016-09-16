@@ -73,7 +73,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "addPhotoTooltip",
+                "fn": "addTooltipForEachPhoto",
                 "implHandler": [
                     "component.tip = Ext.create('Ext.tip.ToolTip', {",
                     "    target: component.getEl(),",
@@ -86,8 +86,30 @@
                 "name": "afterrender",
                 "scope": "me"
             },
-            "name": "addPhotoTooltip",
+            "name": "addTooltipForEachPhoto",
             "designerId": "6848908e-4adc-46ad-a955-3e364005dcd3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPhotosViewResize",
+                "implHandler": [
+                    "var selRec = component.getSelection()[0];",
+                    "",
+                    "if (selRec) {",
+                    "    component.focusNode(selRec);",
+                    "}"
+                ],
+                "name": "resize",
+                "scope": "me"
+            },
+            "name": "onPhotosViewResize",
+            "designerId": "27d7aeeb-2e8f-48b6-a2e5-776b024794d9"
         }
     ]
 }

@@ -7,16 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "autoEl": null,
-        "cls": [
-            "photo"
-        ],
-        "designer|userAlias": "fullsizephoto.selectedimage",
-        "designer|userClassName": "FullSizePhoto.SelectedImage",
+        "designer|userAlias": "selectedphoto",
+        "designer|userClassName": "FullSizePhoto.SelectedPhoto",
         "height": null,
         "hidden": null,
-        "imgCls": null,
+        "imgCls": "photo",
         "maxHeight": null,
         "maxWidth": null,
+        "reference": "selectedphoto",
+        "scrollable": null,
         "src": [
             "{photo.url}"
         ],
@@ -70,9 +69,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|commentHeader": [
+                    "remove the `loading` mask when the image is loaded"
+                ],
                 "fn": "onImageAfterRender",
                 "implHandler": [
-                    "component.getEl().on({",
+                    "var el = component.getEl(),",
+                    "    imgEl = (",
+                    "        (component.autoEl !== 'img') ? ",
+                    "        el.down('img') : ",
+                    "        el",
+                    "    );",
+                    "",
+                    "imgEl.on({",
                     "    'load': function() {",
                     "        component.setLoading(false);",
                     "    }",

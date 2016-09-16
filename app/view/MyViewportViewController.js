@@ -32,7 +32,7 @@ Ext.define('Examples.view.MyViewportViewController', {
         this.getViewModel().set('isPhotoWindowVisible', !!photo);
 
         if (photo) {
-            win.show();
+        //     win.show();
         } else {
             win.hide();
         }
@@ -44,7 +44,7 @@ Ext.define('Examples.view.MyViewportViewController', {
         if (!me._expandedPhotoWindow) {
 
             me._expandedPhotoWindow = me.getView().add({
-                xtype: 'fullsizephoto.selectedwindow',
+                xtype: 'selectedwindow',
                 bind: {
                     hidden: '{!isPhotoWindowVisible}'
                 }
@@ -64,6 +64,16 @@ Ext.define('Examples.view.MyViewportViewController', {
 
         panel.setTitle(title);
         albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title
+    },
+
+    /* adjust parent panel's height so that when the photo shrinks, there's not wasted space */
+    onSelectedPhotoResize: function(component, width, height, oldWidth, oldHeight, eOpts) {
+        this.lookupReference('selectedphotopanel').setHeight(height);
+    },
+
+    onExpandPhotoToolClick: function(tool, e, owner, eOpts) {
+        this.getExpandedPhotoWindow().show();
+        this.lookupReference('selectedphotopanel').hide();
     },
 
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {
