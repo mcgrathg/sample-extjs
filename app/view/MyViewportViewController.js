@@ -20,38 +20,79 @@ Ext.define('Examples.view.MyViewportViewController', {
     initViewModel: function(viewModel) {
         var me = this;
 
-        // keep site title matching the selected tree node
         viewModel.bind({
-            bindTo: '{photo}'
-        }, me.reactPhotoChange, me);
+            photo: '{photo}',
+            viewer: '{singlephotoviewer}'
+        }, me.reactPhotoAndViewerChange, me);
     },
 
-    reactPhotoChange: function(photo) {
-        var win = this.getExpandedPhotoWindow();
+    /*
+        Show appropriate panel when there is a selected photo.
+        If not photo, hide everything.
+    */
+    reactPhotoAndViewerChange: function(value) {
+        var me = this,
 
-        this.getViewModel().set('isPhotoWindowVisible', !!photo);
+            photo = value.photo,
+            viewer = value.viewer,
 
-        if (photo) {
-        //     win.show();
-        } else {
-            win.hide();
+            hasPhoto = !Ext.isEmpty(photo),
+
+            panel = me.lookupReference('selectedphotopanel'),
+            win = me.getSelectedPhotoWindow();
+
+        switch (viewer) {
+
+            case 'panel':
+                win.hide();
+                active = panel;
+                break;
+
+            case 'window':
+                panel.hide();
+                active = win;
+                break;
+
+            default:
+                console.error('Unknown Viewer Type: ' + viewer);
         }
+
+        active.setVisible(hasPhoto);
     },
 
-    getExpandedPhotoWindow: function() {
+    /*
+        Returns the Selected Photo Window instance.
+        Will create a new photo window if it is not yet defined.
+    */
+    getSelectedPhotoWindow: function() {
         var me = this;
 
-        if (!me._expandedPhotoWindow) {
+        if (!me._selectedPhotoWindow) {
 
-            me._expandedPhotoWindow = me.getView().add({
+            me._selectedPhotoWindow = me.getView().add({
                 xtype: 'selectedwindow',
-                bind: {
-                    hidden: '{!isPhotoWindowVisible}'
-                }
+                tools: [
+                    {
+                        xtype: 'tool',
+                        type: 'minimize',
+                        listeners: {
+                            scope: me,
+                            click: me.onUseSelectedPhotoPanelClick
+                        }
+                    }
+                ]
             });
         }
 
-        return me._expandedPhotoWindow;
+        return me._selectedPhotoWindow;
+    },
+
+    /*
+        Returns the Selected Photo Window instance.
+        Will create a new photo window if it is not yet defined.
+    */
+    onUseSelectedPhotoPanelClick: function() {
+        this.getViewModel().set('singlephotoviewer', 'panel');
     },
 
     onAlbumsGridTitleChange: function(albumsGrid, newTitle, defaultTitle, divider, recordText) {
@@ -72,8 +113,7 @@ Ext.define('Examples.view.MyViewportViewController', {
     },
 
     onExpandPhotoToolClick: function(tool, e, owner, eOpts) {
-        this.getExpandedPhotoWindow().show();
-        this.lookupReference('selectedphotopanel').hide();
+        this.getViewModel().set('singlephotoviewer', 'window');
     },
 
     onPostsGridTitleChange: function(postsGrid, newTitle, defaultTitle, divider, recordText) {

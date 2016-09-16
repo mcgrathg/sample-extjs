@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "autoEl": null,
-        "autoShow": true,
+        "autoShow": null,
         "closeAction": "hide",
         "designer|uiInterfaceName": "default",
         "designer|userAlias": "selectedwindow",

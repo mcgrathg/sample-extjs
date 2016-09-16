@@ -19,6 +19,9 @@
         "width": null
     },
     "name": "MyContainer2",
+    "configAlternates": {
+        "asdf": "binding"
+    },
     "designerId": "3aa9bf05-aaa4-4c9a-bee5-811cb62caf2a",
     "viewControllerInstanceId": "a2e0c7e3-7a51-40c3-9ef8-f61d2fd4e184",
     "viewModelInstanceId": "a3dd58d5-e300-4cac-a2dd-1878e4921fc4",

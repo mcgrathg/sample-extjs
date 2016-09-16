@@ -29,7 +29,6 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     viewModel: {
         type: 'fullsizephoto.selectedwindow'
     },
-    autoShow: true,
     maxWidth: 612,
     width: 612,
     layout: 'fit',

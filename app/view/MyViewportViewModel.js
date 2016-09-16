@@ -20,12 +20,12 @@ Ext.define('Examples.view.MyViewportViewModel', {
     requires: [
         'Ext.data.Store',
         'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json',
-        'Ext.app.bind.Formula'
+        'Ext.data.reader.Json'
     ],
 
     data: {
         photo: null,
+        singlephotoviewer: 'panel',
         isPhotoWindowVisible: false
     },
 
@@ -40,11 +40,6 @@ Ext.define('Examples.view.MyViewportViewModel', {
                     type: 'json'
                 }
             }
-        }
-    },
-    formulas: {
-        isSinglePhotoPanelVisible: function(get) {
-            return get('photo');
         }
     }
 

@@ -112,9 +112,9 @@ Ext.define('Examples.view.MyViewport', {
                                 {
                                     xtype: 'panel',
                                     reference: 'selectedphotopanel',
+                                    hidden: true,
                                     maxHeight: 600,
                                     bind: {
-                                        hidden: '{!photo}',
                                         title: '<a href="{photo.url}" target="_blank">{photo.title}</a>'
                                     },
                                     items: [

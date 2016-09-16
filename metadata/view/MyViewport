@@ -233,9 +233,7 @@
                                     "userConfig": {
                                         "flex": null,
                                         "height": null,
-                                        "hidden": [
-                                            "{!photo}"
-                                        ],
+                                        "hidden": true,
                                         "maxHeight": 600,
                                         "reference": "selectedphotopanel",
                                         "resizable": null,
@@ -246,7 +244,6 @@
                                     "name": "MyPanel2",
                                     "configAlternates": {
                                         "title": "binding",
-                                        "hidden": "binding",
                                         "height": "binding",
                                         "resizable": "boolean"
                                     },
@@ -326,8 +323,7 @@
                                                     "userConfig": {
                                                         "fn": "onExpandPhotoToolClick",
                                                         "implHandler": [
-                                                            "this.getExpandedPhotoWindow().show();",
-                                                            "this.lookupReference('selectedphotopanel').hide();"
+                                                            "this.getViewModel().set('singlephotoviewer', 'window');"
                                                         ],
                                                         "name": "click",
                                                         "scope": "me"
