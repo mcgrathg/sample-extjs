@@ -133,6 +133,7 @@ Ext.define('Examples.view.MyViewport', {
                                     tools: [
                                         {
                                             xtype: 'tool',
+                                            tooltip: 'Undock Panel',
                                             type: 'maximize',
                                             listeners: {
                                                 click: 'onExpandPhotoToolClick'

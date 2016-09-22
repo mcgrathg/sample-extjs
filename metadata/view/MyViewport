@@ -308,6 +308,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|displayName": "expand photo tool",
+                                                "tooltip": "Undock Panel",
                                                 "type": "maximize"
                                             },
                                             "name": "MyTool1",

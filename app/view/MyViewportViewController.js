@@ -75,6 +75,7 @@ Ext.define('Examples.view.MyViewportViewController', {
                     {
                         xtype: 'tool',
                         type: 'minimize',
+                        tooltip: 'Dock Panel',
                         listeners: {
                             scope: me,
                             click: me.onUseSelectedPhotoPanelClick

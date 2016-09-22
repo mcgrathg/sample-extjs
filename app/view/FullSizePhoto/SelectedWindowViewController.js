@@ -15,10 +15,5 @@
 
 Ext.define('Examples.view.FullSizePhoto.SelectedWindowViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.fullsizephoto.selectedwindow',
-
-    onToolClick: function(tool, e, owner, eOpts) {
-        console.log('use the non-floating panel instead of this window');
-    }
-
+    alias: 'controller.fullsizephoto.selectedwindow'
 });

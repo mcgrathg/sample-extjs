@@ -19,13 +19,10 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
 
     requires: [
         'Examples.view.FullSizePhoto.SelectedWindowViewModel',
-        'Examples.view.FullSizePhoto.SelectedWindowViewController',
         'Examples.view.FullSizePhoto.SelectedInformation',
-        'Ext.panel.Tool',
         'Ext.container.Container'
     ],
 
-    controller: 'fullsizephoto.selectedwindow',
     viewModel: {
         type: 'fullsizephoto.selectedwindow'
     },
@@ -33,24 +30,10 @@ Ext.define('Examples.view.FullSizePhoto.SelectedWindow', {
     width: 612,
     layout: 'fit',
     closeAction: 'hide',
-    maximizable: true,
 
     bind: {
         title: '{photo.title} (Full Size)'
     },
-    tools: [
-        {
-            xtype: 'tool',
-            type: 'minimize',
-            listeners: {
-                click: 'onToolClick'
-            }
-        },
-        {
-            xtype: 'tool',
-            type: 'maximize'
-        }
-    ],
     items: [
         {
             xtype: 'selectedinformation'
