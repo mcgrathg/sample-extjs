@@ -30,7 +30,8 @@
             "PhotosView",
             "FullSizePhoto.SelectedPhoto",
             "FullSizePhoto.SelectedInformation",
-            "FullSizePhoto.SelectedPanel"
+            "FullSizePhoto.SelectedPanel",
+            "MainView"
         ]
     },
     "name": "Application",

@@ -1,0 +1,646 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "height": null,
+        "layout": "hbox",
+        "title": "Greg McGrath's Examples",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "c8085622-a88a-430b-8332-5540b7640c97",
+    "viewControllerInstanceId": "b307b013-01a4-4c20-bc52-9975c79547f5",
+    "viewModelInstanceId": "677a731b-8c48-4623-b355-b4277f4ded45",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar",
+            "designerId": "378dd40b-245d-4849-9484-ba012e4cb535",
+            "cn": [
+                {
+                    "type": "sl.field.ComboGrid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "anyMatch": true,
+                        "displayField": "**Required**",
+                        "fieldLabel": null,
+                        "forceSelection": true,
+                        "layout|flex": null,
+                        "typeAheadDelay": 500,
+                        "valueField": "ID"
+                    },
+                    "name": "MyComboGrid",
+                    "designerId": "e446074d-8c1e-4fd3-ad38-b2608074cb51"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "left",
+                "includeStateViewPanel": true,
+                "layout|flex": 1,
+                "reference": null,
+                "stateful": true
+            },
+            "name": "usersgrid1",
+            "designerId": "86806de6-eaf6-4029-a702-59c412158627",
+            "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
+        },
+        {
+            "type": "Ext.resizer.Splitter",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseOnDblClick": false,
+                "collapseTarget": "prev",
+                "collapsible": true
+            },
+            "name": "MySplitter1",
+            "designerId": "21cd9933-2662-41ae-8e98-2552d0980e06"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "accordion",
+                "layout|flex": 1,
+                "maxWidth": null
+            },
+            "name": "MyContainer",
+            "designerId": "20986927-1e0c-47be-ba9e-2d836629a4c2",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "maxWidth": null,
+                        "reference": "albumsandphotos",
+                        "title": "Albums And Photos"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "bd60371d-8b3c-40a7-8cba-2bd8170010bd",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapseDirection": "left",
+                                "flex": 1,
+                                "includeBufferedRenderer": null,
+                                "includeExcelBtn": null,
+                                "includeFilters": null,
+                                "includeRefreshBtn": null,
+                                "includeRowCount": null,
+                                "includeSearch": null,
+                                "includeStateViewPanel": null,
+                                "includeValidationStatus": null,
+                                "layout|flex": null,
+                                "minWidth": 150,
+                                "scrollable": "y",
+                                "useDefaultButtons": null,
+                                "useDefaultDeleteConfig": null,
+                                "useDefaultEnterKeyHandler": null,
+                                "useDefaultSaveConfig": null,
+                                "useDefaultUndoDeleteConfig": null,
+                                "width": null
+                            },
+                            "name": "albumsgrid1",
+                            "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
+                            "masterInstanceId": "7180c313-00f2-4862-9459-deba5b9f701a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "albumsGrid",
+                                            "newTitle",
+                                            "defaultTitle",
+                                            "divider",
+                                            "recordText"
+                                        ],
+                                        "fn": "onAlbumsGridTitleChange",
+                                        "implHandler": [
+                                            "var me = this,",
+                                            "    refs = me.getReferences(),",
+                                            "    panel = refs.albumsandphotos,",
+                                            "    photos = refs.photos;",
+                                            "",
+                                            "    title = defaultTitle + ' And ' + photos.getDefaultTitle() + (recordText ? divider : '') + recordText;",
+                                            "",
+                                            "panel.setTitle(title);",
+                                            "albumsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title"
+                                        ],
+                                        "name": "parentchildtitlechange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAlbumsGridTitleChange",
+                                    "designerId": "1393c37d-d343-476c-a2ba-8322c05dd5ac"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySplitter3",
+                            "designerId": "f5191dc8-f5d3-4e59-8847-bb61bc300650"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": null,
+                                "layout": "vbox",
+                                "layout|flex": 3,
+                                "maxWidth": 612,
+                                "minWidth": 200,
+                                "width": null
+                            },
+                            "name": "MyContainer1",
+                            "designerId": "894c3950-6d89-4267-8c5d-25a09b948fd1",
+                            "cn": [
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "photo-chooser-view"
+                                        ],
+                                        "defaultTitle": "Photos",
+                                        "deferInitialRefresh": null,
+                                        "floating": null,
+                                        "hidden": [
+                                            "{!isPhotoViewVisible}"
+                                        ],
+                                        "layout|flex": 1,
+                                        "minHeight": 215,
+                                        "minWidth": null,
+                                        "reference": null,
+                                        "selection": [
+                                            "{photo}"
+                                        ],
+                                        "title": null,
+                                        "width": null
+                                    },
+                                    "name": "photosview1",
+                                    "configAlternates": {
+                                        "hidden": "binding",
+                                        "selection": "binding"
+                                    },
+                                    "designerId": "3b7520fd-06e5-4772-8cc3-b196811cc693",
+                                    "masterInstanceId": "b5a678d6-d346-4f75-b111-b9773deac3f5"
+                                },
+                                {
+                                    "type": "Ext.resizer.Splitter",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MySplitter2",
+                                    "designerId": "54f07b09-322d-471a-a38f-2f6c28158e07"
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "flex": null,
+                                        "height": null,
+                                        "hidden": true,
+                                        "maxHeight": 600,
+                                        "reference": "selectedphotopanel",
+                                        "resizable": null,
+                                        "title": [
+                                            "<a href=\"{photo.url}\" target=\"_blank\">{photo.title}</a>"
+                                        ]
+                                    },
+                                    "name": "MyPanel2",
+                                    "configAlternates": {
+                                        "title": "binding",
+                                        "height": "binding",
+                                        "resizable": "boolean"
+                                    },
+                                    "designerId": "e1a7f37c-8446-44ea-a45e-c8d6e5afcc6f",
+                                    "cn": [
+                                        {
+                                            "type": "linkedinstance",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "autoEl": "div",
+                                                "cls": [
+                                                    "full-size-photo"
+                                                ],
+                                                "flex": null,
+                                                "height": null,
+                                                "hidden": [
+                                                    "{!photo}"
+                                                ],
+                                                "imgCls": null,
+                                                "maxHeight": null,
+                                                "reference": null
+                                            },
+                                            "name": "FullSizePhoto.SelectedPhoto",
+                                            "configAlternates": {
+                                                "height": "binding"
+                                            },
+                                            "designerId": "77492531-a3f6-4ba3-a85b-5c557dddbf88",
+                                            "masterInstanceId": "de27ded7-5413-4a54-a576-4eba53237620",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|commentHeader": [
+                                                            "adjust parent panel's height so that when the photo shrinks, there's not wasted space"
+                                                        ],
+                                                        "fn": "onSelectedPhotoResize",
+                                                        "implHandler": [
+                                                            "this.lookupReference('selectedphotopanel').setHeight(height);"
+                                                        ],
+                                                        "name": "resize",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onSelectedPhotoResize",
+                                                    "designerId": "c49a3b86-b557-4935-b02a-ecbcc02196e2"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.panel.Tool",
+                                            "reference": {
+                                                "name": "tools",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "expand photo tool",
+                                                "tooltip": "Undock Panel",
+                                                "type": "maximize"
+                                            },
+                                            "name": "MyTool1",
+                                            "designerId": "c20759f1-e063-47ee-8e26-cb854507c8b8",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onExpandPhotoToolClick",
+                                                        "implHandler": [
+                                                            "this.getViewModel().set('singlephotoviewer', 'window');"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onExpandPhotoToolClick",
+                                                    "designerId": "4594f08a-fbcf-4006-b15b-dff082f2fcd8"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "sl.panel.grid.ParentChildGridPairing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cacheParamName": "albumId",
+                                "childForeignKeyFieldName": "albumId",
+                                "childGridReference": "photos",
+                                "designer|displayName": "albums -> photos parentChild",
+                                "directionArrow": "l",
+                                "monitorUIUpdate": true,
+                                "parentFieldName": "id",
+                                "parentFieldsForChildGridTitle": [
+                                    "['title']"
+                                ],
+                                "parentGridReference": "albums",
+                                "pluginId": "albumToPhotos"
+                            },
+                            "name": "MyParentChildGridPairing2",
+                            "designerId": "94af5e1b-7b61-4f97-87c6-f2be189a90f4"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "reference": null
+                    },
+                    "name": "todosgrid1",
+                    "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
+                    "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "reference": "postsandcomments",
+                        "title": "Posts and Comments"
+                    },
+                    "name": "MyPanel",
+                    "designerId": "f04e04b5-1dd5-4e87-85b1-a7da08c5bf19",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "name": "postsgrid1",
+                            "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
+                            "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "postsGrid",
+                                            "newTitle",
+                                            "defaultTitle",
+                                            "divider",
+                                            "recordText"
+                                        ],
+                                        "fn": "onPostsGridTitleChange",
+                                        "implHandler": [
+                                            "var me = this,",
+                                            "    refs = me.getReferences(),",
+                                            "    panel = refs.postsandcomments,",
+                                            "    comments = refs.comments;",
+                                            "",
+                                            "    title = defaultTitle + ' And ' + comments.getDefaultTitle() + (recordText ? divider : '') + recordText;",
+                                            "",
+                                            "panel.setTitle(title);",
+                                            "postsGrid.setTitle(defaultTitle); // revert to basic, non-parent-child title"
+                                        ],
+                                        "name": "parentchildtitlechange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPostsGridTitleChange",
+                                    "designerId": "03ddf03e-514f-4c05-8d29-05123a65175e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapseOnDblClick": false,
+                                "collapseTarget": "prev",
+                                "collapsible": true
+                            },
+                            "name": "MySplitter",
+                            "designerId": "665f49df-d18f-4f61-ab04-d7355ee33c0d"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "minHeight": null
+                            },
+                            "name": "commentsgrid1",
+                            "designerId": "54f93ec5-68f3-4510-9684-d246cf9bbf54",
+                            "masterInstanceId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2"
+                        },
+                        {
+                            "type": "sl.panel.grid.ParentChildGridPairing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseAndParentDivider": " On ",
+                                "cacheParamName": "postId",
+                                "childForeignKeyFieldName": "postId",
+                                "childGridReference": "comments",
+                                "designer|displayName": "post -> comments parentChild",
+                                "directionArrow": "u",
+                                "monitorUIUpdate": true,
+                                "parentFieldName": "id",
+                                "parentFieldsForChildGridTitle": [
+                                    "['title']"
+                                ],
+                                "parentGridReference": "posts",
+                                "pluginId": "postToComments"
+                            },
+                            "name": "MyParentChildGridPairing2",
+                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "baseAndParentDivider",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "sl.panel.grid.ParentChildGridPairing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseAndParentDivider": " For ",
+                "cacheParamName": "userId",
+                "childForeignKeyFieldName": "userId",
+                "childGridReference": "todos",
+                "designer|displayName": "users -> todo parentchild",
+                "directionArrow": "l",
+                "monitorUIUpdate": true,
+                "parentFieldName": "id",
+                "parentFieldsForChildGridTitle": [
+                    "['name']"
+                ],
+                "parentGridReference": "users",
+                "pluginId": "userToTodos"
+            },
+            "name": "MyParentChildGridPairing",
+            "designerId": "1864019e-764f-4a21-b54a-afba76a7dfa6",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "baseAndParentDivider",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "sl.panel.grid.ParentChildGridPairing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseAndParentDivider": " By ",
+                "cacheParamName": "userId",
+                "childForeignKeyFieldName": "userId",
+                "childGridReference": "posts",
+                "designer|displayName": "users -> posts parentChild",
+                "directionArrow": "l",
+                "monitorUIUpdate": true,
+                "parentFieldName": "id",
+                "parentFieldsForChildGridTitle": [
+                    "['name']"
+                ],
+                "parentGridReference": "users",
+                "pluginId": "userToPosts"
+            },
+            "name": "MyParentChildGridPairing1",
+            "designerId": "5fd67e62-5aa1-4d4e-a347-595ef0b712f3",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "baseAndParentDivider",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "sl.panel.grid.ParentChildGridPairing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseAndParentDivider": " By ",
+                "cacheParamName": "userId",
+                "childGridReference": "albums",
+                "designer|displayName": "users -> albums parentChild",
+                "directionArrow": "l",
+                "monitorUIUpdate": true,
+                "parentFieldName": "id",
+                "parentFieldsForChildGridTitle": [
+                    "['name']"
+                ],
+                "parentGridReference": "users",
+                "pluginId": "userToAlbums"
+            },
+            "name": "MyParentChildGridPairing3",
+            "designerId": "0dd2491f-8ceb-4ff6-804a-cbd561110ae8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "baseAndParentDivider",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

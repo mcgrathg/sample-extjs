@@ -16,49 +16,5 @@
         "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewportViewModel"
     },
-    "designerId": "86ac9e9b-036e-41b7-9dd1-2a8299decbc5",
-    "cn": [
-        {
-            "type": "jsonpstore",
-            "reference": {
-                "name": "stores",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "model": "Photo",
-                "name": "photosStore",
-                "pageSize": 0
-            },
-            "name": "MyJsonPStore",
-            "designerId": "45799357-1494-4b0a-97e4-393b256d2621",
-            "cn": [
-                {
-                    "type": "Ext.data.proxy.JsonP",
-                    "reference": {
-                        "name": "proxy",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "url": "https://jsonplaceholder.typicode.com/photos"
-                    },
-                    "name": "MyJsonPProxy3",
-                    "designerId": "a789c6be-26d8-4f00-9c28-e38cf666761b",
-                    "cn": [
-                        {
-                            "type": "Ext.data.reader.Json",
-                            "reference": {
-                                "name": "reader",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "name": "MyJsonReader3",
-                            "designerId": "15c22076-a7c2-401c-b421-b4dbdfe39b8f"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+    "designerId": "86ac9e9b-036e-41b7-9dd1-2a8299decbc5"
 }

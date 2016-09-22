@@ -14,7 +14,7 @@
         "imgCls": "photo",
         "maxHeight": null,
         "maxWidth": null,
-        "reference": "selectedphoto",
+        "reference": null,
         "scrollable": null,
         "src": [
             "{photo.url}"

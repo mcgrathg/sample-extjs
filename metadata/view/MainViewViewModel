@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainViewViewModel"
+    },
+    "designerId": "677a731b-8c48-4623-b355-b4277f4ded45",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Photo",
+                "name": "photosStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore",
+            "designerId": "4043710d-cbd9-4554-856b-ba5ba52df259",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/photos"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "a789c6be-26d8-4f00-9c28-e38cf666761b",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "15c22076-a7c2-401c-b421-b4dbdfe39b8f"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

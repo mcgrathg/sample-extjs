@@ -17,30 +17,10 @@ Ext.define('Examples.view.MyViewportViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.myviewport',
 
-    requires: [
-        'Ext.data.Store',
-        'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
-    ],
-
     data: {
         photo: null,
         singlephotoviewer: 'panel',
         isPhotoWindowVisible: false
-    },
-
-    stores: {
-        photosStore: {
-            pageSize: 0,
-            model: 'Examples.model.Photo',
-            proxy: {
-                type: 'jsonp',
-                url: 'https://jsonplaceholder.typicode.com/photos',
-                reader: {
-                    type: 'json'
-                }
-            }
-        }
     }
 
 });
