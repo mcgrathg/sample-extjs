@@ -302,6 +302,39 @@
                     },
                     "name": "rowBodyTpl",
                     "designerId": "31512ee0-e305-4b9b-99aa-e4beb9645569"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "getHeaderConfig",
+                        "implHandler": [
+                            "// Add custom changes to the expander column, which continuing to inherit from ExtJS ",
+                            "// If Sencha makes changes to the rowexpander's rendering, we'll get those changes",
+                            "// immediately without needing any changes here",
+                            "",
+                            "var me = this,",
+                            "    tip = 'Expand to see Address & Company Information',",
+                            "    config = me.self.prototype.getHeaderConfig.apply(me, arguments);",
+                            "",
+                            "// keep original cell renderer configuration, while adding a new tooltip to cell",
+                            "config.renderer = Ext.Function.createSequence(defaultHeaderConfig.renderer, function(value, metadata, record, rowIndex, colIndex, store, view) {",
+                            "    // add cell tooltip",
+                            "    metadata.tdAttr = 'data-qtip=\"' + tip + '\"';",
+                            "});",
+                            "",
+                            "// add column tooltip",
+                            "config.tooltip = tip;",
+                            "",
+                            "return config;"
+                        ]
+                    },
+                    "name": "getHeaderConfig",
+                    "designerId": "06de60f6-af99-469c-b239-39e80e486def"
                 }
             ]
         },

@@ -115,6 +115,26 @@ Ext.define('Examples.view.UsersGrid', {
     plugins: [
         {
             ptype: 'rowexpander',
+            getHeaderConfig: function() {
+                // Add custom changes to the expander column, which continuing to inherit from ExtJS
+                // If Sencha makes changes to the rowexpander's rendering, we'll get those changes
+                // immediately without needing any changes here
+
+                var me = this,
+                    tip = 'Expand to see Address & Company Information',
+                    config = me.self.prototype.getHeaderConfig.apply(me, arguments);
+
+                // keep original cell renderer configuration, while adding a new tooltip to cell
+                config.renderer = Ext.Function.createSequence(defaultHeaderConfig.renderer, function(value, metadata, record, rowIndex, colIndex, store, view) {
+                    // add cell tooltip
+                    metadata.tdAttr = 'data-qtip="' + tip + '"';
+                });
+
+                // add column tooltip
+                config.tooltip = tip;
+
+                return config;
+            },
             expandOnDblClick: false,
             expandOnEnter: false,
             rowBodyTpl: [
