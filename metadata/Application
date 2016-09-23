@@ -31,7 +31,9 @@
             "FullSizePhoto.SelectedPhoto",
             "FullSizePhoto.SelectedInformation",
             "FullSizePhoto.SelectedPanel",
-            "MainView"
+            "MainView",
+            "Search.PickerGrid",
+            "Search.ComboGrid"
         ]
     },
     "name": "Application",

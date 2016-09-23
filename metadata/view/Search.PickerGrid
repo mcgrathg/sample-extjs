@@ -1,0 +1,89 @@
+{
+    "type": "sl.panel.grid.DisplayGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "columnLines": null,
+        "designer|userAlias": "searchpickergrid",
+        "designer|userClassName": "Search.PickerGrid",
+        "filterLocal": null,
+        "filterParamPrefix": null,
+        "filterUpdateBuffer": null,
+        "height": null,
+        "includeRefreshBtn": null,
+        "includeRowCount": null,
+        "includeSearch": null,
+        "isLocalExcelExport": null,
+        "searchAlign": null,
+        "searchWidth": null,
+        "selModelMode": null,
+        "store": null,
+        "title": null,
+        "useStewartsRenderer": null,
+        "width": null
+    },
+    "name": "MyDisplayGrid",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "cfaa28b8-1d73-4657-b4a4-176ae832e549",
+    "viewControllerInstanceId": "12e2b730-f307-40ff-81d2-9ff9c319b23c",
+    "viewModelInstanceId": "86ead383-9b04-48a0-82cb-976795eef98f",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "6370fc6e-88d6-402d-9ea7-05e567068e67"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "text": "Name"
+            },
+            "name": "MyColumn12",
+            "designerId": "def94cab-7535-4956-8495-070e7e0a2853"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "email",
+                "text": "Email"
+            },
+            "name": "MyColumn14",
+            "designerId": "b7a8d075-a524-484a-90b7-71839225b4ef"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "body",
+                "text": "Body"
+            },
+            "name": "MyColumn13",
+            "designerId": "7297363b-526d-47cc-a721-53365297afbb"
+        }
+    ]
+}

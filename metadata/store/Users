@@ -13,7 +13,7 @@
         "storeId": "Users"
     },
     "name": "MyJsonPStore2",
-    "designerId": "642eb705-45e1-49ff-a98f-3519ad393c77",
+    "designerId": "7bb78869-498d-44e8-95b8-447d8e76ae05",
     "cn": [
         {
             "type": "Ext.data.proxy.JsonP",

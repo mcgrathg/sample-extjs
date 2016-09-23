@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "search.combogrid",
+        "designer|userClassName": "Search.ComboGridViewModel"
+    },
+    "designerId": "f2eb1e80-6751-4bfd-9a85-17e5348d9ff3",
+    "cn": [
+        {
+            "type": "jsonpstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Comment",
+                "name": "searchStore",
+                "pageSize": 0
+            },
+            "name": "MyJsonPStore2",
+            "designerId": "4cb7a1be-9a5c-481e-8192-c3fe8e3ce9c9",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.JsonP",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "https://jsonplaceholder.typicode.com/comments"
+                    },
+                    "name": "MyJsonPProxy3",
+                    "designerId": "8df36152-840a-4138-9e79-2eb83db93aba",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "f6a3b65a-6f30-4439-8140-4b0b80d51701"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

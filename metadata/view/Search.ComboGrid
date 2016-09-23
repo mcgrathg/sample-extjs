@@ -1,0 +1,29 @@
+{
+    "type": "sl.field.ComboGrid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anyMatch": true,
+        "designer|userAlias": "searchcombogrid",
+        "designer|userClassName": "Search.ComboGrid",
+        "displayField": "body",
+        "fieldLabel": null,
+        "forceSelection": true,
+        "gridXType": "searchpickergrid",
+        "store": [
+            "{searchStore}"
+        ],
+        "typeAheadDelay": 500,
+        "valueField": "id"
+    },
+    "name": "MyComboGrid",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "e73aa91c-cd9d-435e-af8f-38297b067038",
+    "viewControllerInstanceId": "e921ca95-09a8-411c-bc45-231e6d81d71f",
+    "viewModelInstanceId": "f2eb1e80-6751-4bfd-9a85-17e5348d9ff3"
+}

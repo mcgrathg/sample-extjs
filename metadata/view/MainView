@@ -34,23 +34,18 @@
             "designerId": "378dd40b-245d-4849-9484-ba012e4cb535",
             "cn": [
                 {
-                    "type": "sl.field.ComboGrid",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "anyMatch": true,
-                        "displayField": "**Required**",
-                        "fieldLabel": null,
-                        "forceSelection": true,
-                        "layout|flex": null,
-                        "typeAheadDelay": 500,
-                        "valueField": "ID"
+                        "layout|flex": null
                     },
-                    "name": "MyComboGrid",
-                    "designerId": "e446074d-8c1e-4fd3-ad38-b2608074cb51"
+                    "name": "search.combogrid",
+                    "designerId": "c1860765-1d4e-4938-925d-30a60d608989",
+                    "masterInstanceId": "e73aa91c-cd9d-435e-af8f-38297b067038"
                 }
             ]
         },
@@ -68,7 +63,7 @@
                 "reference": null,
                 "stateful": true
             },
-            "name": "usersgrid1",
+            "name": "usersgrid",
             "designerId": "86806de6-eaf6-4029-a702-59c412158627",
             "masterInstanceId": "09e3b21b-d456-4fcc-8498-65194fd7c5d6"
         },
@@ -147,7 +142,7 @@
                                 "useDefaultUndoDeleteConfig": null,
                                 "width": null
                             },
-                            "name": "albumsgrid1",
+                            "name": "albumsgrid",
                             "designerId": "3de2faef-d494-4a25-bca4-fb8273fef3a3",
                             "masterInstanceId": "7180c313-00f2-4862-9459-deba5b9f701a",
                             "cn": [
@@ -242,7 +237,7 @@
                                         "title": null,
                                         "width": null
                                     },
-                                    "name": "photosview1",
+                                    "name": "photosview",
                                     "configAlternates": {
                                         "hidden": "binding",
                                         "selection": "binding"
@@ -412,7 +407,7 @@
                     "userConfig": {
                         "reference": null
                     },
-                    "name": "todosgrid1",
+                    "name": "todosgrid",
                     "designerId": "fff04d22-b4cb-455d-816e-b76f179cff30",
                     "masterInstanceId": "42475572-55e1-4f87-a60d-9e6caed54962"
                 },
@@ -442,7 +437,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
-                            "name": "postsgrid1",
+                            "name": "postsgrid",
                             "designerId": "11bd503a-e5ba-4070-b303-11c51cff33ba",
                             "masterInstanceId": "1bbd63d4-f5a9-472d-967c-22df414fdab4",
                             "cn": [
@@ -507,7 +502,7 @@
                                 "layout|flex": 1,
                                 "minHeight": null
                             },
-                            "name": "commentsgrid1",
+                            "name": "commentsgrid",
                             "designerId": "54f93ec5-68f3-4510-9684-d246cf9bbf54",
                             "masterInstanceId": "a8b638a0-1fc0-4881-9edd-15cb5d061ae2"
                         },

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "search.pickergrid",
+        "designer|userClassName": "Search.PickerGridViewController"
+    },
+    "designerId": "12e2b730-f307-40ff-81d2-9ff9c319b23c"
+}

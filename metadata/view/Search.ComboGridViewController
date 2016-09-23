@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "search.combogrid",
+        "designer|userClassName": "Search.ComboGridViewController"
+    },
+    "designerId": "e921ca95-09a8-411c-bc45-231e6d81d71f"
+}
