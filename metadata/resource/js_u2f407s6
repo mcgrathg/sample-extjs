@@ -8,13 +8,12 @@
     "userConfig": {
         "bootstrap": true,
         "defer": false,
-        "designer|userClassName": "js_8ko9d1gf",
+        "designer|userClassName": "js_u2f407s6",
         "includeInBundle": true,
-        "remote": false,
         "requireSdk": true,
-        "url": "resources/stewarts-all.js",
+        "url": "overrides/data/Model.js",
         "x-compile": true
     },
-    "name": "js",
-    "designerId": "54ca454d-f7f6-4463-b39c-375d2894d0f8"
+    "name": "js2",
+    "designerId": "6bfcbdec-9031-4a6a-85e6-e10783649297"
 }

@@ -20,6 +20,7 @@ Ext.define('Examples.view.CommentsGrid', {
     requires: [
         'Examples.view.CommentsGridViewModel',
         'Ext.view.Table',
+        'Ext.form.field.Text',
         'Ext.grid.column.Template',
         'Ext.XTemplate'
     ],
@@ -56,21 +57,34 @@ Ext.define('Examples.view.CommentsGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'name',
-            text: 'Name'
+            text: 'Name',
+            editor: {
+                xtype: 'textfield'
+            }
         },
         {
             xtype: 'templatecolumn',
+            flex: 1,
+            maxWidth: 200,
             tpl: [
                 '<a href="mailto:{email}">{email}</a>'
             ],
             dataIndex: 'email',
-            text: 'Email'
+            text: 'Email',
+            editor: {
+                xtype: 'textfield'
+            }
         },
         {
             xtype: 'gridcolumn',
+            flex: 2,
             dataIndex: 'body',
-            text: 'Body'
+            text: 'Body',
+            editor: {
+                xtype: 'textfield'
+            }
         }
     ]
 

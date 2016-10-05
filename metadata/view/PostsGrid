@@ -75,7 +75,19 @@
                 "text": "Title"
             },
             "name": "MyColumn",
-            "designerId": "d43d5d3d-f5de-411e-9395-ce470bbb8728"
+            "designerId": "d43d5d3d-f5de-411e-9395-ce470bbb8728",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField1",
+                    "designerId": "e8284e72-d133-4a38-9887-2bb752c35a8f"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -92,7 +104,19 @@
                 "variableRowHeight": true
             },
             "name": "MyColumn1",
-            "designerId": "caa7eab4-7d43-4509-ab38-0fab034ca3a4"
+            "designerId": "caa7eab4-7d43-4509-ab38-0fab034ca3a4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField2",
+                    "designerId": "01610c77-74ea-4884-9bd8-f647248be9c2"
+                }
+            ]
         }
     ]
 }

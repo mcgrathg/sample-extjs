@@ -20,7 +20,8 @@ Ext.define('Examples.view.PostsGrid', {
     requires: [
         'Examples.view.PostsGridViewModel',
         'Ext.view.Table',
-        'Ext.grid.column.Column'
+        'Ext.grid.column.Column',
+        'Ext.form.field.Text'
     ],
 
     viewModel: {
@@ -58,7 +59,10 @@ Ext.define('Examples.view.PostsGrid', {
             flex: 1,
             cellWrap: true,
             dataIndex: 'title',
-            text: 'Title'
+            text: 'Title',
+            editor: {
+                xtype: 'textfield'
+            }
         },
         {
             xtype: 'gridcolumn',
@@ -66,7 +70,10 @@ Ext.define('Examples.view.PostsGrid', {
             cellWrap: true,
             dataIndex: 'body',
             text: 'Body',
-            variableRowHeight: true
+            variableRowHeight: true,
+            editor: {
+                xtype: 'textfield'
+            }
         }
     ]
 

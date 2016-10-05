@@ -19,11 +19,11 @@ Ext.Loader.setConfig({
 });
 
 
-Ext.Loader.setPath('sl.field.ComboBox','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.field.ComboGrid','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.panel.grid.DisplayGrid','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.panel.grid.EditorGrid','packages/Stewarts-5/src/../stewarts-all.js');
-Ext.Loader.setPath('sl.panel.grid.ParentChildGridPairing','packages/Stewarts-5/src/../stewarts-all.js');
+Ext.Loader.setPath('sl.field.ComboBox','resources/stewarts-all.js');
+Ext.Loader.setPath('sl.field.ComboGrid','resources/stewarts-all.js');
+Ext.Loader.setPath('sl.panel.grid.DisplayGrid','resources/stewarts-all.js');
+Ext.Loader.setPath('sl.panel.grid.EditorGrid','resources/stewarts-all.js');
+Ext.Loader.setPath('sl.panel.grid.ParentChildGridPairing','resources/stewarts-all.js');
 
 Ext.application({
     models: [

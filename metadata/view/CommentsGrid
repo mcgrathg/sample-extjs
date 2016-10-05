@@ -70,10 +70,23 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "name",
+                "flex": 1,
                 "text": "Name"
             },
             "name": "MyColumn5",
-            "designerId": "795ec6ec-236b-40bc-bab4-c8acf404a12e"
+            "designerId": "795ec6ec-236b-40bc-bab4-c8acf404a12e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField3",
+                    "designerId": "7574c63b-7405-461a-b238-1119b2646f17"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Template",
@@ -84,6 +97,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "email",
+                "flex": 1,
+                "maxWidth": 200,
                 "text": "Email"
             },
             "name": "MyTemplateColumn",
@@ -104,6 +119,16 @@
                     },
                     "name": "tpl",
                     "designerId": "36dbf370-3b80-4f05-8d5e-091db40ae92d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField4",
+                    "designerId": "5f566d21-a00a-4397-aed4-36a77fc97f78"
                 }
             ]
         },
@@ -116,10 +141,23 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "body",
+                "flex": 2,
                 "text": "Body"
             },
             "name": "MyColumn6",
-            "designerId": "6d5f4290-07ab-4567-bf45-8c3aef2d33db"
+            "designerId": "6d5f4290-07ab-4567-bf45-8c3aef2d33db",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField10",
+                    "designerId": "dbb96afa-e25d-436e-ab24-e580fb2807b2"
+                }
+            ]
         }
     ]
 }

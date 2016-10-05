@@ -75,7 +75,8 @@
                     "{includeUser}"
                 ],
                 "hideable": false,
-                "text": "User"
+                "text": "User",
+                "width": 200
             },
             "name": "MyColumn3",
             "configAlternates": {
@@ -158,6 +159,18 @@
                     "group": "(Custom Properties)",
                     "name": "readOnly",
                     "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyCheckbox",
+                    "designerId": "ce84ba62-0f73-4390-8cbc-6c73dabcdc4e"
                 }
             ]
         }

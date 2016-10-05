@@ -21,7 +21,8 @@ Ext.define('Examples.view.TodosGrid', {
         'Examples.view.TodosGridViewModel',
         'Ext.view.Table',
         'sl.field.ComboBox',
-        'Ext.grid.column.Check'
+        'Ext.grid.column.Check',
+        'Ext.form.field.Checkbox'
     ],
 
     viewModel: {
@@ -56,6 +57,7 @@ Ext.define('Examples.view.TodosGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            width: 200,
             dataIndex: 'userId',
             hideable: false,
             text: 'User',
@@ -91,7 +93,10 @@ Ext.define('Examples.view.TodosGrid', {
             xtype: 'checkcolumn',
             readOnly: true,
             dataIndex: 'completed',
-            text: 'Completed'
+            text: 'Completed',
+            editor: {
+                xtype: 'checkboxfield'
+            }
         }
     ]
 

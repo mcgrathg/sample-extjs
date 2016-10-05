@@ -21,17 +21,20 @@ Ext.define('overrides.data.Store', {
      * If `true`, when a new record is added to the store, it will immediately be validated
      */
     isNewRecordValidated: true,
-    
+
     constructor: function(config) {
         var store = this;
-        
+
         store.callParent(arguments);
 
-        store.on({
-            priority: 1000,
-            datachanged: (store.isStoreValidatedOnLoad ? store.validateOnStoreLoad : Ext.emptyFn),
-            update: (store.isRecordChangeValidated ? store.validateOnRecordChange : Ext.emptyFn),
-            add: (store.isNewRecordValidated ? store.validateOnRecordAdded : Ext.emptyFn)
-        });   
+        if(store.getStoreId() !== 'ext-empty-store') {
+
+            store.on({
+                priority: 1000,
+                datachanged: (store.isStoreValidatedOnLoad ? store.validateOnStoreLoad : Ext.emptyFn),
+                update: (store.isRecordChangeValidated ? store.validateOnRecordChange : Ext.emptyFn),
+                add: (store.isNewRecordValidated ? store.validateOnRecordAdded : Ext.emptyFn)
+            });   
+        }
     }
 });
