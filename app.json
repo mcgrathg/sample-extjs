@@ -5,9 +5,7 @@
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
    "theme": "ext-theme-gray-6ed0c18f-e314-478f-8827-accf070a4a75",
-   "requires": [
-      "Stewarts-5"
-   ],
+   "requires": [],
    "sass": {
       "namespace": "Examples"
    },
@@ -16,15 +14,15 @@
          "path": "${framework.dir}/build/ext-all-rtl-debug.js"
       },
       {
-         "path": "overrides/data/Model.js",
+         "path": "resources/stewarts-all.js",
+         "remote": false,
          "bootstrap": true,
          "requireSdk": true,
          "x-compile": true,
          "includeInBundle": true
       },
       {
-         "path": "resources/stewarts-all.js",
-         "remote": false,
+         "path": "overrides/data/Model.js",
          "bootstrap": true,
          "requireSdk": true,
          "x-compile": true,
