@@ -20,36 +20,6 @@
     "viewModelInstanceId": "677a731b-8c48-4623-b355-b4277f4ded45",
     "cn": [
         {
-            "type": "Ext.toolbar.Toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top",
-                "layout|flex": 1
-            },
-            "name": "MyToolbar",
-            "designerId": "378dd40b-245d-4849-9484-ba012e4cb535",
-            "cn": [
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
-                    },
-                    "name": "search.combogrid",
-                    "designerId": "c1860765-1d4e-4938-925d-30a60d608989",
-                    "masterInstanceId": "e73aa91c-cd9d-435e-af8f-38297b067038"
-                }
-            ]
-        },
-        {
             "type": "linkedinstance",
             "reference": {
                 "name": "items",

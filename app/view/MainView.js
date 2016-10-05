@@ -20,7 +20,6 @@ Ext.define('Examples.view.MainView', {
     requires: [
         'Examples.view.MainViewViewModel',
         'Examples.view.MainViewViewController',
-        'Examples.view.Search.ComboGrid',
         'Examples.view.UsersGrid',
         'Examples.view.AlbumsGrid',
         'Examples.view.PhotosView',
@@ -28,8 +27,6 @@ Ext.define('Examples.view.MainView', {
         'Examples.view.TodosGrid',
         'Examples.view.PostsGrid',
         'Examples.view.CommentsGrid',
-        'Ext.toolbar.Toolbar',
-        'sl.field.ComboGrid',
         'sl.panel.grid.EditorGrid',
         'Ext.resizer.Splitter',
         'Ext.view.View',
@@ -48,18 +45,6 @@ Ext.define('Examples.view.MainView', {
         type: 'hbox',
         align: 'stretch'
     },
-    dockedItems: [
-        {
-            xtype: 'toolbar',
-            flex: 1,
-            dock: 'top',
-            items: [
-                {
-                    xtype: 'searchcombogrid'
-                }
-            ]
-        }
-    ],
     items: [
         {
             xtype: 'usersgrid',
