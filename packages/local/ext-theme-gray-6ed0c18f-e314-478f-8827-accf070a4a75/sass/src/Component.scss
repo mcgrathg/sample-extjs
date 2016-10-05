@@ -527,7 +527,7 @@ td.can-drag-view.first-visible-column {
     padding-top: 200px;
 
     /* stewarts logo & loading image */
-    background-image: url('./images/stewarts-shops-logo.png'), url('./images/ajax-loader.gif');
+    background-image: url('./images/ajax-loader.gif');
     background-repeat: no-repeat, no-repeat;
     background-position: top, bottom;
 
@@ -599,7 +599,7 @@ ul {
 /* Card Layout container */
 .x-grouptabcontainer {
     background-color: white;
-    border-top: 1px solid #d9d9d9 !important;    
+    border-top: 1px solid #d9d9d9 !important;
     border-bottom: 1px solid #d9d9d9 !important;
     border-right: 1px solid #d9d9d9 !important;
 }
@@ -651,7 +651,7 @@ ul {
     background-color: #EDEEF0;
 }
 
-.x-grouptabbar .x-tree-elbow-line, 
+.x-grouptabbar .x-tree-elbow-line,
 .x-grouptabbar .x-tree-elbow-empty {
     width: 0;
 }

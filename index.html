@@ -5,10 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <style media="screen" type="text/css">
+        .centered-on-page {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0px;
+        }
+
+        /* app splash screen */
+        #stewarts-splashscreen {
+            /* correctly position stewarts logo at top and loading image at bottom */
+            padding-top: 200px;
+
+            /* stewarts logo & loading image */
+            background-image: url('./images/ajax-loader.gif');
+            background-repeat: no-repeat, no-repeat;
+            background-position: top, bottom;
+
+            /*modeled after mask msg text */
+            font: normal 15px tahoma,arial,verdana,sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            font-size: 15px;
+            line-height: normal;
+            font-family: tahoma, arial, verdana, sans-serif;
+            color: #222;
+
+            text-align: center;
+        }
+        /* end app splash screen */
+    </style>
     <title>Greg McGrath's Examples</title>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
 </head>
 <body>
+    <div id="stewarts-splashscreen" class="centered-on-page">Application Loading...</div>
 </body>
 </html>
