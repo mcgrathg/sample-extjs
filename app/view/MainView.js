@@ -195,7 +195,6 @@ Ext.define('Examples.view.MainView', {
                     plugins: [
                         {
                             ptype: 'parentchild',
-                            baseAndParentDivider: ' On ',
                             pluginId: 'postToComments',
                             parentGridReference: 'posts',
                             childGridReference: 'comments',
@@ -206,7 +205,8 @@ Ext.define('Examples.view.MainView', {
                             parentFieldsForChildGridTitle: [
                                 'title'
                             ],
-                            monitorUIUpdate: true
+                            monitorUIUpdate: true,
+                            baseAndParentDivider: ' On '
                         }
                     ]
                 }
@@ -216,7 +216,6 @@ Ext.define('Examples.view.MainView', {
     plugins: [
         {
             ptype: 'parentchild',
-            baseAndParentDivider: ' For ',
             pluginId: 'userToTodos',
             parentGridReference: 'users',
             childGridReference: 'todos',
@@ -227,11 +226,11 @@ Ext.define('Examples.view.MainView', {
             parentFieldsForChildGridTitle: [
                 'name'
             ],
-            monitorUIUpdate: true
+            monitorUIUpdate: true,
+            baseAndParentDivider: ' For '
         },
         {
             ptype: 'parentchild',
-            baseAndParentDivider: ' By ',
             pluginId: 'userToPosts',
             parentGridReference: 'users',
             childGridReference: 'posts',
@@ -242,11 +241,11 @@ Ext.define('Examples.view.MainView', {
             parentFieldsForChildGridTitle: [
                 'name'
             ],
-            monitorUIUpdate: true
+            monitorUIUpdate: true,
+            baseAndParentDivider: ' By '
         },
         {
             ptype: 'parentchild',
-            baseAndParentDivider: ' By ',
             pluginId: 'userToAlbums',
             parentGridReference: 'users',
             childGridReference: 'albums',
@@ -256,7 +255,8 @@ Ext.define('Examples.view.MainView', {
             parentFieldsForChildGridTitle: [
                 'name'
             ],
-            monitorUIUpdate: true
+            monitorUIUpdate: true,
+            baseAndParentDivider: ' By '
         }
     ]
 
