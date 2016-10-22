@@ -17,6 +17,9 @@ Ext.define('Examples.view.MainView', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.mainview',
 
+    uses: [
+        'Ext.window.Toast'
+    ],
     requires: [
         'Examples.view.MainViewViewModel',
         'Examples.view.MainViewViewController',

@@ -12,6 +12,9 @@
         "height": null,
         "layout": "hbox",
         "title": "Greg McGrath's Examples",
+        "uses": [
+            "Ext.window.Toast"
+        ],
         "width": null
     },
     "name": "MyPanel",
@@ -499,14 +502,7 @@
                                 "pluginId": "postToComments"
                             },
                             "name": "MyParentChildGridPairing2",
-                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "baseAndParentDivider",
-                                    "type": "string"
-                                }
-                            ]
+                            "designerId": "4f3ead4d-6b63-4726-bca3-eeb6f2bb8b12"
                         }
                     ]
                 }
@@ -535,14 +531,7 @@
                 "pluginId": "userToTodos"
             },
             "name": "MyParentChildGridPairing",
-            "designerId": "1864019e-764f-4a21-b54a-afba76a7dfa6",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "baseAndParentDivider",
-                    "type": "string"
-                }
-            ]
+            "designerId": "1864019e-764f-4a21-b54a-afba76a7dfa6"
         },
         {
             "type": "sl.panel.grid.ParentChildGridPairing",
@@ -567,14 +556,7 @@
                 "pluginId": "userToPosts"
             },
             "name": "MyParentChildGridPairing1",
-            "designerId": "5fd67e62-5aa1-4d4e-a347-595ef0b712f3",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "baseAndParentDivider",
-                    "type": "string"
-                }
-            ]
+            "designerId": "5fd67e62-5aa1-4d4e-a347-595ef0b712f3"
         },
         {
             "type": "sl.panel.grid.ParentChildGridPairing",
@@ -598,14 +580,7 @@
                 "pluginId": "userToAlbums"
             },
             "name": "MyParentChildGridPairing3",
-            "designerId": "0dd2491f-8ceb-4ff6-804a-cbd561110ae8",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "baseAndParentDivider",
-                    "type": "string"
-                }
-            ]
+            "designerId": "0dd2491f-8ceb-4ff6-804a-cbd561110ae8"
         }
     ]
 }
