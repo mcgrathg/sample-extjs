@@ -1,8 +1,8 @@
 # sample-extjs
 The demo is written in ExtJS 5 with placeholder data supplied by JSON Placeholder.
 
-<ul>This app includes some custom components and features I've developed for ExtJS like:
-
+This app includes some custom components and features I've developed for ExtJS like:
+<ul>
 <li>Remembers column order and width automatically between sessions</li>
 <li>Context-based grid row editability</li>
 <li>Highlighting and notification of incorrect grid data</li>
