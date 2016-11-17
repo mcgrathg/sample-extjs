@@ -33,8 +33,8 @@
         "displayfield-ExtBox1-1210-inputEl": "a new version of the framework is available",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.0.1",
-    "xdsBuild": 190,
+    "xdsVersion": "4.0.2",
+    "xdsBuild": 209,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
